@@ -1,0 +1,11 @@
+input::-webkit-input-placeholder { color: black; }
+
+svg[alt="Comedy"] circle { fill: #F4E600; }
+svg[alt="Community"] circle { fill: #943390; }
+svg[alt="Dance"] circle { fill: #8FC442; }
+svg[alt="Film"] circle { fill: #58AFE1; }
+svg[alt="Food"] circle { fill: #EE589C; }
+svg[alt="Literature"] circle { fill: #2F449F; }
+svg[alt="Music"] circle { fill: #E83E25; }
+svg[alt="Theatre"] circle { fill: #F9A449; }
+svg[alt="Visual Art"] circle { fill: #357034; }

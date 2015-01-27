@@ -1,0 +1,26 @@
+body * { text-rendering: "optimizeLegibility"; }
+
+@font-face {
+  font-family: Artlist-Medium;
+  src: url(MaisonNeue-Medium.ttf);
+}
+
+@font-face {
+  font-family: Artlist-Light;
+  src: url(MaisonNeue-Light.ttf);
+}
+
+@font-face {
+  font-family: Artlist-Bold;
+  src: url(MaisonNeue-Bold.ttf);
+}
+
+@font-face {
+  font-family: Artlist-Demi;
+  src: url(MaisonNeue-Demi.ttf);
+}
+
+@font-face {
+  font-family: Artlist-Mono;
+  src: url(MaisonNeue-Mono.ttf);
+}

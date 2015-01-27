@@ -1,0 +1,81 @@
+/*body { background: top no-repeat url("Artlist - Mobile.jpg"); }*/
+/*body { background: 0 0 no-repeat url("body.png"); }*/
+
+html, body > header { background-image: url(background.png); }
+
+body                { font: 16px/30px "Artlist-Medium";  }
+body > header h1    { font: 36px/98px "Artlist-Bold"; letter-spacing: 2px; text-transform: uppercase; }
+div.controls        { font: 14px/32px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
+input               { font: 14px/32px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
+section.day h2      { font: 16px/64px "Artlist-Medium"; }
+section.day article { font: 22px/64px "Artlist-Medium"; }
+section.day article { font: 22px/64px "Artlist-Medium"; }
+
+body > header { position: fixed; top: 0; left: 0; right: 0; z-index: 1; }
+
+nav.categories { position: absolute; }
+form.search { position: absolute; }
+nav.share { position: absolute; }
+nav.info { position: absolute; }
+
+nav.categories h4 { height: 30px; }
+nav.categories a { height: 30px; position: relative; display: block; padding-left: 15px; box-sizing: border-box; }
+nav.categories svg { height: 30px; width: 20px; display: block; margin: 0; position: absolute; top: 0; left: 0; }
+
+form.search { top: 15px; left: 0; }
+form.search input { display: block; height: 30px; border: 0; padding: 0; }
+nav.share { top: 45px; left: 0; }
+nav.info { top: 75px; left: 0; }
+
+@media screen and (min-width: 1200px) {
+	body > header div.sleeve, section.day { width: 1200px; margin: auto; }
+	body { padding-top: 270px; }
+	body > header { height: 270px; }
+	h1 {
+		height: 90px;
+	}
+	div.controls {
+		height: 180px;
+	}
+div.controls div.rules {
+	border-bottom: 1px solid black;
+	border-top: 1px solid black;
+	position: absolute; top: -1px; bottom: -1px; left: -20px; right: -20px;
+}
+	nav.categories { position: absolute; right: 0; top: 15px; left: 50%; }
+
+	nav.categories a, nav.categories h4 {
+		width: 50%;
+		float: left;
+	}
+}
+
+
+
+
+
+
+
+
+section.day h2 { height: 59px; border-top: 1px solid black; border-bottom: 1px solid black; margin: 0 -20px -1px; padding: 0px 20px; position: relative; }
+
+section.day article { height: 59px; overflow: hidden; margin: 0 0 -1px; position: relative; border-top: 1px dotted black; border-bottom: 1px dotted black; }
+section.day article:hover { border-top: 1px solid black; border-bottom: 1px solid black; }
+
+section.day article div.title_category_and_location { position: absolute; left: 0; top: 0; right: 285px; }
+section.day article div.time_and_cost { position: absolute; right: 0;  top: 0; width: 285px; }
+
+article div.title_category_and_location { }
+article div.title_category_and_location > div { display: inline-block; }
+article div.title { margin-left: 20px; }
+article div.title a { text-decoration: none; }
+article div.category { position: absolute; left: 0; top: 20px; height: 20px; }
+article div.category svg { height: 20px; width: 20px; display: block; margin: 0; position: absolute; }
+
+
+article div.location { color: hsl(0, 0%, 50%); }
+article div.location:before { content: "— "; }
+
+article div.time_and_cost > div { display: inline-block; }
+article div.cost { color: hsl(0, 0%, 50%); }
+article div.cost:before { content: "— "; }

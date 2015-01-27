@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<meta charset="UTF-8">
+<title><%= @event.title %> on <%= @event.date.format("dddd, MMMM DD YYYY") %></title>
+<link rel="stylesheet" href="../artlist.css">
+<body class="avenir">
+  <article>
+    <header>
+      <h1><b><%= @event.title %></b></h1>
+      <h2><%= @event.artist %></h2>
+      <h2><a><%= @event.date.format("dddd") %> <%= @event.date.format("MMMM DD YYYY") %></a></h2>
+      <h2>8pm until Midnight</h2>
+    </header>
+    <div class="location">
+      <h2><b><%= @event.location.name %></b></h2>
+      <h2><a href=""><%= @event.location.address %>, <%= @event.location.city %></a></h2>
+    </div>
+    <div>
+      <%- @event.enHTML %>
+    </div>
+    <div>
+      <a href=""><%= @event.website %></a>
+    </div>
+  </article>
+
+<footer>
+
+<p>
+  <b><a href="">Artlist</a></b> is a place to discover arts events in the Ottawa-Gatineau region. <a href="">Artlist</a> is curated by <a href="">Artengine</a>.
+</p>
+<p>
+To add an event to <a href="">Artlist</a> please send a short summary or a photograph of a the event poster to <a href="mailto:artlist@artengine.ca">artlist@artengine.ca</a>.
+If you are sending your first posting please <a href="">read our event guidelines</a> before sending your email.
+</p>
+
+</footer>
+</body>
