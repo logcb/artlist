@@ -7,7 +7,7 @@ body                { font: 16px/30px "Artlist-Medium";  }
 body > header h1    { font: 36px/98px "Artlist-Bold"; letter-spacing: 2px; text-transform: uppercase; }
 div.controls        { font: 14px/32px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
 input               { font: 14px/32px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
-section.day h2      { font: 16px/64px "Artlist-Medium"; }
+section.day h2      { font: 16px/64px "Artlist-Demi"; letter-spacing: 1px; }
 section.day article { font: 22px/64px "Artlist-Medium"; }
 section.day article { font: 22px/64px "Artlist-Medium"; }
 
