@@ -6,6 +6,7 @@ SCREENS = \
 	dance.html \
 	film.html \
 	food.html \
+	literature.html \
 	music.html \
 	theatre.html \
 	visual_art.html \
