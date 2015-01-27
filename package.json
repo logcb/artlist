@@ -1,0 +1,20 @@
+{
+  "name": "artlist",
+  "version": "0.0.0",
+  "repository": "git+https://github.com/logcb/artlist.git",
+  "dependencies": {
+    "cson": "^1.6.1",
+    "eco": "^1.1.0-rc-3",
+    "moment": "^2.8.4"
+  },
+  "devDependencies": {
+    "coffee-script": "^1.8.0"
+  },
+  "scripts": {
+    "test": "open index.html"
+  },
+  "description": "THE ARTLIST",
+  "homepage": "https://logcb.github.io/artlist/index.html",
+  "license": "Public Domain",
+  "author": "Log Creative Bureau with Girafe en Bois"
+}
