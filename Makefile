@@ -26,8 +26,8 @@ default: .git
 	git remote add artlist.website core@artlist.website:artlist.git
 
 deploy:
-	git push origin deploy gh-pages
-	git push artlist.website deploy
+	git push origin deploy:gh-pages
+	git push artlist.website deploy:deploy
 
 review:
-	git push origin deploy gh-pages
+	git push origin deploy:gh-pages
