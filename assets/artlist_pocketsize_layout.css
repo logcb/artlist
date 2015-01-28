@@ -12,20 +12,21 @@
 
 	body > header div.sleeve, section.day { width: 640px; margin: auto; }
 
-	body { padding-top: 270px; }
-	body > header { height: 270px; }
+	body { padding-top: 230px; }
+	body > header { height: 230px; }
 	body > header h1 { height: 75px; }
-	body > header div.controls { height: 195px; }
+	body > header div.controls { height: 155px; }
 
 	div.controls div.rules { top: -1px; bottom: 0px; left: 0px; right: 0px; }
-	form.search { top: 0px; left: 30px; height: 45px; }
+	form.search { top: 0px; right: 0px; left: 0px; text-align: center; height: 44px; border-bottom: 1px dotted hsl(0, 0%, 33%);}
+	nav.share { top: 0px; right: 30px; height: 45px; }
 
-	nav.categories { position: absolute; right: 30px; top: 44px; bottom: 44px; left: 30px; border-bottom: 1px dotted black;  border-top: 1px dotted black; }
-	nav.categories > * { width: 25%; height: 45px; }
+	nav.categories { position: absolute; right: 30px; top: 45px; bottom: 0; left: 30px; }
+	nav.categories a { width: 25%; height: 45px; }
 	nav.categories a { text-indent: 15px; }
 	nav.categories svg { position: absolute; height: 45px; width: 22px; top: 0; left: -1px; }
 
-	nav.categories h4                        { left: 00%; top: 00px; }
+	nav.categories h4                        { left: 0%; top: 30px; }
 	nav.categories a[href="comedy.html"]     { left: 25%; top: 00px; }
 	nav.categories a[href="community.html"]  { left: 25%; top: 30px; }
 	nav.categories a[href="dance.html"]      { left: 25%; top: 60px; }
@@ -36,9 +37,9 @@
 	nav.categories a[href="theatre.html"]    { left: 75%; top: 30px; }
 	nav.categories a[href="visual_art.html"] { left: 75%; top: 60px; }
 
-	nav.share { bottom: 0px; left: 30px; height: 45px; }
 
-	nav.info { bottom: 0px; right: 30px; height: 45px; }
+
+	nav.info { top: 0px; left: 30px; height: 45px; }
 
 	section.day h2 { height: 44px; border-top: 1px solid black; border-bottom: 1px solid black; margin: -1px 0 0; position: relative; text-align:center; }
 
