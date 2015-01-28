@@ -29,11 +29,14 @@
 
 	section.day h2 { height: 59px; border-top: 1px solid black; border-bottom: 1px solid black; margin: 0 -20px -1px; padding: 0px 20px; position: relative; }
 	section.day article { height: 59px; overflow: hidden; margin: 0 0 -1px; position: relative; border-top: 1px dotted black; border-bottom: 1px dotted black; }
-	/*section.day article:hover { border-top: 1px solid black; border-bottom: 1px solid black; }*/
+	section.day article:hover { border-top: 1px solid black; border-bottom: 1px solid black; }
 
 	article div.title_category_and_location { right: 285px; }
 	article div.title_category_and_location > div { display: inline-block; }
 	article div.location:before { content: "— "; }
+
+	article div.title { text-indent: 20px; }
+
 
 	article div.time_and_cost { width: 285px; }
 	article div.time_and_cost > div { display: inline-block; }
