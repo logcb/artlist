@@ -6,6 +6,7 @@
     "backbone": "^1.1.2",
     "cson": "^1.6.1",
     "eco": "^1.1.0-rc-3",
+    "express": "^4.11.1",
     "moment": "^2.8.4",
     "underscore": "^1.7.0"
   },

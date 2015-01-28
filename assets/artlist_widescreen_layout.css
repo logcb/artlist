@@ -1,16 +1,29 @@
 @media screen and (min-width: 1025px) {
+	body, h1 { width: 1200px; margin: auto; }
+
 	body                { font: 16px/30px "Artlist-Medium";  }
-	body > header h1    { font: 36px/98px "Artlist-Title"; letter-spacing: 1px; text-transform: uppercase; }
+	h1    { font: 36px/98px "Artlist-Title"; letter-spacing: 1px; text-transform: uppercase; }
 	div.controls        { font: 14px/32px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
-	input               { font: 14px/32px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
+
+	input               { font: 14px/32px "Artlist-Demi"; letter-spacing: 1px; }
+	button              { font: 15px/33px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
 	section.day h2      { font: 16px/64px "Artlist-Demi"; letter-spacing: 1px; }
 	section.day article { font: 22px/64px "Artlist-Medium"; }
 	section.day article { font: 22px/64px "Artlist-Medium"; }
 
-	body > header div.sleeve, section.day { width: 1200px; margin: auto; }
-	body { padding-top: 270px; }
-	body > header { height: 270px; }
-	h1 { height: 90px; }
+
+	/*body.index { background: top center no-repeat url(../graphics/widescreen-index-page-mockup.png); min-height: 1000px; }*/
+	body.index { padding-top: 90px; }
+	body.index > header { height: 90px; }
+	h1 {  padding: 0px 30px; margin: auto; border-bottom: 1px solid black; height: 89px; }
+
+	/*body.share { background: top center no-repeat url(../graphics/widescreen-share-page-mockup.png); min-height: 1000px; }*/
+	body.share { padding-top: 90px; }
+	body.share > header { height: 90px; }
+
+
+
+
 	div.controls {
 		height: 180px;
 	}
@@ -50,4 +63,56 @@
 	article div.time_and_cost { width: 285px; }
 	article div.time_and_cost > div { display: inline-block; }
 	article div.cost:before { content: "— "; }
+
+	form.post_an_event { position: relative; height: 420px; }
+
+	form.post_an_event button { font: 15px/33px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; box-sizing: border-box; }
+
+	form.post_an_event div.attribute > label  { font: 22px/64px "Artlist-Medium"; display: block; position: absolute; box-sizing: border-box; height: 60px; width: 100%; }
+	form.post_an_event div.attribute > input  { font: 22px/64px "Artlist-Medium"; display: block; position: absolute; box-sizing: border-box; height: 60px; width: 100%; }
+	form.post_an_event input:focus { outline: transparent; }
+
+
+
+	form.post_an_event div.attribute	{position: absolute; height: 60px;}
+
+	form.post_an_event div.attribute	{border-bottom: 1px dotted hsl(0, 0%, 33%);}
+
+
+	form.post_an_event div.attribute > input {left: 0; right: 0; top: 0; text-indent: 100px; }
+
+	form.post_an_event div.title      { left: 0; right: 0; top: 0px; }
+	form.post_an_event div.venue      { left: 0; right: 50%; top: 60px; }
+	form.post_an_event div.address    { left: 50%; right: 0; top: 60px; }
+	form.post_an_event div.date       { left: 0; right: 50%; top: 120px; }
+	form.post_an_event div.start_time { left: 50%; right: 0; top: 120px; }
+	form.post_an_event div.web_url    { left: 0; right: 0; top: 300px; }
+
+	form.post_an_event div.title input { text-indent: 75px;  }
+	form.post_an_event div.venue input { text-indent: 75px;  }
+	form.post_an_event div.date input  { text-indent: 75px;  }
+	form.post_an_event div.web_url input { text-indent: 210px;  }
+
+	form.post_an_event div.select.one.category { position: absolute; top: 180px; left: 0; right: 0; height: 120px; }
+	/*form.post_an_event div.select.one.category > label { font: 22px/64px "Artlist-Medium"; display: block; position: absolute; box-sizing: border-box; height: 60px; width: 100%; }*/
+
+	/*form.post_an_event div.category { height: 30px; line-height:30px; position: absolute; }*/
+	form.post_an_event div.select > div.category { position:absolute; top:0; left: 0; width: 25%;  }
+
+
+	form.post_an_event div.select > div.category label { position:absolute; font: 15px/33px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; height: 30px; top:0; left: 0; right: 20px; text-indent: 20px; display: block; }
+	form.post_an_event div.select > div.category input { position:absolute; height: 20px; width: 20px; top:5px; left: 0px; margin: 0; }
+	form.post_an_event div.select > div.category svg { position:absolute; top:0; display: none; }
+	form.post_an_event div.select > div.comedy.category     { left: 25%; top: 15px; }
+	form.post_an_event div.select > div.community.category  { left: 25%; top: 45px; }
+	form.post_an_event div.select > div.dance.category      { left: 25%; top: 75px; }
+	form.post_an_event div.select > div.film.category       { left: 50%; top: 15px; }
+	form.post_an_event div.select > div.food.category       { left: 50%; top: 45px; }
+	form.post_an_event div.select > div.literature.category { left: 50%; top: 75px; }
+	form.post_an_event div.select > div.music.category      { left: 75%; top: 15px; }
+	form.post_an_event div.select > div.theatre.category    { left: 75%; top: 45px; }
+	form.post_an_event div.select > div.visual_art.category { left: 75%; top: 75px; }
+
+	form.post_an_event div.commit	{position: absolute; height: 60px; left: -30px; right: -30px; bottom: 0; border-top: 1px solid black; border-bottom: 1px solid black; box-sizing: border-box;}
+	form.post_an_event div.commit	button { position: absolute; top: 15px; height: 30px; padding: 0; left: 30px;}
 }

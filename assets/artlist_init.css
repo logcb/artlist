@@ -1,4 +1,4 @@
-input { background: none; }
+button, input { background: none; border: none; padding: none; margin: none; }
 h1, h2, h3, h4, h5, h6, p, pre, input, ::input-placeholder { font: inherit; }
 body, header, footer, section, article, div, h1, h2, h3, h4, h5, h6, p, pre { margin: 0; padding: 0; position: relative; }
 

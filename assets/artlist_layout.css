@@ -1,4 +1,4 @@
-html, body > header { background-image: url(background.png); }
+
 
 body > header { position: fixed; top: 0; left: 0; right: 0; z-index: 1; }
 body > header nav > a { display:block; }

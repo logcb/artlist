@@ -17,139 +17,83 @@
 <script src="index.json.js"></script>
 
 <body class="share">
-<header><div class="sleeve">
-  <h1><a href="index.html">THE ARTLIST</a></h1>
-  <div class="controls">
-    <div class="rules"></div>
-    <nav class="categories">
-      <h4>Categories:</h4>
-      <a href="comedy.html">Comedy <svg alt="Comedy" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="5" cy="10"></svg></a>
-      <a href="community.html">Community <svg alt="Community" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="5" cy="10"></svg></a>
-      <a href="dance.html">Dance <svg alt="Dance" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="5" cy="10"></svg></a>
-      <a href="film.html">Film <svg alt="Film" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="5" cy="10"></svg></a>
-      <a href="food.html">Food <svg alt="Food" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="5" cy="10"></svg></a>
-      <a href="literature.html">Literature <svg alt="Literature" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="5" cy="10"></svg></a>
-      <a href="music.html">Music <svg alt="Music" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="5" cy="10"></svg></a>
-      <a href="theatre.html">Theatre <svg alt="Theatre" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="5" cy="10"></svg></a>
-      <a href="visual_art.html">Visual Art <svg alt="Visual Art" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="5" cy="10"></svg></a>
-    </nav>
-    <form class="search">
-      <input placeholder="Search:" disabled>
-    </form>
-    <nav class="share">
-      <a href="">Share Your Event</a>
-    </nav>
-    <nav class="info">
-      <a href="">Information</a>
-    </nav>
+
+<header>
+  <h1><a href="index.html">THE ARTLIST</a>: Share Your Event</h1>
+</header>
+
+<form class="post_an_event" method="post" >
+  <div class="title attribute">
+    <label>Title:</label>
+    <input name="event[title]">
   </div>
-</div></header>
+  <div class="venue attribute">
+    <label>Venue:</label>
+    <input name="event[venue]">
+  </div>
+  <div class="address attribute">
+    <label>Address:</label>
+    <input name="event[address]">
+  </div>
+  <div class="date attribute">
+    <label>Date:</label>
+    <input name="event[date]">
+  </div>
+  <div class="start_time attribute">
+    <label>Starts at:</label>
+    <input name="event[cost]">
+  </div>
+  <div class="select one category attribute">
+    <label>Category:</label>
+    <div class="comedy category deactivated">
+      <label>Comedy <input type="radio" value="comedy" name="event[category]"></label>
+      <svg alt="Comedy" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="5" cy="10"></svg>
+    </div>
+    <div class="community category deactivated">
+      <label>Community <input type="radio" value="community" name="event[category]"></label>
+      <svg alt="Community" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="5" cy="10"></svg>
+    </div>
+    <div class="dance category deactivated">
+      <label>Dance <input type="radio" value="dance" name="event[category]"></label>
+      <svg alt="Dance" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="5" cy="10"></svg>
+    </div>
+    <div class="film category deactivated">
+      <label>Film <input type="radio" value="film" name="event[category]"></label>
+      <svg alt="Film" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="5" cy="10"></svg>
+    </div>
+    <div class="food category deactivated">
+      <label>Food <input type="radio" value="food"  name="event[category]"></label>
+      <svg alt="Food" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="5" cy="10"></svg>
+    </div>
+    <div class="literature category deactivated">
+      <label>Literature <input type="radio" value="comedy" name="event[category]"></label>
+      <svg alt="Literature" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="5" cy="10"></svg>
+    </div>
+    <div class="music category deactivated">
+      <label>Music <input type="radio" value="comedy" name="event[category]"></label>
+      <svg alt="Music" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="5" cy="10"></svg>
+    </div>
+    <div class="theatre category deactivated">
+      <label>Theatre <input type="radio" value="comedy" name="event[category]"></label>
+      <svg alt="Theatre" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="5" cy="10"></svg>
+    </div>
+    <div class="visual_art category deactivated">
+      <label>Visual Art <input type="radio" value="comedy" name="event[category]"></label>
+      <svg alt="Visual Art" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="5" cy="10"></svg>
+    </div>
+  </div>
 
-<section class="day sleeve">
-  <h2>01/05/2014</h2>
-  <article>
-    <div class="title_category_and_location">
-      <div class="title"><a href="https://example.org/">Craft Sale</a></div>
-      <div class="location">Glebe Community Centre (175 Third Ave)</div>
-      <div class="category"><svg alt="Community" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="5" cy="10"></svg></div>
-    </div>
-    <div class="time_and_cost">
-      <div class="time">2PM</div>
-      <div class="cost">Free</div>
-    </div>
-  </article>
-  <article>
-    <div class="title_category_and_location">
-      <div class="title"><a href="https://example.org/">Andrew Wright Vernissage</a></div>
-      <div class="location">Ottawa Art Gallery (2 Daly Ave)</div>
-      <div class="category"><svg alt="Visual Art" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="5" cy="10"></svg></div>
-    </div>
-    <div class="time_and_cost">
-      <div class="time">5PM</div>
-      <div class="cost">Free</div>
-    </div>
-  </article>
-  <article>
-    <div class="title_category_and_location">
-      <div class="title"><a href="https://example.org/">Foxcatcher</a></div>
-      <div class="location">Mayfair Theatre (175 Third Ave)</div>
-      <div class="category"><svg alt="Film" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="5" cy="10"></svg></div>
-    </div>
-    <div class="time_and_cost">
-      <div class="time">5PM</div>
-      <div class="cost">$10</div>
-    </div>
-  </article>
-  <article>
-    <div class="title_category_and_location">
-      <div class="title"><a href="https://example.org/">Hey Rosetta</a></div>
-      <div class="location">Bronson Centre (211 Bronson Ave)</div>
-      <div class="category"><svg alt="Music" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="5" cy="10"></svg></div>
-    </div>
-    <div class="time_and_cost">
-      <div class="time">8PM</div>
-      <div class="cost">$15</div>
-    </div>
-  </article>
-  <article>
-    <div class="title_category_and_location">
-      <div class="title"><a href="https://example.org/">Acoustic Open Mic Night</a></div>
-      <div class="location">The Rainbow Bistro (175 Third Ave)</div>
-      <div class="category"><svg alt="Community" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="5" cy="10"></svg></div>
-    </div>
-    <div class="time_and_cost">
-      <div class="time">9:45PM</div>
-      <div class="cost">Free</div>
-    </div>
-  </article>
-  <article>
-    <div class="title_category_and_location">
-      <div class="title"><a href="https://example.org/">Mike Dambra</a></div>
-      <div class="location">Absolute Comedy (412 Preston St)</div>
-      <div class="category"><svg alt="Comedy" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="5" cy="10"></svg></div>
-    </div>
-    <div class="time_and_cost">
-      <div class="time">10PM</div>
-      <div class="cost">$7</div>
-    </div>
-  </article>
-</section>
-
-<section class="day">
-  <h2>01/06/2014</h2>
-  <article>
-    <div class="title_category_and_location">
-      <div class="title"><a href="https://example.org/">Beginners Cooking Class</a></div>
-      <div class="location">C’est Bon (361 Daly Ave)</div>
-      <div class="category"><svg alt="Food" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="5" cy="10"></svg></div>
-    </div>
-    <div class="time_and_cost">
-      <div class="time">2PM</div>
-      <div class="cost">Free</div>
-    </div>
-  </article>
-  <article>
-    <div class="title_category_and_location">
-      <div class="title"><a href="https://example.org/">Ottawa Dance Directive</a></div>
-      <div class="location">Arts Court (2 Daly Ave)</div>
-      <div class="category"><svg alt="Dance" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="5" cy="10"></svg></div>
-    </div>
-    <div class="time_and_cost">
-      <div class="time">8PM</div>
-      <div class="cost">PYWC</div>
-    </div>
-  </article>
-  <article>
-    <div class="title_category_and_location">
-      <div class="title"><a href="https://example.org/">Craft Sale</a></div>
-      <div class="location">Glebe Community Centre (175 Third Ave)</div>
-      <div class="category"><svg alt="Community" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="5" cy="10"></svg></div>
-    </div>
-    <div class="time_and_cost">
-      <div class="time">2PM</div>
-      <div class="cost">$5</div>
-    </div>
-  </article>
-</section>
+  <div class="web_url attribute">
+    <label>Link to event page:</label>
+    <input name="event[web_url]">
+  </div>
+  <!-- <div class="cost attribute">
+    <label>Cost:</label>
+    <input name="event[cost]">
+  <div> -->
+  <div class="commit">
+    <button>SUBMIT</button>
+  </div>
+</form>
 
 </body>
