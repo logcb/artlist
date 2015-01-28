@@ -1,81 +1,137 @@
-/*body { background: top no-repeat url("Artlist - Mobile.jpg"); }*/
-/*body { background: 0 0 no-repeat url("body.png"); }*/
-
-html, body > header { background-image: url(background.png); }
-
-body                { font: 16px/30px "Artlist-Medium";  }
-body > header h1    { font: 36px/98px "Artlist-Bold"; letter-spacing: 2px; text-transform: uppercase; }
-div.controls        { font: 14px/32px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
-input               { font: 14px/32px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
-section.day h2      { font: 16px/64px "Artlist-Demi"; letter-spacing: 1px; }
-section.day article { font: 22px/64px "Artlist-Medium"; }
-section.day article { font: 22px/64px "Artlist-Medium"; }
+/*html, body > header { background-image: url(background.png); }*/
 
 body > header { position: fixed; top: 0; left: 0; right: 0; z-index: 1; }
+body > header nav > a { display:block; }
+
+form.search { position: absolute; }
+form.search input { display: block; height: 30px; border: 0; padding: 0; }
 
 nav.categories { position: absolute; }
-form.search { position: absolute; }
+nav.categories > h4, nav.categories > a { position: absolute; }
+
 nav.share { position: absolute; }
+
 nav.info { position: absolute; }
 
-nav.categories h4 { height: 30px; }
-nav.categories a { height: 30px; position: relative; display: block; padding-left: 15px; box-sizing: border-box; }
-nav.categories svg { height: 30px; width: 20px; display: block; margin: 0; position: absolute; top: 0; left: 0; }
+section.day h2 { position: relative; border-top: 1px solid black; border-bottom: 1px solid black; }
+section.day article { position: relative; overflow: hidden; border-top: 1px dotted black; border-bottom: 1px dotted black; }
+section.day article:hover { border-style: solid; }
 
-form.search { top: 15px; left: 0; }
-form.search input { display: block; height: 30px; border: 0; padding: 0; }
-nav.share { top: 45px; left: 0; }
-nav.info { top: 75px; left: 0; }
-
-@media screen and (min-width: 1200px) {
-	body > header div.sleeve, section.day { width: 1200px; margin: auto; }
-	body { padding-top: 270px; }
-	body > header { height: 270px; }
-	h1 {
-		height: 90px;
-	}
-	div.controls {
-		height: 180px;
-	}
-div.controls div.rules {
-	border-bottom: 1px solid black;
-	border-top: 1px solid black;
-	position: absolute; top: -1px; bottom: -1px; left: -20px; right: -20px;
-}
-	nav.categories { position: absolute; right: 0; top: 15px; left: 50%; }
-
-	nav.categories a, nav.categories h4 {
-		width: 50%;
-		float: left;
-	}
-}
-
-
-
-
-
-
-
-
-section.day h2 { height: 59px; border-top: 1px solid black; border-bottom: 1px solid black; margin: 0 -20px -1px; padding: 0px 20px; position: relative; }
-
-section.day article { height: 59px; overflow: hidden; margin: 0 0 -1px; position: relative; border-top: 1px dotted black; border-bottom: 1px dotted black; }
-section.day article:hover { border-top: 1px solid black; border-bottom: 1px solid black; }
-
-section.day article div.title_category_and_location { position: absolute; left: 0; top: 0; right: 285px; }
-section.day article div.time_and_cost { position: absolute; right: 0;  top: 0; width: 285px; }
-
-article div.title_category_and_location { }
+article div.title_category_and_location { position: absolute; left: 0; top: 0; }
 article div.title_category_and_location > div { display: inline-block; }
 article div.title { margin-left: 20px; }
 article div.title a { text-decoration: none; }
 article div.category { position: absolute; left: 0; top: 20px; height: 20px; }
 article div.category svg { height: 20px; width: 20px; display: block; margin: 0; position: absolute; }
 
-
-article div.location { color: hsl(0, 0%, 50%); }
-article div.location:before { content: "— "; }
-
+article div.time_and_cost { position: absolute; right: 0; top: 0; }
 article div.time_and_cost > div { display: inline-block; }
-article div.cost { color: hsl(0, 0%, 50%); }
-article div.cost:before { content: "— "; }
+
+
+/* Pocket-size layout */
+@media screen and (max-width: 640px) {
+	body { background: top no-repeat url("../graphics/pocket-size-mockup.png"); }
+
+	body                { font: 16px/30px "Artlist-Medium";  }
+	body > header h1    { font: 32px/80px "Artlist-Title"; letter-spacing: 1px; text-transform: uppercase; text-align: center; }
+	div.controls, h4    { font: 16px/48px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
+	input               { font: 16px/48px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
+	section.day h2      { font: 16px/48px "Artlist-Demi"; letter-spacing: 1px; }
+	section.day article { font: 22px/30px "Artlist-Medium"; }
+	section.day article { font: 22px/30px "Artlist-Medium"; }
+
+	body > header div.sleeve, section.day { width: 640px; margin: 0; }
+
+	body { padding-top: 270px; }
+	body > header { height: 270px; }
+	body > header h1 { height: 75px; }
+	body > header div.controls { height: 195px; }
+
+	div.controls div.rules {
+		border-bottom: 1px solid pink;
+		border-top: 1px solid pink;
+		position: absolute; top: -1px; bottom: 0px; left: 0px; right: 0px;
+	}
+	form.search { top: 0px; left: 30px; height: 45px; }
+
+	nav.categories { position: absolute; right: 30px; top: 44px; bottom: 44px; left: 30px; border-bottom: 1px dotted black;  border-top: 1px dotted black; }
+	nav.categories > * { width: 25%; height: 45px; }
+	nav.categories a { text-indent: 15px; }
+
+	nav.categories svg { height: 45px; width: 20px; display: block; margin: 0; position: absolute; top: 0; left: 0; }
+
+	nav.categories h4                        { left: 00%; top: 00px; }
+	nav.categories a[href="comedy.html"]     { left: 25%; top: 00px; }
+	nav.categories a[href="community.html"]  { left: 25%; top: 30px; }
+	nav.categories a[href="dance.html"]      { left: 25%; top: 60px; }
+	nav.categories a[href="film.html"]       { left: 50%; top: 00px; }
+	nav.categories a[href="food.html"]       { left: 50%; top: 30px; }
+	nav.categories a[href="literature.html"] { left: 50%; top: 60px; }
+	nav.categories a[href="music.html"]      { left: 75%; top: 00px; }
+	nav.categories a[href="theatre.html"]    { left: 75%; top: 30px; }
+	nav.categories a[href="visual_art.html"] { left: 75%; top: 60px; }
+
+	nav.share { bottom: 0px; left: 30px; height: 45px; }
+	nav.info { bottom: 0px; right: 30px; height: 45px; }
+
+	section.day h2 { height: 44px; border-top: 1px solid black; border-bottom: 1px solid black; margin: -1px 0 0; position: relative; text-align:center; }
+
+	article { height: 74px; margin: -1px 30px 0; }
+	article div.title_category_and_location { position: absolute; left: 0; top: 0; right: 285px; }
+
+	article div.time_and_cost { height: 75px; outline: 1px solid purple; }
+	article div.time_and_cost { position: absolute; right: 0;  top: 0; width: 90px; }
+	article div.time_and_cost > div { position: absolute; outline: 1px solid pink; height: 30px; }
+	article div.time { right: 0; top: 10px; }
+	article div.cost { right: 0; bottom: 5px; }
+
+	article { border-color: transparent;}
+}
+
+/* Wide-screen layout */
+@media screen and (min-width: 1200px) {
+	body                { font: 16px/30px "Artlist-Medium";  }
+	body > header h1    { font: 36px/98px "Artlist-Bold"; letter-spacing: 2px; text-transform: uppercase; }
+	div.controls        { font: 14px/32px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
+	input               { font: 14px/32px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
+	section.day h2      { font: 16px/64px "Artlist-Demi"; letter-spacing: 1px; }
+	section.day article { font: 22px/64px "Artlist-Medium"; }
+	section.day article { font: 22px/64px "Artlist-Medium"; }
+
+
+
+	body > header div.sleeve, section.day { width: 1200px; margin: auto; }
+	body { padding-top: 270px; }
+	body > header { height: 270px; }
+	h1 { height: 90px; }
+	div.controls {
+		height: 180px;
+	}
+	div.controls div.rules {
+		border-bottom: 1px solid black;
+		border-top: 1px solid black;
+		position: absolute; top: -1px; bottom: -1px; left: -20px; right: -20px;
+	}
+	form.search { top: 15px; left: 0; }
+	nav.categories { position: absolute; right: 0; top: 15px; left: 50%; }
+	nav.categories a, nav.categories h4 { width: 50%; float: left; }
+
+	nav.categories h4 { height: 30px; }
+	nav.categories a { height: 30px; position: relative; display: block; padding-left: 15px; box-sizing: border-box; }
+	nav.categories svg { height: 30px; width: 20px; display: block; margin: 0; position: absolute; top: 0; left: 0; }
+
+	nav.share { top: 45px; left: 0; }
+	nav.info { top: 75px; left: 0; }
+
+	section.day h2 { height: 59px; border-top: 1px solid black; border-bottom: 1px solid black; margin: 0 -20px -1px; padding: 0px 20px; position: relative; }
+	section.day article { height: 59px; overflow: hidden; margin: 0 0 -1px; position: relative; border-top: 1px dotted black; border-bottom: 1px dotted black; }
+	section.day article:hover { border-top: 1px solid black; border-bottom: 1px solid black; }
+
+	article div.title_category_and_location { right: 285px; }
+	article div.title_category_and_location > div { display: inline-block; }
+	article div.location:before { content: "— "; }
+
+	article div.time_and_cost { width: 285px; }
+	article div.time_and_cost > div { display: inline-block; }
+	article div.cost:before { content: "— "; }
+}

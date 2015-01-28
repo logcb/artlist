@@ -1,4 +1,10 @@
 body * { text-rendering: "optimizeLegibility"; }
+body * { text-rendering: "geometricPrecision"; }
+
+@font-face {
+  font-family: Artlist-Title;
+  src: url(BaseNineSmallCaps.otf);
+}
 
 @font-face {
   font-family: Artlist-Medium;
