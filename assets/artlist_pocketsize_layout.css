@@ -1,4 +1,4 @@
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 1024px) {
 	/*body { background: top no-repeat url("../graphics/pocket-size-mockup.png"); }*/
 
 	body                { font: 22px/30px "Artlist-Medium";  }
@@ -10,7 +10,7 @@
 	section.day article div.title { font: 22px/30px "Artlist-Medium"; }
 	section.day article div.time { font: 22px/30px "Artlist-Medium"; }
 
-	body > header div.sleeve, section.day { width: 640px; margin: 0; }
+	body > header div.sleeve, section.day { width: 640px; margin: auto; }
 
 	body { padding-top: 270px; }
 	body > header { height: 270px; }

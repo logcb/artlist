@@ -1,4 +1,4 @@
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1025px) {
 	body                { font: 16px/30px "Artlist-Medium";  }
 	body > header h1    { font: 36px/98px "Artlist-Bold"; letter-spacing: 2px; text-transform: uppercase; }
 	div.controls        { font: 14px/32px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
