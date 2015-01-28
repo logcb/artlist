@@ -11,8 +11,10 @@ SCREENS = \
 	theatre.html \
 	visual_art.html \
 
-default: .git
-	make $(SCREENS)
+default: .git assets/artlist.js $(SCREENS)
+
+assets/artlist.js: assets/artlist.coffee
+	coffee --compile --print $< > $@
 
 %.html: templates/%.html templates/head.html templates/header.html templates/list.html
 	render $< > $@

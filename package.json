@@ -3,14 +3,18 @@
   "version": "0.0.0",
   "repository": "git+https://github.com/logcb/artlist.git",
   "dependencies": {
+    "backbone": "^1.1.2",
     "cson": "^1.6.1",
     "eco": "^1.1.0-rc-3",
-    "moment": "^2.8.4"
+    "moment": "^2.8.4",
+    "underscore": "^1.7.0"
   },
   "devDependencies": {
-    "coffee-script": "^1.8.0"
+    "coffee-script": "^1.8.0",
+    "wr": "^1.3.1"
   },
   "scripts": {
+    "start": "make && wr make assets/*.coffee templates",
     "test": "open index.html"
   },
   "description": "THE ARTLIST",
