@@ -17,11 +17,20 @@
 	div.controls div.rules { top: -1px; bottom: -1px; left: -20px; right: -20px;
 	}
 	form.search { top: 15px; left: 0; }
-	nav.categories { position: absolute; right: 0; top: 15px; left: 50%; }
-	nav.categories a, nav.categories h4 { width: 50%; float: left; }
 
-	nav.categories h4 { height: 30px; }
-	nav.categories a { height: 30px; position: relative; display: block; padding-left: 15px; box-sizing: border-box; }
+	nav.categories { position: absolute; right: 0; top: 15px; bottom: 15px; left: 50%; }
+	nav.categories > * { position: absolute; display:block; width: 50%; height: 30px; }
+	nav.categories a { position: absolute; display:block; text-indent: 15px; }
+	nav.categories h4                        { left: 0; top: 0px; }
+	nav.categories a[href="comedy.html"]     { left: 0; top: 30px; }
+	nav.categories a[href="community.html"]  { left: 0; top: 60px; }
+	nav.categories a[href="dance.html"]      { left: 0; top: 90px; }
+	nav.categories a[href="film.html"]       { left: 0; top: 120px; }
+	nav.categories a[href="food.html"]       { right: 0; top: 0px; }
+	nav.categories a[href="literature.html"] { right: 0; top: 30px; }
+	nav.categories a[href="music.html"]      { right: 0; top: 60px; }
+	nav.categories a[href="theatre.html"]    { right: 0; top: 90px; }
+	nav.categories a[href="visual_art.html"] { right: 0; top: 120px; }
 	nav.categories svg { height: 30px; width: 20px; display: block; margin: 0; position: absolute; top: 0; left: 0; }
 
 	nav.share { top: 45px; left: 0; }
