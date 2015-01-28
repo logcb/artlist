@@ -1,7 +1,9 @@
-/*html, body > header { background-image: url(background.png); }*/
+html, body > header { background-image: url(background.png); }
 
 body > header { position: fixed; top: 0; left: 0; right: 0; z-index: 1; }
 body > header nav > a { display:block; }
+
+div.controls div.rules {position: absolute;  border-bottom: 1px solid hsl(0, 0%, 33%); border-top: 1px solid hsl(0, 0%, 33%); }
 
 form.search { position: absolute; }
 form.search input { display: block; height: 30px; border: 0; padding: 0; }
@@ -9,18 +11,22 @@ form.search input { display: block; height: 30px; border: 0; padding: 0; }
 nav.categories { position: absolute; }
 nav.categories > h4, nav.categories > a { position: absolute; }
 
+
 nav.share { position: absolute; }
 
 nav.info { position: absolute; }
 
 section.day h2 { position: relative; border-top: 1px solid black; border-bottom: 1px solid black; }
-section.day article { position: relative; overflow: hidden; border-top: 1px dotted black; border-bottom: 1px dotted black; }
-section.day article:hover { border-style: solid; }
+
+article { position: relative; overflow: hidden; border-top: 1px dotted black; border-bottom: 1px dotted black; }
+article div.title, article div.location, article div.cost, article div.time { white-space: nowrap; }
+article div.title a { text-decoration: none; }
+
+/*section.day article:hover { border-style: solid; }*/
 
 article div.title_category_and_location { position: absolute; left: 0; top: 0; }
 article div.title_category_and_location > div { display: inline-block; }
-article div.title { margin-left: 20px; }
-article div.title a { text-decoration: none; }
+
 article div.category { position: absolute; left: 0; top: 20px; height: 20px; }
 article div.category svg { height: 20px; width: 20px; display: block; margin: 0; position: absolute; }
 
