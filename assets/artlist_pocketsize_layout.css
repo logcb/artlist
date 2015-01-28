@@ -23,7 +23,6 @@
 	nav.categories { position: absolute; right: 30px; top: 44px; bottom: 44px; left: 30px; border-bottom: 1px dotted black;  border-top: 1px dotted black; }
 	nav.categories > * { width: 25%; height: 45px; }
 	nav.categories a { text-indent: 15px; }
-
 	nav.categories svg { position: absolute; height: 45px; width: 22px; top: 0; left: -1px; }
 
 	nav.categories h4                        { left: 00%; top: 00px; }
