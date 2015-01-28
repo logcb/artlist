@@ -11,10 +11,15 @@ SCREENS = \
 	theatre.html \
 	visual_art.html \
 
-default: .git assets/artlist.js $(SCREENS)
+default: .git assets/artlist.js index.json.js $(SCREENS)
 
 assets/artlist.js: assets/artlist.coffee
 	coffee --compile --print $< > $@
+
+index.json.js: index.json
+	echo "Artlist.index.set(" > index.json.js
+	cat index.json >> index.json.js
+	echo ");" >> index.json.js
 
 %.html: templates/%.html templates/head.html templates/header.html templates/list.html
 	render $< > $@
