@@ -18,28 +18,28 @@
 	body > header div.controls { height: 155px; }
 
 	div.controls div.rules { top: -1px; bottom: 0px; left: 0px; right: 0px; }
-	form.search { top: 0px; right: 30px; left: 30px; text-align: center; height: 45px; }
+	form.search { top: 0px; right: 0px; left: 0px; text-align: center; height: 44px; border-bottom: 1px dotted hsl(0, 0%, 33%);}
 	nav.share { top: 0px; right: 30px; height: 45px; }
 
-	nav.categories { position: absolute; right: 30px; top: 44px; bottom: 0; left: 30px;  border-top: 1px dotted black; }
+	nav.categories { position: absolute; right: 30px; top: 45px; bottom: 0; left: 30px; }
 	nav.categories a { width: 25%; height: 45px; }
 	nav.categories a { text-indent: 15px; }
 	nav.categories svg { position: absolute; height: 45px; width: 22px; top: 0; left: -1px; }
 
-	nav.categories h4                        { left: 0%; top: -45px; }
-	nav.categories a[href="comedy.html"]     { left: 0%; top: 00px; }
-	nav.categories a[href="community.html"]  { left: 0%; top: 30px; }
-	nav.categories a[href="dance.html"]      { left: 0%; top: 60px; }
-	nav.categories a[href="film.html"]       { left: 33%; top: 00px; }
-	nav.categories a[href="food.html"]       { left: 33%; top: 30px; }
-	nav.categories a[href="literature.html"] { left: 33%; top: 60px; }
-	nav.categories a[href="music.html"]      { left: 66%; top: 00px; }
-	nav.categories a[href="theatre.html"]    { left: 66%; top: 30px; }
-	nav.categories a[href="visual_art.html"] { left: 66%; top: 60px; }
+	nav.categories h4                        { left: 0%; top: 30px; }
+	nav.categories a[href="comedy.html"]     { left: 25%; top: 00px; }
+	nav.categories a[href="community.html"]  { left: 25%; top: 30px; }
+	nav.categories a[href="dance.html"]      { left: 25%; top: 60px; }
+	nav.categories a[href="film.html"]       { left: 50%; top: 00px; }
+	nav.categories a[href="food.html"]       { left: 50%; top: 30px; }
+	nav.categories a[href="literature.html"] { left: 50%; top: 60px; }
+	nav.categories a[href="music.html"]      { left: 75%; top: 00px; }
+	nav.categories a[href="theatre.html"]    { left: 75%; top: 30px; }
+	nav.categories a[href="visual_art.html"] { left: 75%; top: 60px; }
 
 
 
-	nav.info { bottom: 0px; right: 30px; height: 45px; display: none;}
+	nav.info { top: 0px; left: 30px; height: 45px; }
 
 	section.day h2 { height: 44px; border-top: 1px solid black; border-bottom: 1px solid black; margin: -1px 0 0; position: relative; text-align:center; }
 
