@@ -3,11 +3,20 @@
   "version": "0.0.0",
   "repository": "git+https://github.com/logcb/artlist.git",
   "dependencies": {
+    "async": "^0.9.0",
+    "authority": "git://github.com/45678/authority",
     "backbone": "^1.1.2",
+    "blake2s-js": "^1.0.3",
+    "body-parser": "^1.10.2",
+    "browserify": "^8.1.1",
     "cson": "^1.6.1",
     "eco": "^1.1.0-rc-3",
     "express": "^4.11.1",
+    "express-session": "^1.10.1",
     "moment": "^2.8.4",
+    "morgan": "^1.5.1",
+    "stylus": "^0.49.3",
+    "through": "^2.3.6",
     "underscore": "^1.7.0"
   },
   "devDependencies": {
@@ -16,6 +25,7 @@
   },
   "scripts": {
     "start": "make && wr make assets/*.coffee templates",
+    "webserver": "NODE_PATH=. coffee webserver/start.coffee",
     "test": "open index.html"
   },
   "description": "THE ARTLIST",
