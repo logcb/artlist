@@ -13,6 +13,12 @@ SCREENS = \
 
 default: .git assets/artlist.js index.json.js $(SCREENS)
 
+webserver/artlist.dev.secret.key:
+	openssl genrsa 2048 > webserver/artlist.dev.secret.key
+
+webserver/artlist.dev.crt: webserver/artlist.dev.secret.key
+	./bin/certify-artlist.dev
+
 assets/artlist.js: assets/artlist.coffee
 	coffee --compile --print $< > $@
 

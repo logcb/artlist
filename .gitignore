@@ -1,1 +1,3 @@
 node_modules
+*.secret.key
+webserver/artlist.dev.crt
