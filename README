@@ -1,0 +1,9 @@
+THE ARTLIST
+
+Created by LOG Creative Bureau with girafe en bois.
+
+Start the development webserver:
+`npm run webserver`
+
+Start the production webserver:
+`NODE_ENV=production npm run webserver`
