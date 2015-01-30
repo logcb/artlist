@@ -1,111 +1,28 @@
 @media screen and (min-width: 1025px) {
 	body, div.sleeve { width: 1200px; margin: auto; }
 
-	/*body.index { background: top center no-repeat url(../graphics/widescreen-index-page-mockup.png); min-height: 1000px; }*/
-	/*body.share { background: top center no-repeat url(../graphics/widescreen-share-page-mockup.png); min-height: 1000px; }*/
-
 	body                { font: 16px/30px "Artlist-Medium";  }
 	h1                  { font: 36px/98px "Artlist-Title"; letter-spacing: 1px; text-transform: uppercase; }
-	nav.page.controls   { font: 36px/98px "Artlist-Title"; letter-spacing: 1px; text-transform: uppercase; }
-	div.controls        { font: 14px/32px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
+	div.list.controls   { font: 14px/32px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
+	h4                  { font: 14px/32px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
 	input               { font: 14px/32px "Artlist-Demi"; letter-spacing: 1px; }
 	button              { font: 15px/33px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
 	section.day h2      { font: 16px/64px "Artlist-Demi"; letter-spacing: 1px; }
-	section.day article { font: 22px/64px "Artlist-Medium"; }
-	section.day article { font: 22px/64px "Artlist-Medium"; }
+	article             { font: 22px/64px "Artlist-Light"; }
+	article div.title   { font: 22px/30px "Artlist-Medium"; }
+	article div.time    { font: 22px/30px "Artlist-Medium"; }
 
-	body { padding:0; }
-
-	body > header { position: fixed; top: 0; left: 0; right: 0; height: 90px; z-index: 1; }
-
+	body > header { height: 90px; }
 	h1 { padding: 0px 30px; margin: 0 -30px; border-bottom: 1px solid black; height: 89px; }
 
-	/*div.intro { height: 0; overflow: hidden; }
-	div.intro.activated { height: 200px; transition: height 360ms ease-out; }*/
+	div.intro { position: relative; height: 0; overflow: hidden; }
+	div.intro.activated { height: 480px; transition: height ease-out 360ms; }
 	div.intro p { margin: 30px 0; width: 50%; }
 
-	div.intro, div.write { position: relative; height: 0; overflow:hidden; }
-	div.intro.activated, div.write.activated { height: 570px; transition: height ease-out 360ms; }
-
-
-
-	/*div.write { position: relative; height: 480px; overflow: hidden; }
-	div.write.activated { height: 480px; transition: height ease-out 360ms; }*/
-	/*div.write form { position: absolute; height: 480px; left: 0; right: 0; bottom: 0; }*/
-
-	/*div.write.expired   { height: 0px; transition: height ease-out 360ms; }*/
-
-
-	div.list.controls { position: absolute; top: 90px; left: 0; right: 0; height: 180px; z-index: 1; }
-	body.index div.list.controls { position: fixed; }
-
-	div.list.controls div.sleeve { height: 180px; }
-	div.list.controls div.rules {
-		position: absolute;
-		top: -1px; bottom: -1px; left: -20px; right: -20px;
-		border-bottom: 1px solid hsl(0, 0%, 33%); border-top: 1px solid hsl(0, 0%, 33%);
-	}
-
-
-	/*body.index div.fixed.list.controls { position: fixed; top: 90px; }*/
-	div.list.controls.shadow.in.flow { height: 180px; z-index: -1; display:none;}
-
-	/*body       div.list.controls { transition: margin-top 360ms ease-out, opacity 120ms linear 360ms; }
-	body.index div.list.controls { margin-top: 0px; opacity: 1; transition: margin-top 360ms ease-out 120ms, opacity 120ms linear 0ms; }
-	body.intro div.list.controls { margin-top: 480px; opacity: 0; }
-	body.write div.list.controls { margin-top: 480px; opacity: 0; }*/
-
-	/*body       div.list_view { transition: margin-top 360ms ease-out; }
-	body.index div.list_view { margin-top: 0px; opacity: 1; }
-	body.intro div.list_view { margin-top: 480px; opacity: 1; }
-	body.write div.list_view { margin-top: 480px; opacity: 1; }*/
-
-
-
-div.list_container { padding-top: 270px; position: relative; }
-	div.list_view { position: relative; min-height: 1200px;  }
-	/*body.index div.list_view { top: 0px; opacity: 1; transition: all 360ms ease-out; }
-	body.intro div.list_view { top: 360px; opacity: 0; transition: all 360ms ease-out; }
-	body.writing div.list_view { top: 360px; opacity: 0; transition: all 360ms ease-out; }*/
-
-
-	form.search { top: 15px; left: 0; }
-
-	nav.categories { position: absolute; right: 0; top: 15px; bottom: 15px; left: 50%; }
-	nav.categories > * { position: absolute; display:block; width: 50%; height: 30px; }
-	nav.categories a { position: absolute; display:block; text-indent: 15px; }
-	nav.categories h4                        { left: 0; top: 0px; }
-	nav.categories a[href="comedy"]     { left: 0; top: 30px; }
-	nav.categories a[href="community"]  { left: 0; top: 60px; }
-	nav.categories a[href="dance"]      { left: 0; top: 90px; }
-	nav.categories a[href="film"]       { left: 0; top: 120px; }
-	nav.categories a[href="food"]       { right: 0; top: 0px; }
-	nav.categories a[href="literature"] { right: 0; top: 30px; }
-	nav.categories a[href="music"]      { right: 0; top: 60px; }
-	nav.categories a[href="theatre"]    { right: 0; top: 90px; }
-	nav.categories a[href="visual_art"] { right: 0; top: 120px; }
-	nav.categories svg { height: 30px; width: 20px; display: block; margin: 0; position: absolute; top: 0; left: 0; }
-
-	nav.share { top: 45px; left: 0; }
-	nav.intro { top: 75px; left: 0; }
-
-	section.day h2 { height: 59px; border-top: 1px solid black; border-bottom: 1px solid black; margin: 0 -20px -1px; padding: 0px 20px; position: relative; }
-	section.day article { height: 59px; overflow: hidden; margin: 0 0 -1px; position: relative; border-top: 1px dotted black; border-bottom: 1px dotted black; }
-	section.day article:hover { border-top: 1px solid black; border-bottom: 1px solid black; }
-
-	article div.title_category_and_location { right: 285px; }
-	article div.title_category_and_location > div { display: inline-block; }
-	article div.location:before { content: "— "; }
-
-	article div.title { text-indent: 20px; }
-
-
-	article div.time_and_cost { width: 285px; }
-	article div.time_and_cost > div { display: inline-block; }
-	article div.cost:before { content: "— "; }
+	div.write { position: relative; height: 0; overflow: hidden; }
+	div.write.activated { height: 480px; transition: height ease-out 360ms; }
 
 	div.write form { position: absolute; height: 480px; left: 0; right: 0; top: 90px; }
-
 
 	div.write button { font: 15px/33px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; box-sizing: border-box; }
 	div.write div.attribute > label  { font: 22px/64px "Artlist-Medium"; display: block; position: absolute; box-sizing: border-box; height: 60px; width: 100%; }
@@ -150,6 +67,51 @@ div.list_container { padding-top: 270px; position: relative; }
 	div.write div.commit	button {
 		position: absolute; top: 15px; height: 30px; padding: 0; left: 30px;
 	}
+
+
+	div.list_container { padding-top: 270px; position: relative; }
+	div.list.controls { top: 90px; left: 0; right: 0; height: 180px; z-index: 1; }
+	div.list.controls div.sleeve { height: 180px; }
+	div.list.controls div.rules {
+		position: absolute;
+		top: -1px; bottom: -1px; left: -20px; right: -20px;
+		border-bottom: 1px solid hsl(0, 0%, 33%); border-top: 1px solid hsl(0, 0%, 33%);
+	}
+	div.list.controls form.search { top: 15px; left: 0; }
+
+	nav.categories { position: absolute; right: 0; top: 15px; bottom: 15px; left: 50%; }
+	nav.categories > * { position: absolute; display:block; width: 50%; height: 30px; }
+	nav.categories a { position: absolute; display:block; text-indent: 15px; }
+	nav.categories h4                        { left: 0; top: 0px; }
+	nav.categories a[href="comedy"]     { left: 0; top: 30px; }
+	nav.categories a[href="community"]  { left: 0; top: 60px; }
+	nav.categories a[href="dance"]      { left: 0; top: 90px; }
+	nav.categories a[href="film"]       { left: 0; top: 120px; }
+	nav.categories a[href="food"]       { right: 0; top: 0px; }
+	nav.categories a[href="literature"] { right: 0; top: 30px; }
+	nav.categories a[href="music"]      { right: 0; top: 60px; }
+	nav.categories a[href="theatre"]    { right: 0; top: 90px; }
+	nav.categories a[href="visual_art"] { right: 0; top: 120px; }
+	nav.categories svg { height: 30px; width: 20px; display: block; margin: 0; position: absolute; top: 0; left: 0; }
+
+	nav.share { top: 45px; left: 0; }
+	nav.intro { top: 75px; left: 0; }
+
+	div.list_view { position: relative; }
+
+	section.day h2 { height: 59px; border-top: 1px solid black; border-bottom: 1px solid black; margin: 0 -20px -1px; padding: 0px 20px; position: relative; }
+	section.day article { height: 59px; overflow: hidden; margin: 0 0 -1px; position: relative; border-top: 1px dotted black; border-bottom: 1px dotted black; }
+	section.day article:hover { border-top: 1px solid black; border-bottom: 1px solid black; }
+
+	article div.title_category_and_location { right: 285px; }
+	article div.title_category_and_location > div { display: inline-block; }
+	article div.title { text-indent: 20px; }
+	article div.location:before { content: "— "; }
+
+	article div.time_and_cost { width: 285px; }
+	article div.time_and_cost > div { display: inline-block; }
+	article div.cost:before { content: "— "; }
+
 
 
 	nav.editor.entrance { display: none;}

@@ -1,63 +1,73 @@
 @media screen and (max-width: 1024px) {
-	/*body { background: top no-repeat url("../graphics/pocket-size-mockup.png"); }*/
+	body, div.sleeve { width: 640px; margin: auto; }
 
 	body                { font: 22px/30px "Artlist-Medium";  }
-	body > header h1    { font: 32px/80px "Artlist-Title"; letter-spacing: 1px; text-transform: uppercase; text-align: center; }
-	div.controls, h4    { font: 16px/48px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
-	input               { font: 16px/48px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
-	section.day h2      { font: 16px/48px "Artlist-Demi"; letter-spacing: 1px; }
-	section.day article { font: 22px/30px "Artlist-Light"; }
-	section.day article div.title { font: 22px/30px "Artlist-Medium"; }
-	section.day article div.time { font: 22px/30px "Artlist-Medium"; }
+	h1                  { font: 32px/80px "Artlist-Title"; letter-spacing: 1px; text-transform: uppercase; text-align: center; }
+	div.list.controls   { font: 16px/48px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
+	h4                  { font: 16px/48px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
+	input               { font: 16px/48px "Artlist-Demi"; letter-spacing: 1px; }
+	button              { font: 16px/48px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
+	section.day h2      { font: 16px/48px "Artlist-Demi"; letter-spacing: 1px; text-align: center; }
+	article             { font: 22px/30px "Artlist-Light"; }
+	article div.title   { font: 22px/30px "Artlist-Medium"; }
+	article div.time    { font: 22px/30px "Artlist-Medium"; }
 
-	body > header div.sleeve, section.day { width: 640px; margin: auto; }
+	body > header { height: 75px; }
+	h1 { padding: 0px 30px; margin: 0 -30px; border-bottom: 1px solid black; height: 74px; }
 
-	body { padding-top: 270px; }
-	body > header { height: 270px; }
-	body > header h1 { height: 75px; }
-	body > header div.controls { height: 195px; }
+	div.intro { display: none; }
+	div.intro.activated {}
 
-	div.controls div.rules { top: -1px; bottom: 0px; left: 0px; right: 0px; }
-	form.search { top: 0px; left: 30px; height: 45px; }
+	div.write { display: none; }
+	div.write.activated {}
+
+	div.list_container { padding-top: 270px; position: relative; }
+	div.list.controls { top: 75px; left: 0; right: 0; height: 195px; z-index: 1; }
+	div.list.controls div.sleeve { height: 195px; }
+	div.list.controls div.rules {
+		position: absolute;
+		top: -1px; bottom: -1px; left: -20px; right: -20px;
+		border-bottom: 1px solid hsl(0, 0%, 33%); border-top: 1px solid hsl(0, 0%, 33%);
+	}
 
 	nav.categories { position: absolute; right: 30px; top: 44px; bottom: 44px; left: 30px; border-bottom: 1px dotted black;  border-top: 1px dotted black; }
 	nav.categories > * { width: 25%; height: 45px; }
 	nav.categories a { text-indent: 15px; }
 	nav.categories svg { position: absolute; height: 45px; width: 22px; top: 0; left: -1px; }
 
-	nav.categories h4                        { left: 00%; top: 00px; }
-	nav.categories a[href="comedy.html"]     { left: 25%; top: 00px; }
-	nav.categories a[href="community.html"]  { left: 25%; top: 30px; }
-	nav.categories a[href="dance.html"]      { left: 25%; top: 60px; }
-	nav.categories a[href="film.html"]       { left: 50%; top: 00px; }
-	nav.categories a[href="food.html"]       { left: 50%; top: 30px; }
-	nav.categories a[href="literature.html"] { left: 50%; top: 60px; }
-	nav.categories a[href="music.html"]      { left: 75%; top: 00px; }
-	nav.categories a[href="theatre.html"]    { left: 75%; top: 30px; }
-	nav.categories a[href="visual_art.html"] { left: 75%; top: 60px; }
+	nav.categories h4                   { left: 00%; top: 00px; }
+	nav.categories a[href="comedy"]     { left: 25%; top: 00px; }
+	nav.categories a[href="community"]  { left: 25%; top: 30px; }
+	nav.categories a[href="dance"]      { left: 25%; top: 60px; }
+	nav.categories a[href="film"]       { left: 50%; top: 00px; }
+	nav.categories a[href="food"]       { left: 50%; top: 30px; }
+	nav.categories a[href="literature"] { left: 50%; top: 60px; }
+	nav.categories a[href="music"]      { left: 75%; top: 00px; }
+	nav.categories a[href="theatre"]    { left: 75%; top: 30px; }
+	nav.categories a[href="visual_art"] { left: 75%; top: 60px; }
+
+	form.search { top: 0px; left: 30px; height: 45px; }
 
 	nav.share { bottom: 0px; left: 30px; height: 45px; }
 
-	nav.info { bottom: 0px; right: 30px; height: 45px; }
+	nav.intro { bottom: 0px; right: 30px; height: 45px; display:none; }
+
+	div.list_view { position: relative; }
 
 	section.day h2 { height: 44px; border-top: 1px solid black; border-bottom: 1px solid black; margin: -1px 0 0; position: relative; text-align:center; }
 
 	article { height: 74px; margin: -1px 30px 0; }
+
 	article div.title_category_and_location { position: absolute; left: 0; top: 0; right: 0; height: 75px; }
 	article div.title_category_and_location > div { position: absolute; height: 25px; }
-
 	article div.title { left: 0; top: 12px; right: 0; text-indent: 20px; }
 	article div.location { left: 0; bottom: 12px; right: 0; text-indent: 20px; }
-
 	article div.category { left: 1px; top: 14px; }
 	article div.category svg { height: 22px; width: 22px; display: block; margin: 0; position: absolute; }
-
 
 	article div.time_and_cost { height: 75px; }
 	article div.time_and_cost { position: absolute; right: 0;  top: 0; width: 90px; }
 	article div.time_and_cost > div { position: absolute; height: 25px; }
 	article div.time { right: 0; top: 12px; }
 	article div.cost { right: 0; bottom: 12px; }
-
-	/*article { border-color: transparent;}*/
 }
