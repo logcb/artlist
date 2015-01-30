@@ -37,7 +37,7 @@ compile = module.exports.compile = (callback) ->
     # Require all the templates.
     browserify.require("./templates/#{file}") for file in readdirSync("templates") when file.match(".html")
     # Require the bundle index file.
-    browserify.add("window/index")
+    browserify.add("./window/index")
     # Bundle the script and send a buffer to the `callback`.
     browserify.bundle (error, buffer) ->
       if error

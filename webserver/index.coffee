@@ -1,6 +1,6 @@
-{readFileSync, writeFileSync} = require "fs"
+{readFileSync} = require "fs"
 
-environment       = "development"
+environment       = process.env.NODE_ENV ? "development"
 hostname          = "artlist.dev"
 Artlist           = require "./artlist"
 CryptoCredentials = require "./crypto_credentials"
@@ -8,6 +8,7 @@ MorganLogger      = require "morgan"
 Express           = require "express"
 ExpressSession    = require "express-session"
 HTTPS             = require "https"
+Helmet            = require "helmet"
 Eco               = require "eco"
 
 # Exports an instance of [HTTPS server](http://nodejs.org/api/https.html#https_class_https_server)
@@ -18,29 +19,20 @@ module.exports = HTTPS.createServer CryptoCredentials, service = new Express
 # Log response status, request method, request URL and response time with [Morgan](https://www.npmjs.org/package/morgan#readme).
 service.use MorganLogger ":status :method :url :response-time ms"
 
-# Activate strict transport security and define the content security policy with
-# [Helmet](https://www.npmjs.org/package/helmet#readme).
-# Helmet = require "helmet"
-#
-# service.use Helmet.hsts maxAge: (24.hours()) * 180
-# service.use Helmet.csp
-#   defaultSrc: "'self' data:"
-#   scriptSrc: "'self'"
-#   styleSrc: "'self' 'unsafe-inline'"
-# service.use Helmet.hidePoweredBy()
-# service.use Helmet.xframe()
-# service.use Helmet.xssFilter()
+# Activate strict transport security.
+service.use Helmet.hsts maxAge: (24 * 60 * 60 * 1000) * 180
 
-# Serve images and compiled scripts and stylesheets from the filesystem.
+# Serve images, fonts, scripts and stylesheets from the filesystem.
 service.use "/assets", Express.static("#{__dirname}/../assets")
 service.use Express.static("#{__dirname}/..")
 
-# Compile [bundle script](middleware/bundle_script.coffee), [stylesheet](middleware/stylesheet.coffee) on demand durring development.
+# Compiled bundle script.
 service.get "/assets/bundle.js", require("./middleware/bundle_script")
+
+# Compiled stylesheet.
 service.get "/assets/compiled/stylesheet.css", require("./middleware/stylesheet")
 
-
-
+# Script to update the `Artlist.index` collection in the window.
 service.get "/index.json.js", (request, response, next) ->
   response.writeHead 200, "Content-Type": "application/javascript; charset=utf-8"
   response.end "Artlist.index.set(#{JSON.stringify(Artlist.index.toJSON())});"
@@ -66,10 +58,10 @@ service.put "/articles/:id", (request, response, next) ->
   response.statusCode = 200
   response.json model.toJSON()
 
-service.get "/:page", (request, response, next) ->
+service.get "/:page?", (request, response, next) ->
   if request.accepts "html"
     page = request.params.page || "index"
-    HTML = render(page, {})
+    HTML = render("document", {})
     response.writeHead 200, "Content-Type": "text/html; charset=utf-8"
     response.end HTML
   else

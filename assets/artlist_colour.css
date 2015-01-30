@@ -1,6 +1,6 @@
 input::-webkit-input-placeholder { color: black; }
 
-/*html, body > header { background-image: url(background.png); }*/
+html, body > header, div.list.controls  { background-image: url(background.png); }
 
 svg[alt="Comedy"] circle { fill: #F4E600; }
 svg[alt="Community"] circle { fill: #943390; }

@@ -1,9 +1,10 @@
 Artlist  = module.exports = {}
 Backbone = require "backbone"
-BLAKE2s  = require "blake2s-js"
+crypto  = require "crypto"
 {readFileSync, writeFileSync} = require "fs"
 
 Artlist.index = new Backbone.Collection JSON.parse(readFileSync("index.json"))
+
 Artlist.index.comparator = "created_at"
 
 Artlist.index.on "add", (model) ->
@@ -14,10 +15,9 @@ Artlist.index.on "add", (model) ->
   saveIndexOnFileSystem()
 
 generateIdentifierForNewArticle = (attributes) ->
-  hash = new BLAKE2s 32
-  hash.update(Date.now())
-  hash.update(attributes)
-  hash.hexDigest()
+  hash = crypto.createHash("sha1")
+  hash.update(JSON.stringify(attributes), "utf-8")
+  hash.digest("hex")
 
 saveIndexOnFileSystem = ->
-  writeFileSync "index.json", JSON.stringify(Artlist.index.toJSON()), "utf-8"
+  writeFileSync "index.json", JSON.stringify(Artlist.index.toJSON(), undefined, "  "), "utf-8"

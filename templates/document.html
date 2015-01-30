@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<meta charset="UTF-8">
+<title><%= @title ? "THE ARTLIST" %></title>
+<link rel="icon" type="image/ico" href="assets/favicon.ico">
+<link rel="stylesheet" href="assets/artlist_typefaces.css">
+<link rel="stylesheet" href="assets/artlist_init.css">
+<link rel="stylesheet" href="assets/artlist_colour.css">
+<link rel="stylesheet" href="assets/artlist_layout.css">
+<link rel="stylesheet" href="assets/artlist_pocketsize_layout.css">
+<link rel="stylesheet" href="assets/artlist_widescreen_layout.css">
+<script src="assets/zepto.js"></script>
+<script src="assets/bundle.js"></script>
+<script src="index.json.js"></script>
+<body class="loading">
+  <header><div class="sleeve">
+    <h1><a href="/">THE ARTLIST</a></h1>
+  </div></header>
+
+  <%- @render "intro" %>
+
+  <%- @render "write" %>
+
+  <div class="list_container">
+    <div class="list controls"><div class="sleeve">
+      <div class="rules"></div>
+      <nav class="categories">
+        <h4>Categories:</h4>
+        <a href="comedy">Comedy <svg alt="Comedy" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="5" cy="10"></svg></a>
+        <a href="community">Community <svg alt="Community" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="5" cy="10"></svg></a>
+        <a href="dance">Dance <svg alt="Dance" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="5" cy="10"></svg></a>
+        <a href="film">Film <svg alt="Film" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="5" cy="10"></svg></a>
+        <a href="food">Food <svg alt="Food" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="5" cy="10"></svg></a>
+        <a href="literature">Literature <svg alt="Literature" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="5" cy="10"></svg></a>
+        <a href="music">Music <svg alt="Music" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="5" cy="10"></svg></a>
+        <a href="theatre">Theatre <svg alt="Theatre" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="5" cy="10"></svg></a>
+        <a href="visual_art">Visual Art <svg alt="Visual Art" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="5" cy="10"></svg></a>
+      </nav>
+      <form class="search">
+        <label>Search:</label>
+        <!-- <input placeholder="Search"> -->
+      </form>
+      <nav class="share">
+        <a href="post">Share Your Event</a>
+      </nav>
+      <nav class="intro">
+        <a href="intro">Information</a>
+      </nav>
+    </div></div>
+    <div class="list_view"></div>
+  </div>
+
+  <nav class="editor entrance">
+    <div class="sleeve">
+      <a href="/editor/enter">Edit</a>
+    <div>
+  </nav>
+
+  <nav class="editor page controls">
+    <div class="sleeve">
+      <a href="/editor/post">Add Event</a>
+      <a href="/editor/exit">Exit</a>
+    <div>
+  </nav>
+
+  <footer></footer>
+</body>
