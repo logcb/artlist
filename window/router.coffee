@@ -1,6 +1,7 @@
 Backbone = require "backbone"
 Artlist = require "./artlist"
 ListView = require "./list_view"
+ReadIntroView = require "./read_intro_view"
 WriteArticleView = require "./write_article_view"
 
 class Router extends Backbone.Router
@@ -33,8 +34,7 @@ class Router extends Backbone.Router
     document.title = "THE ARTLIST: INFORMATION"
     document.body.className = "public intro"
     document.body.querySelector("h1").innerHTML = """<a href="/">THE ARTLIST</a>: INFORMATION"""
-    document.body.querySelector("div.intro").classList.add("activated")
-    document.body.querySelector("div.intro").scrollIntoView()
+    new ReadIntroView
 
   search: ->
     document.title = "THE ARTLIST"
