@@ -2,12 +2,6 @@ THE ARTLIST
 
 Created by LOG Creative Bureau with girafe en bois.
 
-Start the development webserver:
-`npm run webserver`
-
-Start the production webserver:
-`NODE_ENV=production npm run webserver`
-
 SCHEDULE:
 
 January 26-30:
@@ -36,3 +30,14 @@ February 16-20:
 • Refinements, bug squishing, optimizations, etc...
 
 Public Launch on Tuesday February 24 2015.
+
+COMMANDS:
+
+Install the package:
+`npm install`
+
+Start the development webserver:
+`npm start`
+
+Start the production webserver:
+`NODE_ENV=production npm start`
