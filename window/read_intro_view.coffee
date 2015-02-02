@@ -8,7 +8,6 @@ class ReadIntroView extends Backbone.View
 
   initialize: ->
     @activate()
-    Function.delay 1, => Backbone.history.once "route", @deactivateOnReturnToIndex
 
   events:
     "input div.attribute": "attributeInputWasChanged"
@@ -19,17 +18,19 @@ class ReadIntroView extends Backbone.View
     @el.innerHTML = template()
 
   activate: =>
-    $(@el).addClass "activated"
+    Function.delay 1, => Backbone.history.once "route", @deactivateOnReturnToIndex
+    @render()
     @el.scrollIntoView()
+    $(@el).addClass "activated"
     $(@el).on "transitionend", (event) =>
       if event.target is @el and event.propertyName is "height"
         $(@el).off "transitionend"
 
   deactivate: =>
     Backbone.history.off "route", @deactivate
-    $(@el).removeClass "activated"
     $(@el).off()
     @el.innerHTML = ""
+    $(@el).removeClass "activated"
 
   deactivateOnReturnToIndex: (router, destination) =>
     @deactivate() if destination is "index"

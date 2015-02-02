@@ -8,9 +8,7 @@ class WriteArticleView extends Backbone.View
 
   initialize: ->
     @article = new Artlist.Article
-    @render()
     @activate()
-    Function.delay 1, => Backbone.history.once "route", @deactivate
 
   events:
     "input div.attribute": "attributeInputWasChanged"
@@ -21,17 +19,19 @@ class WriteArticleView extends Backbone.View
     @el.innerHTML = template({article: @article.toJSON()})
 
   activate: =>
-    $(@el).addClass "activated"
+    Function.delay 1, => Backbone.history.once "route", @deactivateOnReturnToIndex
+    @render()
     @el.scrollIntoView()
+    $(@el).addClass "activated"
     $(@el).on "transitionend", (event) =>
       if event.target is @el and event.propertyName is "height"
         @el.querySelector("input[name=title]").focus()
 
   deactivate: =>
-    $(@el).removeClass "activated"
+    Backbone.history.off "route", @deactivateOnReturnToIndex
     $(@el).off()
     @el.innerHTML = ""
-    Backbone.history.off "route", @deactivate
+    $(@el).removeClass "activated"
 
   commit: (event) ->
     @article.save()
@@ -44,3 +44,6 @@ class WriteArticleView extends Backbone.View
   formWasSubmitted: (event) ->
     event.preventDefault()
     @commit(event)
+
+  deactivateOnReturnToIndex: (router, destination) =>
+    @deactivate() if destination is "index"
