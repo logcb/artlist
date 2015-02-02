@@ -112,8 +112,6 @@
 	article div.time_and_cost > div { display: inline-block; }
 	article div.cost:before { content: "— "; }
 
-
-
 	nav.editor.entrance { display: none;}
 	nav.editor.controls { display: none;}
 
