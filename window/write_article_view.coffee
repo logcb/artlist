@@ -9,6 +9,7 @@ class WriteArticleView extends Backbone.View
   initialize: ->
     @article = new Artlist.Article
     @activate()
+    @el.scrollIntoView()
     Function.delay 1, => Backbone.history.once "route", @remove
 
   events:
