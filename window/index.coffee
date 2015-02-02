@@ -27,25 +27,10 @@ $(document).on "click", "a[href]", (event) ->
   else
     "Opening link to remote host..."
 
-
+# TODO: Move this procedure into appropriate views.
 $(document).on "scroll", (event) ->
-  console.info $("div.list_container").offset().top, window.scrollY
   if window.location.pathname isnt "/"
     if window.scrollY >= $("div.list_container").offset().top
       event.preventDefault()
       window.scrollTo(0,0)
       window.router.navigate "/", {trigger: yes}
-
-
-  # console.info "scroll", window.scrollY
-
-  # filtered = bookmarks.filter (bookmark) -> window.scrollY >= $(bookmark).offset().top
-  # bookmark = filtered[0]
-  # bookmarkHash = (if bookmark then "#"+bookmark.id else "")
-  # if location.hash isnt bookmarkHash
-  #   [baseUrl] = location.toString().split("#")
-  #   history.replaceState({}, "", "#{baseUrl}#{bookmarkHash}")
-  # if location.hash
-  #   window.hashOffset = window.scrollY - $(location.hash).offset().top
-  # else
-  #   window.hashOffset = 0
