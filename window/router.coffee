@@ -25,8 +25,6 @@ class Router extends Backbone.Router
     document.title = "THE ARTLIST"
     document.body.className = "public index"
     document.body.querySelector("h1").innerHTML = """THE ARTLIST"""
-    document.body.querySelector("div.intro").classList.remove("activated")
-    document.body.querySelector("div.write").classList.remove("activated")
     @articles.set Artlist.index.toArray()
 
 
@@ -47,8 +45,8 @@ class Router extends Backbone.Router
     document.title = "Post an event to THE ARTLIST"
     document.body.className = "public write new article"
     document.body.querySelector("h1").innerHTML = """<a href="/">THE ARTLIST</a>: SHARE YOUR EVENT"""
-    document.body.querySelector("div.write").classList.add("activated")
-    document.body.querySelector("div.write").scrollIntoView()
+    article = new Artlist.Article
+    new WriteArticleView model: article
 
   editArtList: ->
     document.title = "Edit THE ARTLIST"

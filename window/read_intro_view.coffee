@@ -8,7 +8,7 @@ class ReadIntroView extends Backbone.View
 
   initialize: ->
     @activate()
-    Function.delay 1, => Backbone.history.once "route", @remove
+    Function.delay 1, => Backbone.history.once "route", @deactivateOnReturnToIndex
 
   events:
     "input div.attribute": "attributeInputWasChanged"
@@ -24,16 +24,12 @@ class ReadIntroView extends Backbone.View
     $(@el).on "transitionend", (event) =>
       if event.target is @el and event.propertyName is "height"
         $(@el).off "transitionend"
-        @el.querySelector("input[name=title]").focus()
 
   deactivate: =>
-    $(@el).addClass "expired"
-    $(@el).on "transitionend", (event) =>
-      if event.target is @el and event.propertyName is "height"
-        $(@el).off "transitionend"
-        @remove()
-
-  remove: =>
-    $(@el).off()
-    $(@el).remove()
     Backbone.history.off "route", @deactivate
+    $(@el).removeClass "activated"
+    $(@el).off()
+    @el.innerHTML = ""
+
+  deactivateOnReturnToIndex: (router, destination) =>
+    @deactivate() if destination is "index"

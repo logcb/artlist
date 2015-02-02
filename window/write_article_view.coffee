@@ -8,9 +8,9 @@ class WriteArticleView extends Backbone.View
 
   initialize: ->
     @article = new Artlist.Article
+    @render()
     @activate()
-    @el.scrollIntoView()
-    Function.delay 1, => Backbone.history.once "route", @remove
+    Function.delay 1, => Backbone.history.once "route", @deactivate
 
   events:
     "input div.attribute": "attributeInputWasChanged"
@@ -22,19 +22,15 @@ class WriteArticleView extends Backbone.View
 
   activate: =>
     $(@el).addClass "activated"
+    @el.scrollIntoView()
     $(@el).on "transitionend", (event) =>
       if event.target is @el and event.propertyName is "height"
         @el.querySelector("input[name=title]").focus()
 
   deactivate: =>
-    $(@el).addClass "expired"
-    $(@el).on "transitionend", (event) =>
-      if event.target is @el and event.propertyName is "height"
-        @remove()
-
-  remove: =>
+    $(@el).removeClass "activated"
     $(@el).off()
-    $(@el).remove()
+    @el.innerHTML = ""
     Backbone.history.off "route", @deactivate
 
   commit: (event) ->
