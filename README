@@ -8,11 +8,29 @@ Start the development webserver:
 Start the production webserver:
 `NODE_ENV=production npm run webserver`
 
+SCHEDULE:
 
+January 26-30:
+• Converted widescreen mockup to web page
+• Converted pocket-size mockup to web page
+• Converted share form to web page
+• Assembled all screens into a HTML+CSS+Javascript bundle.
+• Registered artlist.website and setup basic hosting
+• Setup initial application server and compilation scripts
 
+February 2-6:
+• Validation and error handling for post an event form
+• Preview new event
+• Show event creation notice/receipt
+• Search and category filter programming
+• Enable pocket-sized post an event form
+• Enable pocket-sized information screen
 
+February 9-13:
+• Programming of editing controls to add, remove and change the list.
+• Access controls for Art Engine folks
+• Update text on information screen.
+• Database and hosting configuration.
 
-
-
-
-Food on THE ARTLIST
+February 16-20:
+• Refinements, bug squishing, etc...
