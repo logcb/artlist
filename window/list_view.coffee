@@ -14,17 +14,16 @@ class ArticleListView extends Backbone.View
     @render()
 
   render: =>
-    articlesGroupedByDate = @collection.groupBy (article) -> article.date
     sections = []
     template = require "../templates/day_of_articles.html"
-    for date, articles of articlesGroupedByDate
+    for date, articles of @getArticlesGroupedByDate()
       articles = (article.toJSON() for article in articles)
-      sections.push template({date, articles: articles})
+      sections.push template({date: date, articles: articles})
     @el.innerHTML = sections.join("")
 
   editArticle: (event) ->
     id = event.currentTarget.id
     Backbone.history.navigate("articles/#{id}")
 
-  getArticlesGroupedByDay: ->
-    @collection.groupBy (article) -> article.date
+  getArticlesGroupedByDate: ->
+    @collection.groupBy (article) -> article.get("date")
