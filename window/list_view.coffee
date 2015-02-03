@@ -1,5 +1,6 @@
 Artlist = require "./artlist"
 Backbone = require "backbone"
+Moment = require "moment"
 
 class ArticleListView extends Backbone.View
   module.exports = this
@@ -18,7 +19,7 @@ class ArticleListView extends Backbone.View
     template = require "../templates/day_of_articles.html"
     for date, articles of @getArticlesGroupedByDate()
       articles = (article.toJSON() for article in articles)
-      sections.push template({date: date, articles: articles})
+      sections.push template({date: date, articles: articles, moment: Moment})
     @el.innerHTML = sections.join("")
 
   editArticle: (event) ->
