@@ -28,4 +28,3 @@ RUN cd artlist; npm install
 
 # Add secret key and certificate for the web server.
 ADD artlist.website.secret.key /artlist/webserver/artlist.website.secret.key
-ADD artlist.website.certificates.pem /artlist/webserver/artlist.website.crt
