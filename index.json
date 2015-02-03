@@ -182,5 +182,18 @@
     "created_at": "2015-02-02T23:56:24.362Z",
     "updated_at": "2015-02-02T23:56:24.362Z",
     "id": "1306184161cf79022cf88cae1ebb4050924b9a2b"
+  },
+  {
+    "title": "ELECTRONIC ORGANS",
+    "venue": "Christ Church Cathedral",
+    "address": "414 Sparks Street",
+    "date": "2015/02/07",
+    "starts_at": "2015-02-07T21:30:00.000Z",
+    "web_url": "http://www.rcco-ottawa.ca/events.html",
+    "category": "Music",
+    "cost": "$10",
+    "created_at": "2015-02-03T16:34:48.109Z",
+    "updated_at": "2015-02-03T16:34:48.109Z",
+    "id": "851eeea0cb3c69fbca5ea5367ff92acfce0cc4ac"
   }
 ]
