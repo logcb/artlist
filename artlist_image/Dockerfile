@@ -20,8 +20,8 @@ ENV NODE_HOSTNAME artlist.website
 # Clone source code.
 RUN git clone https://github.com/logcb/artlist.git
 
-# Set the file system to 22ccc0619db0dffe63478736abd1c53f9330288e.
-RUN cd artlist; git fetch --all; git reset --hard 22ccc0619db0dffe63478736abd1c53f9330288e
+# Set the file system to 7590be9face5f8560d3483861cfbb4818f1f763c.
+RUN cd artlist; git fetch --all; git reset --hard 7590be9face5f8560d3483861cfbb4818f1f763c
 
 # Install slowpost dependencies.
 RUN cd artlist; npm install
