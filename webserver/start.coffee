@@ -26,8 +26,7 @@ port = if environment is "production" then 443 else 4000
 # and members-to-be-or-not-to-be.
 process.nextTick ->
   startupTasks = []
-  startupTasks.push compileAndSaveBundleScript if environment is "production"
-  startupTasks.push compileAndSaveStylesheet if environment is "production"
+  # startupTasks.push compileAndSaveBundleScript if environment is "production"
   async.series startupTasks, (error) ->
     if error
       console.error(error)
