@@ -1,0 +1,32 @@
+#!/usr/bin/env coffee
+
+FileSystem = require "fs"
+XML2JS     = require "xml2js"
+Moment     = require "moment"
+Artlist    = require "../webserver/artlist"
+FeedXML    = FileSystem.readFileSync "sources/artlist-en.xml", "utf-8"
+
+convertEventAttributes = (source) ->
+  moment = Moment(source["pubDate"][0])
+  return target =
+    "date": moment.format("YYYY/MM/DD")
+    "title": source["title"][0]
+    "starts_at": moment.toJSON()
+    "ends_at": undefined
+    "venue": undefined
+    "address": undefined
+    "cost": undefined
+    "description": source["description"][0]
+    "web_url": source["link"][0]
+    "source": "artlist-en.xml"
+
+Artlist.index.on "add", (article) ->
+  console.info "Added", article.get("id"), article.get("title")
+
+XML2JS.parseString FeedXML, (error, parsed) ->
+  if error
+    throw error
+  else
+    sourceEvents = parsed.rss.channel[0].item
+    converted = (convertEventAttributes(source) for source in sourceEvents)
+    Artlist.index.add(article) for article in converted
