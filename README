@@ -36,8 +36,14 @@ COMMANDS:
 Install the package:
 `npm install`
 
-Start the development webserver:
+Start the webserver:
 `npm start`
 
-Start the production webserver:
+Start the webserver in a production environment:
 `NODE_ENV=production npm start`
+
+Deploy the project:
+`fly deploy:website`
+
+Run the image in an interactive console on the remote host:
+`ssh core@artlist.website -C docker run -i -t artlist_image /bin/bash`
