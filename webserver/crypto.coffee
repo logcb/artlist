@@ -17,11 +17,10 @@
 # to provide forward secrecy...
 
 {readFileSync} = require "fs"
-environment = process.env.NODE_ENV ? "development"
-hostname = "artlist" + (if environment is "development" then ".dev" else ".website")
+hostname = "artlist" + (if process.env.NODE_ENV is "production" then ".website" else ".dev")
 
 module.exports =
-  cert: readFileSync "webserver/#{hostname}.crt"
-  key: readFileSync "webserver/#{hostname}.secret.key"
+  cert: readFileSync "webserver/#{hostname}.certificates.pem"
+  key:  readFileSync "webserver/#{hostname}.secret.key"
   ciphers: "HIGH:!MD5:!aNull"
   honorCipherOrder: yes

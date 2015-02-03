@@ -1,3 +1,5 @@
 node_modules
 *.secret.key
-webserver/artlist.dev.crt
+*.csr
+webserver/crypto/artlist.dev.crt
+webserver/crypto/artlist.dev.certificates.pem
