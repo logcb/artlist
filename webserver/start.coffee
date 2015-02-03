@@ -53,12 +53,3 @@ compileAndSaveBundleScript = (callback) ->
     (compiled, f) -> writeFile "assets/compiled/bundle.js", compiled, "utf-8", f
     (f) -> console.info("Wrote assets/compiled/bundle.js"); f()
   ], callback
-
-# Compile [stylesheet](middleware/stylesheet.coffee). And also save it in the `assets/compiled` folder.
-compileAndSaveStylesheet = (callback) ->
-  async.waterfall [
-    (f) -> console.info("Compiling stylesheet..."); f()
-    (f) -> require("webserver/middleware/stylesheet").compile f
-    (compiled, f) -> writeFile "assets/compiled/stylesheet.css", compiled, "utf-8", f
-    (f) -> console.info("Wrote assets/compiled/stylesheet.css"); f()
-  ], callback
