@@ -3,7 +3,7 @@ Backbone = require "backbone"
 crypto  = require "crypto"
 {readFileSync, writeFileSync} = require "fs"
 
-Artlist.index = new Backbone.Collection JSON.parse(readFileSync("index.json"))
+Artlist.index = new Backbone.Collection JSON.parse(readFileSync("storage/index.json"))
 
 Artlist.index.comparator = "created_at"
 
@@ -20,4 +20,4 @@ generateIdentifierForNewArticle = (attributes) ->
   hash.digest("hex")
 
 saveIndexOnFileSystem = ->
-  writeFileSync "index.json", JSON.stringify(Artlist.index.toJSON(), undefined, "  "), "utf-8"
+  writeFileSync "storage/index.json", JSON.stringify(Artlist.index.toJSON(), undefined, "  "), "utf-8"

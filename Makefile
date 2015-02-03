@@ -1,4 +1,4 @@
-setup: .git index.json webserver/artlist.dev.crt
+setup: .git storage/index.json webserver/artlist.dev.crt
 
 deploy:
 	git push artlist.website deploy:deploy
@@ -8,8 +8,8 @@ deploy:
 	git remote add origin git@github.com:logcb/artlist.git
 	git remote add artlist.website core@artlist.website:artlist.git
 
-index.json:
-	echo "[]" > index.json
+storage/index.json:
+	echo "[]" > storage/index.json
 
 webserver/artlist.dev.secret.key:
 	openssl genrsa 2048 > webserver/artlist.dev.secret.key
