@@ -20,6 +20,7 @@ class WriteArticleView extends Backbone.View
 
   activate: =>
     Function.delay 1, => Backbone.history.once "route", @deactivateOnReturnToIndex
+    @article.on "invalid", @focusInvalidAttribute
     @render()
     @el.scrollIntoView()
     $(@el).addClass "activated"
@@ -30,6 +31,7 @@ class WriteArticleView extends Backbone.View
   deactivate: =>
     Backbone.history.off "route", @deactivateOnReturnToIndex
     $(@el).off()
+    @article.off "invalid", @focusInvalidAttribute
     @el.innerHTML = ""
     $(@el).removeClass "activated"
 
@@ -47,3 +49,8 @@ class WriteArticleView extends Backbone.View
 
   deactivateOnReturnToIndex: (router, destination) =>
     @deactivate() if destination is "index"
+
+  focusInvalidAttribute: (article, error) =>
+    [attributeName, message] = error
+    console.error "Article #{attributeName} #{message}."
+    @el.querySelector("input[name=#{attributeName}]").focus()

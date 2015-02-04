@@ -3,6 +3,19 @@ Backbone = require "backbone"
 class Article extends Backbone.Model
   urlRoot: "/articles"
 
+  validate: (attributes, options) ->
+    if attributes.title is undefined
+      return ["title", "can’t be blank"]
+    if attributes.venue is undefined
+      return ["venue", "can’t be blank"]
+    if attributes.address is undefined
+      return ["address", "can’t be blank"]
+    if attributes.date is undefined
+      return ["date", "can’t be blank"]
+    if attributes.start_time is undefined
+      return ["start_time", "can’t be blank"]
+
+
 class Article.Collection extends Backbone.Collection
   model: Article
 
