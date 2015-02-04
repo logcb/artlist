@@ -1,5 +1,6 @@
 artlist_image
 node_modules
+storage
 webserver/crypto/artlist.dev.crt
 webserver/crypto/artlist.dev.certificates.pem
 *.secret.key
