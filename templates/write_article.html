@@ -1,23 +1,27 @@
 <form>
-  <div class="title attribute">
+  <div class="title string attribute">
     <label>Title:</label>
     <input name="title" value="<%= @article.title %>">
   </div>
-  <div class="venue attribute">
+  <div class="venue string attribute">
     <label>Venue:</label>
     <input name="venue" value="<%= @article.venue %>">
   </div>
-  <div class="address attribute">
+  <div class="address string attribute">
     <label>Address:</label>
     <input name="address" value="<%= @article.address %>">
   </div>
-  <div class="date attribute">
+  <div class="date string attribute">
     <label>Date:</label>
     <input name="date" value="<%= @article.date %>">
   </div>
-  <div class="start_time attribute">
+  <div class="start time attribute">
     <label>Starts at:</label>
-    <input name="start_time" value="<%= @article.start_time %>">
+    <input name="start_time" value="<%= @formatModelTimeForInput @article.start_time %>">
+  </div>
+  <div class="end time attribute" hidden>
+    <label>Starts at:</label>
+    <input name="end_time" value="">
   </div>
     <div class="select one category attribute">
       <label>Category:</label>

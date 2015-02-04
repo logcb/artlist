@@ -37,7 +37,7 @@
 	div.write div.venue      { left: 0; right: 50%; top: 60px; }
 	div.write div.address    { left: 50%; right: 0; top: 60px; }
 	div.write div.date       { left: 0; right: 50%; top: 120px; }
-	div.write div.start_time { left: 50%; right: 0; top: 120px; }
+	div.write div.start.time { left: 50%; right: 0; top: 120px; }
 	div.write div.web_url    { left: 0; right: 0; top: 300px; }
 
 	div.write div.title input { text-indent: 75px;  }
