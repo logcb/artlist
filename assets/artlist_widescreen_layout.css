@@ -24,9 +24,8 @@
 
 	div.write form { position: absolute; height: 480px; left: 0; right: 0; top: 90px; }
 
-	div.write button { font: 15px/33px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; box-sizing: border-box; }
-	div.write div.attribute > label  { font: 22px/64px "Artlist-Medium"; display: block; position: absolute; box-sizing: border-box; height: 60px; width: 100%; }
-	div.write div.attribute > input  { font: 22px/64px "Artlist-Medium"; display: block; position: absolute; box-sizing: border-box; height: 60px; width: 100%; }
+	div.write div.attribute > label { font: 22px/64px "Artlist-Medium"; display: block; position: absolute; box-sizing: border-box; height: 60px; width: 100%; }
+	div.write div.attribute > input { font: 22px/64px "Artlist-Medium"; display: block; position: absolute; box-sizing: border-box; height: 60px; width: 100%; }
 	div.write input:focus { outline: transparent; }
 
 	div.write div.attribute	{position: absolute; height: 60px;}
