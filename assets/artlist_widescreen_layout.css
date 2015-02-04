@@ -1,4 +1,4 @@
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1200px) {
 	body, div.sleeve { width: 1200px; margin: auto; }
 
 	body                { font: 16px/30px "Artlist-Medium";  }
@@ -12,17 +12,32 @@
 	article div.title   { font: 22px/30px "Artlist-Medium"; }
 	article div.time    { font: 22px/30px "Artlist-Medium"; }
 
-	body > header { height: 90px; }
-	h1 { padding: 0px 30px; margin: 0 -30px; border-bottom: 1px solid black; height: 89px; }
+	/* PAGE LAYOUT */
 
-	div.intro { position: relative; height: 0; overflow: hidden; }
-	div.intro.activated { height: 480px; transition: height ease-out 360ms; }
+	body > header, div.header_block_in_flow { height: 90px; }
+
+	body > div.intro { height: 0px; }
+	body > div.intro.activated { height: 480px; transition: height ease-out 360ms; }
+
+	body > div.write { height: 0px; }
+	body > div.write.activated { height: 480px; transition: height ease-out 360ms; }
+
+	body > div.list_container { padding-top: 180px; }
+
+	div.list.controls { position: absolute; top: 0; left: 0; right: 0; height: 180px; z-index: 1; }
+	body.index div.list.controls { position: fixed; top: 90px; }
+
+	/* HEADER */
+
+	h1 { padding: 0px 30px; margin: 0 0px; border-bottom: 1px solid black; height: 89px; }
+
+	/* INTRO */
+
 	div.intro p { margin: 30px 0; width: 50%; }
 
-	div.write { position: relative; height: 0; overflow: hidden; }
-	div.write.activated { height: 480px; transition: height ease-out 360ms; }
+	/* POST */
 
-	div.write form { position: absolute; height: 480px; left: 0; right: 0; top: 90px; }
+	div.write form { position: absolute; height: 480px; left: 0; right: 0; top: 0; }
 
 	div.write div.attribute > label { font: 22px/64px "Artlist-Medium"; display: block; position: absolute; box-sizing: border-box; height: 60px; width: 100%; }
 	div.write div.attribute > input { font: 22px/64px "Artlist-Medium"; display: block; position: absolute; box-sizing: border-box; height: 60px; width: 100%; }
@@ -67,9 +82,8 @@
 		position: absolute; top: 15px; height: 30px; padding: 0; left: 30px;
 	}
 
+	/* LIST CONTROLS */
 
-	div.list_container { padding-top: 270px; position: relative; }
-	div.list.controls { top: 90px; left: 0; right: 0; height: 180px; z-index: 1; }
 	div.list.controls div.sleeve { height: 180px; }
 	div.list.controls div.rules {
 		position: absolute;

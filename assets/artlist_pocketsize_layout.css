@@ -1,5 +1,5 @@
-@media screen and (max-width: 1024px) {
-	body, div.sleeve { width: 640px; margin: auto; }
+@media screen and (max-width: 1199px) {
+	body, div.sleeve { width: auto; margin: auto; }
 
 	body                { font: 22px/30px "Artlist-Medium";  }
 	h1                  { font: 32px/80px "Artlist-Title"; letter-spacing: 1px; text-transform: uppercase; text-align: center; }
@@ -12,17 +12,33 @@
 	article div.title   { font: 22px/30px "Artlist-Medium"; }
 	article div.time    { font: 22px/30px "Artlist-Medium"; }
 
-	body > header { height: 75px; }
-	h1 { padding: 0px 30px; margin: 0 -30px; border-bottom: 1px solid black; height: 74px; }
+	/* PAGE LAYOUT */
 
-	div.intro { display: none; }
-	div.intro.activated {}
+	body > header, div.header_block_in_flow { height: 75px; }
 
-	div.write { display: none; }
-	div.write.activated {}
+	body > div.intro { height: 0px; }
+	body > div.intro.activated { height: 600px; transition: height linear 300ms; }
 
-	div.list_container { padding-top: 270px; position: relative; }
-	div.list.controls { top: 75px; left: 0; right: 0; height: 195px; z-index: 1; }
+	body > div.write { height: 0px; }
+	body > div.write.activated { height: 500px; transition: height linear 360ms; }
+
+	body > div.list_container { padding-top: 195px; }
+
+	body       div.list.controls { position:absolute; top: 0; left: 0; right: 0; height: 195px; z-index: 1; }
+	body.index div.list.controls { position:fixed; top: 75px; }
+
+	/* HEADER */
+
+	h1 { padding: 0px 30px; margin: 0; border-bottom: 1px solid black; height: 74px; }
+
+	/* INTRO */
+
+	div.intro p { margin: 20px 30px; }
+
+	/* POST */
+
+	/* LIST CONTROLS */
+
 	div.list.controls div.sleeve { height: 195px; }
 	div.list.controls div.rules {
 		position: absolute;
@@ -50,7 +66,9 @@
 
 	nav.share { bottom: 0px; left: 30px; height: 45px; }
 
-	nav.intro { bottom: 0px; right: 30px; height: 45px; display:none; }
+	nav.intro { bottom: 0px; right: 30px; height: 45px; }
+
+	/* LIST VIEW */
 
 	div.list_view { position: relative; }
 

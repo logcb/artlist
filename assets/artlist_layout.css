@@ -2,9 +2,11 @@ body.loading * { visibility: hidden; }
 
 body > header { position: fixed; top: 0; left: 0; right: 0; z-index: 1; }
 body > header nav > a { display: block; }
+div.header_block_in_flow { background: black; }
 
-body       div.list.controls { position: absolute; }
-body.index div.list.controls { position: fixed; }
+
+div.write, div.intro { position: relative; box-sizing: border-box; overflow: hidden; }
+div.list_container { position: relative; box-sizing: border-box; }
 
 form.search { position: absolute; }
 form.search input { display: block; height: 30px; border: 0; padding: 0; }

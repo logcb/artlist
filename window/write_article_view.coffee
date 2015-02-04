@@ -20,14 +20,14 @@ class WriteArticleView extends Backbone.View
     @el.innerHTML = template({@formatModelTimeForInput, article: @article.toJSON()})
 
   activate: =>
-    Function.delay 1, => Backbone.history.once "route", @deactivateOnReturnToIndex
-    @article.on "invalid", @focusInvalidAttribute
     @render()
-    @el.scrollIntoView()
-    $(@el).addClass "activated"
+    @el.classList.add("activated")
+    # @el.scrollIntoView()
     $(@el).on "transitionend", (event) =>
       if event.target is @el and event.propertyName is "height"
         @el.querySelector("input[name=title]").focus()
+        Backbone.history.once "route", @deactivateOnReturnToIndex
+        @article.on "invalid", @focusInvalidAttribute
 
   deactivate: =>
     Backbone.history.off "route", @deactivateOnReturnToIndex

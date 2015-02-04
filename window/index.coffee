@@ -29,8 +29,10 @@ $(document).on "click", "a[href]", (event) ->
 
 # TODO: Move this procedure into appropriate views.
 $(document).on "scroll", (event) ->
-  if window.location.pathname isnt "/"
-    if window.scrollY >= $("div.list_container").offset().top
+  if document.body.classList.contains("index")
+    # do nothing
+  else
+    if window.scrollY > ($("div.list_container").offset().top - $("body > header").height())
       event.preventDefault()
-      window.scrollTo(0,0)
       window.router.navigate "/", {trigger: yes}
+      window.scrollTo(0,0)
