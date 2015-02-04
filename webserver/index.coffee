@@ -30,6 +30,11 @@ service.use "/assets", Express.static("#{__dirname}/../assets")
 # Serve compiled bundle script.
 service.get "/assets/bundle.js", require("./middleware/bundle_script")
 
+# Serve serialized index data on request.
+service.get "/index.json", (request, response, next) ->
+  response.writeHead 200, "Content-Type": "application/json; charset=utf-8"
+  response.end JSON.stringify(Artlist.index.toJSON(), undefined, 2)
+
 # Serve script to update the `Artlist.index` collection in the window.
 service.get "/index.json.js", (request, response, next) ->
   response.writeHead 200, "Content-Type": "application/javascript; charset=utf-8"
