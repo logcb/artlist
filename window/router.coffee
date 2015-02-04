@@ -31,7 +31,7 @@ class Router extends Backbone.Router
   intro: ->
     document.title = "THE ARTLIST: INFORMATION"
     document.body.className = "public intro"
-    document.body.querySelector("h1").innerHTML = """<a href="/">THE ARTLIST</a>: INFORMATION"""
+    document.body.querySelector("h1").innerHTML = """ABOUT <a href="/">THE ARTLIST</a>"""
     new ReadIntroView
 
   search: ->

@@ -20,7 +20,7 @@
 	body > div.intro.activated { height: 600px; transition: height linear 300ms; }
 
 	body > div.write { height: 0px; }
-	body > div.write.activated { height: 500px; transition: height linear 360ms; }
+	body > div.write.activated { height: 600px; transition: height linear 360ms; }
 
 	body > div.list_container { padding-top: 195px; }
 
@@ -33,11 +33,11 @@
 
 	/* INTRO */
 
-	div.intro p { margin: 20px 20px; }
+	/*div.intro p { margin: 20px; }*/
+	div.intro div.read_intro { padding: 30px 20px; }
+	div.intro div.read_intro p + p { margin-top: 20px; }
 
 	/* POST */
-
-	div.write form {}
 
 	div.write form {}
 
@@ -48,8 +48,9 @@
 	div.list.controls div.sleeve { height: 195px; }
 	div.list.controls div.rules {
 		position: absolute;
-		top: -1px; bottom: -1px; left: -20px; right: -20px;
-		border-bottom: 1px solid hsl(0, 0%, 33%); border-top: 1px solid hsl(0, 0%, 33%);
+		top: -1px; bottom: -1px; left: 0px; right: 0px;
+		border-bottom: 1px solid hsl(0, 0%, 33%);
+		border-top: 1px solid hsl(0, 0%, 33%);
 	}
 
 	nav.categories { position: absolute; right: 20px; top: 44px; bottom: 44px; left: 20px; border-bottom: 1px dotted black;  border-top: 1px dotted black; }
