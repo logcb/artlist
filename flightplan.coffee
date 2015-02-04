@@ -30,18 +30,12 @@ flightplan.remote "stop", (remote) ->
   remote.sudo "systemctl stop artlist"
   remote.exec "systemctl status artlist", failsafe: true
 
-flightplan.remote ["restart"], (remote) ->
-  remote.sudo("systemctl stop artlist")
-  remote.sudo("systemctl start artlist")
-  remote.exec("systemctl status artlist")
-
-# ## <tt>\--commit commit-hash</tt>
-# `artlist.commit` is also defined for `setup`, `build` and `deploy` commands.
-# Default is the last commit in the selected branch of `artlist.repo`.
+# `artlist.commit` is defined durring `deploy` and `build_image`.
+# It is set to the latest commit in the deploy branch of `artlist.repo`.
 flightplan.local ["deploy", "build_image"], (local) ->
   {stdout} = local.exec("git ls-remote #{artlist.repo} deploy", silent:yes)
   artlist.commit = stdout.split("\t")[0]
-  local.log "deploy.commit is #{artlist.commit}"
+  local.log "artlist.commit is #{artlist.commit}"
 
 flightplan.local ["deploy", "build_image"], (local) ->
   local.exec "cp webserver/crypto/artlist.website.secret.key artlist_image/artlist.website.secret.key"
@@ -58,8 +52,11 @@ flightplan.remote ["deploy", "build_image"], (remote) ->
   remote.log "Building /home/core/artlist_image"
   remote.exec "docker build --tag artlist_image /home/core/artlist_image"
   remote.exec "docker images"
-  remote.log "Removing build files"
-  remote.exec "rm -rf artlist_image"
+  # remote.log "Removing build files"
+  # remote.exec "rm -rf artlist_image"
+
+flightplan.remote ["deploy", "setup_storage_folder"], (remote) ->
+  remote.exec "mkdir -p artlist_storage"
 
 flightplan.local ["deploy", "setup_service"], (local) ->
   local.log "Transfering artlist.service unit file"
@@ -69,12 +66,17 @@ flightplan.remote ["deploy", "setup_service"], (remote) ->
   remote.log "Linking artlist service with systemd"
   remote.sudo "systemctl link /home/core/artlist.service"
 
+flightplan.remote ["deploy", "restart"], (remote) ->
+  remote.sudo("systemctl stop artlist")
+  remote.sudo("systemctl start artlist")
+  remote.exec("systemctl status artlist")
+
 flightplan.remote ["erase"], (remote) ->
   remote.sudo("rm -rf artlist")
-  remote.exec("rm -rf artlist.git")
+  remote.sudo("rm -rf artlist_image")
   remote.exec("rm -rf artlist.service")
 
-flightplan.remote ["erase", "remove_expired_docker_containers"], (remote) ->
+flightplan.remote ["erase", "clean", "remove_expired_docker_containers"], (remote) ->
   expiredContainerList = remote.exec("docker ps --all | grep Exited", {failsafe:yes}).stdout
   if expiredContainerList
     containerIDs = (entry.split(" ")[0] for entry in expiredContainerList.trim().split("\n")).join(" ")
@@ -83,7 +85,7 @@ flightplan.remote ["erase", "remove_expired_docker_containers"], (remote) ->
   else
     remote.log "No expired docker containers."
 
-flightplan.remote ["erase", "remove_expired_docker_images"], (remote) ->
+flightplan.remote ["erase", "clean", "remove_expired_docker_images"], (remote) ->
   expiredImageList = remote.exec("docker images | grep '^<none>' | awk '{print $3}'", failsafe:yes).stdout
   if expiredImageList
     expiredImageIDs = (id for id in expiredImageList.trim().split("\n")).join(" ")
