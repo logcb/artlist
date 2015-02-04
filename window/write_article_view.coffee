@@ -11,12 +11,13 @@ class WriteArticleView extends Backbone.View
     @activate()
 
   events:
-    "input div.attribute": "attributeInputWasChanged"
+    "input div.string.attribute": "stringInputWasChanged"
+    "input div.time.attribute": "timeInputWasChanged"
     "submit": "formWasSubmitted"
 
   render: =>
     template = require "../templates/write_article.html"
-    @el.innerHTML = template({article: @article.toJSON()})
+    @el.innerHTML = template({@formatModelTimeForInput, article: @article.toJSON()})
 
   activate: =>
     Function.delay 1, => Backbone.history.once "route", @deactivateOnReturnToIndex
@@ -40,8 +41,11 @@ class WriteArticleView extends Backbone.View
     @article.once "sync", => Artlist.index.add(@article)
     @article.once "sync", => window.router.navigate("/", {trigger: yes})
 
-  attributeInputWasChanged: (event) ->
-    @article.set event.target.name, event.target.value
+  stringInputWasChanged: (event) ->
+    @article.set event.target.name, event.target.value.trim()
+
+  timeInputWasChanged: (event) ->
+    @article.set event.target.name, @formatInputTimeForModel(event.target.value.trim())
 
   formWasSubmitted: (event) ->
     event.preventDefault()
@@ -54,3 +58,20 @@ class WriteArticleView extends Backbone.View
     [attributeName, message] = error
     console.error "Article #{attributeName} #{message}."
     @el.querySelector("input[name=#{attributeName}]").focus()
+
+  formatModelTimeForInput: (time) ->
+    [hour, minute] = time.split(":")
+    if hour < 12
+      "#{hour}:#{minute}AM"
+    else
+      "#{Number(hour)-12}:#{minute}PM"
+
+  formatInputTimeForModel: (time) ->
+    [match, hour, minute, meridian] = /([0-9][0-9]):([0-9][0-9]):(AM|PM)/.exec(time)
+    if meridian is "AM"
+      hour = "0#{hour}" if hour.length is 1
+      "#{hour}:#{minute}"
+    else
+      hour = String(Number(hour)+12)
+      hour = "0#{hour}" if hour.length is 1
+      "#{hour}:#{minute}"
