@@ -46,4 +46,4 @@ Deploy the project:
 `fly deploy:website`
 
 Run the image in an interactive console on the remote host:
-`ssh core@artlist.website -C docker run -i -t artlist_image /bin/bash`
+`ssh core@artlist.website -C docker run -i -t --volume=/home/core/artlist_storage:/artlist/storage artlist_image /bin/bash`
