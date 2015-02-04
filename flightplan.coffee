@@ -96,7 +96,7 @@ flightplan.remote ["erase", "remove_expired_docker_images"], (remote) ->
 # Writes a Dockerfile to the local file system replacing placeholders defined in Dockerfile.template.
 flightplan.writeDockerfile = ->
   {readFileSync, writeFileSync} = require "fs"
-  dockerfile = readFileSync "artlist_image/Dockerfile.template", "utf-8"
+  dockerfile = readFileSync "Dockerfile.template", "utf-8"
   dockerfile = dockerfile.replace /ARTLIST_REPO/g, artlist.repo
   dockerfile = dockerfile.replace /ARTLIST_COMMIT/g, artlist.commit
   dockerfile = dockerfile.replace /ARTLIST_BRANCH/g, artlist.branch
