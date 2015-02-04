@@ -3,7 +3,7 @@
   <% for article in @articles: %>
     <article>
       <div class="title_category_and_location">
-        <div class="title"><a href="https://example.org/"><%= article.title %></a></div>
+        <div class="title"><a href="<%= article.web_url %>" target="<%= article.id %>"><%= article.title %></a></div>
         <div class="location"><%= article.venue %> (<%= article.address %>)</div>
         <div class="category"><svg alt="<%= article.category %>" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="5" cy="10"></svg></div>
       </div>
