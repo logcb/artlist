@@ -1,7 +1,13 @@
 Backbone = require "backbone"
+Moment = require "moment"
 
 class Article extends Backbone.Model
   urlRoot: "/articles"
+
+  defaults: ->
+    date: Moment().format("YYYY/MM/DD")
+    start_time: "16:30"
+    category: "Community"
 
   validate: (attributes, options) ->
     if attributes.title is undefined
