@@ -33,17 +33,17 @@
 	div.write div.attribute	{border-bottom: 1px dotted hsl(0, 0%, 33%);}
 	div.write div.attribute > input {left: 0; right: 0; top: 0; text-indent: 100px; }
 
-	div.write div.title      { left: 0; right: 0; top: 0px; }
-	div.write div.venue      { left: 0; right: 50%; top: 60px; }
-	div.write div.address    { left: 50%; right: 0; top: 60px; }
-	div.write div.date       { left: 0; right: 50%; top: 120px; }
-	div.write div.start.time { left: 50%; right: 0; top: 120px; }
-	div.write div.web_url    { left: 0; right: 0; top: 300px; }
+	div.write div.title       { left: 0; right: 0; top: 0px; }
+	div.write div.venue       { left: 0; right: 50%; top: 60px; }
+	div.write div.address     { left: 50%; right: 0; top: 60px; }
+	div.write div.date        { left: 0; right: 50%; top: 120px; }
+	div.write div.start.time  { left: 50%; right: 0; top: 120px; }
+	div.write div.web.address { left: 0; right: 0; top: 300px; }
 
 	div.write div.title input { text-indent: 75px;  }
 	div.write div.venue input { text-indent: 75px;  }
 	div.write div.date input  { text-indent: 75px;  }
-	div.write div.web_url input { text-indent: 210px;  }
+	div.write div.web.address input { text-indent: 210px;  }
 
 	div.write div.select.one.category { position: absolute; top: 180px; left: 0; right: 0; height: 120px; }
 	div.write div.select > div.category { position:absolute; top:0; left: 0; width: 25%;  }

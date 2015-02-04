@@ -17,7 +17,7 @@ convertEventAttributes = (source) ->
     "address": undefined
     "cost": undefined
     "description": source["description"][0]
-    "web_url": source["link"][0]
+    "web_address": source["link"][0]
     "source": "artlist-en.xml"
 
 Artlist.index.on "add", (article) ->
