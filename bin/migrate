@@ -8,12 +8,7 @@ parsed = JSON.parse(serialized)
 output = []
 
 for article in parsed
-  if article["starts_at"]
-    article["start_time"] = Moment(article["starts_at"]).format("HH:mm")
-    delete article["starts_at"]
-  if article["ends_at"]
-    article["end_time"] = Moment(article["ends_at"]).format("HH:mm")
-    delete article["ends_at"]
+  # ...
   output.push article
 
 FileSystem.writeFileSync "storage/migrated.json", JSON.stringify(output, undefined, 2), "utf-8"
