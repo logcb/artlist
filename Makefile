@@ -4,9 +4,13 @@ setup: \
 	webserver/crypto/artlist.website.certificates.pem
 
 
-# Serialized copy of the index.
-storage/index.json:
-	echo "[]" > storage/index.json
+# Storage folder.
+storage:
+	mkdir -p storage
+
+# Download a copy of the index and save it to storage.
+storage/index.json: storage
+	curl https://artlist.website/index.json > storage/index.json
 
 
 # PEM encoded file that includes the artlist.dev certificate and any intermediate certificates.
