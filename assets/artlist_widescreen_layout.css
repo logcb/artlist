@@ -1,16 +1,18 @@
 @media screen and (min-width: 1200px) {
 	body, div.sleeve { width: 1200px; margin: auto; }
 
-	body                { font: 16px/30px "Artlist-Medium";  }
+	body, article, pre  { font: 16px/30px "Artlist-Light";  }
 	h1                  { font: 36px/98px "Artlist-Title"; letter-spacing: 1px; text-transform: uppercase; }
-	div.list.controls   { font: 14px/32px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
+	h2                  { font: 16px/64px "Artlist-Demi"; letter-spacing: 1px; }
 	h4                  { font: 14px/32px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
+	article header      { font: 22px/64px "Artlist-Light"; }
+
+	div.list.controls   { font: 14px/32px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
 	input               { font: 14px/32px "Artlist-Demi"; letter-spacing: 1px; }
 	button              { font: 15px/33px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
-	section.day h2      { font: 16px/64px "Artlist-Demi"; letter-spacing: 1px; }
-	article             { font: 22px/64px "Artlist-Light"; }
-	article div.title   { font: 22px/30px "Artlist-Medium"; }
-	article div.time    { font: 22px/30px "Artlist-Medium"; }
+
+	article div.title, article div.time, article div.web_address { font-family: "Artlist-Medium"; }
+
 
 	/* PAGE LAYOUT */
 
@@ -110,32 +112,31 @@
 	nav.share { top: 45px; left: 0; }
 	nav.intro { top: 75px; left: 0; }
 
-	div.list_view { position: relative; }
-
 	section.day h2 { height: 59px; border-top: 1px solid black; border-bottom: 1px solid black; margin: 0 -20px -1px; padding: 0px 20px; position: relative; }
-	section.day article { height: 59px; overflow: hidden; margin: 0 0 -1px; position: relative; border-top: 1px dotted black; border-bottom: 1px dotted black; }
-	section.day article:hover { border-top: 1px solid black; border-bottom: 1px solid black; }
+
+	/* ARTICLE */
+
+	article { overflow: hidden; margin: 0 0 -1px; position: relative; border-top: 1px dotted black; border-bottom: 1px dotted black; }
+	article.compacted { height: 59px; }
+	article.activated { height: auto; }
+
+	article header { height: 60px; }
+	article footer { height: 20px; }
+
+	article div.description { margin: 0 25% 0 0; padding: 0 20px; }
+
+	article div.web_address { position: absolute; right: 0; width: 25%; top: 60px; }
+	article div.web_address a { text-decoration: underline; }
+
 
 	article div.title_category_and_location { right: 285px; }
 	article div.title_category_and_location > div { display: inline-block; }
 	article div.title { text-indent: 20px; }
 	article div.location:before { content: "— "; }
 
-	article div.time_and_cost { width: 285px; }
+	article div.time_and_cost { width: 25%; right: 0; }
 	article div.time_and_cost > div { display: inline-block; }
 	article div.cost:before { content: "— "; }
 
-	nav.editor.entrance { display: none;}
-	nav.editor.controls { display: none;}
 
-	body.editor h1 { text-align: center; }
-	body.editor > header { height: 90px; background: white; }
-	body.editor > header > nav { height: 0px; }
-
-	div.editor.page.controls { position: fixed; top: 0; left: 0; right: 0; height: 0; z-index: 1;}
-	div.editor.page.controls { display: none; }
-	body.editor div.editor.page.controls { display: block; }
-	div.editor.page.controls a { font: 36px/98px "Artlist-Title"; letter-spacing: 1px; text-transform: uppercase; }
-	div.editor.page.controls a[href="/editor/post"] {position: absolute; top: 0; left: 0; }
-	div.editor.page.controls a[href="/editor/exit"] {position: absolute; top: 0; right: 0; }
 }

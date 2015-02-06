@@ -1,16 +1,17 @@
 @media screen and (max-width: 1199px) {
 	body, div.sleeve { width: auto; margin: auto; }
 
-	body                { font: 22px/30px "Artlist-Medium";  }
+	body, article, pre  { font: 22px/30px "Artlist-Light"; }
 	h1                  { font: 32px/80px "Artlist-Title"; letter-spacing: 1px; text-transform: uppercase; text-align: center; }
-	div.list.controls   { font: 16px/48px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
+	h2                  { font: 16px/48px "Artlist-Demi"; letter-spacing: 1px; text-align: center; }
 	h4                  { font: 16px/48px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
+	article header      { font: 22px/30px "Artlist-Light"; }
+
+	div.list.controls   { font: 16px/48px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
 	input               { font: 16px/48px "Artlist-Demi"; letter-spacing: 1px; }
 	button              { font: 16px/48px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
-	section.day h2      { font: 16px/48px "Artlist-Demi"; letter-spacing: 1px; text-align: center; }
-	article             { font: 22px/30px "Artlist-Light"; }
-	article div.title   { font: 22px/30px "Artlist-Medium"; }
-	article div.time    { font: 22px/30px "Artlist-Medium"; }
+
+	article div.title, article div.time { font-family: "Artlist-Medium"; }
 
 	/* PAGE LAYOUT */
 
@@ -81,7 +82,14 @@
 
 	section.day h2 { height: 44px; border-top: 1px solid black; border-bottom: 1px solid black; margin: -1px 0 0; position: relative; text-align:center; }
 
-	article { height: 74px; margin: -1px 20px 0; }
+	/* ARTICLE */
+
+	article { margin: -1px 20px 0; }
+	article.compacted { height: 74px; }
+	article.activated { height: auto; }
+
+	article header { height: 75px; }
+	article footer { height: 5px; }
 
 	article div.title_category_and_location { position: absolute; left: 0; top: 0; right: 0; height: 75px; }
 	article div.title_category_and_location > div { position: absolute; height: 25px; }
@@ -95,4 +103,8 @@
 	article div.time_and_cost > div { position: absolute; height: 25px; }
 	article div.time { right: 0; top: 12px; }
 	article div.cost { right: 0; bottom: 12px; }
+
+	article div.description { padding: 0 20px; }
+	article div.web_address { padding: 10px 20px; }
+	article div.web_address a { text-decoration: underline; }
 }

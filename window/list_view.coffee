@@ -1,4 +1,5 @@
 Artlist = require "./artlist"
+ArticleView = require "./article_view"
 Backbone = require "backbone"
 Moment = require "moment"
 
@@ -6,7 +7,7 @@ class ArticleListView extends Backbone.View
   module.exports = this
 
   events:
-    "mousedown article[id]": "editArticle"
+    "mousedown article.compacted[id]": "activateArticle"
 
   initialize: ->
     @collection = Artlist.index
@@ -22,9 +23,10 @@ class ArticleListView extends Backbone.View
       sections.push template({date: date, articles: articles, moment: Moment})
     @el.innerHTML = sections.join("")
 
-  editArticle: (event) ->
+  activateArticle: (event) ->
     id = event.currentTarget.id
-    Backbone.history.navigate("articles/#{id}")
+    article = @collection.get(id)
+    new ArticleView {model: article, el: event.currentTarget}
 
   getArticlesGroupedByDate: ->
     @collection.groupBy (article) -> article.get("date")

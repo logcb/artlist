@@ -1,22 +1,26 @@
 <section class="day">
   <h2><%= @date %></h2>
   <% for article in @articles: %>
-    <article>
-      <div class="title_category_and_location">
-        <div class="title"><a href="<%= article.web_address %>" target="<%= article.id %>"><%= article.title %></a></div>
-        <div class="location"><%= article.venue %> (<%= article.address %>)</div>
-        <div class="category"><svg alt="<%= article.category %>" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="5" cy="10"></svg></div>
-      </div>
-      <div class="time_and_cost">
-        <div class="time"><%= @moment("#{article.date} #{article.start_time}").format("h:mmA") %></div>
-        <div class="cost"><%= article.cost %></div>
-      </div>
+    <article class="compacted" id="<%= article.id %>"><div class="box">
+      <header>
+        <div class="title_category_and_location">
+          <div class="title"><a href="<%= article.web_address %>" target="<%= article.id %>"><%= article.title %></a></div>
+          <div class="location"><%= article.venue %> (<%= article.address %>)</div>
+          <div class="category"><svg alt="<%= article.category %>" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="5" cy="10"></svg></div>
+        </div>
+        <div class="time_and_cost">
+          <div class="time"><%= @moment("#{article.date} #{article.start_time}").format("h:mmA") %></div>
+          <div class="cost"><%= article.cost %></div>
+        </div>
+      </header>
       <div class="description">
-        <pre><%= article.description %></pre>
+        <pre contenteditable="false"><%= article.description %></pre>
       </div>
       <div class="web_address">
-        <a href="<%= article.web_address %>">Go to event page →</a>
+        <a href="<%= article.web_address %>" target="<%= article.id %>">Go to event page →</a>
       </div>
-    </article>
+      <footer>
+      </footer>
+    </div></article>
   <% end %>
 </section>
