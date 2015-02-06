@@ -129,13 +129,13 @@
 	article div.web_address a { text-decoration: underline; }
 
 
-	article div.title_category_and_location { right: 285px; }
-	article div.title_category_and_location > div { display: inline-block; }
+	article div.title_and_location { margin: 0 20px; left: 0; right: 25%; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+	article div.title_and_location > div { display: inline; }
 	article div.title { text-indent: 20px; }
 	article div.location:before { content: "— "; }
 
-	article div.time_and_cost { width: 25%; right: 0; }
-	article div.time_and_cost > div { display: inline-block; }
+	article div.time_and_cost { left: 75%; right: 0; white-space: nowrap; overflow: hidden; }
+	article div.time_and_cost > div { display: inline; }
 	article div.cost:before { content: "— "; }
 
 

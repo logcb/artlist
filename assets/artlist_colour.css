@@ -12,4 +12,5 @@ svg[alt="Music"] circle { fill: #E83E25; }
 svg[alt="Theatre"] circle { fill: #F9A449; }
 svg[alt="Visual Art"] circle { fill: #357034; }
 
-article div.location, article div.cost { color: hsl(0, 0%, 33%); }
+article header { color: hsl(0, 0%, 33%); }
+article div.title, article div.time { color: black; }
