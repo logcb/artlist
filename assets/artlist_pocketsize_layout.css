@@ -91,8 +91,8 @@
 	article header { height: 75px; }
 	article footer { height: 5px; }
 
-	article div.title_category_and_location { position: absolute; left: 0; top: 0; right: 0; height: 75px; }
-	article div.title_category_and_location > div { position: absolute; height: 25px; }
+	article div.title_and_location { position: absolute; left: 0; top: 0; right: 0; height: 75px; }
+	article div.title_and_location > div { position: absolute; height: 25px; }
 	article div.title { left: 0; top: 12px; right: 0; text-indent: 20px; }
 	article div.location { left: 0; bottom: 12px; right: 0; text-indent: 20px; }
 	article div.category { left: 1px; top: 14px; }
