@@ -11,6 +11,7 @@ class Router extends Backbone.Router
     @articles = Artlist.selection
     @listView ?= new ListView el: "div.list_view"
 
+    @listView ?= new ListView el: "div.list_view", collection: @articles
 
   routes:
     "": "index"
