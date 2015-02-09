@@ -9,13 +9,11 @@ class Router extends Backbone.Router
 
   initialize: ->
     @articles = Artlist.selection
-    @listView ?= new ListView el: "div.list_view"
-
     @listView ?= new ListView el: "div.list_view", collection: @articles
 
   routes:
     "": "index"
-    "search?query": "search"
+    "index": "index"
     "intro": "intro"
     "post": "post"
     "editor": "editArtList"
@@ -26,21 +24,13 @@ class Router extends Backbone.Router
     document.title = "THE ARTLIST"
     document.body.className = "public index"
     document.body.querySelector("h1").innerHTML = """THE ARTLIST"""
-    @articles.set Artlist.index.toArray()
-
+    @articles.set Artlist.search(@params()), {remove:yes}
 
   intro: ->
     document.title = "THE ARTLIST: INFORMATION"
     document.body.className = "public intro"
     document.body.querySelector("h1").innerHTML = """ABOUT <a href="/">THE ARTLIST</a>"""
     new ReadIntroView
-
-  search: ->
-    document.title = "THE ARTLIST"
-    document.body.className = "public search"
-    document.body.querySelector("h1").innerHTML = """<a href="/">THE ARTLIST</a>: SEARCH"""
-    @articles.set Artlist.index.search(query)
-
 
   post: () ->
     document.title = "Post an event to THE ARTLIST"
@@ -65,3 +55,11 @@ class Router extends Backbone.Router
     document.body.className = "editor write article"
     article = Artlist.index.get(id)
     new EditArticleView model: article
+
+  params: (url=window.location) ->
+    params = {}
+    if url.search
+      for pair in url.search.replace("?", "").split("&")
+        [name, value] = pair.split("=")
+        params[name] = decodeURIComponent value
+    return params

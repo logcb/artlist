@@ -1,7 +1,9 @@
 Backbone = require "backbone"
 Moment = require "moment"
 
-class Article extends Backbone.Model
+module.exports = Artlist = {}
+
+Artlist.Article = class Article extends Backbone.Model
   urlRoot: "/articles"
 
   defaults: ->
@@ -25,7 +27,25 @@ class Article extends Backbone.Model
 class Article.Collection extends Backbone.Collection
   model: Article
 
-module.exports =
-  Article: Article
-  index: new Article.Collection
-  selection: new Article.Collection
+Artlist.search = (params={}) ->
+  selection = Artlist.index.toArray()
+  if params.query
+    queryPattern = new RegExp params.query, "i"
+    selection = selection.filter (article) -> filterByQueryPattern(article, queryPattern)
+  if params.categories
+    categories = params.categories
+    selection = selection.filter (article) -> filterByCategory(article, categories)
+  return selection
+
+filterByQueryPattern = (article, queryPattern) ->
+  for attribute in ["title", "venue"]
+    return yes if queryPattern.test(article.get(attribute))
+  return no
+
+filterByCategory = (article, categories) ->
+  for category in categories
+    return yes if article.get("category") is category
+  return no
+
+Artlist.index = new Article.Collection
+Artlist.selection = new Article.Collection
