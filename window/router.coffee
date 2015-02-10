@@ -16,9 +16,9 @@ class Router extends Backbone.Router
     "index": "index"
     "intro": "intro"
     "post": "post"
-    "editor": "editArtList"
-    "editor/articles/new": "postArticle"
-    "editor/articles/:id": "editArticle"
+    # "editor": "editArtList"
+    # "editor/articles/new": "postArticle"
+    # "editor/articles/:id": "editArticle"
 
   index: ->
     document.title = "THE ARTLIST"
