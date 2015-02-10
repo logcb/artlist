@@ -32,7 +32,7 @@ Artlist.search = (params={}) ->
   if params.query
     queryPattern = new RegExp params.query, "i"
     selection = selection.filter (article) -> filterByQueryPattern(article, queryPattern)
-  if params.categories
+  if params.categories.length
     categories = params.categories
     selection = selection.filter (article) -> filterByCategory(article, categories)
   return selection
