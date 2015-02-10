@@ -1,0 +1,22 @@
+Backbone = require "backbone"
+
+class ListControlsView extends Backbone.View
+  module.exports = this
+
+  events:
+    "input [name=query]": "queryInputWasChanged"
+    "change input[type=checkbox]": "categoryInputWasChanged"
+
+  initialize: ->
+    @render()
+
+  render: =>
+    template = require "../templates/list_controls.html"
+    @el.innerHTML = template(@model.toJSON())
+
+  queryInputWasChanged: (event) ->
+    @model.set "query", @el.querySelector("input[name=query]").value
+
+  categoryInputWasChanged: (event) ->
+    categories = $("div.categories input:checked").toArray().map((input) -> input.value)
+    @model.set "categories", categories
