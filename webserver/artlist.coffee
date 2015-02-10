@@ -14,6 +14,12 @@ Artlist.index.on "add", (model) ->
   Artlist.index.sort()
   saveIndexOnFileSystem()
 
+Artlist.index.on "change", (model) ->
+  return if model.isNew()
+  model.set "updated_at": (new Date).toJSON()
+  Artlist.index.sort()
+  saveIndexOnFileSystem()
+
 generateIdentifierForNewArticle = (attributes) ->
   hash = crypto.createHash("sha1")
   hash.update(JSON.stringify(attributes), "utf-8")
