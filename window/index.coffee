@@ -13,8 +13,8 @@ window.Artlist = Artlist
 
 # Construct the router and start the push state history system when the document is ready.
 $(document).ready ->
-  window.router = new Router
-  window.router.on "route", -> console.info(arguments)
+  Artlist.router = window.router = new Router
+  Artlist.router.on "route", -> console.info(arguments)
   Backbone.history.start {pushState: true}, {hashChange: false}
 
 # Dispatch local hyperlinks to the router via history.
