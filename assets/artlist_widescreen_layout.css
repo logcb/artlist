@@ -1,7 +1,7 @@
 @media screen and (min-width: 1200px) {
 	body, div.sleeve { width: 1200px; margin: auto; }
 
-	body, article, pre  { font: 16px/30px "Artlist-Light";  }
+	body, article, pre, textarea { font: 16px/30px "Artlist-Light";  }
 	h1                  { font: 36px/98px "Artlist-Title"; letter-spacing: 1px; text-transform: uppercase; }
 	h2                  { font: 16px/64px "Artlist-Demi"; letter-spacing: 1px; }
 	h4                  { font: 14px/32px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
@@ -22,7 +22,7 @@
 	body > div.intro.activated { height: 480px; transition: height ease-out 360ms; }
 
 	body > div.write { height: 0px; }
-	body > div.write.activated { height: 480px; transition: height ease-out 360ms; }
+	body > div.write.activated { height: 800px; transition: height ease-out 360ms; }
 
 	body > div.list_container { padding-top: 180px; }
 
@@ -39,29 +39,35 @@
 
 	/* POST */
 
-	div.write form { position: absolute; height: 480px; left: 0; right: 0; top: 0; }
-
 	div.write div.attribute > label { font: 22px/64px "Artlist-Medium"; display: block; position: absolute; box-sizing: border-box; height: 60px; width: 100%; }
 	div.write div.attribute > input { font: 22px/64px "Artlist-Medium"; display: block; position: absolute; box-sizing: border-box; height: 60px; width: 100%; }
 	div.write input:focus { outline: transparent; }
+	div.write textarea:focus { outline: transparent; }
 
-	div.write div.attribute	{position: absolute; height: 60px;}
-	div.write div.attribute	{border-bottom: 1px dotted hsl(0, 0%, 33%);}
+	div.write div.attribute	{ height: 59px; border-bottom: 1px dotted hsl(0, 0%, 33%); }
 	div.write div.attribute > input {left: 0; right: 0; top: 0; text-indent: 100px; }
 
-	div.write div.title       { left: 0; right: 0; top: 0px; }
-	div.write div.venue       { left: 0; right: 50%; top: 60px; }
-	div.write div.address     { left: 50%; right: 0; top: 60px; }
-	div.write div.date        { left: 0; right: 50%; top: 120px; }
-	div.write div.start.time  { left: 50%; right: 0; top: 120px; }
-	div.write div.web.address { left: 0; right: 0; top: 300px; }
+	div.write div.title       { width: 50%; }
+	div.write div.venue       { width: 50%; }
+	div.write div.address     { position: absolute; left: 50%; right: 0; top: 60px; }
+	div.write div.date        { width: 50%; }
+	div.write div.start.time  { position: absolute; left: 50%; right: 0; top: 120px; }
+	div.write div.select.one.category { height: 120px; }
+	div.write div.description { height: auto; padding-bottom: 20px; }
+	div.write div.web_address { height: auto; padding-bottom: 20px; }
 
-	div.write div.title input { text-indent: 75px;  }
-	div.write div.venue input { text-indent: 75px;  }
-	div.write div.date input  { text-indent: 75px;  }
-	div.write div.web.address input { text-indent: 210px;  }
+	div.write div.title input { text-indent: 75px; }
+	div.write div.venue input { text-indent: 75px; }
+	div.write div.date input  { text-indent: 75px; }
 
-	div.write div.select.one.category { position: absolute; top: 180px; left: 0; right: 0; height: 120px; }
+	div.write div.description > label { position: relative; }
+	div.write div.description > textarea { height: 120px; width: 75%; font: 16px/30px "Artlist-Light"; padding: 5px; display: block; border: 1px dotted hsl(0, 0%, 33%); box-sizing: border-box; background: transparent; }
+
+	div.write div.web_address > label { position: relative; }
+	div.write div.web_address > input { position: relative; height: 40px; font: 16px/30px "Artlist-Light"; text-indent: 0; width: 100%; padding: 5px; display: block; border: 1px dotted hsl(0, 0%, 33%); box-sizing: border-box; background: transparent; }
+
+
+
 	div.write div.select > div.category { position:absolute; top:0; left: 0; width: 25%;  }
 	div.write div.select > div.category label { position:absolute; font: 15px/33px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; height: 30px; top:0; left: 0; right: 20px; text-indent: 20px; display: block; }
 	div.write div.select > div.category input { position:absolute; height: 20px; width: 20px; top:5px; left: 0px; margin: 0; }
@@ -76,13 +82,8 @@
 	div.write div.select > div.theatre.category    { left: 75%; top: 45px; }
 	div.write div.select > div.visual_art.category { left: 75%; top: 75px; }
 
-	div.write div.commit	{
-		position: absolute; height: 60px; left: -30px; right: -30px; bottom: 60px;
-		border-top: 1px solid black; border-bottom: 1px solid black; box-sizing: border-box;
-	}
-	div.write div.commit	button {
-		position: absolute; top: 15px; height: 30px; padding: 0; left: 30px;
-	}
+	div.write div.commit	{ height: 59px; margin: -1px -30px 0px; border-top: 1px solid black; border-bottom: 1px solid black; }
+	div.write div.commit button { position: absolute; top: 15px; height: 30px; padding: 0; left: 30px; }
 
 	/* LIST CONTROLS */
 
