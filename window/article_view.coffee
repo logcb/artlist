@@ -34,7 +34,7 @@ class ArticleView extends Backbone.View
       editable.setAttribute "contenteditable", "plaintext-only"
 
   formatInputTimeForModel: (time) ->
-    [match, hour, minute, meridian] = /([0-9][0-9]):([0-9][0-9]):(AM|PM)/.exec(time)
+    [match, hour, minute, meridian] = /([0-9]+):([0-9]+)(AM|PM)/.exec(time)
     if meridian is "AM"
       hour = "0#{hour}" if hour.length is 1
       "#{hour}:#{minute}"
