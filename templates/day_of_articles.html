@@ -3,7 +3,7 @@
   <% for article in @articles: %>
     <article class="compacted" id="<%= article.id %>"><div class="box">
       <header>
-        <div class="category"><svg alt="<%= article.category %>" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="5" cy="10"></svg></div>
+        <div class="category"><svg alt="<%= article.category %>" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="10" cy="10"></svg></div>
         <div class="title_and_location">
           <div class="title" contenteditable="false"><%= article.title %></div>
           <div class="location"><%= article.venue %> (<%= article.address %>)</div>

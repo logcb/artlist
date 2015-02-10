@@ -2,15 +2,22 @@ input::-webkit-input-placeholder { color: black; }
 
 html, body > header, div.list.controls  { background-image: url(background.png); }
 
-svg[alt="Comedy"] circle { fill: #F4E600; }
-svg[alt="Community"] circle { fill: #943390; }
-svg[alt="Dance"] circle { fill: #8FC442; }
-svg[alt="Film"] circle { fill: #58AFE1; }
-svg[alt="Food"] circle { fill: #EE589C; }
-svg[alt="Literature"] circle { fill: #2F449F; }
-svg[alt="Music"] circle { fill: #E83E25; }
-svg[alt="Theatre"] circle { fill: #F9A449; }
-svg[alt="Visual Art"] circle { fill: #357034; }
+svg[alt="Comedy"] circle { fill: #F4E600; stroke: #F4E600; }
+svg[alt="Community"] circle { fill: #943390; stroke: #943390; }
+svg[alt="Dance"] circle { fill: #8FC442; stroke: #8FC442; }
+svg[alt="Film"] circle { fill: #58AFE1; stroke: #58AFE1; }
+svg[alt="Food"] circle { fill: #EE589C; stroke: #EE589C; }
+svg[alt="Literature"] circle { fill: #2F449F; stroke: #2F449F; }
+svg[alt="Music"] circle { fill: #E83E25; stroke: #E83E25; }
+svg[alt="Theatre"] circle { fill: #F9A449; stroke: #F9A449; }
+svg[alt="Visual Art"] circle { fill: #357034; stroke: #357034; }
+
+svg.category circle { stroke-width: 0; }
+
+label svg circle { transition: fill 300ms linear, stroke-width 150ms linear; stroke-width: 0; }
+label.excluded:not(:hover) svg circle { fill: #ccc; }
+label.excluded:hover svg circle { transition: stroke-width 150ms linear; }
+label.included svg circle { stroke-width: 5; }
 
 article header { color: hsl(0, 0%, 33%); }
 article div.title, article div.time { color: black; }

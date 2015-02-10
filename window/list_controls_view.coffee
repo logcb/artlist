@@ -8,6 +8,7 @@ class ListControlsView extends Backbone.View
     "change input[type=checkbox]": "categoryInputWasChanged"
 
   initialize: ->
+    @model.on "change", @classifyCategoryElements
     @render()
 
   render: =>
@@ -20,3 +21,11 @@ class ListControlsView extends Backbone.View
   categoryInputWasChanged: (event) ->
     categories = $("div.categories input:checked").toArray().map((input) -> input.value)
     @model.set "categories", categories
+
+  classifyCategoryElements: =>
+    $("div.categories label").removeClass("excluded")
+    $("div.categories label").removeClass("included")
+    if @model.get("categories").length
+      $("div.categories label").addClass("excluded")
+      for category in @model.get("categories")
+        $("div.categories label input[value='#{category}']").closest("label").removeClass("excluded").addClass("included")

@@ -110,7 +110,9 @@
 	div.categories label.music      { right: 0; top: 60px; }
 	div.categories label.theatre    { right: 0; top: 90px; }
 	div.categories label.visual_art { right: 0; top: 120px; }
-	div.categories svg { height: 30px; width: 20px; display: block; margin: 0; position: absolute; top: 0; left: 0; }
+	div.categories label svg { height: 20px; width: 20px; display: block; margin: 0; position: absolute; top: 5px; left: -5px; }
+	div.categories label input { display: none; }
+
 
 	nav.share { top: 45px; left: 0; }
 	nav.intro { top: 75px; left: 0; }
@@ -130,7 +132,6 @@
 
 	article div.web_address { position: absolute; right: 0; width: 25%; top: 60px; }
 	article div.web_address a { text-decoration: underline; }
-
 
 	article div.title_and_location { margin: 0 20px; left: 0; right: 25%; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
 	article div.title_and_location > div { display: inline; }
