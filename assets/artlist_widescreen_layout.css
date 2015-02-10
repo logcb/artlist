@@ -48,6 +48,7 @@
 	div.write div.attribute > input {left: 0; right: 0; top: 0; text-indent: 100px; }
 
 	div.write div.title       { width: 50%; }
+	div.write div.cost        { position: absolute; left: 50%; right: 0; top: 0px; }
 	div.write div.venue       { width: 50%; }
 	div.write div.address     { position: absolute; left: 50%; right: 0; top: 60px; }
 	div.write div.date        { width: 50%; }

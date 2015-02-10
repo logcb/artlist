@@ -3,6 +3,10 @@
     <label>Title:</label>
     <input name="title" value="<%= @article.title %>">
   </div>
+  <div class="cost attribute">
+    <label>Cost:</label>
+    <input name="cost" value="<%= @article.cost %>">
+  </div>
   <div class="venue string attribute">
     <label>Venue:</label>
     <input name="venue" value="<%= @article.venue %>">
@@ -71,10 +75,6 @@
     <label>Link to event page:</label>
     <input name="web_address" type="url">
   </div>
-    <!-- <div class="cost attribute">
-      <label>Cost:</label>
-      <input name="event[cost]">
-    <div> -->
   <div class="commit">
     <button>Submit</button>
   </div>
