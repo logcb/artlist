@@ -10,7 +10,6 @@ class ArticleListView extends Backbone.View
     "mousedown article.compacted[id]": "activateArticle"
 
   initialize: ->
-    @collection = Artlist.index
     @collection.on "add", @render
     @collection.on "remove", @render
     @render()

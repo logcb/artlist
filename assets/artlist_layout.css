@@ -8,9 +8,6 @@ div.header_block_in_flow { background: black; }
 div.write, div.intro { position: relative; box-sizing: border-box; overflow: hidden; }
 div.list_container { position: relative; box-sizing: border-box; }
 
-form.search { position: absolute; }
-form.search input { display: block; height: 30px; border: 0; padding: 0; }
-
 nav.categories { position: absolute; }
 nav.categories > h4, nav.categories > a { position: absolute; }
 
