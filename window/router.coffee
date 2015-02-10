@@ -1,60 +1,40 @@
 Backbone = require "backbone"
 Artlist = require "./artlist"
 ListView = require "./list_view"
+ListControlsView = require "./list_controls_view"
 ReadIntroView = require "./read_intro_view"
 WriteArticleView = require "./write_article_view"
 
 class Router extends Backbone.Router
   module.exports = this
 
-  initialize: ->
-    @articles = Artlist.selection
-    @listView ?= new ListView el: "div.list_view", collection: @articles
+  routes: {"": "index", "intro": "intro", "post": "post"}
 
-  routes:
-    "": "index"
-    "index": "index"
-    "intro": "intro"
-    "post": "post"
-    # "editor": "editArtList"
-    # "editor/articles/new": "postArticle"
-    # "editor/articles/:id": "editArticle"
+  initialize: ->
+    @filters = new Backbone.Model {query: undefined, categories: []}
+    @articles = new Artlist.Article.Collection
+    @filters.on "change", => @articles.set Artlist.search(@filters.toJSON()), {remove:yes}
+    @articles.set Artlist.search(@filters.toJSON()), {remove:yes}
+    @listControlsView = new ListControlsView el: "div.list.controls", model: @filters
+    @listView = new ListView el: "div.list_view", collection: @articles
 
   index: ->
     document.title = "THE ARTLIST"
-    document.body.className = "public index"
+    document.body.className = "index"
     document.body.querySelector("h1").innerHTML = """THE ARTLIST"""
-    @articles.set Artlist.search(@params()), {remove:yes}
 
   intro: ->
     document.title = "THE ARTLIST: INFORMATION"
-    document.body.className = "public intro"
-    document.body.querySelector("h1").innerHTML = """ABOUT <a href="/">THE ARTLIST</a>"""
+    document.body.className = "intro"
+    document.body.querySelector("h1").innerHTML = """<a href="/">THE ARTLIST</a>: INFORMATION"""
     new ReadIntroView
 
   post: () ->
     document.title = "Post an event to THE ARTLIST"
-    document.body.className = "public write new article"
+    document.body.className = "write article"
     document.body.querySelector("h1").innerHTML = """<a href="/">THE ARTLIST</a>: SHARE YOUR EVENT"""
     article = new Artlist.Article
     new WriteArticleView model: article
-
-  editArtList: ->
-    document.title = "Edit THE ARTLIST"
-    document.body.className = "editor index"
-    @articles.set Artlist.index.toArray()
-
-  postArticle: ->
-    document.title = "Adding new event to THE ARTLIST"
-    document.body.className = "editor write new article"
-    article = new Artlist.Article
-    new WriteArticleView model: article
-
-  editArticle: (id) ->
-    document.title = "Editing event: #{id}"
-    document.body.className = "editor write article"
-    article = Artlist.index.get(id)
-    new EditArticleView model: article
 
   params: (url=window.location) ->
     params = {}

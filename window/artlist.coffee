@@ -48,4 +48,3 @@ filterByCategory = (article, categories) ->
   return no
 
 Artlist.index = new Article.Collection
-Artlist.selection = new Article.Collection
