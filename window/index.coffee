@@ -13,9 +13,8 @@ window.Artlist = Artlist
 
 # Construct the router and start the push state history system when the document is ready.
 $(document).ready ->
-  Artlist.router = window.router = new Router
-  Artlist.router.on "route", -> console.info(arguments)
-  Backbone.history.start {pushState: true}, {hashChange: false}
+  Artlist.router = new Router
+  Backbone.history.start {pushState: true}
 
 # Dispatch local hyperlinks to the router via history.
 $(document).on "click", "a[href]", (event) ->
@@ -26,13 +25,3 @@ $(document).on "click", "a[href]", (event) ->
     Artlist.router.navigate(path, {trigger: yes})
   else
     "Opening link to remote host..."
-
-# TODO: Move this procedure into appropriate views.
-$(document).on "scroll", (event) ->
-  if document.body.classList.contains("index")
-    # do nothing
-  else
-    if window.scrollY > ($("div.list_container").offset().top - $("body > header").height())
-      event.preventDefault()
-      window.router.navigate "/", {trigger: yes}
-      window.scrollTo(0,0)
