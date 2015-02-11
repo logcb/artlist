@@ -6,10 +6,11 @@ class ArticleView extends Backbone.View
 
   initialize: ->
     @activate()
-    @enableEditing() if window.location.hostname is "artlist.dev"
+    @enableEditing() if window.location.hostname isnt "artlist.website"
 
   events:
     "input div.title[contenteditable]": "titleInputWasChanged"
+    "input div.cost[contenteditable]": "costInputWasChanged"
     "input div.description [contenteditable]": "descriptionInputWasChanged"
     "input div.time[contenteditable]": "timeInputWasChanged"
 
@@ -19,6 +20,10 @@ class ArticleView extends Backbone.View
 
   titleInputWasChanged: (event) ->
     @model.set "title", event.target.innerText
+    @model.save()
+
+  costInputWasChanged: (event) ->
+    @model.set "cost", event.target.innerText
     @model.save()
 
   descriptionInputWasChanged: (event) ->
