@@ -7,7 +7,7 @@ Artlist.Article = class Article extends Backbone.Model
   urlRoot: "/articles"
 
   defaults: ->
-    date: Moment().format("YYYY/MM/DD")
+    date: Moment(Date.now()).format("YYYY/MM/DD")
     start_time: "16:30"
     category: "Community"
 
