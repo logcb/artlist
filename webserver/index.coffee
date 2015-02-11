@@ -43,10 +43,8 @@ service.get "/index.json.js", (request, response, next) ->
 # Serve HTML document for any page request.
 service.get "/:page?", (request, response, next) ->
   if request.accepts "html"
-    page = request.params.page || "index"
-    HTML = render("document", {})
     response.writeHead 200, "Content-Type": "text/html; charset=utf-8"
-    response.end HTML
+    response.end render("document")
   else
     next()
 
@@ -65,5 +63,4 @@ service.put "/articles/:id", (request, response, next) ->
 render = (name, params={}) ->
   templatesFolder = __dirname.split("/")[0..-2].join("/") + "/templates"
   template = readFileSync "#{templatesFolder}/#{name}.html", "utf-8"
-  params.render = render
-  Eco.render template, params
+  Eco.render template, {render}
