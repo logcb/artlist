@@ -39,7 +39,7 @@ class WriteArticleView extends Backbone.View
   commit: (event) ->
     @article.save()
     @article.once "sync", => Artlist.index.add(@article)
-    @article.once "sync", => window.router.navigate("/", {trigger: yes})
+    @article.once "sync", => Artlist.router.navigate("/", {trigger: yes})
 
   stringInputWasChanged: (event) ->
     @article.set event.target.name, event.target.value.trim()

@@ -23,7 +23,7 @@ $(document).on "click", "a[href]", (event) ->
   if location.hostname is window.location.hostname
     event.preventDefault()
     path = event.currentTarget.getAttribute("href")
-    window.router.navigate(path, {trigger: yes})
+    Artlist.router.navigate(path, {trigger: yes})
   else
     "Opening link to remote host..."
 
