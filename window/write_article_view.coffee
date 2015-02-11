@@ -67,7 +67,7 @@ class WriteArticleView extends Backbone.View
       "#{Number(hour)-12}:#{minute}PM"
 
   formatInputTimeForModel: (time) ->
-    [match, hour, minute, meridian] = /([0-9][0-9]):([0-9][0-9]):(AM|PM)/.exec(time)
+    [match, hour, minute, meridian] = /([0-9]+):([0-9]+)(AM|PM)/.exec(time)
     if meridian is "AM"
       hour = "0#{hour}" if hour.length is 1
       "#{hour}:#{minute}"
