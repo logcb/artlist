@@ -15,13 +15,3 @@ window.Artlist = Artlist
 $(document).ready ->
   Artlist.router = new Router
   Backbone.history.start {pushState: true}
-
-# Dispatch local hyperlinks to the router via history.
-$(document).on "click", "a[href]", (event) ->
-  location = new URL(event.currentTarget.href)
-  if location.hostname is window.location.hostname
-    event.preventDefault()
-    path = event.currentTarget.getAttribute("href")
-    Artlist.router.navigate(path, {trigger: yes})
-  else
-    "Opening link to remote host..."
