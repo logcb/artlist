@@ -20,7 +20,6 @@ class Router extends Backbone.Router
     $(document).on "click", "a[href^='/']", @localHyperlinkWasActivated
     @on "route", (bookmark) -> console.info "Routed to #{bookmark}"
     Artlist.index.on "all", -> console.info "Article.index", arguments
-    # @articles.on "all", -> console.info "@articles", arguments
     console.info "THE ARTLIST is ready at #{location.hostname}:#{location.port}"
 
   index: ->
