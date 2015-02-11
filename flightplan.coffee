@@ -40,7 +40,7 @@ flightplan.local ["deploy", "build_image"], (local) ->
 flightplan.local ["deploy", "build_image"], (local) ->
   local.exec "cp webserver/crypto/artlist.website.secret.key artlist_image/artlist.website.secret.key"
   flightplan.writeDockerfile()
-  local.log "Wrote slowpost_image/Dockerfile to local filesystem."
+  local.log "Wrote artlist_image/Dockerfile to local filesystem."
   imageFiles = [
     "artlist_image/Dockerfile"
     "artlist_image/artlist.website.secret.key"
