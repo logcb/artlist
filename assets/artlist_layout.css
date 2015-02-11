@@ -28,3 +28,5 @@ article div.title_and_location > div { display: inline-block; }
 
 article div.time_and_cost { position: absolute; right: 0; top: 0; }
 article div.time_and_cost > div { display: inline-block; }
+
+body > footer img { display:block; margin: auto; padding: 20px; }
