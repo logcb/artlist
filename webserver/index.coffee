@@ -63,4 +63,5 @@ service.put "/articles/:id", (request, response, next) ->
 render = (name, params={}) ->
   templatesFolder = __dirname.split("/")[0..-2].join("/") + "/templates"
   template = readFileSync "#{templatesFolder}/#{name}.html", "utf-8"
-  Eco.render template, {render}
+  params.render = render
+  Eco.render template, params
