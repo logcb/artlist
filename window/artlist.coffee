@@ -48,3 +48,7 @@ filterByCategory = (article, categories) ->
   return no
 
 Artlist.index = new Article.Collection
+
+class Artlist.Permit extends Backbone.Model
+  defaults: {id: "editor@artlist"}
+  url: "/permit"
