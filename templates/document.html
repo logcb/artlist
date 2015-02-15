@@ -12,12 +12,11 @@
 <script src="assets/zepto.js"></script>
 <script src="assets/bundle.js"></script>
 <script src="index.json.js"></script>
-<body class="loading">
+<body class="loading <%= "editing" if @authorized_to_edit %>">
   <%- @render "header" %>
   <div class="header_block_in_flow"></div>
   <%- @render "intro" %>
   <%- @render "write" %>
   <%- @render "list" %>
-  <%- @render "footer" %>
-  <%- @render "editor" if @authorized_to_edit %>
+  <%- @render "footer", {@authorized_to_edit} %>
 </body>

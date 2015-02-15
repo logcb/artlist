@@ -9,6 +9,7 @@ Express           = require "express"
 HTTPS             = require "https"
 Helmet            = require "helmet"
 Eco               = require "eco"
+Cookie            = require "cookie"
 
 # Exports an instance of [HTTPS server](http://nodejs.org/api/https.html#https_class_https_server)
 # with [cryptography credentials](./crypto_credentials.coffee) for this node.
@@ -43,8 +44,13 @@ service.get "/index.json.js", (request, response, next) ->
 # Serve HTML document for any page request.
 service.get "/:page?", (request, response, next) ->
   if request.accepts "html"
+    if request.header("Cookie")
+      permit = Cookie.parse(request.header("Cookie")).permit?
+    else
+      permit = no
+    # console.info cookie = Cookie.parse(request.header("Cookie"))
     response.writeHead 200, "Content-Type": "text/html; charset=utf-8"
-    response.end render("document")
+    response.end render("document", authorized_to_edit: permit)
   else
     next()
 
@@ -59,6 +65,22 @@ service.put "/articles/:id", (request, response, next) ->
   model = Artlist.index.get(request.params.id).set(request.body)
   response.statusCode = 200
   response.json model.toJSON()
+
+# Request a permit to edit the list.
+service.put "/permit", (request, response, next) ->
+  if request.body.secret_phrase is "open the snowey sesame street"
+    response.statusCode = 200
+    response.setHeader "Set-Cookie", Cookie.serialize("permit", "editor@artlist", {httpOnly:yes, secure:yes})
+    response.end()
+  else
+    response.statusCode = 401
+    response.end()
+
+# Expire an existing permit.
+service.delete "/permit", (request, response, next) ->
+  response.statusCode = 200
+  response.setHeader "Set-Cookie", Cookie.serialize("permit", "editor@artlist", {httpOnly:yes, secure:yes, maxAge: 0})
+  response.json()
 
 render = (name, params={}) ->
   templatesFolder = __dirname.split("/")[0..-2].join("/") + "/templates"

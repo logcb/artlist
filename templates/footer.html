@@ -1,3 +1,17 @@
 <footer>
-  <img src="/assets/footer_A.png" height="20" width="15" alt="Edit">
+  <a class="enter"><img src="/assets/footer_A.png" height="20" width="15" alt="Edit THE ARTLIST" title=""></a>
+
+  <div class="editor controls <%= 'activated' if @authorized_to_edit %>">
+    <form class="new permit">
+      <label for="secret_phrase_input">
+        Enter the secret phrase to start editing THE ARTLIST
+        <input class="secret_phrase" value="" tabindex="-1" disabled="true">
+      </label>
+    </form>
+
+    <div class="session">
+      Hello Comrade in Art! You are permitted to edit THE ARTLIST.<br>
+      When you are finished editing you can <a class="exit">end your session</a> to lock this page.
+    </div>
+  </div>
 </footer>
