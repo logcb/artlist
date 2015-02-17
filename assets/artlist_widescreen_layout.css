@@ -3,7 +3,7 @@
 
 	body, article, pre, textarea { font: 16px/30px "Artlist-Light";  }
 	h1                  { font: 36px/98px "Artlist-Title"; letter-spacing: 1px; text-transform: uppercase; }
-	h2                  { font: 16px/64px "Artlist-Demi"; letter-spacing: 1px; }
+	h2                  { font: 14px/64px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
 	h4                  { font: 14px/32px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
 	article header      { font: 22px/64px "Artlist-Light"; }
 

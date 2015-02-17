@@ -21,3 +21,6 @@ label.included svg circle { stroke-width: 5; }
 
 article header { color: hsl(0, 0%, 33%); }
 article div.title, article div.time { color: black; }
+
+section h2 { color: hsl(0, 0%, 33%); }
+section h2 strong { color: black; }

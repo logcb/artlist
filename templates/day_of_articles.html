@@ -1,5 +1,5 @@
 <section class="day">
-  <h2><%= @date %></h2>
+  <h2><strong><%= @moment("#{@date}", "YYYY-MM-DD").format("dddd") %></strong>, <%= @moment("#{@date}", "YYYY-MM-DD").format("MMM D") %></h2>
   <% for article in @articles: %>
     <article class="compacted" id="<%= article.id %>"><div class="box">
       <header>
