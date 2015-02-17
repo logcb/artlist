@@ -10,9 +10,6 @@ div.list_container { position: relative; box-sizing: border-box; }
 nav.categories { position: absolute; }
 nav.categories > h4, nav.categories > a { position: absolute; }
 
-nav.share { position: absolute; }
-nav.intro { position: absolute; }
-
 section.day h2 { position: relative; border-top: 1px solid black; border-bottom: 1px solid black; }
 
 article { overflow: hidden; border-top: 1px dotted black; border-bottom: 1px dotted black; }
