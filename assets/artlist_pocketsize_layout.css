@@ -96,11 +96,8 @@
 	article div.category { left: -5px; top: 14px; }
 	article div.category svg { height: 22px; width: 22px; display: block; margin: 0; position: absolute; }
 
-	article div.time_and_cost { height: 75px; }
-	article div.time_and_cost { position: absolute; right: 0;  top: 0; width: 90px; }
-	article div.time_and_cost > div { position: absolute; height: 25px; }
-	article div.time { right: 0; top: 12px; }
-	article div.cost { right: 0; bottom: 12px; }
+	article div.time { position: absolute; height: 25px; right: 0; top: 12px; }
+	article div.cost { position: absolute; height: 25px; right: 0; bottom: 12px; }
 
 	article div.description { padding: 0 20px; }
 	article div.web_address { padding: 10px 20px; }

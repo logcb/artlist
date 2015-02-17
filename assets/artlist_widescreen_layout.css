@@ -139,9 +139,8 @@
 	article div.title { text-indent: 20px; }
 	article div.location:before { content: "— "; }
 
-	article div.time_and_cost { left: 75%; right: 0; white-space: nowrap; overflow: hidden; }
-	article div.time_and_cost > div { display: inline; }
-	article div.cost:before { content: "— "; }
+	article div.time { position: absolute; left: 75%; right: 0; white-space: nowrap; overflow: hidden; }
+	article div.cost { position: absolute; right: 0;  }
 
 
 }
