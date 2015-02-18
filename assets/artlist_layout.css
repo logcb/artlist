@@ -1,8 +1,5 @@
-body.loading * { visibility: hidden; }
-
 body > header { position: fixed; top: 0; left: 0; right: 0; z-index: 1; }
 body > header nav > a { display: block; }
-div.header_block_in_flow { background: black; }
 
 div.write, div.intro { position: relative; box-sizing: border-box; overflow: hidden; }
 div.list_container { position: relative; box-sizing: border-box; }
