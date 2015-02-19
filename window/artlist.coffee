@@ -8,7 +8,7 @@ Artlist.Article = class Article extends Backbone.Model
 
   defaults: ->
     date: Moment(Date.now()).format("YYYY/MM/DD")
-    start_time: "16:30"
+    time: "16:30"
     category: "Community"
 
   validate: (attributes, options) ->
@@ -20,8 +20,8 @@ Artlist.Article = class Article extends Backbone.Model
       return ["address", "can’t be blank"]
     if attributes.date is undefined
       return ["date", "can’t be blank"]
-    if attributes.start_time is undefined
-      return ["start_time", "can’t be blank"]
+    if attributes.time is undefined
+      return ["time", "can’t be blank"]
 
 
 class Article.Collection extends Backbone.Collection

@@ -8,7 +8,10 @@ parsed = JSON.parse(serialized)
 output = []
 
 for article in parsed
-  # ...
+  article.venue += ", #{article.address}"
+  delete article.address
+  article.time = article.time
+  delete article.time
   output.push article
 
 FileSystem.writeFileSync "storage/migrated.json", JSON.stringify(output, undefined, 2), "utf-8"

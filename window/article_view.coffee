@@ -31,7 +31,7 @@ class ArticleView extends Backbone.View
     @model.save()
 
   timeInputWasChanged: (event) ->
-    @model.set "start_time", @formatInputTimeForModel(event.target.innerText)
+    @model.set "time", @formatInputTimeForModel(event.target.innerText)
     @model.save()
 
   enableEditing: ->

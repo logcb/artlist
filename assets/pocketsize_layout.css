@@ -75,10 +75,10 @@
 	article.compacted { height: 43px; }
 	article.activated { height: auto; }
 	article header { height: 44px; }
-	article div.title_and_location { height: 44px; }
-	article div.title_and_location > div { height: 18px; }
+	article div.title_and_venue { height: 44px; }
+	article div.title_and_venue > div { height: 18px; }
 	article div.title { left: 12px; top: 4px; right: 56px; text-indent: 0; }
-	article div.location { left: 12px; bottom: 4px; right: 56px; text-indent: 0; }
+	article div.venue { left: 12px; bottom: 4px; right: 56px; text-indent: 0; }
 	article div.time { position: absolute; height: 18px; right: 0; top: 4px; }
 	article div.cost { position: absolute; height: 18px; right: 0; bottom: 4px; }
 	article div.category { left: -2px; top: 6px; }

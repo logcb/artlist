@@ -127,11 +127,11 @@
 	article.compacted { height: 59px; }
 	article.activated { height: auto; }
 	article header { height: 60px; }
-	article div.title_and_location { position: absolute; margin: 0 0 0 0; padding: 15px 20px; bottom: auto; top: 0; left: 0; right: 25%; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
-	article div.title_and_location > div { display: inline; position: relative; top: auto; bottom: auto;	height: 25px; }
+	article div.title_and_venue { position: absolute; margin: 0 0 0 0; padding: 15px 20px; bottom: auto; top: 0; left: 0; right: 25%; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+	article div.title_and_venue > div { display: inline; position: relative; top: auto; bottom: auto;	height: 25px; }
 	article div.title { padding: 0; text-indent: 0; }
-	article div.location { padding: 0; text-indent: 0; }
-	article div.location:before { content: "— "; }
+	article div.venue { padding: 0; text-indent: 0; }
+	article div.venue:before { content: "— "; }
 	article div.time { left: 75%; right: auto; top: 15px; bottom: auto; white-space: nowrap; overflow: hidden; }
 	article div.cost { right: 0; top: 15px; bottom: auto; }
 	article div.category { position: absolute; left: -5px; top: 15px; }

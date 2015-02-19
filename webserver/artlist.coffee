@@ -5,7 +5,7 @@ crypto  = require "crypto"
 
 Artlist.index = new Backbone.Collection JSON.parse(readFileSync("storage/index.json"))
 
-Artlist.index.comparator = (model) -> model.get("date") + model.get("start_time")
+Artlist.index.comparator = (model) -> model.get("date") + model.get("time")
 
 Artlist.index.on "add", (model) ->
   model.set "created_at": (new Date).toJSON()
