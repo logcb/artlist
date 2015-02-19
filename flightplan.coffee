@@ -53,8 +53,8 @@ flightplan.remote ["deploy", "build_image"], (remote) ->
   remote.log "Building /home/core/artlist_image"
   remote.exec "docker build --tag artlist_image /home/core/artlist_image"
   remote.exec "docker images"
-  # remote.log "Removing build files"
-  # remote.exec "rm -rf artlist_image"
+  remote.log "Removing build files"
+  remote.exec "rm -rf artlist_image"
 
 flightplan.remote ["deploy", "setup_storage_folder"], (remote) ->
   remote.exec "mkdir -p artlist_storage"
