@@ -18,12 +18,12 @@ webserver/crypto/artlist.dev.certificates.pem: webserver/crypto/artlist.dev.crt
 	cat webserver/crypto/artlist.dev.crt > webserver/crypto/artlist.dev.certificates.pem
 
 # Make self-signed certificate for artlist.dev
-webserver/crypto/artlist.dev.crt: webserver/crypto/artlist.dev.secret.key
+webserver/crypto/artlist.dev.crt: secrets/artlist.dev.secret.key
 	./bin/certify-artlist.dev
 
 # Make secret key for artlist.dev
-webserver/crypto/artlist.dev.secret.key:
-	openssl genrsa 2048 > webserver/crypto/artlist.dev.secret.key
+secrets/artlist.dev.secret.key:
+	openssl genrsa 2048 > secrets/artlist.dev.secret.key
 
 
 # PEM encoded file that includes the artlist.website certificate and the intermediate certificate.
@@ -34,13 +34,13 @@ webserver/crypto/artlist.website.certificates.pem: webserver/crypto/artlist.webs
 	cat webserver/crypto/GandiStandardSSLCA.pem >> webserver/crypto/artlist.website.certificates.pem
 
 # Make certificate signing request for artlist.website
-webserver/crypto/artlist.website.csr: webserver/crypto/artlist.website.secret.key
-	openssl req -new -key webserver/crypto/artlist.website.secret.key -out webserver/crypto/artlist.website.csr -subj "/CN=artlist.website"
+webserver/crypto/artlist.website.csr: secrets/artlist.website.secret.key
+	openssl req -new -key secrets/artlist.website.secret.key -out webserver/crypto/artlist.website.csr -subj "/CN=artlist.website"
 	openssl req -noout -text -in webserver/crypto/artlist.website.csr
 
 # Make secret key for artlist.website
-webserver/crypto/artlist.website.secret.key:
-	openssl genrsa -out artlist.website.secret.key 2048
+secrets/artlist.website.secret.key:
+	openssl genrsa -out secrets/artlist.website.secret.key 2048
 
 # Download intermediate certificate from Gandi.
 webserver/crypto/GandiStandardSSLCA.pem:
