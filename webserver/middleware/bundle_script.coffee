@@ -2,8 +2,9 @@ environment = "development"
 Browserify = require "browserify"
 CoffeeScript = require "coffee-script"
 Eco = require "eco"
+FileSystem = require "fs"
+Zepto = FileSystem.readFileSync "assets/zepto.js", "utf-8"
 through = require "through"
-{readFileSync, readdirSync} = require "fs"
 
 module.exports = (request, response, next) ->
   compile (error, bundle) ->
@@ -35,7 +36,7 @@ compile = module.exports.compile = (callback) ->
             @queue(null)
       return through(write, end)
     # Require all the templates.
-    browserify.require("./templates/#{file}") for file in readdirSync("templates") when file.match(".html")
+    browserify.require("./templates/#{file}") for file in FileSystem.readdirSync("templates") when file.match(".html")
     # Require the bundle index file.
     browserify.add("./window/index")
     # Bundle the script and send a buffer to the `callback`.
@@ -43,5 +44,5 @@ compile = module.exports.compile = (callback) ->
       if error
         callback error
       else
-        compile.cache = buffer.toString()
+        compile.cache = Zepto + "\n" + buffer.toString()
         callback undefined, compile.cache
