@@ -29,7 +29,7 @@ class Router extends Backbone.Router
     console.info "Rendering index", @params()
     document.title = "THE ARTLIST"
     document.body.classList.add("index")
-    document.body.querySelector("h1").innerHTML = """THE ARTLIST"""
+    document.body.querySelector("h1").innerHTML = """<a href="/">THE ARTLIST</a>"""
     $(document).off "scroll", @returnToIndexWhenListIsInView
     window.scrollTo(0,0)
 
@@ -37,7 +37,7 @@ class Router extends Backbone.Router
     console.info "Rendering intro"
     document.title = "THE ARTLIST: INFORMATION"
     document.body.classList.remove("index")
-    document.body.querySelector("h1").innerHTML = """<a href="/">THE ARTLIST</a>: INFORMATION"""
+    document.body.querySelector("h1").innerHTML = """<a href="/">THE ARTLIST</a>"""
     new ReadIntroView
     window.scrollTo(0,0)
     $(document).on "scroll", @returnToIndexWhenListIsInView
@@ -46,7 +46,7 @@ class Router extends Backbone.Router
     console.info "Rendering post an event", @params()
     document.title = "Post an event to THE ARTLIST"
     document.body.classList.remove("index")
-    document.body.querySelector("h1").innerHTML = """<a href="/">THE ARTLIST</a>: SHARE YOUR EVENT"""
+    document.body.querySelector("h1").innerHTML = """<a href="/">THE ARTLIST</a>"""
     article = new Artlist.Article
     new WriteArticleView model: article
     window.scrollTo(0,0)
