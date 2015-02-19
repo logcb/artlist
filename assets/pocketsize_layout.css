@@ -1,14 +1,14 @@
 @media screen and (max-width: 568px) {
 	body, div.sleeve { width: auto; margin: auto; }
 
-	body, article, pre, textarea       { font: 14px/18px "Artlist-Light"; }
-	h1                                 { font: 21px/48px "Artlist-Title"; letter-spacing: 1px; text-transform: uppercase; text-align: center; }
-	h2                                 { font: 11px/22px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; text-align: center; }
-	article header                     { }
-	body > header nav                  { font: 11px/22px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
-	div.list.controls div.search       { font: 11px/22px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
+	body, article, pre, textarea			 { font: 14px/18px "Artlist-Light"; }
+	h1																 { font: 21px/48px "Artlist-Title"; letter-spacing: 1px; text-transform: uppercase; text-align: center; }
+	h2																 { font: 11px/22px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; text-align: center; }
+	article header										 { }
+	body > header nav									{ font: 11px/22px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
+	div.list.controls div.search			 { font: 11px/22px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
 	div.list.controls div.search input { font: 11px/22px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
-	div.list.controls div.categories   { font: 11px/22px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
+	div.list.controls div.categories	 { font: 11px/22px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
 
 	/* HEADER */
 
@@ -20,8 +20,8 @@
 
 	body > header nav { display: none; }
 	body > header nav > a {}
-  body > header nav.intro { left: 0; top: 0; }
-  body > header nav.share { right: 0; top: 0; }
+	body > header nav.intro { left: 0; top: 0; }
+	body > header nav.share { right: 0; top: 0; }
 
 	/* INTRO */
 
@@ -41,7 +41,7 @@
 	div.list.controls { left: 0; right: 0; z-index: 1; }
 
 	body:not(.index) div.list.controls { position: absolute; top: 0; }
-	body.index       div.list.controls { position: fixed; top: 44px; }
+	body.index			 div.list.controls { position: fixed; top: 44px; }
 
 	div.list.controls div.sleeve { border: 1px solid transparent; margin: -1px; height: 124px; }
 
@@ -56,14 +56,14 @@
 	div.list.controls div.categories label { text-indent: 11px; }
 	div.list.controls div.categories svg { height: 12px; width: 12px; top: 4px; left: -2px; }
 	div.list.controls div.categories label:first-child { left: 00%; top: 00px; text-indent: 0;}
-	div.list.controls div.categories label.comedy     { left: 00%; top: 22px; }
-	div.list.controls div.categories label.community  { left: 00%; top: 44px; }
-	div.list.controls div.categories label.dance      { left: 00%; top: 66px; }
-	div.list.controls div.categories label.film       { left: 33%; top: 22px; }
-	div.list.controls div.categories label.food       { left: 33%; top: 44px; }
+	div.list.controls div.categories label.comedy		 { left: 00%; top: 22px; }
+	div.list.controls div.categories label.community	{ left: 00%; top: 44px; }
+	div.list.controls div.categories label.dance			{ left: 00%; top: 66px; }
+	div.list.controls div.categories label.film			 { left: 33%; top: 22px; }
+	div.list.controls div.categories label.food			 { left: 33%; top: 44px; }
 	div.list.controls div.categories label.literature { left: 33%; top: 66px; }
-	div.list.controls div.categories label.music      { left: 66%; top: 22px; }
-	div.list.controls div.categories label.theatre    { left: 66%; top: 44px; }
+	div.list.controls div.categories label.music			{ left: 66%; top: 22px; }
+	div.list.controls div.categories label.theatre		{ left: 66%; top: 44px; }
 	div.list.controls div.categories label.visual_art { left: 66%; top: 66px; }
 	div.list.controls div.categories label input { display: none; }
 
