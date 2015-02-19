@@ -20,12 +20,12 @@ ENV NODE_HOSTNAME artlist.website
 # Clone source code.
 RUN git clone ARTLIST_REPO
 
+# Add secret key and certificate for the web server.
+ADD artlist.website.secret.key /artlist/secrets/artlist.website.secret.key
+ADD artlist.website.secret.txt /artlist/secrets/artlist.website.secret.txt
+
 # Set the file system to ARTLIST_COMMIT.
 RUN cd artlist; git fetch --all; git reset --hard ARTLIST_COMMIT
 
 # Install package dependencies.
 RUN cd artlist; npm install
-
-# Add secret key and certificate for the web server.
-ADD artlist.website.secret.key /artlist/secrets/artlist.website.secret.key
-ADD artlist.website.secret.txt /artlist/secrets/artlist.website.secret.txt
