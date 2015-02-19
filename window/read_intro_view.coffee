@@ -19,17 +19,26 @@ class ReadIntroView extends Backbone.View
 
   activate: =>
     @render()
-    @el.classList.add("activated")
-    # @el.scrollIntoView()
+    @el.style.height = "0px"
+    @el.classList.add "activated"
+    height = @$("div.read_intro").height()
+    Function.delay 0, =>
+      @el.classList.add "opening"
+      @el.style["height"] = "#{height}px"
+      @el.style["transition-duration"] = "#{height}ms"
     $(@el).on "transitionend", (event) =>
       if event.target is @el and event.propertyName is "height"
         $(@el).off "transitionend"
+        @el.classList.remove "opening"
+        @el.style["height"] = "auto"
+        @el.style["transition-duration"] = "0"
         Backbone.history.once "route", @deactivateOnReturnToIndex
 
   deactivate: =>
     Backbone.history.off "route", @deactivate
     $(@el).off()
-    $(@el).removeClass "activated"
+    @el.classList.remove "activated"
+    @el.innerHTML = ""
 
   deactivateOnReturnToIndex: (router, destination) =>
-    @deactivate() if destination in ["index", "select"]
+    if destination is "index" then @deactivate()

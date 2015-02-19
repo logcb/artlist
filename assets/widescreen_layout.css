@@ -1,36 +1,37 @@
 @media screen and (min-width: 1200px) {
 	body, div.sleeve { width: 1200px; margin: auto; }
 
-	body, article, pre, textarea       { font: 16px/30px "Artlist-Light";  }
-	h1                                 { font: 36px/98px "Artlist-Title"; letter-spacing: 1px; text-transform: uppercase; }
-	h2                                 { font: 14px/64px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
-	article header                     { font: 22px/34px "Artlist-Light"; }
-	body > header nav                  { font: 14px/32px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
-  div.list.controls div.search       { font: 14px/32px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
-  div.list.controls div.search input { font: 14px/30px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
-  div.list.controls div.categories   { font: 14px/32px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
+	body, article, pre, textarea			 { font: 16px/30px "Artlist-Light";	}
+	h1																 { font: 36px/98px "Artlist-Title"; letter-spacing: 1px; text-transform: uppercase; }
+	h2																 { font: 14px/64px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
+	article header										 { font: 22px/34px "Artlist-Light"; }
+	body > header nav									{ font: 14px/32px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
+	div.list.controls div.search			 { font: 14px/32px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
+	div.list.controls div.search input { font: 14px/30px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
+	div.list.controls div.categories	 { font: 14px/32px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
 
-	/*input               { font: 14px/32px "Artlist-Demi"; letter-spacing: 1px; }*/
-	/*button              { font: 15px/33px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }*/
+	/*input							 { font: 14px/32px "Artlist-Demi"; letter-spacing: 1px; }*/
+	/*button							{ font: 15px/33px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }*/
 
 	/* HEADER */
 
-  body > header { position: fixed; top: 0; left: 0; right: 0; z-index: 1; }
+	body > header { position: fixed; top: 0; left: 0; right: 0; z-index: 1; }
 
-  body > header, div.header_block_in_flow { height: 90px; }
+	body > header, div.header_block_in_flow { height: 90px; }
 
-  body > header h1 { margin: 0px -20px; padding: 0px 20px; border-bottom: 1px solid black; height: 89px; }
+	body > header h1 { margin: 0px -20px; padding: 0px 20px; border-bottom: 1px solid black; height: 89px; }
 
-  body > header nav {}
-  body > header nav > a { }
+	body > header nav {}
+	body > header nav > a { }
 	body > header nav.intro { left: auto; top: auto; right: 0px; top: 16px; }
 	body > header nav.share { left: auto; top: auto; right: 0px; bottom: 16px; }
 
 	/* INTRO */
 
-	div.intro p { margin: 30px 0; width: 50%; }
-	body > div.intro { height: 0px; }
-	body > div.intro.activated { height: 480px; transition: height ease-out 360ms; }
+	div.intro { }
+	div.intro.opening, div.intro.closing { }
+	div.intro div.read_intro { padding: 30px 0; width: 75%; }
+	div.intro div.read_intro p + p { margin-top: 20px; }
 
 	/* WRITE */
 
@@ -45,19 +46,19 @@
 	div.write div.attribute	{ height: 59px; border-bottom: 1px dotted hsl(0, 0%, 33%); }
 	div.write div.attribute > input {left: 0; right: 0; top: 0; text-indent: 100px; }
 
-	div.write div.title       { width: 50%; }
-	div.write div.cost        { position: absolute; left: 50%; right: 0; top: 0px; }
-	div.write div.venue       { width: 50%; }
-	div.write div.address     { position: absolute; left: 50%; right: 0; top: 60px; }
-	div.write div.date        { width: 50%; }
-	div.write div.start.time  { position: absolute; left: 50%; right: 0; top: 120px; }
+	div.write div.title			 { width: 50%; }
+	div.write div.cost				{ position: absolute; left: 50%; right: 0; top: 0px; }
+	div.write div.venue			 { width: 50%; }
+	div.write div.address		 { position: absolute; left: 50%; right: 0; top: 60px; }
+	div.write div.date				{ width: 50%; }
+	div.write div.start.time	{ position: absolute; left: 50%; right: 0; top: 120px; }
 	div.write div.select.one.category { height: 120px; }
 	div.write div.description { height: auto; padding-bottom: 20px; }
 	div.write div.web_address { height: auto; padding-bottom: 20px; }
 
 	div.write div.title input { text-indent: 75px; }
 	div.write div.venue input { text-indent: 75px; }
-	div.write div.date input  { text-indent: 75px; }
+	div.write div.date input	{ text-indent: 75px; }
 
 	div.write div.description > label { position: relative; }
 	div.write div.description > textarea { height: 120px; width: 75%; font: 16px/30px "Artlist-Light"; padding: 5px; display: block; border: 1px dotted hsl(0, 0%, 33%); box-sizing: border-box; background: transparent; }
@@ -67,18 +68,18 @@
 
 
 
-	div.write div.select > div.category { position:absolute; top:0; left: 0; width: 25%;  }
+	div.write div.select > div.category { position:absolute; top:0; left: 0; width: 25%;	}
 	div.write div.select > div.category label { position:absolute; font: 15px/33px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; height: 30px; top:0; left: 0; right: 20px; text-indent: 20px; display: block; }
 	div.write div.select > div.category input { position:absolute; height: 20px; width: 20px; top:5px; left: 0px; margin: 0; }
 	div.write div.select > div.category svg { position:absolute; top:0; display: none; }
-	div.write div.select > div.comedy.category     { left: 25%; top: 15px; }
-	div.write div.select > div.community.category  { left: 25%; top: 45px; }
-	div.write div.select > div.dance.category      { left: 25%; top: 75px; }
-	div.write div.select > div.film.category       { left: 50%; top: 15px; }
-	div.write div.select > div.food.category       { left: 50%; top: 45px; }
+	div.write div.select > div.comedy.category		 { left: 25%; top: 15px; }
+	div.write div.select > div.community.category	{ left: 25%; top: 45px; }
+	div.write div.select > div.dance.category			{ left: 25%; top: 75px; }
+	div.write div.select > div.film.category			 { left: 50%; top: 15px; }
+	div.write div.select > div.food.category			 { left: 50%; top: 45px; }
 	div.write div.select > div.literature.category { left: 50%; top: 75px; }
-	div.write div.select > div.music.category      { left: 75%; top: 15px; }
-	div.write div.select > div.theatre.category    { left: 75%; top: 45px; }
+	div.write div.select > div.music.category			{ left: 75%; top: 15px; }
+	div.write div.select > div.theatre.category		{ left: 75%; top: 45px; }
 	div.write div.select > div.visual_art.category { left: 75%; top: 75px; }
 
 	div.write div.commit	{ height: 59px; margin: -1px -30px 0px; border-top: 1px solid black; border-bottom: 1px solid black; }
@@ -91,8 +92,8 @@
 	div.list.controls { position: absolute; top: 0; left: 0; right: 0; height: 180px; z-index: 1; }
 	body.index div.list.controls { position: fixed; top: 90px; }
 
-  div.list.controls div.sleeve { border: 1px solid transparent; margin: -1px auto; height: 180px; }
-  div.list.controls div.rules { position: absolute; top: -1px; bottom: -1px; left: -20px; right: -20px; border-bottom: 1px solid hsl(0, 0%, 33%); border-top: 1px solid hsl(0, 0%, 33%); }
+	div.list.controls div.sleeve { border: 1px solid transparent; margin: -1px auto; height: 180px; }
+	div.list.controls div.rules { position: absolute; top: -1px; bottom: -1px; left: -20px; right: -20px; border-bottom: 1px solid hsl(0, 0%, 33%); border-top: 1px solid hsl(0, 0%, 33%); }
 
 	div.list.controls div.search { position: absolute; top: 15px; left: 0; right: 50%; margin: 0 20px 0 0; padding: 0; }
 	div.list.controls div.search label { }
@@ -103,15 +104,15 @@
 	div.list.controls div.categories { position: absolute; right: 0; top: 15px; bottom: 15px; left: 50%; margin: 0; }
 	div.list.controls div.categories > * { position: absolute; display:block; width: 50%; height: 30px; }
 	div.list.controls div.categories label { position: absolute; display:block; text-indent: 15px; }
-	div.list.controls div.categories h4                        { left: 0; top: 0px; }
-	div.list.controls div.categories label.comedy     { left: 00%; top: 30px; }
-	div.list.controls div.categories label.community  { left: 00%; top: 60px; }
-	div.list.controls div.categories label.dance      { left: 00%; top: 90px; }
-	div.list.controls div.categories label.film       { left: 00%; top: 120px; }
-	div.list.controls div.categories label.food       { left: 50%; top: 0px; }
+	div.list.controls div.categories h4												{ left: 0; top: 0px; }
+	div.list.controls div.categories label.comedy		 { left: 00%; top: 30px; }
+	div.list.controls div.categories label.community	{ left: 00%; top: 60px; }
+	div.list.controls div.categories label.dance			{ left: 00%; top: 90px; }
+	div.list.controls div.categories label.film			 { left: 00%; top: 120px; }
+	div.list.controls div.categories label.food			 { left: 50%; top: 0px; }
 	div.list.controls div.categories label.literature { left: 50%; top: 30px; }
-	div.list.controls div.categories label.music      { left: 50%; top: 60px; }
-	div.list.controls div.categories label.theatre    { left: 50%; top: 90px; }
+	div.list.controls div.categories label.music			{ left: 50%; top: 60px; }
+	div.list.controls div.categories label.theatre		{ left: 50%; top: 90px; }
 	div.list.controls div.categories label.visual_art { left: 50%; top: 120px; }
 	div.list.controls div.categories label svg { height: 20px; width: 20px; display: block; margin: 0; position: absolute; top: 5px; left: -5px; }
 	div.list.controls div.categories label input { display: none; }
@@ -127,14 +128,14 @@
 	article.activated { height: auto; }
 	article header { height: 60px; }
 	article div.title_and_location { position: absolute; margin: 0 0 0 0; padding: 15px 20px; bottom: auto; top: 0; left: 0; right: 25%; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
-	article div.title_and_location > div { display: inline; position: relative; top: auto; bottom: auto;  height: 25px; }
+	article div.title_and_location > div { display: inline; position: relative; top: auto; bottom: auto;	height: 25px; }
 	article div.title { padding: 0; text-indent: 0; }
 	article div.location { padding: 0; text-indent: 0; }
 	article div.location:before { content: "— "; }
 	article div.time { left: 75%; right: auto; top: 15px; bottom: auto; white-space: nowrap; overflow: hidden; }
 	article div.cost { right: 0; top: 15px; bottom: auto; }
-  article div.category { position: absolute; left: -5px; top: 15px; }
-  article div.category svg { height: 20px; width: 20px; margin: 5px 0; display: block; position: absolute; }
+	article div.category { position: absolute; left: -5px; top: 15px; }
+	article div.category svg { height: 20px; width: 20px; margin: 5px 0; display: block; position: absolute; }
 	article div.description { margin: 0 25% 0 0; padding: 0 20px; }
 	article div.web_address { position: absolute; right: 0; width: 25%; top: 60px; padding: 0; }
 	article div.web_address a { }

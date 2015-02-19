@@ -28,12 +28,10 @@
 
   /* INTRO */
 
-  /*div.intro p { margin: 20px; }*/
+  div.intro { height: 0px; }
+  div.intro.opening, div.intro.closing { transition: height linear; }
   div.intro div.read_intro { padding: 30px 20px; }
   div.intro div.read_intro p + p { margin-top: 20px; }
-
-  div.intro { height: 0px; }
-  div.intro.activated { height: 600px; transition: height linear 300ms; }
 
   /* WRITE */
 

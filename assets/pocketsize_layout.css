@@ -26,6 +26,7 @@
 	/* INTRO */
 
 	div.intro p { margin: 20px; }
+	div.intro.opening, div.intro.closing { }
 	div.intro div.read_intro { padding: 30px 20px; }
 	div.intro div.read_intro p + p { margin-top: 20px; }
 
