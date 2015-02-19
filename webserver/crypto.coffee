@@ -21,6 +21,6 @@ hostname = "artlist" + (if process.env.NODE_ENV is "production" then ".website" 
 
 module.exports =
   cert: readFileSync "webserver/crypto/#{hostname}.certificates.pem"
-  key:  readFileSync "webserver/crypto/#{hostname}.secret.key"
+  key:  readFileSync "secrets/#{hostname}.secret.key"
   ciphers: "HIGH:!MD5:!aNull"
   honorCipherOrder: yes

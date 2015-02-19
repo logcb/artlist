@@ -1,9 +1,9 @@
-{readFileSync} = require "fs"
-
+FileSystem        = require "fs"
+hostname          = "artlist" + (if process.env.NODE_ENV is "production" then ".website" else ".dev")
 environment       = process.env.NODE_ENV ? "development"
-hostname          = "artlist.dev"
 Artlist           = require "./artlist"
 CryptoCredentials = require "./crypto"
+SecretPhrase      = FileSystem.readFileSync("secrets/#{hostname}.secret.txt", "utf-8").trim()
 MorganLogger      = require "morgan"
 Express           = require "express"
 HTTPS             = require "https"
@@ -68,7 +68,7 @@ service.put "/articles/:id", (request, response, next) ->
 
 # Request a permit to edit the list.
 service.put "/permit", (request, response, next) ->
-  if request.body.secret_phrase is "open the snowey sesame street"
+  if request.body.secret_phrase is SecretPhrase
     response.statusCode = 200
     response.setHeader "Set-Cookie", Cookie.serialize("permit", "editor@artlist", {httpOnly:yes, secure:yes})
     response.end()
@@ -84,6 +84,6 @@ service.delete "/permit", (request, response, next) ->
 
 render = (name, params={}) ->
   templatesFolder = __dirname.split("/")[0..-2].join("/") + "/templates"
-  template = readFileSync "#{templatesFolder}/#{name}.html", "utf-8"
+  template = FileSystem.readFileSync "#{templatesFolder}/#{name}.html", "utf-8"
   params.render = render
   Eco.render template, params
