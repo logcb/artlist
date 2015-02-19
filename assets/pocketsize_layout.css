@@ -1,0 +1,88 @@
+@media screen and (max-width: 568px) {
+	body, div.sleeve { width: auto; margin: auto; }
+
+	body, article, pre, textarea       { font: 14px/18px "Artlist-Light"; }
+	h1                                 { font: 21px/48px "Artlist-Title"; letter-spacing: 1px; text-transform: uppercase; text-align: center; }
+	h2                                 { font: 11px/22px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; text-align: center; }
+	article header                     { }
+	body > header nav                  { font: 11px/22px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
+	div.list.controls div.search       { font: 11px/22px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
+	div.list.controls div.search input { font: 11px/22px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
+	div.list.controls div.categories   { font: 11px/22px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
+
+	/* HEADER */
+
+	body > header { }
+
+	body > header, div.header_block_in_flow { height: 44px; }
+
+	body > header h1 { padding: 0; height: 44px; }
+
+	body > header nav { display: none; }
+	body > header nav > a {}
+  body > header nav.intro { left: 0; top: 0; }
+  body > header nav.share { right: 0; top: 0; }
+
+	/* INTRO */
+
+	div.intro p { margin: 20px; }
+	div.intro div.read_intro { padding: 30px 20px; }
+	div.intro div.read_intro p + p { margin-top: 20px; }
+
+	/* WRITE */
+
+	div.write form {}
+
+	/* LIST */
+
+	div.list_container { padding-top: 124px; } div.list.controls { height: 124px; }
+
+	div.list.controls { left: 0; right: 0; z-index: 1; }
+
+	body:not(.index) div.list.controls { position: absolute; top: 0; }
+	body.index       div.list.controls { position: fixed; top: 44px; }
+
+	div.list.controls div.sleeve { border: 1px solid transparent; margin: -1px; height: 124px; }
+
+	div.list.controls div.search { margin: 4px 4px 0; height: 22px; }
+	div.list.controls div.search label { position: absolute; top: 0; left: 0; right: 0; display: block; }
+	div.list.controls div.search input { position: absolute; top: 0; left: 0; right: 0; display: block; width: 100%; padding: 0; text-indent: 55px; }
+
+	div.list.controls hr { height: 0; display:block; border:none; margin: 0 4px 4px; border-bottom: 1px dotted hsl(0, 0%, 0%); }
+
+	div.list.controls div.categories { margin: 4px; height: 88px; }
+	div.list.controls div.categories > * { width: 33%; height: 22px; }
+	div.list.controls div.categories label { text-indent: 11px; }
+	div.list.controls div.categories svg { height: 12px; width: 12px; top: 4px; left: -2px; }
+	div.list.controls div.categories label:first-child { left: 00%; top: 00px; text-indent: 0;}
+	div.list.controls div.categories label.comedy     { left: 00%; top: 22px; }
+	div.list.controls div.categories label.community  { left: 00%; top: 44px; }
+	div.list.controls div.categories label.dance      { left: 00%; top: 66px; }
+	div.list.controls div.categories label.film       { left: 33%; top: 22px; }
+	div.list.controls div.categories label.food       { left: 33%; top: 44px; }
+	div.list.controls div.categories label.literature { left: 33%; top: 66px; }
+	div.list.controls div.categories label.music      { left: 66%; top: 22px; }
+	div.list.controls div.categories label.theatre    { left: 66%; top: 44px; }
+	div.list.controls div.categories label.visual_art { left: 66%; top: 66px; }
+	div.list.controls div.categories label input { display: none; }
+
+	section.day h2 { height: 21px; border-top: 1px solid black; border-bottom: 1px solid black; margin: -1px 0 0; position: relative; text-align: center; }
+
+	/* ARTICLE */
+
+	article { margin: -1px 4px 0; }
+	article.compacted { height: 43px; }
+	article.activated { height: auto; }
+	article header { height: 44px; }
+	article div.title_and_location { height: 44px; }
+	article div.title_and_location > div { height: 18px; }
+	article div.title { left: 12px; top: 4px; right: 56px; text-indent: 0; }
+	article div.location { left: 12px; bottom: 4px; right: 56px; text-indent: 0; }
+	article div.time { position: absolute; height: 18px; right: 0; top: 4px; }
+	article div.cost { position: absolute; height: 18px; right: 0; bottom: 4px; }
+	article div.category { left: -2px; top: 6px; }
+	article div.category svg { height: 12px; width: 12px; }
+	article div.description { padding: 4px 12px; }
+	article div.web_address { padding: 4px 12px; }
+	article footer { height: 8px; }
+}

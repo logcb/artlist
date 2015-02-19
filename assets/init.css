@@ -1,5 +1,9 @@
 body.loading * { visibility: hidden; }
 
+body, div.sleeve { width: auto; margin: auto; }
+
+
+
 button, input { background: none; border: none; padding: none; margin: none; box-sizing: border-box; }
 h1, h2, h3, h4, h5, h6, p, pre, input, ::input-placeholder { font: inherit; }
 body, header, footer, section, article, div, h1, h2, h3, h4, h5, h6, p, pre { margin: 0; padding: 0; position: relative; }
@@ -9,3 +13,7 @@ a[href]:link { color: black; }
 a[href]:visited { color: black; }
 
 pre { display: block; white-space: pre-wrap; }
+
+div.write, div.intro { position: relative; box-sizing: border-box; overflow: hidden; }
+
+article div.title, article div.location, article div.cost, article div.time { white-space: nowrap; }
