@@ -9,6 +9,7 @@ Artlist = require "./artlist"
 Router  = require "./router"
 
 # Set a reference to Artlist on the window object to receive index data and for convenience in the console.
+
 window.Artlist = Artlist
 
 # Construct the router and start the push state history system when the document is ready.
