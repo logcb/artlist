@@ -26,3 +26,6 @@ section h2 { color: hsl(0, 0%, 33%); }
 section h2 strong { color: black; }
 
 article div.title, article div.time, article div.web_address { font-family: "Artlist-Medium"; }
+
+div.pending_articles { background: hsl(0, 0%, 88%);}
+div.trashed_articles { background: hsl(0, 0%, 66%);}
