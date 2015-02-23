@@ -23,9 +23,27 @@ Artlist.Article = class Article extends Backbone.Model
     if attributes.time is undefined
       return ["time", "can’t be blank"]
 
+# Article collections.
 
-class Article.Collection extends Backbone.Collection
-  model: Article
+class Artlist.Article.Collection extends Backbone.Collection
+  model: Artlist.Article
+
+Artlist.index     = new Artlist.Article.Collection
+Artlist.pending   = new Artlist.Article.Collection
+Artlist.published = new Artlist.Article.Collection
+Artlist.trash     = new Artlist.Article.Collection
+
+Artlist.index.on "all", (event) ->
+  Artlist.pending.set   Artlist.index.select (article) -> article.isPending()
+  Artlist.published.set Artlist.index.select (article) -> article.isPublished()
+  Artlist.trash.set     Artlist.index.select (article) -> article.isTrash()
+
+# Search articles by query and category.
+
+class Artlist.Article.Selection extends Artlist.Article.Collection
+  initialize: ->
+    @filters = new Backbone.Model {query: undefined, categories: []}
+    @filters.on "change", => @set Artlist.search(@filters.toJSON()), {remove:yes}
 
 Artlist.search = (params={}) ->
   selection = Artlist.index.toArray()
