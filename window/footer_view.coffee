@@ -6,13 +6,42 @@ class FooterView extends Backbone.View
 
   el: "body > footer"
 
-  initialize: ->
-    @permit = new Artlist.Permit
-
   events:
     "click a.enter": "enterElementWasActivated"
     "submit form.new.permit": "permitFormWasCommitted"
     "click a.exit": "exitElementWasActivated"
+
+  initialize: ->
+    if Artlist.operator.isPermittedToMakeChanges()
+      @el.querySelector("div.editor.controls").classList.add("activated")
+
+  enterElementWasActivated: (event) ->
+    event.preventDefault()
+    @el.querySelector("div.editor.controls").classList.add("activated")
+    @el.querySelector("div.editor.controls").scrollIntoView()
+    @focusSecretPhraseInput()
+
+  permitFormWasCommitted: (event) ->
+    event.preventDefault()
+    (new Artlist.Permit).save @permitInput(), {success: @permitIsReady, error: @permitError}
+
+  permitIsReady: (permit) =>
+    Artlist.operator.grantPermissionToMakeChanges(permit)
+    @disableSecretPhraseInput()
+    @secretPhraseInput().classList.remove "unacceptable"
+
+  permitError: =>
+    @focusSecretPhraseInput()
+    @secretPhraseInput().classList.add "unacceptable"
+
+  exitElementWasActivated: (event) ->
+    event.preventDefault()
+    Artlist.operator.permit.destroy success: @permitWasDestroyed
+
+  permitWasDestroyed: =>
+    Artlist.operator.releasePermit()
+    @el.querySelector("form").reset()
+    @focusSecretPhraseInput()
 
   secretPhraseInput: ->
     @el.querySelector("input.secret_phrase")
@@ -20,36 +49,10 @@ class FooterView extends Backbone.View
   permitInput: ->
     {"secret_phrase": @secretPhraseInput().value.trim()}
 
-  enterElementWasActivated: (event) ->
-    event.preventDefault()
-    @el.querySelector("div.editor.controls").classList.add("activated")
-    @el.querySelector("div.editor.controls").scrollIntoView()
+  focusSecretPhraseInput: ->
     @secretPhraseInput().disabled = false
     @secretPhraseInput().focus()
 
-  permitFormWasCommitted: (event) ->
-    event.preventDefault()
-    @secretPhraseInput().classList.remove "unacceptable"
-    @permit.save @permitInput(), {success: @permitIsReady, error: @permitError}
-
-  permitIsReady: =>
+  disableSecretPhraseInput: ->
     @secretPhraseInput().blur()
     @secretPhraseInput().disabled = true
-    document.body.classList.add("editing")
-
-  permitError: =>
-    @secretPhraseInput().disabled = false
-    @secretPhraseInput().focus()
-    @secretPhraseInput().classList.add "unacceptable"
-
-  exitElementWasActivated: (event) ->
-    event.preventDefault()
-    @permit.destroy success: @permitWasDestroyed
-
-  permitWasDestroyed: =>
-    document.body.classList.remove("editing")
-    @el.querySelector("form").reset()
-    @secretPhraseInput().disabled = false
-    @secretPhraseInput().focus()
-    delete @permit
-    @initialize()
