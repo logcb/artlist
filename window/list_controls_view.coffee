@@ -3,6 +3,8 @@ Backbone = require "backbone"
 class ListControlsView extends Backbone.View
   module.exports = this
 
+  el: "div.list.controls"
+
   events:
     "input [name=query]": "queryInputWasChanged"
     "change input[type=checkbox]": "categoryInputWasChanged"
