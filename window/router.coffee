@@ -9,7 +9,7 @@ FooterView = require "./footer_view"
 class Router extends Backbone.Router
   module.exports = this
 
-  routes: {"": "index", "filter": "index", "intro": "intro", "post": "post"}
+  routes: {"": "index", "intro": "intro", "post": "post"}
 
   initialize: ->
     @filters = new Backbone.Model {query: undefined, categories: []}
