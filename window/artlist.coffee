@@ -1,10 +1,25 @@
+{extend} = require "underscore"
 Backbone = require "backbone"
 Moment = require "moment"
 
 module.exports = Artlist = {}
 
-Artlist.Article = class Article extends Backbone.Model
+# Each event on THE ARTLIST is represented by an instance of the Article class.
+
+class Artlist.Article extends Backbone.Model
   urlRoot: "/articles"
+
+  isPending: ->
+    (@get("published_at") is undefined) and @isNotTrash()
+
+  isPublished: ->
+    (@get("published_at") isnt undefined) and @isNotTrash()
+
+  isTrash: ->
+    @get("trashed_at") isnt undefined
+
+  isNotTrash: ->
+    @isTrash() is no
 
   defaults: ->
     date: Moment(Date.now()).format("YYYY/MM/DD")
