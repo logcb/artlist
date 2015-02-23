@@ -45,12 +45,12 @@ service.get "/index.json.js", (request, response, next) ->
 service.get "/:page?", (request, response, next) ->
   if request.accepts "html"
     if request.header("Cookie")
-      permit = Cookie.parse(request.header("Cookie")).permit?
+      permitIdentifier = Cookie.parse(request.header("Cookie")).permit
     else
-      permit = no
+      permitIdentifier = ""
     # console.info cookie = Cookie.parse(request.header("Cookie"))
     response.writeHead 200, "Content-Type": "text/html; charset=utf-8"
-    response.end render("document", authorized_to_edit: permit)
+    response.end render("document", {permitIdentifier})
   else
     next()
 
