@@ -47,7 +47,22 @@ filterByCategory = (article, categories) ->
     return yes if article.get("category") is category
   return no
 
-Artlist.index = new Article.Collection
+# The operator might be permitted to edit THE ARTLIST if they have a valid permit.
+
+Artlist.operator = extend {}, Backbone.Events
+
+Artlist.operator.isPermittedToMakeChanges = ->
+  @permit?.has("id")
+
+Artlist.operator.grantPermissionToMakeChanges = (permit) ->
+  Artlist.operator.permit = permit
+  Artlist.operator.trigger("change:permit")
+
+Artlist.operator.releasePermit = ->
+  Artlist.operator.permit = undefined
+  Artlist.operator.trigger("change:permit")
+
+# A permit grants authorization to edit THE ARTLIST.
 
 class Artlist.Permit extends Backbone.Model
   defaults: {id: "editor@artlist"}
