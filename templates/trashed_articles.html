@@ -1,0 +1,7 @@
+<section class="trashed">
+  <h2>Trash</h2>
+  <p>Events are erased automatically after 15 days in the trash.</p>
+  <% for article in @articles: %>
+    <%- @render "article", {article} %>
+  <% end %>
+</section>

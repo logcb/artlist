@@ -1,0 +1,7 @@
+<section class="pending">
+  <h2><%= @articles.length  %> pending events</h2>
+  <p>These events were posted by visitors and are awaiting your review.</p>
+  <% for article in @articles: %>
+    <%- @render "article", {article} %>
+  <% end %>
+</section>

@@ -1,10 +1,7 @@
 Backbone = require "backbone"
 Artlist = require "./artlist"
-ListView = require "./list_view"
-ListControlsView = require "./list_controls_view"
 ReadIntroView = require "./read_intro_view"
 WriteArticleView = require "./write_article_view"
-FooterView = require "./footer_view"
 
 class Router extends Backbone.Router
   module.exports = this
@@ -12,18 +9,9 @@ class Router extends Backbone.Router
   routes: {"": "index", "intro": "intro", "post": "post"}
 
   initialize: ->
-    @filters = new Backbone.Model {query: undefined, categories: []}
-    @articles = new Artlist.Article.Collection
-    @filters.on "change", => @articles.set Artlist.search(@filters.toJSON()), {remove:yes}
-    @articles.set Artlist.search(@filters.toJSON()), {remove:yes}
-    @listControlsView = new ListControlsView el: "div.list.controls", model: @filters
-    new ListView el: "div.list_view", collection: @articles
-    new FooterView
     $(document).on "click", "a[href^='/']", @localHyperlinkWasActivated
     @on "route", (bookmark) -> console.info "Routed to #{bookmark}"
     @once "route", -> document.body.classList.remove("loading")
-    Artlist.index.on "all", -> console.info "Article.index", arguments
-    console.info "THE ARTLIST is ready at #{location.hostname}:#{location.port}"
 
   index: ->
     console.info "Rendering index", @params()
