@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="assets/widescreen_layout.css">
 <script src="assets/bundle.js"></script>
 <script src="index.json.js"></script>
-<body class="loading <%= "editing" if @authorized_to_edit %>">
+<body class="loading" data-permit-id="<%= @permitIdentifier %>">
   <%- @render "header" %>
   <div class="header_block_in_flow"></div>
   <%- @render "intro" %>
