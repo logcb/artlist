@@ -8,8 +8,9 @@ Function.delay = (amount, procedure) -> setTimeout procedure, amount
 # Set a reference to Artlist on the window to receive index data and for convenience in the console.
 Artlist = window.Artlist = require "./artlist"
 
-# Construct a new selection of articles for this session.
-Artlist.selection = new Artlist.Article.Selection
+# Construct a new selection of articles for this session after the index data has been initialized.
+$(document).ready ->
+  Artlist.selection = new Artlist.Article.Selection
 
 # Construct persistent views when the document is ready.
 $(document).ready ->
