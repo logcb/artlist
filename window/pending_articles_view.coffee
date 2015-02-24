@@ -20,7 +20,7 @@ class PendingArticlesView extends BasicView
     if Artlist.operator.isPermittedToMakeChanges()
       @el.classList.add "enabled"
       @el.classList.remove "disabled"
-      @el.innerHTML = @renderTemplate articles: @collection.toJSON()
+      @el.innerHTML = @renderTemplate articles: @collection.toArray()
     else
       @el.classList.remove "enabled"
       @el.classList.add "disabled"

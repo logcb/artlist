@@ -2,7 +2,7 @@
   <section class="day">
     <h2><strong><%= @moment("#{date}", "YYYY-MM-DD").format("dddd") %></strong>, <%= @moment("#{date}", "YYYY-MM-DD").format("MMM D") %></h2>
     <% for article in articles: %>
-      <%= @render "article", {article} %>
+      <%- @render "article", {article} %>
     <% end %>
   </section>
 <% end %>

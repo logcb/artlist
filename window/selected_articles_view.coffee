@@ -17,10 +17,7 @@ class SelectedArticlesView extends BasicView
     @render()
 
   render: =>
-    serialized = {}
-    for date, articles of @getArticlesGroupedByDate()
-      serialized[date] = (article.toJSON() for article in articles)
-    @el.innerHTML = @renderTemplate({dates: serialized})
+    @el.innerHTML = @renderTemplate({dates: @getArticlesGroupedByDate()})
 
   activateArticle: (event) ->
     id = event.currentTarget.id
