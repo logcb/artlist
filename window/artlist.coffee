@@ -31,8 +31,6 @@ class Artlist.Article extends Backbone.Model
       return ["title", "can’t be blank"]
     if attributes.venue is undefined
       return ["venue", "can’t be blank"]
-    if attributes.address is undefined
-      return ["address", "can’t be blank"]
     if attributes.date is undefined
       return ["date", "can’t be blank"]
     if attributes.time is undefined
