@@ -59,7 +59,7 @@ class Artlist.Article.Selection extends Artlist.Article.Collection
     @filters.on "change", => @set Artlist.search(@filters.toJSON()), {remove:yes}
 
 Artlist.search = (params={}) ->
-  selection = Artlist.index.toArray()
+  selection = Artlist.published.toArray()
   if params.query
     queryPattern = new RegExp params.query, "i"
     selection = selection.filter (article) -> filterByQueryPattern(article, queryPattern)
