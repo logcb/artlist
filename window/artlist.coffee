@@ -57,6 +57,7 @@ class Artlist.Article.Selection extends Artlist.Article.Collection
   initialize: ->
     @filters = new Backbone.Model {query: undefined, categories: []}
     @filters.on "change", => @set Artlist.search(@filters.toJSON()), {remove:yes}
+    @set Artlist.published.toArray()
 
 Artlist.search = (params={}) ->
   selection = Artlist.published.toArray()
