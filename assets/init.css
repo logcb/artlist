@@ -2,6 +2,7 @@ body.loading * { visibility: hidden; }
 
 body, div.sleeve { width: auto; margin: auto; }
 
+button, input, select, pre, textarea {font:inherit;}
 
 
 button, input { background: none; border: none; padding: none; margin: none; box-sizing: border-box; }
