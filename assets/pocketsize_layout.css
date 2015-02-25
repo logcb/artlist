@@ -5,6 +5,8 @@
 	h1																 { font: 21px/48px "Artlist-Title"; letter-spacing: 1px; text-transform: uppercase; text-align: center; }
 	h2																 { font: 11px/22px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; text-align: center; }
 	article header										 { }
+	section > p                        { font: 14px/18px "Artlist-Light"; }
+	article .controls                  { font: 14px/18px "Artlist-Light"; }
 	body > header nav									{ font: 11px/22px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
 	div.list.controls div.search			 { font: 11px/22px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
 	div.list.controls div.search input { font: 11px/22px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
@@ -85,5 +87,21 @@
 	article div.category svg { height: 12px; width: 12px; }
 	article div.description { padding: 4px 12px; }
 	article div.web_address { padding: 4px 12px; }
+
+	article div.controls * { font: inherit; }
+	article div.controls { margin: 0px 12px;}
+ 	article div.controls input   {  }
+	article div.controls select  { }
+	article div.controls button  { }
+
+	article div.controls div.category { width: 50%; background: red; }
+	article div.controls div.category select.one.category { width: 100%; }
+
+	article div.controls div.date_and_time { width: 100%; }
+	article div.controls div.date_and_time label {  }
+	article div.controls div.date_and_time input[type=date] { width: 50%;  }
+	article div.controls div.date_and_time input[type=time] { width: 50%; }
+
+
 	article footer { height: 8px; }
 }

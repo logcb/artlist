@@ -1,11 +1,11 @@
 @media screen and (min-width: 1200px) {
 	body, div.sleeve { width: 1200px; margin: auto; }
 
-	body, article, pre, textarea			 { font: 16px/30px "Artlist-Light";	}
+	body, article                      { font: 16px/30px "Artlist-Light";	}
 	h1																 { font: 36px/98px "Artlist-Title"; letter-spacing: 1px; text-transform: uppercase; }
 	h2																 { font: 14px/64px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
 	article header										 { font: 22px/34px "Artlist-Light"; }
-	body > header nav									{ font: 14px/32px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
+	body > header nav									 { font: 14px/32px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
 	div.list.controls div.search			 { font: 14px/32px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
 	div.list.controls div.search input { font: 14px/30px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
 	div.list.controls div.categories	 { font: 14px/32px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
@@ -134,8 +134,8 @@
 	article div.venue:before { content: "— "; }
 	article div.time { left: 75%; right: auto; top: 15px; bottom: auto; white-space: nowrap; overflow: hidden; }
 	article div.cost { right: 0; top: 15px; bottom: auto; }
-	article div.category { position: absolute; left: -5px; top: 15px; }
-	article div.category svg { height: 20px; width: 20px; margin: 5px 0; display: block; position: absolute; }
+	article div.category.icon { position: absolute; left: -5px; top: 15px; }
+	article div.category.icon svg { height: 20px; width: 20px; margin: 5px 0; display: block; position: absolute; }
 	article div.description { margin: 0 25% 0 0; padding: 0 20px; }
 	article div.web_address { position: absolute; right: 0; width: 25%; top: 60px; padding: 0; }
 	article div.web_address a { }

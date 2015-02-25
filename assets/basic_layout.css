@@ -1,15 +1,19 @@
 @media screen {
 	body, div.sleeve { width: auto; margin: auto; }
 
-	body, article, pre, textarea			 { font: 22px/30px "Artlist-Light"; }
+	body, article               			 { font: 22px/30px "Artlist-Light"; }
 	h1																 { font: 32px/80px "Artlist-Title"; letter-spacing: 1px; text-transform: uppercase; text-align: center; }
 	h2																 { font: 15px/48px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; text-align: center; }
 	article header										 { }
-	section > p										     { font: 15px/30px "Artlist-Light"; }
+	section > p                        { font: 15px/30px "Artlist-Light"; }
+	article .controls                  { font: 15px/30px "Artlist-Light"; }
 	body > header nav									 { font: 15px/30px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
 	div.list.controls div.search			 { font: 15px/48px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
 	div.list.controls div.search input { font: 15px/48px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
 	div.list.controls div.categories	 { font: 15px/33px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
+
+
+
 
 	/*input							 { font: 16px/48px "Artlist-Demi"; letter-spacing: 1px; }
 	button							{ font: 16px/48px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }*/
@@ -94,13 +98,29 @@
 	article div.title_and_venue > div { display: inline-block; position: absolute; height: 25px; }
 	article div.title { left: 0; top: 12px; right: 0; text-indent: 20px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
 	article div.venue { left: 0; bottom: 12px; right: 0; text-indent: 20px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
-	article div.category { position: absolute; left: -5px; top: 14px; }
-	article div.category svg { height: 22px; width: 22px; display: block; margin: 0; position: absolute; }
+	article div.category.icon { position: absolute; left: -5px; top: 14px; }
+	article div.category.icon svg { height: 22px; width: 22px; display: block; margin: 0; position: absolute; }
 	article div.time { position: absolute; height: 25px; right: 0; top: 12px; }
 	article div.cost { position: absolute; height: 25px; right: 0; bottom: 12px; }
 	article div.description { padding: 0 20px; }
 	article div.web_address { padding: 10px 20px; }
 	article div.web_address a { text-decoration: underline; }
+	article div.web_address div.code { font: 15px/20px; }
+
+	article div.controls * { font: inherit; }
+	article div.controls { margin: 10px 20px; }
+ 	article div.controls input   { font: 15px/20px; border: 1px solid hsla(0,0%,0%,0.2); padding: 3px 5px 0; height: 30px; border-radius: 0; }
+	article div.controls select  { font: 15px/20px; border: 1px solid hsla(0,0%,0%,0.2); padding: 3px 5px 0; height: 30px; border-radius: 0; }
+	article div.controls button  { font: 15px/20px; border: 1px solid hsla(0,0%,0%,0.3); padding: 1px 5px 0; height: 30px; border-radius: 0; }
+
+	article div.controls div.category { width: 50%; }
+	article div.controls div.category select.one.category { width: 100%; }
+
+	article div.controls div.date_and_time { width: 50%; }
+	article div.controls div.date_and_time label {  }
+	article div.controls div.date_and_time input[type=date] { width: 67%; }
+	article div.controls div.date_and_time input[type=time] { width: 33%; position: absolute; right: 0;}
+
 	article footer { height: 5px; }
 
 	/* FOOTER */
