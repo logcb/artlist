@@ -4,8 +4,7 @@ body, div.sleeve { width: auto; margin: auto; }
 
 button, input, select, pre, textarea {font:inherit;}
 
-
-button, input { background: none; border: none; padding: none; margin: none; box-sizing: border-box; }
+button, input, select { background: transparent; border: none; padding: none; margin: none; box-sizing: border-box; height: 25px; display: inline-block; }
 h1, h2, h3, h4, h5, h6, p, pre, input, ::input-placeholder { font: inherit; }
 body, header, footer, section, article, div, h1, h2, h3, h4, h5, h6, p, pre { margin: 0; padding: 0; position: relative; }
 
