@@ -1,38 +1,65 @@
 Backbone = require "backbone"
+BasicView = require "./basic_view"
 Artlist = require "./artlist"
 
-class ArticleView extends Backbone.View
+class ArticleView extends BasicView
   module.exports = this
+
+  template: require "../templates/article.html"
 
   initialize: ->
     @activate()
+    @model.on "change", (event) =>
+      console.info "Saving article #{@model.id}"
+      console.info @model.save()
+    @model.on "error", (error) =>
+      console.error "Article #{@model.id} error!"
+      console.error @model.attributes
+      console.error error
+    @enableEditing() if window.location.hostname isnt "artlist.website"
+
+  render: ->
+    @el.innerHTML = @renderTemplate({article:@model})
     @enableEditing() if window.location.hostname isnt "artlist.website"
 
   events:
     "input div.title[contenteditable]": "titleInputWasChanged"
     "input div.cost[contenteditable]": "costInputWasChanged"
-    "input div.description [contenteditable]": "descriptionInputWasChanged"
+    "input div.description pre[contenteditable]": "descriptionInputWasChanged"
     "input div.time[contenteditable]": "timeInputWasChanged"
+    "change select.one.category": "categoryInputWasChanged"
+    "click button.publish": "publishArticle"
+    "click button.trash": "moveArticleToTrash"
+
+  publishArticle: (event) ->
+    event.preventDefault()
+    @model.set "published_at", (new Date).toJSON()
+
+  moveArticleToTrash: (event) ->
+    event.preventDefault()
+    @model.set "trashed_at", (new Date).toJSON()
 
   activate: =>
     @el.classList.remove("compacted")
     @el.classList.add("activated")
 
+  categoryInputWasChanged: (event) ->
+    console.info(event.target.value)
+    @model.set "category", event.target.value
+    @render()
+
   titleInputWasChanged: (event) ->
     @model.set "title", event.target.innerText
-    @model.save()
 
   costInputWasChanged: (event) ->
     @model.set "cost", event.target.innerText
-    @model.save()
 
   descriptionInputWasChanged: (event) ->
+    console.info "descriptionInputWasChanged", event
     @model.set "description", event.target.innerText
-    @model.save()
 
   timeInputWasChanged: (event) ->
     @model.set "time", @formatInputTimeForModel(event.target.innerText)
-    @model.save()
 
   enableEditing: ->
     for editable in @el.querySelectorAll("[contenteditable=false]")
