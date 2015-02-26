@@ -1,3 +1,4 @@
+{debounce} = require "underscore"
 Backbone = require "backbone"
 BasicView = require "./basic_view"
 Artlist = require "./artlist"
@@ -9,35 +10,31 @@ class ArticleView extends BasicView
 
   initialize: ->
     @activate()
-    @model.on "change", (event) =>
-      console.info "Saving article #{@model.id}"
-      console.info @model.save()
-    @model.on "error", (error) =>
-      console.error "Article #{@model.id} error!"
-      console.error @model.attributes
-      console.error error
-    @enableEditing() if window.location.hostname isnt "artlist.website"
-
-  render: ->
-    @el.innerHTML = @renderTemplate({article:@model})
+    @model.on "change:title", debounce @saveArticle, 100
+    @model.on "change:venue", debounce @saveArticle, 100
+    @model.on "change:description", debounce @saveArticle, 100
+    @model.on "change:date", debounce @saveArticle, 100
+    @model.on "change:time", debounce @saveArticle, 100
+    @model.on "change:cost", debounce @saveArticle, 100
+    @model.on "error", @articleHasError
     @enableEditing() if window.location.hostname isnt "artlist.website"
 
   events:
     "input div.title[contenteditable]": "titleInputWasChanged"
+    "input div.venue[contenteditable]": "venueInputWasChanged"
+    "input div.time[contenteditable]": "timeStringInputWasChanged"
     "input div.cost[contenteditable]": "costInputWasChanged"
     "input div.description pre[contenteditable]": "descriptionInputWasChanged"
-    "input div.time[contenteditable]": "timeInputWasChanged"
     "change select.one.category": "categoryInputWasChanged"
+    "change input[type=date]": "dateInputWasChanged"
+    "change input[type=time]": "timeInputWasChanged"
     "click button.publish": "publishArticle"
-    "click button.trash": "moveArticleToTrash"
+    "click button.pending": "moveArticleToPendingBucket"
+    "click button.trash": "moveArticleToTrashBucket"
 
-  publishArticle: (event) ->
-    event.preventDefault()
-    @model.set "published_at", (new Date).toJSON()
-
-  moveArticleToTrash: (event) ->
-    event.preventDefault()
-    @model.set "trashed_at", (new Date).toJSON()
+  render: ->
+    @el.innerHTML = @renderTemplate({article:@model})
+    @enableEditing() if Artlist.operator.isPermittedToMakeChanges()
 
   activate: =>
     @el.classList.remove("compacted")
@@ -48,8 +45,19 @@ class ArticleView extends BasicView
     @model.set "category", event.target.value
     @render()
 
+  timeInputWasChanged: (event) ->
+    console.info(event.target.value)
+    @model.set "time", event.target.value
+    @render()
+
   titleInputWasChanged: (event) ->
     @model.set "title", event.target.innerText
+
+  venueInputWasChanged: (event) ->
+    @model.set "venue", event.target.innerText
+
+  timeStringInputWasChanged: (event) ->
+    @model.set "time", @formatInputTimeForModel(event.target.innerText)
 
   costInputWasChanged: (event) ->
     @model.set "cost", event.target.innerText
@@ -58,8 +66,29 @@ class ArticleView extends BasicView
     console.info "descriptionInputWasChanged", event
     @model.set "description", event.target.innerText
 
-  timeInputWasChanged: (event) ->
-    @model.set "time", @formatInputTimeForModel(event.target.innerText)
+  publishArticle: (event) ->
+    event.preventDefault()
+    @model.set "published_at", (new Date).toJSON()
+
+  moveArticleToTrashBucket: (event) ->
+    console.info "moveArticleToTrashBucket"
+    event.preventDefault()
+    @model.set "trashed_at", (new Date).toJSON()
+    @model.save()
+
+  moveArticleToPendingBucket: (event) ->
+    event.preventDefault()
+    @model.unset "trashed_at"
+    @model.unset "published_at"
+
+  saveArticle: =>
+    console.info "Saving article #{@model.id}"
+    @model.save()
+
+  articleHasError: (error ) =>
+    console.error "Article #{@model.id} error!"
+    console.error @model.attributes
+    console.error error
 
   enableEditing: ->
     for editable in @el.querySelectorAll("[contenteditable=false]")
