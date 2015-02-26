@@ -10,7 +10,7 @@ class BasicView extends Backbone.View
     @template(params)
 
   renderHTML: (templateName, params={}) ->
-    params.render = @renderHTML
+    params.render = BasicView::renderHTML
     params.moment = Moment
     templateFunction = require "./templates/#{templateName}.html"
     templateFunction(params)
