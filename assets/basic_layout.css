@@ -126,7 +126,7 @@
 	article div.controls div.date_and_time input[type=date] { width: 67%; }
 	article div.controls div.date_and_time input[type=time] { width: 33%; position: absolute; right: 0;}
 
-	article footer { height: 5px; }
+	body:not(.editing) article footer { height: 5px; }
 
 	/* FOOTER */
 
