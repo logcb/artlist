@@ -1,5 +1,5 @@
 @media screen and (min-width: 1200px) {
-	body, div.sleeve { width: 1200px; margin: auto; }
+	div.sleeve, section > article, section > header, section > footer { width: 1200px; margin: auto; }
 
 	body, article                      { font: 16px/30px "Artlist-Light";	}
 	h1																 { font: 36px/98px "Artlist-Title"; letter-spacing: 1px; text-transform: uppercase; }
@@ -19,7 +19,7 @@
 
 	body > header, div.header_block_in_flow { height: 90px; }
 
-	body > header h1 { margin: 0px -20px; padding: 0px 20px; border-bottom: 1px solid black; height: 89px; }
+	body > header h1 { margin: 0px 0px; padding: 0px 20px; border-bottom: 1px solid black; height: 89px; }
 
 	body > header nav {}
 	body > header nav > a { }
@@ -93,7 +93,7 @@
 	body.index div.list.controls { position: fixed; top: 90px; }
 
 	div.list.controls div.sleeve { border: 1px solid transparent; margin: -1px auto; height: 180px; }
-	div.list.controls div.rules { position: absolute; top: -1px; bottom: -1px; left: -20px; right: -20px; border-bottom: 1px solid hsl(0, 0%, 33%); border-top: 1px solid hsl(0, 0%, 33%); }
+	div.list.controls div.rules { position: absolute; top: -1px; bottom: -1px; left: 0px; right: 0px; border-bottom: 1px solid hsl(0, 0%, 33%); border-top: 1px solid hsl(0, 0%, 33%); }
 
 	div.list.controls div.search { position: absolute; top: 15px; left: 0; right: 50%; margin: 0 20px 0 0; padding: 0; }
 	div.list.controls div.search label { }
@@ -119,14 +119,15 @@
 
 	/* LIST */
 
-	section.day h2 { height: 59px; border-top: 1px solid black; border-bottom: 1px solid black; margin: 0 -20px -1px; padding: 0px 20px; position: relative; text-align: left; }
+	section.day h2 { height: 59px; border-top: 1px solid black; border-bottom: 1px solid black; margin: 0 0px -1px; padding: 0px; position: relative; text-align: left; }
 
 	/* ARTICLE */
 
-	article { margin: 0 0 -1px; position: relative; border-top: 1px dotted black; border-bottom: 1px dotted black; }
+	article { margin: 0 auto; position: relative; }
+	article div.box { margin: 0 10px;}
 	article.compacted { height: 59px; }
 	article.activated { height: auto; }
-	article header { height: 60px; }
+	article header { height: 60px; border-top: 1px dotted black; }
 	article div.title_and_venue { position: absolute; margin: 0 0 0 0; padding: 15px 20px; bottom: auto; top: 0; left: 0; right: 25%; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
 	article div.title_and_venue > div { display: inline; position: relative; top: auto; bottom: auto;	height: 25px; }
 	article div.title { padding: 0; text-indent: 0; }

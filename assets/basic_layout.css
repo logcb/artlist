@@ -90,18 +90,19 @@
 
 	/* ARTICLE */
 
-	article { margin: -1px 20px 0; overflow: hidden; border-top: 1px dotted black; border-bottom: 1px dotted black; }
+	article { margin: 0; overflow: hidden; }
 	article.compacted { height: 74px; }
 	article.activated { height: auto; }
-	article header { height: 75px; }
-	article div.title_and_venue { position: absolute; left: 0; top: 0; right: 0; height: 75px; }
+	article > div.box { margin: 0px 20px; }
+	article header { height: 75px; border-top: 1px dotted black; }
+	article div.title_and_venue { position: absolute; left: 20px; top: 0; right: 125px; height: 75px; }
 	article div.title_and_venue > div { display: inline-block; position: absolute; height: 25px; }
-	article div.title { left: 0; top: 12px; right: 0; text-indent: 20px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
-	article div.venue { left: 0; bottom: 12px; right: 0; text-indent: 20px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+	article div.title { left: 0; top: 12px; right: 0; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+	article div.venue { left: 0; bottom: 12px; right: 0; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
 	article div.category.icon { position: absolute; left: -5px; top: 14px; }
 	article div.category.icon svg { height: 22px; width: 22px; display: block; margin: 0; position: absolute; }
-	article div.time { position: absolute; height: 25px; right: 0; top: 12px; }
-	article div.cost { position: absolute; height: 25px; right: 0; bottom: 12px; }
+	article div.time { position: absolute; height: 25px; right: 0; top: 12px; min-width: 100px; text-align: right; }
+	article div.cost { position: absolute; height: 25px; right: 0; bottom: 12px; min-width: 100px; text-align: right; }
 	article div.description { padding: 0 20px; }
 	article div.web_address { padding: 10px 20px; }
 	article div.web_address a { text-decoration: underline; }
