@@ -1,0 +1,42 @@
+<div class="web_address">
+  <div>Event page web URL</div>
+  <input type="url" value="<%= @article.get('web_address') %>" placeholder="https://example.org/special-event-page">
+</div>
+
+<div class="category">
+  <div>Re-categorize this event</div>
+  <select class="one category">
+    <option <%= "selected" if @article.get('category') is "Comedy" %>>Comedy</option>
+    <option <%= "selected" if @article.get('category') is "Community" %>>Community</option>
+    <option <%= "selected" if @article.get('category') is "Dance" %>>Dance</option>
+    <option <%= "selected" if @article.get('category') is "Film" %>>Film</option>
+    <option <%= "selected" if @article.get('category') is "Food" %>>Food</option>
+    <option <%= "selected" if @article.get('category') is "Literature" %>>Literature</option>
+    <option <%= "selected" if @article.get('category') is "Music" %>>Music</option>
+    <option <%= "selected" if @article.get('category') is "Theatre" %>>Theatre</option>
+    <option <%= "selected" if @article.get('category') is "Visual Art" %>>Visual Art</option>
+  </select>
+</div>
+
+<div class="date_and_time">
+  <div>Change the date or time</div>
+  <input type="date" value="<%= @article.get('date').replace(/\//g, '-') %>">
+  <input type="time" value="<%= @article.get('time') %>">
+</div>
+
+<div class="history">
+  <span class="created">Created <%= @moment(@article.get('created_at')).fromNow() %>.</span>
+  <span class="updated">Updated <%= @moment(@article.get('updated_at')).fromNow() %>.</span>
+</div>
+
+<div class="">
+  <% if @article.isTrash(): %>
+    <button class="restore">Restore</button> this event to move it out of the trash bucket.
+  <% else: %>
+    <% if @article.isPublished(): %>
+      <button class="trash">Trash</button> this event to remove it from THE ARTLIST.
+    <% else: %>
+      <button class="publish">Publish</button> this event or move it to the <button class="trash">Trash</button>
+    <% end %>
+  <% end %>
+</div>

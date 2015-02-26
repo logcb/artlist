@@ -114,6 +114,9 @@
 	article div.controls select  { font: 15px/20px; border: 1px solid hsla(0,0%,0%,0.2); padding: 3px 5px 0; height: 30px; border-radius: 0; }
 	article div.controls button  { font: 15px/20px; border: 1px solid hsla(0,0%,0%,0.3); padding: 1px 5px 0; height: 30px; border-radius: 0; }
 
+	article div.controls div.web_address { padding: 0; }
+	article div.controls div.web_address input { width: 100%; }
+
 	article div.controls div.category { width: 50%; }
 	article div.controls div.category select.one.category { width: 100%; }
 
