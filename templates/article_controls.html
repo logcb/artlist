@@ -24,11 +24,6 @@
   <input type="time" value="<%= @article.get('time') %>">
 </div>
 
-<div class="history">
-  <span class="created">Created <%= @moment(@article.get('created_at')).fromNow() %>.</span>
-  <span class="updated">Updated <%= @moment(@article.get('updated_at')).fromNow() %>.</span>
-</div>
-
 <div class="">
   <% if @article.isTrash(): %>
     <button class="restore">Restore</button> this event to move it out of the trash bucket.
