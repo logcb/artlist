@@ -1,6 +1,8 @@
 <section class="trashed">
-  <h2>Trash</h2>
-  <p>Events are erased automatically after 15 days in the trash.</p>
+  <header>
+    <h2>Trash</h2>
+    <p>Events are erased automatically after 15 days in the trash.</p>
+  </header>
   <% for article in @articles: %>
     <article class="compacted" id="<%= article.id %>">
       <%- @render "article", {article} %>

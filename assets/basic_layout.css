@@ -85,8 +85,9 @@
 
 	/* LIST */
 
-	section > h2 { height: 44px; border-top: 1px solid black; border-bottom: 1px solid black; margin: -1px 0 0; position: relative; text-align:center; }
-	section > p { text-align:center; }
+	section > header { border-top: 1px solid black; border-bottom: 1px solid black; }
+	section > header h2 { height: 44px;  position: relative; text-align:center; }
+	section > header p { text-align:center; }
 
 	/* ARTICLE */
 
