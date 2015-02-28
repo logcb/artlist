@@ -27,8 +27,9 @@ class DayOfArticlesView extends BasicView
 
   insertIntoDocument: ->
     @render()
-    referenceElement = document.querySelector("#{@nextSectionID()}, body > footer")
-    document.body.insertBefore(@el, referenceElement)
+    containerElement = document.querySelector("div.current_articles")
+    referenceElement = containerElement.querySelector("#{@nextSectionID()}")
+    containerElement.insertBefore(@el, referenceElement)
 
   insertArticle: (article) =>
     @render()
