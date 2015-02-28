@@ -8,7 +8,15 @@ Function.delay = (amount, procedure) -> setTimeout procedure, amount
 # Define a reference to Artlist on the window to receive index data and for convenience in the console.
 Artlist = window.Artlist = require "./artlist"
 
-# Construct a new selection of articles for this session after the index data has been initialized.
+
+# Construct an editing permit for the operator if a permit id is included in the document.
+$(document).ready ->
+  if permitIdentifier = document.body.getAttribute("data-permit-id")
+    permit = new Artlist.Permit id:permitIdentifier
+    Artlist.operator.grantPermissionToMakeChanges(permit)
+
+
+# Define a selection of articles for this session after the index data has been initialized.
 $(document).ready ->
   Artlist.selection = new Artlist.Article.Selection
 

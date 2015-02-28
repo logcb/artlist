@@ -6,10 +6,8 @@ class BodyView extends Backbone.View
   el: "body"
 
   initialize: ->
+    @render()
     Artlist.operator.on "change:permit", @render
-    if permitIdentifier = @el.getAttribute("data-permit-id")
-      permit = new Artlist.Permit id:permitIdentifier
-      Artlist.operator.grantPermissionToMakeChanges(permit)
 
   render: =>
     if Artlist.operator.isPermittedToMakeChanges()
