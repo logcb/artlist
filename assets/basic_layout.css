@@ -2,7 +2,6 @@
 	body, div.sleeve { width: auto; margin: auto; }
 
 	body, article               			 { font: 22px/30px "Artlist-Light"; }
-	h1																 { font: 32px/80px "Artlist-Title"; letter-spacing: 1px; text-transform: uppercase; text-align: center; }
 	h2																 { font: 15px/48px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; text-align: center; }
 	article header										 { }
 	section > p                        { font: 15px/30px "Artlist-Light"; }
@@ -12,9 +11,6 @@
 	div.list.controls div.search input { font: 15px/48px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
 	div.list.controls div.categories	 { font: 15px/33px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
 
-
-
-
 	/*input							 { font: 16px/48px "Artlist-Demi"; letter-spacing: 1px; }
 	button							{ font: 16px/48px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }*/
 
@@ -22,14 +18,16 @@
 
 	body > header { position: fixed; top: 0; left: 0; right: 0; z-index: 1; }
 
-	body > header, div.header_block_in_flow { height: 75px; }
+	body > header, div.header_block_in_flow { height: 80px; }
 
-	body > header h1 { padding: 0; margin: 0; border-bottom: 1px solid black; height: 74px; }
+	body > header h1 { padding: 20px 0 19px; margin: 0; border-bottom: 1px solid red; text-align: center; height: 40px;}
+
 
 	body > header nav {}
 	body > header nav > a { display: block; }
 	body > header nav.intro { position: absolute; left: 20px; top: 20px; }
 	body > header nav.share { position: absolute; right: 20px; top: 20px; }
+	body > header nav img.icon { border: 1px solid hsla(0, 0%, 0%, 0.33); box-sizing: border-box; }
 
 	/* INTRO */
 
@@ -51,12 +49,12 @@
 
 	div.list_container { position: relative; box-sizing: border-box; }
 
-	div.list_container { padding-top: 155px; } div.list.controls { height: 155px; }
+	div.list_container { padding-top: 160px; } div.list.controls { height: 160px; }
 
 	div.list.controls { left: 0; right: 0; z-index: 1; }
 
 	body:not(.index) div.list.controls { position: absolute; top: 0; }
-	body.index			 div.list.controls { position: fixed; top: 75px; }
+	body.index			 div.list.controls { position: fixed; top: 80px; }
 
 	div.list.controls div.sleeve { border: 1px solid transparent; margin: -1px; height: 155px; }
 	div.list.controls div.rules { position: absolute; top: -1px; bottom: -1px; left: 0; right: 0; border-bottom: 1px solid hsl(0, 0%, 33%); border-top: 1px solid hsl(0, 0%, 33%); }

@@ -2,12 +2,11 @@
 	body, div.sleeve { width: auto; margin: auto; }
 
 	body, article, pre, textarea			 { font: 14px/18px "Artlist-Light"; }
-	h1																 { font: 21px/48px "Artlist-Title"; letter-spacing: 1px; text-transform: uppercase; text-align: center; }
 	h2																 { font: 11px/22px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; text-align: center; }
 	article header										 { }
 	section > p                        { font: 14px/18px "Artlist-Light"; }
 	article .controls                  { font: 14px/18px "Artlist-Light"; }
-	body > header nav									{ font: 11px/22px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
+	body > header nav									 { font: 11px/22px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
 	div.list.controls div.search			 { font: 11px/22px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
 	div.list.controls div.search input { font: 11px/22px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
 	div.list.controls div.categories	 { font: 11px/22px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
@@ -18,12 +17,14 @@
 
 	body > header, div.header_block_in_flow { height: 44px; }
 
-	body > header h1 { padding: 0; height: 44px; }
+	body > header h1 { padding: 12px 11px 10px; height: 22px; }
+	body > header h1 img { height: 22px; }
 
-	body > header nav { display: none; }
+	body > header nav { }
 	body > header nav > a {}
-	body > header nav.intro { left: 0; top: 0; }
-	body > header nav.share { right: 0; top: 0; }
+	body > header nav.intro { left: 0px; top: 0px; }
+	body > header nav.share { right: 0px; top: 0px; }
+	body > header nav img { height: 44px; width: 44px; }
 
 	/* INTRO */
 

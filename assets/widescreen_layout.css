@@ -2,7 +2,7 @@
 	div.sleeve, section > article, section > header, section > footer { width: 1200px; margin: auto; }
 
 	body, article                      { font: 16px/30px "Artlist-Light";	}
-	h1																 { font: 36px/98px "Artlist-Title"; letter-spacing: 1px; text-transform: uppercase; }
+	/*h1																 { font: 36px/98px "Artlist-Title"; letter-spacing: 1px; text-transform: uppercase; }*/
 	h2																 { font: 14px/64px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
 	article header										 { font: 22px/34px "Artlist-Light"; }
 	body > header nav									 { font: 14px/32px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
@@ -17,14 +17,14 @@
 
 	body > header { position: fixed; top: 0; left: 0; right: 0; z-index: 1; }
 
-	body > header, div.header_block_in_flow { height: 90px; }
+	body > header, div.header_block_in_flow { height: 80px; }
 
-	body > header h1 { margin: 0px 0px; padding: 0px 20px; border-bottom: 1px solid black; height: 89px; }
+	body > header h1 { margin: 0px; padding: 20px 20px 19px; border-bottom: 1px solid black; height: 80px; }
 
 	body > header nav {}
 	body > header nav > a { }
-	body > header nav.intro { left: auto; top: auto; right: 0px; top: 16px; }
-	body > header nav.share { left: auto; top: auto; right: 0px; bottom: 16px; }
+	body > header nav.intro { left: 0; right: auto; }
+	body > header nav.share { left: auto; right: 0;  }
 
 	/* INTRO */
 
@@ -90,7 +90,7 @@
 	div.list_container { padding-top: 180px; }
 
 	div.list.controls { position: absolute; top: 0; left: 0; right: 0; height: 180px; z-index: 1; }
-	body.index div.list.controls { position: fixed; top: 90px; }
+	body.index div.list.controls { position: fixed; top: 80px; }
 
 	div.list.controls div.sleeve { border: 1px solid transparent; margin: -1px auto; height: 180px; }
 	div.list.controls div.rules { position: absolute; top: -1px; bottom: -1px; left: 0px; right: 0px; border-bottom: 1px solid hsl(0, 0%, 33%); border-top: 1px solid hsl(0, 0%, 33%); }

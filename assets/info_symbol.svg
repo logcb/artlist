@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>info_symbol</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="info_symbol" sketch:type="MSArtboardGroup" fill="#000000">
+            <path d="M20.0150376,9 C18.9022556,9 18,9.8365019 18,10.8681876 C18,11.8719899 18.9022556,12.6806084 20.0150376,12.6806084 C21.0977444,12.6806084 22,11.8719899 22,10.8681876 C22,9.8365019 21.0977444,9 20.0150376,9 L20.0150376,9 L20.0150376,9 Z M18.3308271,31 L21.6691729,31 L21.6691729,16.4448669 L18.3308271,16.4448669 L18.3308271,31 L18.3308271,31 Z" id="i" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>
