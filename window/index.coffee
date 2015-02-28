@@ -20,6 +20,7 @@ $(document).ready ->
 $(document).ready ->
   Artlist.selection = new Artlist.Article.Selection
 
+
 # Construct persistent views when the document is ready.
 $(document).ready ->
   BodyView = require "./body_view"
@@ -35,11 +36,13 @@ $(document).ready ->
   FooterView = require "./footer_view"
   new FooterView
 
+
 # Construct the router and start the push state history system when the document is ready.
 $(document).ready ->
   Router = require "./router"
   Artlist.router = new Router
   Backbone.history.start {pushState: true}
+
 
 # Say hello to console operators.
 $(document).ready ->
