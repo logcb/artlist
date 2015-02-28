@@ -23,16 +23,28 @@ $(document).ready ->
 
 # Construct persistent views when the document is ready.
 $(document).ready ->
+  # Body view is responsible for changing the body element class list.
   BodyView = require "./body_view"
   new BodyView
+
+  # List controls accept and display the current filter input.
   ListControlsView = require "./list_controls_view"
   new ListControlsView model: Artlist.selection.filters
-  SelectedArticlesView = require "./selected_articles_view"
-  new SelectedArticlesView collection: Artlist.selection
+
+  # One view for each day in the selection range.
+  DayOfArticlesView = require "./day_of_articles_view"
+  for date in Artlist.selection.filters.get("range")
+    new DayOfArticlesView date, source: Artlist.selection
+
+  # View of pending articles.
   PendingArticlesView = require "./pending_articles_view"
   new PendingArticlesView collection: Artlist.pending
+
+  # View of trashed articles.
   TrashedArticlesView = require "./trashed_articles_view"
   new TrashedArticlesView collection: Artlist.trash
+
+  # Footer view for secret phrase input and editor permit.
   FooterView = require "./footer_view"
   new FooterView
 

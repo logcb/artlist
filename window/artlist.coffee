@@ -22,7 +22,7 @@ class Artlist.Article extends Backbone.Model
     @isTrash() is no
 
   defaults: ->
-    date: Moment(Date.now()).format("YYYY/MM/DD")
+    date: Moment(Date.now()).format("YYYY-MM-DD")
     time: "16:30"
     category: "Community"
 
@@ -41,6 +41,9 @@ class Artlist.Article extends Backbone.Model
 class Artlist.Article.Collection extends Backbone.Collection
   model: Artlist.Article
 
+  filterByDate: (date) ->
+    @filter (article) -> article.get("date") is date
+
 Artlist.index     = new Artlist.Article.Collection
 Artlist.pending   = new Artlist.Article.Collection
 Artlist.published = new Artlist.Article.Collection
@@ -51,13 +54,23 @@ Artlist.index.on "all", (event) ->
   Artlist.published.set Artlist.index.select (article) -> article.isPublished()
   Artlist.trash.set     Artlist.index.select (article) -> article.isTrash()
 
+class Artlist.Article.DateCollection extends Artlist.Article.Collection
+  constructor: (@date, options={}) ->
+    Artlist.Article.Collection::constructor.call(this)
+    @source = options.source ? Artlist.index
+    @set @source.filterByDate(@date)
+    @source.on "add remove", => @set @source.filterByDate(@date)
+
 # Search articles by query and category.
 
 class Artlist.Article.Selection extends Artlist.Article.Collection
   initialize: ->
-    @filters = new Backbone.Model {query: undefined, categories: []}
+    @filters = new Backbone.Model {query: undefined, categories: [], range: @rangeOfDates() }
     @filters.on "change", => @set Artlist.search(@filters.toJSON()), {remove:yes}
-    @set Artlist.published.toArray()
+    @set Artlist.search(@filters.toJSON())
+
+  rangeOfDates: (now=Date.now())->
+    Moment(now).add(amount, "day").format("YYYY-MM-DD") for amount in [-15...15]
 
 Artlist.search = (params={}) ->
   selection = Artlist.published.toArray()
