@@ -1,11 +1,11 @@
 # Configure Backbone to use `window.$` defined by Zepto.
 Backbone = require "backbone"
 Backbone.$ = window.$
-
-# Similar to setTimeout but with more elegant syntax, I find.
+# Similar to setTimeout but with more elegant syntax I find.
 Function.delay = (amount, procedure) -> setTimeout procedure, amount
 
-# Set a reference to Artlist on the window to receive index data and for convenience in the console.
+
+# Define a reference to Artlist on the window to receive index data and for convenience in the console.
 Artlist = window.Artlist = require "./artlist"
 
 # Construct a new selection of articles for this session after the index data has been initialized.
