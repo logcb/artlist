@@ -3,25 +3,25 @@ body * { text-rendering: "geometricPrecision"; }
 
 @font-face {
   font-family: Artlist-Medium;
-  src: url(MaisonNeue-Medium.ttf);
+  src: url(fonts/MaisonNeue-Medium.ttf);
 }
 
 @font-face {
   font-family: Artlist-Light;
-  src: url(MaisonNeue-Light.ttf);
+  src: url(fonts/MaisonNeue-Light.ttf);
 }
 
 @font-face {
   font-family: Artlist-Bold;
-  src: url(MaisonNeue-Bold.ttf);
+  src: url(fonts/MaisonNeue-Bold.ttf);
 }
 
 @font-face {
   font-family: Artlist-Demi;
-  src: url(MaisonNeue-Demi.ttf);
+  src: url(fonts/MaisonNeue-Demi.ttf);
 }
 
 @font-face {
   font-family: Artlist-Mono;
-  src: url(MaisonNeue-Mono.ttf);
+  src: url(fonts/MaisonNeue-Mono.ttf);
 }
