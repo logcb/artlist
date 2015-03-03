@@ -9,30 +9,29 @@ class Router extends Backbone.Router
   routes: {"": "index", "intro": "intro", "post": "post"}
 
   initialize: ->
+    @bookmarks = $("section.intro, section.post, div.list.controls").toArray()
     $(document).on "click", "a[href^='/']", @localHyperlinkWasActivated
+    $(document).on "scroll", @documentWasScrolled
     @on "route", (bookmark) -> console.info "Routed to #{bookmark}"
     @once "route", -> document.body.classList.remove("loading")
+
+  scrollTo: (section) ->
+    window.scrollTo 0, $(section).offset().top - $("body > header").height()
 
   index: ->
     console.info "Rendering index", @params()
     document.body.classList.add("index")
-    $(document).off "scroll", @returnToIndexWhenListIsInView
-    window.scrollTo(0,0)
+    @scrollTo("div.list.controls")
 
   intro: ->
     console.info "Rendering intro"
     document.body.classList.remove("index")
-    # new ReadIntroView
-    window.scrollTo(0,0)
-    $(document).on "scroll", @returnToIndexWhenListIsInView
+    @scrollTo("section.intro")
 
   post: () ->
     console.info "Rendering post an event", @params()
     document.body.classList.remove("index")
-    # article = new Artlist.Article
-    # new WriteArticleView model: article
-    window.scrollTo(0,0)
-    $(document).on "scroll", @returnToIndexWhenListIsInView
+    @scrollTo("section.post")
 
   params: (url=window.location) ->
     params = {}
@@ -45,6 +44,12 @@ class Router extends Backbone.Router
   localHyperlinkWasActivated: (event) =>
     event.preventDefault()
     @navigate event.currentTarget.getAttribute("href"), {trigger: yes}
+
+  documentWasScrolled: (event) =>
+    # console.info window.scrollY, $("section.intro").offset().top
+    # console.info window.scrollY, $("section.post").offset().top
+    # filtered = @bookmarks.filter (bookmark) -> window.scrollY >= ($(bookmark).offset().top - $("body > header").height())
+    # console.info filtered
 
   returnToIndexWhenListIsInView: (event) =>
     if window.scrollY > ($("div.list_container").offset().top - $("body > header").height())
