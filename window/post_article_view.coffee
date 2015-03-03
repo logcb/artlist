@@ -9,11 +9,10 @@ class PostArticleView extends Backbone.View
   initialize: ->
     @article = new Artlist.Article
     @render()
-    @activate()
+    # @activate()
 
   events:
-    "input div.string.attribute": "stringInputWasChanged"
-    "input div.time.attribute": "timeInputWasChanged"
+    "input div.attribute": "attributeInputWasChanged"
     "submit": "formWasSubmitted"
 
   render: =>
@@ -22,18 +21,15 @@ class PostArticleView extends Backbone.View
 
   activate: =>
     @el.classList.add("activated")
-    # @el.scrollIntoView()
     $(@el).on "transitionend", (event) =>
       if event.target is @el and event.propertyName is "height"
         @el.querySelector("input[name=title]").focus()
-        Backbone.history.once "route", @deactivateOnReturnToIndex
         @article.on "invalid", @focusInvalidAttribute
 
   deactivate: =>
     Backbone.history.off "route", @deactivateOnReturnToIndex
     $(@el).off()
     @article.off "invalid", @focusInvalidAttribute
-    # @el.innerHTML = ""
     $(@el).removeClass "activated"
 
   commit: (event) ->
@@ -41,18 +37,14 @@ class PostArticleView extends Backbone.View
     @article.once "sync", => Artlist.index.add(@article)
     @article.once "sync", => Artlist.router.navigate("/", {trigger: yes})
 
-  stringInputWasChanged: (event) ->
-    @article.set event.target.name, event.target.value.trim()
-
-  timeInputWasChanged: (event) ->
-    @article.set event.target.name, @formatInputTimeForModel(event.target.value.trim())
+  attributeInputWasChanged: (event) ->
+    value = event.target.value.trim()
+    value = @formatInputTimeForModel(value) if event.target.name is "time"
+    @article.set event.target.name, value
 
   formWasSubmitted: (event) ->
     event.preventDefault()
     @commit(event)
-
-  deactivateOnReturnToIndex: (router, destination) =>
-    @deactivate() if destination is "index"
 
   focusInvalidAttribute: (article, error) =>
     [attributeName, message] = error

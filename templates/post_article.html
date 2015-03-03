@@ -9,60 +9,55 @@
 
   <form class="new event">
     <div class="title string attribute">
-      <label>Event Title:</label>
-      <input type="string" name="title" value="<%= @article.title %>" placeholder="Little Big Show">
+      <label>Event Title: <input type="string" name="title" value="<%= @article.title %>" placeholder="Little Big Show"></label>
     </div>
 
     <div class="venue string attribute">
-      <label>Venue:</label>
-      <input type="string" name="venue" value="<%= @article.venue %>" placeholder="The Teeney Tiny Theatre">
+      <label>Venue: <input type="string" name="venue" value="<%= @article.venue %>" placeholder="The Teeney Tiny Theatre"></label>
     </div>
 
     <div class="address string attribute">
-      <label>Address:</label>
-      <input type="string" name="address" value="<%= @article.address %>" placeholder="123 Small Street">
+      <label>Address: <input type="string" name="address" value="<%= @article.address %>" placeholder="123 Small Street"></label>
     </div>
 
     <div class="date string attribute">
-      <label>Date:</label>
-      <input type="string" name="date" value="<%= @article.date %>">
+      <label>Date: <input type="string" name="date" value="<%= @article.date %>"></label>
     </div>
+
     <div class="time string attribute">
-      <label>Time:</label>
-      <input type="string" name="time" value="<%= @formatModelTimeForInput @article.time %>">
+      <label>Time: <input type="string" name="time" value="<%= @formatModelTimeForInput @article.time %>"></label>
     </div>
-    <div class="category attribute">
-      <label>Category:</label>
-      <select class="one category">
-        <option >Comedy</option>
-        <option >Community</option>
-        <option >Dance</option>
-        <option >Film</option>
-        <option >Food</option>
-        <option >Literature</option>
-        <option >Music</option>
-        <option >Theatre</option>
-        <option >Visual Art</option>
-      </select>
+
+    <div class="category string attribute">
+      <label>Category:
+        <select class="one category" name="category">
+          <option >Comedy</option>
+          <option >Community</option>
+          <option >Dance</option>
+          <option >Film</option>
+          <option >Food</option>
+          <option >Literature</option>
+          <option >Music</option>
+          <option >Theatre</option>
+          <option >Visual Art</option>
+        </select>
+      </label>
     </div>
 
     <div class="cost string attribute">
-      <label>Cost:</label>
-      <input type="string" name="cost" value="<%= @article.cost %>" placeholder="Free">
+      <label>Cost: <input type="string" name="cost" value="<%= @article.cost %>" placeholder="Free"></label>
     </div>
 
-    <div class="description string attribute">
-      <label>Description:</label>
-      <textarea name="description"></textarea>
+    <div class="description text attribute">
+      <label>Description: <textarea name="description"></textarea></label>
     </div>
 
-    <div class="web_address url attribute">
-      <label>Event URL:</label>
-      <input name="web_address" type="url" placeholder="https://example.com/">
+    <div class="web_address url string attribute">
+      <label>Event URL: <input name="web_address" type="url" placeholder="https://example.com/"></label>
     </div>
 
     <div class="commit">
-      <button>Send Event</button> to THE ARTLIST
+      <button>Post this Event</button> to THE ARTLIST
     </div>
   </form>
 

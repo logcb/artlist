@@ -4,7 +4,7 @@
 	body { font: 15px/25px "Artlist-Light";	}
 	article header, section.post input, section.post select { font-size: 22px; }
 	h2, div.list.controls { font-size: 14px; }
-	section.post label { font-size: 14px; }
+	section.post label { font-size: 12px; }
 
 	/* HEADER */
 
@@ -22,63 +22,25 @@
 	/* POST AN EVENT */
 
 	section.post { padding: 25px 0; }
-	/*section.post form { margin: 0 25% 0 0; }*/
-	section.post .title.attribute { margin: 0 50% 0 0; clear: both; }
-	section.post .venue.attribute { margin: 0 50% 0 0; clear: both; }
-	section.post .address.attribute { margin: 0 50% 0 0; clear: both; }
-	section.post .description.attribute { width: 75%; clear: both; }
+	section.post header { margin: 0px -30px; padding: 20px 30px 0; }
+	section.post .attribute { height: 50px; }
+	section.post .attribute label { height: 50px; line-height: 22px; }
+	section.post .string.attribute input { position: absolute; bottom: 2px; line-height: 30px; height: 28px;}
+	section.post .string.attribute select { position: absolute; bottom: 2px; line-height: 30px; height: 28px;}
+	section.post .title.attribute { margin: 10px 50% 0px 0; }
+	section.post .venue.attribute { margin: 10px 50% 0px 0; }
+	section.post .address.attribute { margin: 10px 50% 0px 0; }
+	section.post .date.attribute { width: 25%; margin: 10px 0 0; float:left; clear: left; }
+	section.post .date.attribute label { margin-right: 30px; }
+	section.post .time.attribute { width: 12.5%; float:left; margin: 10px 0 0; }
+	section.post .category.attribute { width: 25%; margin: 10px 0 0; float:left; clear: left;}
+	section.post .category.attribute label { margin-right: 30px; }
+	section.post .cost.attribute { width: 12.5%; float:left; margin: 10px 0 0; }
+	section.post .description.attribute { width: 75%; margin: 10px 0 0; float:left; clear: both; height: 120px; }
+	section.post .description.attribute label { height: auto; }
 	section.post .web_address.attribute { width: 75%; clear: both; }
-	section.post .date.attribute { width: 25%; float:left; clear: left;}
-	section.post .time.attribute { width: 12.5%; float:left; }
-	section.post .category.attribute { width: 25%; float:left; clear: left;}
-	section.post .cost.attribute { width: 12.5%; float:left; }
-
-	/*section.post div.attribute > label { font: 22px/64px "Artlist-Medium"; display: block; position: absolute; box-sizing: border-box; height: 60px; width: 100%; }
-	section.post div.attribute > input { font: 22px/64px "Artlist-Medium"; display: block; position: absolute; box-sizing: border-box; height: 60px; width: 100%; }*/
-	/*section.post input:focus { outline: transparent; }*/
-	/*section.post textarea:focus { outline: transparent; }*/
-
-	/*section.post div.attribute	{ height: 59px; border-bottom: 1px dotted hsl(0, 0%, 33%); }
-	section.post div.attribute > input {left: 0; right: 0; top: 0; text-indent: 100px; }*/
-
-	/*div.write div.title			 { width: 50%; }
-	div.write div.cost				{ position: absolute; left: 50%; right: 0; top: 0px; }
-	div.write div.venue			 { width: 50%; }
-	div.write div.address		 { position: absolute; left: 50%; right: 0; top: 60px; }
-	div.write div.date				{ width: 50%; }
-	div.write div.start.time	{ position: absolute; left: 50%; right: 0; top: 120px; }
-	div.write div.select.one.category { height: 120px; }
-	div.write div.description { height: auto; padding-bottom: 20px; }
-	div.write div.web_address { height: auto; padding-bottom: 20px; }
-
-	div.write div.title input { text-indent: 75px; }
-	div.write div.venue input { text-indent: 75px; }
-	div.write div.date input	{ text-indent: 75px; }
-
-	div.write div.description > label { position: relative; }
-	div.write div.description > textarea { height: 120px; width: 75%; font: 16px/30px "Artlist-Light"; padding: 5px; display: block; border: 1px dotted hsl(0, 0%, 33%); box-sizing: border-box; background: transparent; }
-
-	div.write div.web_address > label { position: relative; }
-	div.write div.web_address > input { position: relative; height: 40px; font: 16px/30px "Artlist-Light"; text-indent: 0; width: 100%; padding: 5px; display: block; border: 1px dotted hsl(0, 0%, 33%); box-sizing: border-box; background: transparent; }*/
-
-
-
-	/*div.write div.select > div.category { position:absolute; top:0; left: 0; width: 25%;	}
-	div.write div.select > div.category label { position:absolute; font: 15px/33px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; height: 30px; top:0; left: 0; right: 20px; text-indent: 20px; display: block; }
-	div.write div.select > div.category input { position:absolute; height: 20px; width: 20px; top:5px; left: 0px; margin: 0; }
-	div.write div.select > div.category svg { position:absolute; top:0; display: none; }
-	div.write div.select > div.comedy.category		 { left: 25%; top: 15px; }
-	div.write div.select > div.community.category	{ left: 25%; top: 45px; }
-	div.write div.select > div.dance.category			{ left: 25%; top: 75px; }
-	div.write div.select > div.film.category			 { left: 50%; top: 15px; }
-	div.write div.select > div.food.category			 { left: 50%; top: 45px; }
-	div.write div.select > div.literature.category { left: 50%; top: 75px; }
-	div.write div.select > div.music.category			{ left: 75%; top: 15px; }
-	div.write div.select > div.theatre.category		{ left: 75%; top: 45px; }
-	div.write div.select > div.visual_art.category { left: 75%; top: 75px; }
-
-	div.write div.commit	{ height: 59px; margin: -1px -30px 0px; border-top: 1px solid black; border-bottom: 1px solid black; }
-	div.write div.commit button { position: absolute; top: 15px; height: 30px; padding: 0; left: 30px; }*/
+	section.post .commit { height: 30px; margin: 20px 0 0; }
+	section.post button { padding: 0px 5px; height: 26px; }
 
 	/* LIST CONTROLS */
 
