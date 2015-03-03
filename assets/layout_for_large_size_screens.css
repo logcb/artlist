@@ -14,7 +14,8 @@
 
 	/* INTRO */
 
-	div.intro div.box { padding: 30px 0; width: 75%; }
+	div.intro section { padding: 30px 0; }
+	div.intro p { width: 75%; }
 	div.intro p + p { margin-top: 10px; }
 
 	/* WRITE */
