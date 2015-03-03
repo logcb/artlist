@@ -2,7 +2,7 @@
 	div.sleeve, section { width: 1200px; margin: auto; }
 
 	body { font: 15px/25px "Artlist-Light";	}
-	article header { font: 22px/34px "Artlist-Light"; }
+	article header { font-size: 22px; }
 	h2, div.list.controls { font-size: 14px; }
 
 	/* HEADER */
@@ -20,12 +20,7 @@
 
 	/* POST AN EVENT */
 
-	/*body > div.write { height: 0px; }
-	body > div.write.activated { height: 800px; transition: height ease-out 360ms; }*/
-
 	section.post { padding: 25px 0; }
-
-
 	section.post div.attribute > label { font: 22px/64px "Artlist-Medium"; display: block; position: absolute; box-sizing: border-box; height: 60px; width: 100%; }
 	section.post div.attribute > input { font: 22px/64px "Artlist-Medium"; display: block; position: absolute; box-sizing: border-box; height: 60px; width: 100%; }
 	section.post input:focus { outline: transparent; }
@@ -116,7 +111,7 @@
 	article div.box { margin: 0;}
 	article.compacted { height: 59px; }
 	article.activated { height: auto; }
-	article header { height: 60px; border-top: 1px dotted black; }
+	article header { height: 60px; line-height: 34px; border-top: 1px dotted black; }
 	article div.title_and_venue { position: absolute; margin: 0 0 0 0; padding: 15px 20px; bottom: auto; top: 0; left: 0; right: 25%; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
 	article div.title_and_venue > div { display: inline; position: relative; top: auto; bottom: auto;	height: 25px; }
 	article div.title { padding: 0; text-indent: 0; }
