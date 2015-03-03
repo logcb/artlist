@@ -1,13 +1,14 @@
 Backbone = require "backbone"
 Artlist = require "./artlist"
 
-class WriteArticleView extends Backbone.View
+class PostArticleView extends Backbone.View
   module.exports = this
 
-  el: "div.write"
+  el: "body > div.post"
 
   initialize: ->
     @article = new Artlist.Article
+    @render()
     @activate()
 
   events:
@@ -20,7 +21,6 @@ class WriteArticleView extends Backbone.View
     @el.innerHTML = template({@formatModelTimeForInput, article: @article.toJSON()})
 
   activate: =>
-    @render()
     @el.classList.add("activated")
     # @el.scrollIntoView()
     $(@el).on "transitionend", (event) =>
@@ -33,7 +33,7 @@ class WriteArticleView extends Backbone.View
     Backbone.history.off "route", @deactivateOnReturnToIndex
     $(@el).off()
     @article.off "invalid", @focusInvalidAttribute
-    @el.innerHTML = ""
+    # @el.innerHTML = ""
     $(@el).removeClass "activated"
 
   commit: (event) ->
