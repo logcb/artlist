@@ -31,13 +31,8 @@
       <label>Time:</label>
       <input type="string" name="time" value="<%= @formatModelTimeForInput @article.time %>">
     </div>
-    <div class="cost string attribute">
-      <label>Cost:</label>
-      <input type="string" name="cost" value="<%= @article.cost %>" placeholder="Free">
-    </div>
-
     <div class="category attribute">
-      <label>Categorize this event</label>
+      <label>Category:</label>
       <select class="one category">
         <option >Comedy</option>
         <option >Community</option>
@@ -51,13 +46,18 @@
       </select>
     </div>
 
+    <div class="cost string attribute">
+      <label>Cost:</label>
+      <input type="string" name="cost" value="<%= @article.cost %>" placeholder="Free">
+    </div>
+
     <div class="description string attribute">
       <label>Description:</label>
       <textarea name="description"></textarea>
     </div>
 
     <div class="web_address url attribute">
-      <label>Link to event page:</label>
+      <label>Event URL:</label>
       <input name="web_address" type="url" placeholder="https://example.com/">
     </div>
 

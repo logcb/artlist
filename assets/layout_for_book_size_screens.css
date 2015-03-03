@@ -44,6 +44,8 @@
   section.post > footer { padding: 0 0 22px; }
   section.post form { margin: 0px 0px 0px 25%;  }
 
+  section.post label { font-size: 11px; }
+
   /*form.new.event div.attribute { margin: 12px; }*/
   form.new.event .date.attribute { width: 25%; float:left; }
   form.new.event .time.attribute { width: 25%; float:left; }
