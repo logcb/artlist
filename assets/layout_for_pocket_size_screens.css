@@ -23,14 +23,15 @@
   body > header nav.share { right: 0px; top: 0px; }
   body > header nav img { height: 44px; width: 44px; }
 
-  /* INTRO */
+  /* INTRODUCTION */
 
-  div.intro div.box { padding: 18px 12px; }
-  div.intro p + p { margin-top: 12px; }
+  section.intro { padding: 18px 12px; }
+  section.intro p + p { margin-top: 12px; }
 
-  /* WRITE */
+  /* POST AN EVENT */
 
-  div.write > header p { margin: 12px; }
+  section.post { padding: 18px 12px; }
+  section.post > header p { margin: 12px; }
 
   form.new.event { margin: 12px; }
   form.new.event label { font: 9px/10px "Artlist-Light"; }

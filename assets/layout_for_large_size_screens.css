@@ -14,24 +14,25 @@
 
 	/* INTRODUCTION */
 
-	div.intro section { padding: 25px 0; }
-	div.intro p { width: 75%; }
-	div.intro p + p { margin-top: 10px; }
+	section.intro { padding: 25px 0; }
+	section.intro p { width: 75%; }
+	section.intro p + p { margin-top: 10px; }
 
 	/* POST AN EVENT */
 
+	/*body > div.write { height: 0px; }
+	body > div.write.activated { height: 800px; transition: height ease-out 360ms; }*/
+
 	section.post { padding: 25px 0; }
 
-	body > div.write { height: 0px; }
-	body > div.write.activated { height: 800px; transition: height ease-out 360ms; }
 
-	div.write div.attribute > label { font: 22px/64px "Artlist-Medium"; display: block; position: absolute; box-sizing: border-box; height: 60px; width: 100%; }
-	div.write div.attribute > input { font: 22px/64px "Artlist-Medium"; display: block; position: absolute; box-sizing: border-box; height: 60px; width: 100%; }
-	div.write input:focus { outline: transparent; }
-	div.write textarea:focus { outline: transparent; }
+	section.post div.attribute > label { font: 22px/64px "Artlist-Medium"; display: block; position: absolute; box-sizing: border-box; height: 60px; width: 100%; }
+	section.post div.attribute > input { font: 22px/64px "Artlist-Medium"; display: block; position: absolute; box-sizing: border-box; height: 60px; width: 100%; }
+	section.post input:focus { outline: transparent; }
+	section.post textarea:focus { outline: transparent; }
 
-	div.write div.attribute	{ height: 59px; border-bottom: 1px dotted hsl(0, 0%, 33%); }
-	div.write div.attribute > input {left: 0; right: 0; top: 0; text-indent: 100px; }
+	section.post div.attribute	{ height: 59px; border-bottom: 1px dotted hsl(0, 0%, 33%); }
+	section.post div.attribute > input {left: 0; right: 0; top: 0; text-indent: 100px; }
 
 	/*div.write div.title			 { width: 50%; }
 	div.write div.cost				{ position: absolute; left: 50%; right: 0; top: 0px; }

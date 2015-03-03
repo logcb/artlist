@@ -28,18 +28,21 @@
   body > header nav.share { right: 0px; top: 20px; }
   body > header nav img.icon { border: 1px solid hsla(0, 0%, 0%, 0.33); box-sizing: border-box; display: block; }
 
-  /* INTRO */
+  /* INTRODUCTION */
 
-  div.intro.opening, div.intro.closing { transition: height linear; }
-  div.intro div.box { padding: 30px 20px; }
-  div.intro p + p { margin-top: 20px; }
+  section.intro > header { padding: 22px 0 0; }
+  section.intro h2 { position: absolute; }
+  section.intro p { margin: 0px 0px 0px 25%;  }
+  section.intro p + p { margin-top: 11px; }
+  section.intro > footer { padding: 0 0 22px; }
 
-  /* WRITE */
+  /* POST AN EVENT */
 
-  div.write > header p { margin: 20px; }
-
-  form.new.event { margin: 20px; }
-
+  section.post > header { padding: 22px 0 0; }
+  section.post > header h2 { position: absolute; }
+  section.post > header p { margin: 0px 0px 0px 25%;  }
+  section.post > footer { padding: 0 0 22px; }
+  section.post form { margin: 0px 0px 0px 25%;  }
 
   /*form.new.event div.attribute { margin: 12px; }*/
   form.new.event .date.attribute { width: 25%; float:left; }
