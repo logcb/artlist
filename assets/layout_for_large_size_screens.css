@@ -5,7 +5,6 @@
 	article header { font: 22px/34px "Artlist-Light"; }
 	h2, div.list.controls { font-size: 14px; }
 
-
 	/* HEADER */
 
 	body > header, div.header_block_in_flow { height: 80px; }
@@ -79,16 +78,16 @@
 	div.list.controls div.sleeve { border: 1px solid transparent; margin: -1px auto; height: 180px; }
 	div.list.controls div.rules { position: absolute; top: -1px; bottom: -1px; left: 0px; right: 0px; border-bottom: 1px solid hsl(0, 0%, 33%); border-top: 1px solid hsl(0, 0%, 33%); }
 
-	div.list.controls div.search { position: absolute; top: 15px; left: 0; right: 50%; margin: 0 20px 0 0; padding: 0; line-height: 30px; }
+	div.list.controls div.search { position: absolute; top: 15px; left: 0; right: 50%; margin: 0 20px 0 0; height: 30px; line-height: 30px; }
 	div.list.controls div.search label { }
-	div.list.controls div.search input { text-indent: 75px; margin: 0px -5px; height: 28px; line-height: 30px; }
+	div.list.controls div.search input { text-indent: 70px; outline-offset: 2px; height: 30px; line-height: 30px; width: 100%; position: absolute; left: 0; right: 0;}
 
 	div.list.controls hr { display: none; }
 
 	div.list.controls div.categories { position: absolute; right: 0; top: 15px; bottom: 15px; left: 50%; margin: 0; }
 	div.list.controls div.categories > * { position: absolute; display:block; width: 50%; height: 30px; line-height: 30px; }
 	div.list.controls div.categories label { position: absolute; display:block; text-indent: 15px; }
-	div.list.controls div.categories h4												{ left: 0; top: 0px; }
+	div.list.controls div.categories h4 { left: 0; top: 0px; }
 	div.list.controls div.categories label.comedy		 { left: 00%; top: 30px; }
 	div.list.controls div.categories label.community	{ left: 00%; top: 60px; }
 	div.list.controls div.categories label.dance			{ left: 00%; top: 90px; }
