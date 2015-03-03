@@ -1,7 +1,7 @@
 <section class="pending">
   <header>
-    <h2><%= @articles.length  %> pending events</h2>
-    <p>These events were posted by visitors and are awaiting your review.</p>
+    <h2>Pending events</h2>
+    <p><%= @articles.length  %> new events are awaiting editorial review.</p>
   </header>
   <% for article in @articles: %>
     <article class="compacted" id="<%= article.id %>">

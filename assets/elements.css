@@ -1,0 +1,143 @@
+@font-face { font-family: Artlist-Medium; src: url(fonts/MaisonNeue-Medium.ttf); }
+@font-face { font-family: Artlist-Light;  src: url(fonts/MaisonNeue-Light.ttf);  }
+@font-face { font-family: Artlist-Bold;   src: url(fonts/MaisonNeue-Bold.ttf);   }
+@font-face { font-family: Artlist-Demi;   src: url(fonts/MaisonNeue-Demi.ttf);   }
+@font-face { font-family: Artlist-Mono;   src: url(fonts/MaisonNeue-Mono.ttf);   }
+
+
+
+
+h1, h2, h3, h4, h5, h6, p, pre, button, input, select, textarea { font: inherit; }
+button, input, select { background: transparent; border: none; padding: none; margin: none; box-sizing: border-box; display: inline-block; }
+body, header, footer, section, article, div, h1, h2, h3, h4, h5, h6, p, pre { margin: 0; padding: 0; position: relative; }
+pre { display: block; white-space: pre-wrap; }
+
+body, div.sleeve { width: auto; margin: auto; }
+body * { text-rendering: "optimizeLegibility"; }
+body * { text-rendering: "geometricPrecision"; }
+
+a[href] { text-decoration: none; }
+a[href]:link, a[href]:visited { color: inherit; }
+
+
+body { }
+h2 { font-family: "Artlist-Bold"; text-transform: uppercase; letter-spacing: 1px; }
+
+
+/*div.write, div.intro { box-sizing: border-box; overflow: hidden; }*/
+
+article div.title, article div.location, article div.cost, article div.time { white-space: nowrap; }
+
+
+html, body > header, div.list.controls  { background-image: url(images/background.png); }
+
+body.loading * { visibility: hidden; }
+
+/* Introduction */
+
+div.intro { border-bottom: 1px solid #999; }
+
+/* New Event Form */
+
+form.new.event { outline: 1px solid transparent;}
+form.new.event div.attribute { margin: 4px 0; border-bottom: 1px dotted #aaa;}
+form.new.event label { font: 9px/10px "Artlist-Light"; }
+form.new.event textarea { display:block; border: 1px dotted #aaa; border-bottom: none;  width: 100%; background:transparent; box-sizing: border-box; padding: 0; height:88px; outline-offset: 2px;}
+form.new.event textarea:focus { border:none; }
+form.new.event select.one.category { display:block; border: none; width: 100%; padding: 0; text-indent: 0; -webkit-appearance: button; outline-offset: 2px;}
+form.new.event input[type=url]     { display:block; width: 100%; box-sizing: border-box; padding: 0; }
+form.new.event input[type=string]  { display:block; width: 100%; box-sizing: border-box; padding: 0; outline-offset: 2px;}
+
+form.new.event button { font-family: "Artlist-Demi"; }
+
+/* Document Header */
+
+body > header { position: fixed; top: 0; left: 0; right: 0; z-index: 1; overflow: hidden; }
+body > header h1 { border-bottom: 1px solid #999; }
+
+/* Info and Post buttons in the header */
+
+body > header nav { position: absolute; }
+body > header nav > a { display: block; }
+body > header nav img.icon { border: 1px solid #999; box-sizing: border-box; display: block; }
+
+/* Category Icons */
+
+svg[alt="Comedy"] circle { fill: #F4E600; stroke: #F4E600; }
+svg[alt="Community"] circle { fill: #943390; stroke: #943390; }
+svg[alt="Dance"] circle { fill: #8FC442; stroke: #8FC442; }
+svg[alt="Film"] circle { fill: #58AFE1; stroke: #58AFE1; }
+svg[alt="Food"] circle { fill: #EE589C; stroke: #EE589C; }
+svg[alt="Literature"] circle { fill: #2F449F; stroke: #2F449F; }
+svg[alt="Music"] circle { fill: #E83E25; stroke: #E83E25; }
+svg[alt="Theatre"] circle { fill: #F9A449; stroke: #F9A449; }
+svg[alt="Visual Art"] circle { fill: #357034; stroke: #357034; }
+
+svg.category circle { stroke-width: 0; }
+
+label svg circle { transition: fill 300ms linear, stroke-width 150ms linear; stroke-width: 0; }
+label.excluded:not(:hover) svg circle { fill: #ccc; }
+label.excluded:hover svg circle { transition: stroke-width 150ms linear; }
+label.included svg circle { stroke-width: 5; }
+
+
+/* List Controls */
+
+div.list.controls div.categories { margin: 10px 20px; height: 90px; }
+div.list.controls div.categories > * { width: 25%; height: 30px; }
+div.list.controls div.categories label { position: absolute; display:block; text-indent: 15px; }
+div.list.controls div.categories svg { position: absolute; height: 20px; width: 20px; top: 5px; left: -5px; }
+div.list.controls div.categories label input { display: none; }
+
+
+/* Sections */
+
+section > header {  }
+section.day > header h2 { border-top: 1px solid #999; border-bottom: 1px solid #999;}
+section.day > header h2 .month_and_date { color: #999; font-family: "Artlist-Light" }
+
+/* Articles */
+
+article { overflow: hidden; }
+article header { color: hsl(0, 0%, 33%); }
+article div.title, article div.time { color: black; }
+article div.title, article div.time, article div.web_address a { font-family: "Artlist-Medium"; }
+
+/* Pending Articles */
+
+div.pending_articles { background: hsl(0, 0%, 88%);}
+section.pending { border-top: 1px solid #999; }
+section.pending > header { padding: 20px 0; }
+section.pending > header h2 { font-family: "Artlist-Bold"; text-transform: uppercase; letter-spacing: 1px; line-height: 20px; }
+section.pending > header p { line-height: 20px; line-height: 20px; }
+
+/* Trashed Articles */
+
+div.trashed_articles { background: hsl(0, 0%, 66%);}
+section.trashed { border-top: 1px solid #999; }
+section.trashed > header { padding: 20px 0; }
+section.trashed > header h2 { font-family: "Artlist-Bold"; text-transform: uppercase; letter-spacing: 1px; line-height: 20px; }
+section.trashed > header p { line-height: 20px; line-height: 20px; }
+
+
+/* Document Footer */
+
+body > footer div.box { border-top: 1px solid #999; }
+
+body > footer img { display:block; margin: auto; padding: 12px; }
+
+body > footer, body > footer * { font: 16px/22px "Artlist-Light"; }
+body > footer input { font-family: "Artlist-Bold"; }
+
+body > footer div.editor.controls { border: 1px solid #999; background: hsl(0, 0%, 88%); height: 0px; overflow: hidden;  }
+body > footer div.editor.controls.activated { height: 88px; }
+
+body         > footer form.new.permit { height: 88px; margin-top: 0px; transition: margin-top 333ms ease-out; }
+body.editing > footer form.new.permit { margin-top: -88px; transition: margin-top 333ms ease-out; }
+
+body > footer label { display:block; padding: 22px; text-align: center; }
+body > footer input.secret_phrase { display: block; width: 400px; height: 28px; margin: 0 auto 0; text-align: center; padding: 4px 0; background: white; border: 1px solid hsla(0, 0%, 0%, 0.33); }
+body > footer input.secret_phrase:disabled { background: transparent; color: hsla(0, 0%, 0%, 0.33); }
+
+body > footer div.session { text-align: center; padding: 22px; }
+body > footer div.session a.exit { text-decoration: underline; cursor: pointer; }

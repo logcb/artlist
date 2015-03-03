@@ -1,0 +1,76 @@
+<div class="sleeve">
+<header>
+  <h2>Post An Event</h2>
+  <p>
+    Fill in the following form to post an event to THE ARTLIST.
+    We’ll review your event shortly and publish it if it is suitable.
+  </p>
+</header>
+
+<form class="new event">
+  <div class="title string attribute">
+    <label>Event Title:</label>
+    <input type="string" name="title" value="<%= @article.title %>" autofocus placeholder="Little Big Show">
+  </div>
+
+  <div class="venue string attribute">
+    <label>Venue:</label>
+    <input type="string" name="venue" value="<%= @article.venue %>" placeholder="The Teeney Tiny Theatre">
+  </div>
+
+  <div class="address string attribute">
+    <label>Address:</label>
+    <input type="string" name="address" value="<%= @article.address %>" placeholder="123 Small Street">
+  </div>
+
+  <div class="date string attribute">
+    <label>Date:</label>
+    <input type="string" name="date" value="<%= @article.date %>">
+  </div>
+  <div class="time string attribute">
+    <label>Time:</label>
+    <input type="string" name="time" value="<%= @formatModelTimeForInput @article.time %>">
+  </div>
+  <div class="cost string attribute">
+    <label>Cost:</label>
+    <input type="string" name="cost" value="<%= @article.cost %>" placeholder="Free">
+  </div>
+
+  <div class="category attribute">
+    <label>Categorize this event</label>
+    <select class="one category">
+      <option >Comedy</option>
+      <option >Community</option>
+      <option >Dance</option>
+      <option >Film</option>
+      <option >Food</option>
+      <option >Literature</option>
+      <option >Music</option>
+      <option >Theatre</option>
+      <option >Visual Art</option>
+    </select>
+  </div>
+
+  <div class="description string attribute">
+    <label>Description:</label>
+    <textarea name="description"></textarea>
+  </div>
+
+  <div class="web_address url attribute">
+    <label>Link to event page:</label>
+    <input name="web_address" type="url" placeholder="https://example.com/">
+  </div>
+
+
+  <div class="commit">
+    <button>Send Event</button> to THE ARTLIST
+  </div>
+</form>
+
+<footer hidden>
+  <p>
+    Thanks for sending us this event!
+    <a href="Send Another"</a>
+  </p>
+</footer>
+</div>

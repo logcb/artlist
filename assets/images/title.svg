@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="240px" height="40px" viewBox="0 0 240 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<svg width="218px" height="40px" viewBox="0 0 218 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
     <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
     <title>title</title>
     <desc>Created with Sketch.</desc>
@@ -7,7 +7,7 @@
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
         <g id="title" sketch:type="MSArtboardGroup" font-weight="420" font-family="BaseNine" fill="#000000" font-size="36" sketch:alignment="middle">
             <text id="THE-ARTLIST" sketch:type="MSTextLayer">
-                <tspan x="10.448" y="33">THE ARTLIST</tspan>
+                <tspan x="-0.552" y="33">THE ARTLIST</tspan>
             </text>
         </g>
     </g>

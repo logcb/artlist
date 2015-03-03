@@ -27,6 +27,14 @@ $(document).ready ->
   BodyView = require "./body_view"
   new BodyView
 
+  # Intro view is responsible for changing opening and closing the intro section.
+  IntroView = require "./intro_view"
+  new IntroView
+
+  # Post article view constructs an article from input and posts the data to the remote host.
+  PostArticleView = require "./post_article_view"
+  new PostArticleView
+
   # List controls accept and display the current filter input.
   ListControlsView = require "./list_controls_view"
   new ListControlsView model: Artlist.selection.filters

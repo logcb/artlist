@@ -1,7 +1,7 @@
 Backbone = require "backbone"
 Artlist = require "./artlist"
-ReadIntroView = require "./read_intro_view"
-WriteArticleView = require "./write_article_view"
+# ReadIntroView = require "./read_intro_view"
+# WriteArticleView = require "./write_article_view"
 
 class Router extends Backbone.Router
   module.exports = this
@@ -22,15 +22,15 @@ class Router extends Backbone.Router
   intro: ->
     console.info "Rendering intro"
     document.body.classList.remove("index")
-    new ReadIntroView
+    # new ReadIntroView
     window.scrollTo(0,0)
     $(document).on "scroll", @returnToIndexWhenListIsInView
 
   post: () ->
     console.info "Rendering post an event", @params()
     document.body.classList.remove("index")
-    article = new Artlist.Article
-    new WriteArticleView model: article
+    # article = new Artlist.Article
+    # new WriteArticleView model: article
     window.scrollTo(0,0)
     $(document).on "scroll", @returnToIndexWhenListIsInView
 

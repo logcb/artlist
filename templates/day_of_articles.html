@@ -1,5 +1,8 @@
 <header>
-  <h2><strong><%= @moment("#{@date}", "YYYY-MM-DD").format("dddd") %></strong>, <%= @moment("#{@date}", "YYYY-MM-DD").format("MMM D") %></h2>
+  <h2>
+    <strong class="day_of_week"><%= @moment("#{@date}", "YYYY-MM-DD").format("dddd") %></strong>
+    <span class="month_and_date"><%= @moment("#{@date}", "YYYY-MM-DD").format("MMMM D") %><span>
+  </h2>
 </header>
 <% for article in @articles: %>
   <article class="compacted" id="ART<%= article.id %>">
