@@ -4,9 +4,6 @@
 @font-face { font-family: Artlist-Demi;   src: url(fonts/MaisonNeue-Demi.ttf);   }
 @font-face { font-family: Artlist-Mono;   src: url(fonts/MaisonNeue-Mono.ttf);   }
 
-
-
-
 h1, h2, h3, h4, h5, h6, p, pre, button, input, select, textarea { font: inherit; }
 button, input, select { background: transparent; border: none; padding: none; margin: none; box-sizing: border-box; display: inline-block; }
 body, header, footer, section, article, div, h1, h2, h3, h4, h5, h6, p, pre { margin: 0; padding: 0; position: relative; }
@@ -15,12 +12,12 @@ pre { display: block; white-space: pre-wrap; }
 a[href] { text-decoration: none; }
 a[href]:link, a[href]:visited { color: inherit; }
 
-body { font-family: "Artlist-Light"; }
-h2 { font-family: "Artlist-Demi"; text-transform: uppercase; letter-spacing: 1px; }
-
 article div.title, article div.location, article div.cost, article div.time { white-space: nowrap; }
 
 html, body > header, div.list.controls  { background-image: url(images/background.png); }
+
+body { font-family: "Artlist-Light"; }
+h2 { font-family: "Artlist-Demi"; text-transform: uppercase; letter-spacing: 1px; }
 
 body.loading * { visibility: hidden; }
 

@@ -1,8 +1,9 @@
 @media screen and (min-width: 1200px)  {
 	div.sleeve, section { width: 1200px; margin: auto; }
 
-	body                      { font: 16px/25px "Artlist-Light";	}
-	article header										 { font: 22px/34px "Artlist-Light"; }
+	body { font: 15px/25px "Artlist-Light";	}
+	article header { font: 22px/34px "Artlist-Light"; }
+	h2 { font-size: 14px; }
 
 	div.list.controls div.search			 { font: 14px/32px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
 	div.list.controls div.search input { font: 14px/30px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
@@ -106,7 +107,7 @@
 	/* LIST */
 
 
-	section > header { margin: 0px auto -1px;}
+	section.day > header h2 { margin: 0px -30px -1px; padding: 0px 30px; height: 60px; line-height: 62px; }
 	/*section.day h2 { font-family: "Artlist-Bold"; text-transform: uppercase; letter-spacing: 1px; line-height: 20px; }*/
 
 	/* ARTICLE */
