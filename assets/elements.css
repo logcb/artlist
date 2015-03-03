@@ -12,16 +12,14 @@ button, input, select { background: transparent; border: none; padding: none; ma
 body, header, footer, section, article, div, h1, h2, h3, h4, h5, h6, p, pre { margin: 0; padding: 0; position: relative; }
 pre { display: block; white-space: pre-wrap; }
 
-body, div.sleeve { width: auto; margin: auto; }
 body * { text-rendering: "optimizeLegibility"; }
 body * { text-rendering: "geometricPrecision"; }
 
 a[href] { text-decoration: none; }
 a[href]:link, a[href]:visited { color: inherit; }
 
-
-body { }
-h2 { font-family: "Artlist-Bold"; text-transform: uppercase; letter-spacing: 1px; }
+body { font-family: "Artlist-Light"; }
+h2 { font-family: "Artlist-Demi"; text-transform: uppercase; letter-spacing: 1px; }
 
 
 /*div.write, div.intro { box-sizing: border-box; overflow: hidden; }*/
