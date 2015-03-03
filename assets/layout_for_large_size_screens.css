@@ -12,13 +12,15 @@
 	body > header nav.intro { right: 0; top: 20px;}
 	body > header nav.share { right: 44px; top: 20px;  }
 
-	/* INTRO */
+	/* INTRODUCTION */
 
-	div.intro section { padding: 30px 0; }
+	div.intro section { padding: 25px 0; }
 	div.intro p { width: 75%; }
 	div.intro p + p { margin-top: 10px; }
 
-	/* WRITE */
+	/* POST AN EVENT */
+
+	section.post { padding: 25px 0; }
 
 	body > div.write { height: 0px; }
 	body > div.write.activated { height: 800px; transition: height ease-out 360ms; }
