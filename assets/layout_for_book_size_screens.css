@@ -61,7 +61,7 @@
 
   div.list_container { padding-top: 160px; } div.filter.controls { height: 160px; }
 
-  div.filter.controls { left: 0; right: 0; z-index: 1; }*/
+  div.filter.controls { left: 0; right: 0; }*/
 
   /*body:not(.index_hm) div.filter.controls { position: absolute; top: 0; }*/
   /*body.index       div.filter.controls { position: fixed; top: 80px; }*/
