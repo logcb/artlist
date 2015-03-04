@@ -21,7 +21,7 @@
 
 	/* POST AN EVENT */
 
-	section.post { padding: 25px 0; }
+	section.post { padding: 0 0; }
 	section.post header { margin: 0px -30px; padding: 20px 30px 0; }
 	section.post .attribute { height: 50px; }
 	section.post .attribute label { height: 50px; line-height: 22px; }
@@ -39,8 +39,11 @@
 	section.post .description.attribute { width: 75%; margin: 10px 0 0; float:left; clear: both; height: 120px; }
 	section.post .description.attribute label { height: auto; }
 	section.post .web_address.attribute { width: 75%; clear: both; }
-	section.post .commit { height: 30px; margin: 20px 0 0; }
-	section.post button { padding: 0px 5px; height: 26px; }
+	section.post footer { height: 30px; line-height: 30px; margin: 20px 0; overflow: hidden; }
+	section.post footer .commit { height: 30px; margin-top: 0; }
+	section.post footer .synced { height: 30px; margin-top: 0; }
+	section.post form.synced .commit { margin-top: -30px; transition: margin-top 200ms ease-in-out; }
+	section.post button { padding: 0px 5px; height: 30px; }
 
 	/* LIST CONTROLS */
 

@@ -34,6 +34,7 @@ class PostArticleView extends Backbone.View
 
   commit: (event) ->
     @article.save()
+    @article.once "sync", => @$("form").addClass("synced")
     @article.once "sync", => Artlist.index.add(@article)
     @article.once "sync", => Artlist.router.navigate("/", {trigger: yes})
 

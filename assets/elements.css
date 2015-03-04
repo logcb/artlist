@@ -41,6 +41,7 @@ section.post input[type=url]     { display:block; width: 100%; outline-offset: 2
 section.post input[type=string]  { display:block; width: 100%; outline-offset: 2px; }
 
 section.post button { font-family: "Artlist-Demi"; border: 1px solid #999; box-sizing: border-box; }
+section.post strong { font-family: "Artlist-Demi"; }
 
 /* Document Header */
 
