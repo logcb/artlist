@@ -28,7 +28,6 @@ class ArticleView extends BasicView
     "input div.description pre[contenteditable]": "descriptionInputWasChanged"
     "change select.one.category": "categoryInputWasChanged"
     "change input[type=date]": "dateInputWasChanged"
-    "change input[type=time]": "timeInputWasChanged"
     "click button.publish": "publishArticle"
     "click button.pending": "moveArticleToPendingBucket"
     "click button.trash": "moveArticleToTrashBucket"
