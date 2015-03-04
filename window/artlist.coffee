@@ -25,6 +25,7 @@ class Artlist.Article extends Backbone.Model
     date: Moment(Date.now()).format("YYYY-MM-DD")
     time: "16:30"
     category: "Community"
+    cost: "Free"
 
   validate: (attributes, options) ->
     if attributes.title is undefined
@@ -35,6 +36,10 @@ class Artlist.Article extends Backbone.Model
       return ["date", "can’t be blank"]
     if attributes.time is undefined
       return ["time", "can’t be blank"]
+    if attributes.description is undefined
+      return ["description", "can’t be blank"]
+    if attributes.web_address is undefined
+      return ["web_address", "can’t be blank"]
 
 # Article collections.
 
