@@ -35,11 +35,11 @@ $(document).ready ->
   PostArticleView = require "./post_article_view"
   new PostArticleView
 
-  # List controls accept and display the current filter input.
-  ListControlsView = require "./list_controls_view"
-  new ListControlsView model: Artlist.selection.filters
+  # Filter controls adjust and display the current selection filters.
+  FilterControlsView = require "./filter_controls_view"
+  new FilterControlsView model: Artlist.selection.filters
 
-  # One view for each day in the selection range.
+  # A section for each day in the current selection.
   DayOfArticlesView = require "./day_of_articles_view"
   for date in Artlist.selection.filters.get("range")
     new DayOfArticlesView date, source: Artlist.selection

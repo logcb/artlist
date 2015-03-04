@@ -14,10 +14,10 @@ a[href]:link, a[href]:visited { color: inherit; }
 
 article div.title, article div.location, article div.cost, article div.time { white-space: nowrap; }
 
-html, body > header, div.list.controls  { background-image: url(images/background.png); }
+html, body > header, div.filter.controls  { background-image: url(images/background.png); }
 
 body { font-family: "Artlist-Light"; }
-h2, div.list.controls { font-family: "Artlist-Demi"; text-transform: uppercase; letter-spacing: 1px; }
+h2, div.filter.controls { font-family: "Artlist-Demi"; text-transform: uppercase; letter-spacing: 1px; }
 
 body.loading * { visibility: hidden; }
 
@@ -51,6 +51,7 @@ body > header nav img.icon { border: 1px solid #999; box-sizing: border-box; dis
 
 /* Category Icons */
 
+svg.category circle { stroke-width: 0; }
 svg[alt="Comedy"] circle { fill: #F4E600; stroke: #F4E600; }
 svg[alt="Community"] circle { fill: #943390; stroke: #943390; }
 svg[alt="Dance"] circle { fill: #8FC442; stroke: #8FC442; }
@@ -61,22 +62,18 @@ svg[alt="Music"] circle { fill: #E83E25; stroke: #E83E25; }
 svg[alt="Theatre"] circle { fill: #F9A449; stroke: #F9A449; }
 svg[alt="Visual Art"] circle { fill: #357034; stroke: #357034; }
 
-svg.category circle { stroke-width: 0; }
+/* Filter Controls */
 
-label svg circle { transition: fill 300ms linear, stroke-width 150ms linear; stroke-width: 0; }
-label.excluded:not(:hover) svg circle { fill: #ccc; }
-label.excluded:hover svg circle { transition: stroke-width 150ms linear; }
-label.included svg circle { stroke-width: 5; }
+div.filter.controls div.categories { margin: 10px 20px; height: 90px; }
+div.filter.controls div.categories > * { width: 25%; height: 30px; }
+div.filter.controls div.categories label { position: absolute; display:block; text-indent: 15px; }
+div.filter.controls div.categories svg { position: absolute; height: 20px; width: 20px; top: 5px; left: -5px; }
+div.filter.controls div.categories label input { display: none; }
 
-
-/* List Controls */
-
-div.list.controls div.categories { margin: 10px 20px; height: 90px; }
-div.list.controls div.categories > * { width: 25%; height: 30px; }
-div.list.controls div.categories label { position: absolute; display:block; text-indent: 15px; }
-div.list.controls div.categories svg { position: absolute; height: 20px; width: 20px; top: 5px; left: -5px; }
-div.list.controls div.categories label input { display: none; }
-
+div.filter.controls label svg circle { transition: fill 300ms linear, stroke-width 150ms linear; stroke-width: 0; }
+div.filter.controls label.excluded:not(:hover) svg circle { fill: #ccc; }
+div.filter.controls label.excluded:hover svg circle { transition: stroke-width 150ms linear; }
+div.filter.controls label.included svg circle { stroke-width: 5; }
 
 /* Sections */
 
@@ -117,7 +114,7 @@ body > footer img { display:block; margin: auto; padding: 12px; }
 body > footer, body > footer * { font: 16px/22px "Artlist-Light"; }
 body > footer input { font-family: "Artlist-Bold"; }
 
-body > footer div.editor.controls { border: 1px solid #999; background: hsl(0, 0%, 88%); height: 0px; overflow: hidden;  }
+body > footer div.editor.controls { background: hsl(0, 0%, 88%); height: 0px; overflow: hidden;  }
 body > footer div.editor.controls.activated { height: 88px; }
 
 body         > footer form.new.permit { height: 88px; margin-top: 0px; transition: margin-top 333ms ease-out; }

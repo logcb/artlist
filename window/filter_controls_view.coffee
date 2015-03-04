@@ -1,9 +1,9 @@
 Backbone = require "backbone"
 
-class ListControlsView extends Backbone.View
+class FilterControlsView extends Backbone.View
   module.exports = this
 
-  el: "div.list.controls"
+  el: "div.filter.controls"
 
   events:
     "input [name=query]": "queryInputWasChanged"
@@ -14,7 +14,7 @@ class ListControlsView extends Backbone.View
     @render()
 
   render: =>
-    template = require "../templates/list_controls.html"
+    template = require "../templates/filter_controls.html"
     @el.innerHTML = template(@model.toJSON())
 
   queryInputWasChanged: (event) ->

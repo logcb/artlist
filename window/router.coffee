@@ -9,7 +9,7 @@ class Router extends Backbone.Router
   routes: {"": "index", "intro": "intro", "post": "post"}
 
   initialize: ->
-    @bookmarks = $("section.intro, section.post, div.list.controls").toArray()
+    @bookmarks = $("section.intro, section.post, div.current_articles").toArray()
     $(document).on "click", "a[href^='/']", @localHyperlinkWasActivated
     $(document).on "scroll", @documentWasScrolled
     @on "route", (bookmark) -> console.info "Routed to #{bookmark}"
@@ -21,7 +21,7 @@ class Router extends Backbone.Router
   index: ->
     console.info "Rendering index", @params()
     document.body.classList.add("index")
-    @scrollTo("div.list.controls")
+    @scrollTo("div.current_articles")
 
   intro: ->
     console.info "Rendering intro"
