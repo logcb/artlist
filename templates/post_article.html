@@ -58,7 +58,7 @@
 
     <footer>
       <div class="commit controls">
-        <button>Post this Event</button> to THE ARTLIST
+        <button>Post <%- if @hasPostedAnArticle then "another" else "an" %> Event</button> to THE ARTLIST
       </div>
 
       <div class="synced message">

@@ -7,9 +7,16 @@ class PostArticleView extends Backbone.View
   el: "body > div.post"
 
   initialize: ->
-    @article = new Artlist.Article
+    @constructNewArticle()
     @render()
-    # @activate()
+
+  constructNewArticle: ->
+    @article = new Artlist.Article
+    @article.on "invalid", @focusInvalidAttribute
+    @article.on "sync", => @$("form").addClass("synced")
+    @article.on "sync", => Artlist.index.add(@article)
+    @article.on "sync", => Artlist.router.navigate("/", {trigger: yes})
+    @article.on "sync", => Function.delay 5000, => @initialize()
 
   events:
     "input div.attribute": "attributeInputWasChanged"
@@ -17,26 +24,26 @@ class PostArticleView extends Backbone.View
 
   render: =>
     template = require "../templates/post_article.html"
-    @el.innerHTML = template({@formatModelTimeForInput, article: @article.toJSON()})
+    @el.innerHTML = template({@formatModelTimeForInput, @hasPostedAnArticle, article: @article.toJSON()})
 
   activate: =>
-    @el.classList.add("activated")
-    $(@el).on "transitionend", (event) =>
-      if event.target is @el and event.propertyName is "height"
-        @el.querySelector("input[name=title]").focus()
-        @article.on "invalid", @focusInvalidAttribute
+    @el.querySelector("input[name=title]").focus()
 
   deactivate: =>
-    Backbone.history.off "route", @deactivateOnReturnToIndex
     $(@el).off()
-    @article.off "invalid", @focusInvalidAttribute
-    $(@el).removeClass "activated"
 
   commit: (event) ->
-    @article.save()
-    @article.once "sync", => @$("form").addClass("synced")
-    @article.once "sync", => Artlist.index.add(@article)
-    @article.once "sync", => Artlist.router.navigate("/", {trigger: yes})
+    if @article.save()
+      @disableFormInput()
+      @hasPostedAnArticle = yes
+      @$("form").addClass("synced")
+
+  disableFormInput: ->
+    @$("input,select,textarea").toArray().forEach (el) -> el.disabled = yes
+
+  enableFormInput: ->
+    @$("input,select,textarea").each (el) -> el.disabled = no
+
 
   attributeInputWasChanged: (event) ->
     value = event.target.value.trim()
@@ -50,7 +57,7 @@ class PostArticleView extends Backbone.View
   focusInvalidAttribute: (article, error) =>
     [attributeName, message] = error
     console.error "Article #{attributeName} #{message}."
-    @el.querySelector("input[name=#{attributeName}]").focus()
+    @el.querySelector("input[name=#{attributeName}],textarea[name=#{attributeName}]").focus()
 
   formatModelTimeForInput: (time) ->
     [hour, minute] = time.split(":")
