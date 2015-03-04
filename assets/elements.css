@@ -14,7 +14,9 @@ a[href]:link, a[href]:visited { color: inherit; }
 
 article div.title, article div.location, article div.cost, article div.time { white-space: nowrap; }
 
-html, body > header, div.filter.controls  { background-image: url(images/background.png); }
+div.filter.controls { z-index: 1;}
+
+html, body > header, div.filter.controls div.position { background-image: url(images/background.png); }
 
 body { font-family: "Artlist-Light"; }
 h2, div.filter.controls { font-family: "Artlist-Demi"; text-transform: uppercase; letter-spacing: 1px; }
