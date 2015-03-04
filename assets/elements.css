@@ -20,6 +20,7 @@ html, body > header, div.filter.controls div.position { background-image: url(im
 
 body { font-family: "Artlist-Light"; }
 h2, div.filter.controls { font-family: "Artlist-Demi"; text-transform: uppercase; letter-spacing: 1px; }
+button, strong { font-family: "Artlist-Demi"; }
 
 body.loading * { visibility: hidden; }
 
@@ -105,7 +106,6 @@ section.trashed { border-top: 1px solid #999; }
 section.trashed > header { padding: 20px 0; }
 section.trashed > header h2 { font-family: "Artlist-Bold"; text-transform: uppercase; letter-spacing: 1px; line-height: 20px; }
 section.trashed > header p { line-height: 20px; line-height: 20px; }
-
 
 /* Document Footer */
 
