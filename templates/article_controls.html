@@ -4,7 +4,7 @@
 </div>
 
 <div class="category">
-  <div>Re-categorize this event</div>
+  <div>Re-categorize</div>
   <select class="one category">
     <option <%= "selected" if @article.get('category') is "Comedy" %>>Comedy</option>
     <option <%= "selected" if @article.get('category') is "Community" %>>Community</option>
@@ -19,17 +19,14 @@
 </div>
 
 <div class="date_and_time">
+  <div>Change the date</div>
   <input type="date" value="<%= @article.get('date').replace(/\//g, '-') %>">
 </div>
 
-<div class="">
-  <% if @article.isTrash(): %>
-    <button class="restore">Restore</button> this event to move it out of the trash bucket.
-  <% else: %>
-    <% if @article.isPublished(): %>
-      <button class="trash">Trash</button> this event to remove it from THE ARTLIST.
-    <% else: %>
-      <button class="publish">Publish</button> this event or move it to the <button class="trash">Trash</button>
-    <% end %>
-  <% end %>
+
+
+<div>
+  <button class="pending" <%- "disabled" if @article.isPending() %>>Pending</button>
+  <button class="publish" <%- "disabled" if @article.isPublished() %>>Publish</button>
+  <button class="trash" <%- "disabled" if @article.isTrash() %>>Trash</button>
 </div>
