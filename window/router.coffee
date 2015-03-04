@@ -9,29 +9,26 @@ class Router extends Backbone.Router
   routes: {"": "index", "intro": "intro", "post": "post"}
 
   initialize: ->
-    @bookmarks = $("section.intro, section.post, div.current_articles").toArray()
+
     $(document).on "click", "a[href^='/']", @localHyperlinkWasActivated
     $(document).on "scroll", @documentWasScrolled
     @on "route", (bookmark) -> console.info "Routed to #{bookmark}"
     @once "route", -> document.body.classList.remove("loading")
 
-  scrollTo: (section) ->
-    window.scrollTo 0, $(section).offset().top - $("body > header").height()
-
   index: ->
-    console.info "Rendering index", @params()
+    document.body.classList.remove("index", "intro", "post")
     document.body.classList.add("index")
-    @scrollTo("div.current_articles")
+    @scrollTo("div.current_articles") unless @scrolling
 
   intro: ->
-    console.info "Rendering intro"
-    document.body.classList.remove("index")
-    @scrollTo("section.intro")
+    document.body.classList.remove("index", "intro", "post")
+    document.body.classList.add("intro")
+    @scrollTo("section.intro") unless @scrolling
 
-  post: () ->
-    console.info "Rendering post an event", @params()
-    document.body.classList.remove("index")
-    @scrollTo("section.post")
+  post: ->
+    document.body.classList.remove("index", "intro", "post")
+    document.body.classList.add("post")
+    @scrollTo("section.post") unless @scrolling
 
   params: (url=window.location) ->
     params = {}
@@ -46,13 +43,16 @@ class Router extends Backbone.Router
     @navigate event.currentTarget.getAttribute("href"), {trigger: yes}
 
   documentWasScrolled: (event) =>
-    # console.info window.scrollY, $("section.intro").offset().top
-    # console.info window.scrollY, $("section.post").offset().top
-    # filtered = @bookmarks.filter (bookmark) -> window.scrollY >= ($(bookmark).offset().top - $("body > header").height())
-    # console.info filtered
+    @bookmarks ?= $("section.intro, section.post, div.current_articles").toArray().reverse()
+    filtered = @bookmarks.filter (bookmark) ->
+      window.scrollY >= ($(bookmark).offset().top - $("body > header").height())
+    destination = switch filtered[0].className
+      when "intro" then "/intro"
+      when "post" then "/post"
+      else "/"
+    @scrolling = yes
+    @navigate destination, trigger: yes
+    @scrolling = no
 
-  returnToIndexWhenListIsInView: (event) =>
-    if window.scrollY > ($("div.list_container").offset().top - $("body > header").height())
-      event.preventDefault()
-      $(document).off "scroll", @returnToIndexWhenListIsInView
-      @navigate "/", {trigger: yes}
+  scrollTo: (section) ->
+    window.scrollTo 0, $(section).offset().top - $("body > header").height()

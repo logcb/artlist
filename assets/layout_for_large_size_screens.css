@@ -48,9 +48,10 @@
 
 	/* LIST CONTROLS */
 
-	/*div.list_container { padding-top: 180px; }*/
-	/*div.filter.controls { position: absolute; top: 0; left: 0; right: 0; height: 180px; z-index: 1; }*/
-	/*body.index div.filter.controls { position: fixed; top: 80px; }*/
+	body.index div.filter.controls div.position { position: fixed; top: 80px; left: 0; right: 0; }
+	body:not(.index) div.filter.controls div.position { position: relative; }
+
+	div.filter.controls { height: 180px; }
 
 	div.filter.controls div.sleeve { border: 1px solid transparent; margin: -1px auto; height: 180px; }
 	div.filter.controls div.box { height: 180px; }
