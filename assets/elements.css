@@ -19,14 +19,9 @@ html, body > header, div.list.controls  { background-image: url(images/backgroun
 body { font-family: "Artlist-Light"; }
 h2, div.list.controls { font-family: "Artlist-Demi"; text-transform: uppercase; letter-spacing: 1px; }
 
-
-
-
 body.loading * { visibility: hidden; }
 
 /* Introduction */
-
-
 
 div.intro > header { border-top: 1px solid red; }
 
