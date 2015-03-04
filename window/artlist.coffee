@@ -75,7 +75,7 @@ class Artlist.Article.Selection extends Artlist.Article.Collection
     @set Artlist.search(@filters.toJSON())
 
   rangeOfDates: (now=Date.now())->
-    Moment(now).add(amount, "day").format("YYYY-MM-DD") for amount in [-15...15]
+    Moment(now).add(amount, "day").format("YYYY-MM-DD") for amount in [0...25]
 
 Artlist.search = (params={}) ->
   selection = Artlist.published.toArray()
