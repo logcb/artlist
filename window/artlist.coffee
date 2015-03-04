@@ -73,8 +73,11 @@ Artlist.pending   = new Artlist.Article.Collection
 Artlist.published = new Artlist.Article.Collection
 Artlist.trash     = new Artlist.Article.Collection
 
+Artlist.index.on "add", (article) -> console.info "Article was added to index", article.id
+Artlist.index.on "remove", (article) -> console.info "Article was removed from index", article.id
+Artlist.index.on "change:bucket", (article) -> console.info "Article bucket was changed", article.id
+
 Artlist.index.on "add remove change:bucket", (event) ->
-  console.info "Article added or removed from index"
   Artlist.pending.set   (Artlist.index.select (article) -> article.isPending()), {remove:yes}
   Artlist.published.set (Artlist.index.select (article) -> article.isPublished()), {remove:yes}
   Artlist.trash.set     (Artlist.index.select (article) -> article.isTrash()), {remove:yes}
