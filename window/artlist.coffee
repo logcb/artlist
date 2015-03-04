@@ -9,23 +9,42 @@ module.exports = Artlist = {}
 class Artlist.Article extends Backbone.Model
   urlRoot: "/articles"
 
-  isPending: ->
-    (@get("published_at") is undefined) and @isNotTrash()
-
-  isPublished: ->
-    (@get("published_at") isnt undefined) and @isNotTrash()
-
-  isTrash: ->
-    @get("trashed_at") isnt undefined
-
-  isNotTrash: ->
-    @isTrash() is no
-
   defaults: ->
     date: Moment(Date.now()).format("YYYY-MM-DD")
     time: "16:30"
     category: "Community"
     cost: "Free"
+    bucket: "pending"
+
+  moveToPendingBucket: (options) ->
+    @save {"destination_bucket": "pending"}, options
+
+  moveToPublishedBucket: (options) ->
+    @save {"destination_bucket": "published"}, options
+
+  moveToTrashBucket: (options) ->
+    @save {"destination_bucket": "trash"}, options
+
+  isPending: ->
+    @get("bucket") is "pending"
+
+  isMovingToPendingBucket: ->
+    @get("destination_bucket") is "pending"
+
+  isPublished: ->
+    @get("bucket") is "published"
+
+  isMovingToPublishedBucket: ->
+    @get("destination_bucket") is "published"
+
+  isTrash: ->
+    (@get("bucket") is "trash") and @get("trashed_at")
+
+  isMovingToTrashBucket: ->
+    (@get("bucket") is "trash") and (@get("trashed_at") is undefined)
+
+  isNotTrash: ->
+    @isTrash() is no
 
   validate: (attributes, options) ->
     if attributes.title is undefined
@@ -54,17 +73,20 @@ Artlist.pending   = new Artlist.Article.Collection
 Artlist.published = new Artlist.Article.Collection
 Artlist.trash     = new Artlist.Article.Collection
 
-Artlist.index.on "all", (event) ->
-  Artlist.pending.set   Artlist.index.select (article) -> article.isPending()
-  Artlist.published.set Artlist.index.select (article) -> article.isPublished()
-  Artlist.trash.set     Artlist.index.select (article) -> article.isTrash()
+Artlist.index.on "add remove change:bucket", (event) ->
+  console.info "Article added or removed from index"
+  Artlist.pending.set   (Artlist.index.select (article) -> article.isPending()), {remove:yes}
+  Artlist.published.set (Artlist.index.select (article) -> article.isPublished()), {remove:yes}
+  Artlist.trash.set     (Artlist.index.select (article) -> article.isTrash()), {remove:yes}
 
 class Artlist.Article.DateCollection extends Artlist.Article.Collection
-  constructor: (@date, options={}) ->
+  constructor: (@date) ->
     Artlist.Article.Collection::constructor.call(this)
-    @source = options.source ? Artlist.index
-    @set @source.filterByDate(@date)
-    @source.on "add remove", => @set @source.filterByDate(@date)
+    @syncArticlesWithPublishedBucket()
+    Artlist.published.on "add remove", @syncArticlesWithPublishedBucket
+
+  syncArticlesWithPublishedBucket: =>
+    @set Artlist.published.filterByDate(@date), {remove:yes}
 
 # Search articles by query and category.
 

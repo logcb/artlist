@@ -63,23 +63,22 @@ class ArticleView extends BasicView
     @model.set "cost", event.target.innerText
 
   descriptionInputWasChanged: (event) ->
-    console.info "descriptionInputWasChanged", event
     @model.set "description", event.target.innerText
 
   publishArticle: (event) ->
+    console.info "moveArticleToPublishedBucket"
     event.preventDefault()
-    @model.set "published_at", (new Date).toJSON()
+    @model.moveToPublishedBucket()
 
   moveArticleToTrashBucket: (event) ->
     console.info "moveArticleToTrashBucket"
     event.preventDefault()
-    @model.set "trashed_at", (new Date).toJSON()
-    @model.save()
+    @model.moveToTrashBucket()
 
   moveArticleToPendingBucket: (event) ->
+    console.info "moveArticleToPendingBucket"
     event.preventDefault()
-    @model.unset "trashed_at"
-    @model.unset "published_at"
+    @model.moveToPendingBucket()
 
   saveArticle: =>
     console.info "Saving article #{@model.id}"
