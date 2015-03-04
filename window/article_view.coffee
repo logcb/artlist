@@ -10,6 +10,7 @@ class ArticleView extends BasicView
 
   initialize: ->
     @activate()
+    @model = Artlist.index.get @el.id.replace("ART", "")
     @model.on "change:title", debounce @saveArticle, 100
     @model.on "change:venue", debounce @saveArticle, 100
     @model.on "change:description", debounce @saveArticle, 100
