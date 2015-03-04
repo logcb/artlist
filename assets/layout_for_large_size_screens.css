@@ -38,6 +38,7 @@
 	section.post .cost.attribute { width: 12.5%; float:left; margin: 10px 0 0; }
 	section.post .description.attribute { width: 75%; margin: 10px 0 0; float:left; clear: both; height: 120px; }
 	section.post .description.attribute label { height: auto; }
+	section.post .description.attribute textarea { font-size:initial; }
 	section.post .web_address.attribute { width: 75%; clear: both; }
 	section.post footer { height: 30px; line-height: 30px; margin: 20px 0; overflow: hidden; }
 	section.post footer .commit { height: 30px; margin-top: 0; }
@@ -78,9 +79,7 @@
 
 	/* LIST */
 
-
 	section.day > header h2 { margin: 0px -30px -1px; padding: 0px 30px; height: 60px; line-height: 62px; }
-	/*section.day h2 { font-family: "Artlist-Bold"; text-transform: uppercase; letter-spacing: 1px; line-height: 20px; }*/
 
 	/* ARTICLE */
 
