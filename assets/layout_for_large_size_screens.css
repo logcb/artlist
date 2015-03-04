@@ -102,6 +102,27 @@
 	article div.description { margin: 0 25% 0 0; padding: 0 20px; }
 	article div.web_address { position: absolute; right: 0; width: 25%; top: 60px; padding: 0; }
 	article div.web_address a { }
+
+  article div.controls * { font: inherit; }
+  article div.controls { margin: 10px 20px; }
+  article div.controls input   { font: 15px/20px; border: 1px solid hsla(0,0%,0%,0.2); padding: 3px 5px 0; height: 30px; border-radius: 0; }
+  article div.controls select  { font: 15px/20px; border: 1px solid hsla(0,0%,0%,0.2); padding: 3px 5px 0; height: 30px; border-radius: 0; }
+  article div.controls button  { border: 1px solid #999; padding: 1px 5px 0; height: 30px; border-radius: 0; width: 80px; }
+
+  article div.controls div.web_address { padding: 0; }
+  article div.controls div.web_address input { width: 100%; }
+
+  article div.controls div.category { width: 50%; }
+  article div.controls div.category select.one.category { width: 100%; }
+
+  article div.controls div.date_and_time { width: 50%; }
+  article div.controls div.date_and_time label {  }
+  article div.controls div.date_and_time input[type=date] { width: 67%; }
+  article div.controls div.date_and_time input[type=time] { width: 33%; position: absolute; right: 0;}
+
+  body:not(.editing) article footer { height: 5px; }
+
+
 	article footer { height: 20px; }
 
 	/* Pending Articles */
