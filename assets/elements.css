@@ -89,8 +89,16 @@ section.day > header h2 .month_and_date { color: #999; font-family: "Artlist-Lig
 
 article { overflow: hidden; }
 article header { color: hsl(0, 0%, 33%); }
-article div.title, article div.time { color: black; }
-article div.title, article div.time, article div.web_address a { font-family: "Artlist-Medium"; }
+article div.title, article div.time, article div.web_address a { font-family: "Artlist-Medium"; color: black; }
+article div.web_address a { text-decoration: underline; }
+
+/* Article Editing Controls */
+
+article div.controls label { display:block; position: relative; box-sizing: border-box; }
+article div.controls input { border: 1px solid #999; }
+article div.controls select { border: 1px solid #999; }
+article div.controls div.bucket_switches button { border: 1px solid #999; border-radius: 0; width: 33%; display: block; float:left; }
+article div.controls div.bucket_switches button.publish { width: 34%; margin: 0px -1px; }
 
 /* Pending Articles */
 

@@ -1,21 +1,23 @@
 <div class="box">
-  <header>
-    <div class="category icon"><svg alt="<%= @article.get('category') %>" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="10" cy="10"></svg></div>
-    <div class="title_and_venue">
-      <div class="title" contenteditable="false"><%= @article.get('title') %></div>
-      <div class="venue" contenteditable="false"><%= @article.get('venue') %></div>
+  <div class="display">
+    <header>
+      <div class="category icon"><svg alt="<%= @article.get('category') %>" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="10" cy="10"></svg></div>
+      <div class="title_and_venue">
+        <div class="title" contenteditable="false"><%= @article.get('title') %></div>
+        <div class="venue" contenteditable="false"><%= @article.get('venue') %></div>
+      </div>
+      <div class="time" contenteditable="false"><%= @moment("#{@article.get('date')} #{@article.get('time')}", "YYYY-MM-DD hh:mm").format("h:mmA") %></div>
+      <div class="cost" contenteditable="false"><%= @article.get('cost') %></div>
+    </header>
+
+    <div class="description">
+      <pre contenteditable="false"><%= @article.get('description') %></pre>
     </div>
-    <div class="time" contenteditable="false"><%= @moment("#{@article.get('date')} #{@article.get('time')}", "YYYY-MM-DD hh:mm").format("h:mmA") %></div>
-    <div class="cost" contenteditable="false"><%= @article.get('cost') %></div>
-  </header>
 
-  <div class="description">
-    <pre contenteditable="false"><%= @article.get('description') %></pre>
-  </div>
-
-  <div class="web_address">
-    <div class="link">
-      <a href="<%= @article.get('web_address') %>" target="<%= @article.id %>">Go to event page →</a>
+    <div class="web_address">
+      <div class="link">
+        <a href="<%= @article.get('web_address') %>" target="<%= @article.id %>">Go to event page →</a>
+      </div>
     </div>
   </div>
 
@@ -24,7 +26,7 @@
   </div>
 
   <footer>
-    <div class="history">
+    <div class="history" hidden>
       <span class="created">Created <%= @moment(@article.get('created_at')).fromNow() %>.</span>
       <span class="updated">Updated <%= @moment(@article.get('updated_at')).fromNow() %>.</span>
     </div>
