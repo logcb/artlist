@@ -122,22 +122,17 @@
   /* ARTICLE Editing Controls */
 
   article div.controls { margin: 20px; height: 100px; }
-
   article div.controls input   { font: 15px/20px; border: 1px solid hsla(0,0%,0%,0.2); padding: 3px 5px 0; height: 30px; border-radius: 0; }
   article div.controls select  { font: 15px/20px; border: 1px solid hsla(0,0%,0%,0.2); padding: 3px 5px 0; height: 30px; border-radius: 0; }
   article div.controls button  { font: 15px/20px; border: 1px solid hsla(0,0%,0%,0.3); padding: 1px 5px 0; height: 30px; border-radius: 0; }
-
   article div.controls div.web_address { padding: 0; position: absolute; bottom: 60px; left: 0; right: 0;}
   article div.controls div.web_address input { width: 100%; }
-
   article div.controls div.category { width: 25%; left: 0; bottom: 0; position: absolute; }
   article div.controls div.category label { margin-right: 20px; }
   article div.controls div.category select.one.category { width: 100%; }
-
   article div.controls div.date { width: 25%; position: absolute; left: 25%; bottom: 0; }
   article div.controls div.date label { margin-right: 20px; }
   article div.controls div.date input { width: 100%; }
-
 	article div.controls div.bucket_switches { position: absolute; right: 0; left: 50%; bottom: 0; height: 30px; }
 	article div.controls div.bucket_switches button  { border: 1px solid #999; padding: 1px 5px 0; height: 30px; border-radius: 0; width: 33%; display: block; float:left; }
 	article div.controls div.bucket_switches button.publish { width: 34%; margin: 0px -1px; }
