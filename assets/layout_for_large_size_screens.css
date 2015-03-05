@@ -28,18 +28,18 @@
 	section.post .string.attribute input { position: absolute; bottom: 2px; line-height: 30px; height: 28px;}
 	section.post .string.attribute select { position: absolute; bottom: 2px; line-height: 30px; height: 28px;}
 	section.post .title.attribute { margin: 10px 50% 0px 0; }
-	section.post .venue.attribute { margin: 10px 50% 0px 0; }
-	section.post .address.attribute { margin: 10px 50% 0px 0; }
-	section.post .date.attribute { width: 25%; margin: 10px 0 0; float:left; clear: left; }
-	section.post .date.attribute label { margin-right: 30px; }
-	section.post .time.attribute { width: 12.5%; float:left; margin: 10px 0 0; }
-	section.post .category.attribute { width: 25%; margin: 10px 0 0; float:left; clear: left;}
-	section.post .category.attribute label { margin-right: 30px; }
-	section.post .cost.attribute { width: 12.5%; float:left; margin: 10px 0 0; }
-	section.post .description.attribute { width: 75%; margin: 10px 0 0; float:left; clear: both; height: 120px; }
-	section.post .description.attribute label { height: auto; }
-	section.post .description.attribute textarea { font-size:initial; }
-	section.post .web_address.attribute { width: 75%; clear: both; }
+	section.post .venue_name { margin: 10px 50% 0px 0; }
+	section.post .venue_address { margin: 10px 50% 0px 0; }
+	section.post .date { width: 25%; margin: 10px 0 0; float:left; clear: left; }
+	section.post .date label { margin-right: 30px; }
+	section.post .time { width: 12.5%; float:left; margin: 10px 0 0; }
+	section.post .category { width: 25%; margin: 10px 0 0; float:left; clear: left;}
+	section.post .category label { margin-right: 30px; }
+	section.post .cost { width: 12.5%; float:left; margin: 10px 0 0; }
+	section.post .description { width: 75%; margin: 10px 0 0; float:left; clear: both; height: 120px; }
+	section.post .description label { height: auto; }
+	section.post .description textarea { font-size:initial; }
+	section.post .web_address { width: 75%; clear: both; }
 	section.post .web_address input { font-size: initial; }
 	section.post footer { height: 30px; line-height: 30px; margin: 20px 0; overflow: hidden; }
 	section.post footer .commit { height: 30px; margin-top: 0; }

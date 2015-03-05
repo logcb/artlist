@@ -33,6 +33,7 @@ div.intro > header { border-top: 1px solid red; }
 section.post > header { border-top: 1px solid black; }
 section.post div.attribute label { display:block; position: relative; box-sizing: border-box; }
 section.post div.string.attribute label { border-bottom: 1px dotted #aaa; }
+section.post div.url.attribute label { border-bottom: 1px dotted #aaa; }
 section.post textarea { display:block; border: 1px dotted #aaa; width: 100%; background:transparent; box-sizing: border-box; padding: 0; height:88px; outline-offset: 2px;}
 section.post select.one.category { display:block; border: none; width: 100%; padding: 0; text-indent: 0; -webkit-appearance: button; outline-offset: 2px;}
 section.post input[type=url]     { display:block; width: 100%; outline-offset: 2px; }
