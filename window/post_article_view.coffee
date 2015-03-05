@@ -36,14 +36,12 @@ class PostArticleView extends Backbone.View
     if @article.save()
       @disableFormInput()
       @hasPostedAnArticle = yes
-      @$("form").addClass("synced")
 
   disableFormInput: ->
     @$("input,select,textarea").toArray().forEach (el) -> el.disabled = yes
 
   enableFormInput: ->
-    @$("input,select,textarea").each (el) -> el.disabled = no
-
+    @$("input,select,textarea").toArray().forEach (el) -> el.disabled = no
 
   attributeInputWasChanged: (event) ->
     value = event.target.value.trim()
