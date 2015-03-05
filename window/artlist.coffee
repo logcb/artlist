@@ -9,6 +9,9 @@ module.exports = Artlist = {}
 class Artlist.Article extends Backbone.Model
   urlRoot: "/articles"
 
+  initialize: ->
+    @on "change:venue_name change:venue_address", => @set "venue", @get("venue_name")+", "+@get("venue_address")
+
   defaults: ->
     date: Moment(Date.now()).format("YYYY-MM-DD")
     time: "16:30"

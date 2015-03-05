@@ -12,12 +12,12 @@
       <label>Event Title: <input type="string" name="title" value="<%= @article.title %>" placeholder="Little Big Show"></label>
     </div>
 
-    <div class="venue string attribute">
-      <label>Venue: <input type="string" name="venue" value="<%= @article.venue %>" placeholder="The Teeney Tiny Theatre"></label>
+    <div class="venue_name string attribute">
+      <label>Venue: <input type="string" name="venue_name" value="<%= @article.venue %>" placeholder="The Teeney Tiny Theatre"></label>
     </div>
 
-    <div class="address string attribute">
-      <label>Address: <input type="string" name="address" value="<%= @article.address %>" placeholder="123 Small Street"></label>
+    <div class="venue_address string attribute">
+      <label>Address: <input type="string" name="venue_address" value="<%= @article.address %>" placeholder="123 Small Street"></label>
     </div>
 
     <div class="date string attribute">
@@ -52,7 +52,7 @@
       <label>Description: <textarea name="description"></textarea></label>
     </div>
 
-    <div class="web_address url string attribute">
+    <div class="web_address url attribute">
       <label>Event URL: <input name="web_address" type="url" placeholder="https://example.com/"></label>
     </div>
 
@@ -66,5 +66,4 @@
       </div>
     </footer>
   </form>
-
 </section>
