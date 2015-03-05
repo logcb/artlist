@@ -25,8 +25,8 @@ class ArticleView extends BasicView
     "input div.venue[contenteditable]": "venueInputWasChanged"
     "input div.time[contenteditable]": "timeStringInputWasChanged"
     "input div.description pre[contenteditable]": "descriptionInputWasChanged"
-    "input select.one.category": "categoryInputWasChanged"
     "input div.cost[contenteditable]": "costInputWasChanged"
+    "change select.one.category": "categoryInputWasChanged"
     "change input[type=date]": "dateInputWasChanged"
     "click button.publish": "publishArticle"
     "click button.pending": "moveArticleToPendingBucket"
@@ -43,6 +43,7 @@ class ArticleView extends BasicView
   categoryInputWasChanged: (event) ->
     console.info(event.target.value)
     @model.set "category", event.target.value
+    @model.save()
     @render()
 
   timeInputWasChanged: (event) ->
