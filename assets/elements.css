@@ -94,6 +94,7 @@ article div.web_address a { text-decoration: underline; }
 
 /* Article Editing Controls */
 
+body:not(.editing) article div.controls { display: none; }
 article div.controls label { display:block; position: relative; box-sizing: border-box; }
 article div.controls input { border: 1px solid #999; }
 article div.controls select { border: 1px solid #999; }
