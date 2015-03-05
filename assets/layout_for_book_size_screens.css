@@ -8,7 +8,6 @@
 
   article header,
   form.new.event input[type=string],
-  form.new.event input[type=url],
   form.new.event textarea,
   form.new.event select {
     font: 22px/30px "Artlist-Light";
@@ -45,6 +44,7 @@
   section.post form { margin: 0px 0px 0px 25%;  }
 
   section.post label { font-size: 11px; }
+  section.post .web_address input { font-size: initial; }
 
   /*form.new.event div.attribute { margin: 12px; }*/
   form.new.event .date.attribute { width: 25%; float:left; }
