@@ -102,7 +102,7 @@
 
   /* ARTICLE */
 
-  article { overflow: hidden; }
+  article { overflow: hidden; margin: 0px -20px; padding: 0px 20px; }
   article.compacted { height: 74px; }
   article.activated { height: auto; }
   article header { height: 75px; border-top: 1px dotted black; }
@@ -119,24 +119,28 @@
   article div.web_address a { text-decoration: underline; }
   article div.web_address div.code { font: 15px/20px; }
 
-  article div.controls * { font: inherit; }
-  article div.controls { margin: 10px 20px; }
+  /* ARTICLE Editing Controls */
+
+  article div.controls { margin: 20px; height: 100px; }
+
   article div.controls input   { font: 15px/20px; border: 1px solid hsla(0,0%,0%,0.2); padding: 3px 5px 0; height: 30px; border-radius: 0; }
   article div.controls select  { font: 15px/20px; border: 1px solid hsla(0,0%,0%,0.2); padding: 3px 5px 0; height: 30px; border-radius: 0; }
   article div.controls button  { font: 15px/20px; border: 1px solid hsla(0,0%,0%,0.3); padding: 1px 5px 0; height: 30px; border-radius: 0; }
 
-  article div.controls div.web_address { padding: 0; }
+  article div.controls div.web_address { padding: 0; position: absolute; bottom: 60px; left: 0; right: 0;}
   article div.controls div.web_address input { width: 100%; }
 
-  article div.controls div.category { width: 50%; }
+  article div.controls div.category { width: 25%; left: 0; bottom: 0; position: absolute; }
+  article div.controls div.category label { margin-right: 20px; }
   article div.controls div.category select.one.category { width: 100%; }
 
-  article div.controls div.date_and_time { width: 50%; }
-  article div.controls div.date_and_time label {  }
-  article div.controls div.date_and_time input[type=date] { width: 67%; }
-  article div.controls div.date_and_time input[type=time] { width: 33%; position: absolute; right: 0;}
+  article div.controls div.date { width: 25%; position: absolute; left: 25%; bottom: 0; }
+  article div.controls div.date label { margin-right: 20px; }
+  article div.controls div.date input { width: 100%; }
 
-  body:not(.editing) article footer { height: 5px; }
+	article div.controls div.bucket_switches { position: absolute; right: 0; left: 50%; bottom: 0; height: 30px; }
+	article div.controls div.bucket_switches button  { border: 1px solid #999; padding: 1px 5px 0; height: 30px; border-radius: 0; width: 33%; display: block; float:left; }
+	article div.controls div.bucket_switches button.publish { width: 34%; margin: 0px -1px; }
 
 	/* Pending Articles */
 
