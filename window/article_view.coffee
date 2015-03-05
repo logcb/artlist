@@ -18,7 +18,6 @@ class ArticleView extends BasicView
     @model.on "change:time", debounce @saveArticle, 100
     @model.on "change:cost", debounce @saveArticle, 100
     @model.on "error", @articleHasError
-    @enableEditing() if window.location.hostname isnt "artlist.website"
 
   events:
     "input div.title[contenteditable]": "titleInputWasChanged"
@@ -34,7 +33,6 @@ class ArticleView extends BasicView
 
   render: ->
     @el.innerHTML = @renderTemplate({article:@model})
-    @enableEditing() if Artlist.operator.isPermittedToMakeChanges()
 
   activate: =>
     @el.classList.remove("compacted")

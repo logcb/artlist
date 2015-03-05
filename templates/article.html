@@ -3,15 +3,15 @@
     <header>
       <div class="category icon"><svg alt="<%= @article.get('category') %>" class="category" viewbox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle r="5" cx="10" cy="10"></svg></div>
       <div class="title_and_venue">
-        <div class="title" contenteditable="false"><%= @article.get('title') %></div>
-        <div class="venue" contenteditable="false"><%= @article.get('venue') %></div>
+        <div class="title" <%= @mutable() %>><%= @article.get('title') %></div>
+        <div class="venue" <%= @mutable() %>><%= @article.get('venue') %></div>
       </div>
-      <div class="time" contenteditable="false"><%= @moment("#{@article.get('date')} #{@article.get('time')}", "YYYY-MM-DD hh:mm").format("h:mmA") %></div>
-      <div class="cost" contenteditable="false"><%= @article.get('cost') %></div>
+      <div class="time" <%= @mutable() %>><%= @moment("#{@article.get('date')} #{@article.get('time')}", "YYYY-MM-DD hh:mm").format("h:mmA") %></div>
+      <div class="cost" <%= @mutable() %>><%= @article.get('cost') %></div>
     </header>
 
     <div class="description">
-      <pre contenteditable="false"><%= @article.get('description') %></pre>
+      <pre <%= @mutable() %>><%= @article.get('description') %></pre>
     </div>
 
     <div class="web_address">
