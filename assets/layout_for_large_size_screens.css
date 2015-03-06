@@ -9,7 +9,7 @@
 	/* HEADER */
 
 	body > header, div.header_block_in_flow { height: 80px; }
-	body > header h1 { padding: 20px; margin: 0px -20px; height: 80px; box-sizing: border-box; }
+	body > header h1 { padding: 20px 30px; margin: 0px -30px; height: 80px; box-sizing: border-box; }
 	body > header nav.intro { right: 0; top: 20px;}
 	body > header nav.share { right: 44px; top: 20px;  }
 
@@ -56,7 +56,7 @@
 
 	div.filter.controls div.sleeve { border: 1px solid transparent; margin: -1px auto; height: 180px; }
 	div.filter.controls div.box { height: 180px; }
-	div.filter.controls div.rules { position: absolute; top: -1px; bottom: -1px; left: -20px; right: -20px; border-bottom: 1px solid #999; border-top: 1px solid #999; }
+	div.filter.controls div.rules { position: absolute; top: -1px; bottom: -1px; left: -30px; right: -30px; border-bottom: 1px solid #999; border-top: 1px solid #999; }
 
 	div.filter.controls div.search { position: absolute; top: 15px; left: 0; right: 50%; margin: 0 20px 0 0; height: 30px; line-height: 30px; }
 	div.filter.controls div.search label { height: 30px; line-height: 32px; display: block; }
