@@ -10,7 +10,6 @@ Artlist.index.comparator = (model) -> model.get("date") + model.get("time")
 Artlist.index.on "add", (model) ->
   model.set {"created_at": (new Date).toJSON()}, silent: yes
   model.set {"updated_at": (new Date).toJSON()}, silent: yes
-  model.set "id", generateIdentifierForNewArticle(model.toJSON()), silent: yes
   Artlist.index.sort()
   saveIndexOnFileSystem()
 
@@ -33,16 +32,9 @@ Artlist.index.on "change:destination_bucket", (model) ->
 
 Artlist.index.on "change", (model) ->
   return if model.isNew()
-  console.info "Updating #{model.id}"
-  console.info model.changedAttributes()
   model.set {"updated_at": (new Date).toJSON()}, silent: yes
   Artlist.index.sort()
   saveIndexOnFileSystem()
-
-generateIdentifierForNewArticle = (attributes) ->
-  hash = crypto.createHash("sha1")
-  hash.update(JSON.stringify(attributes), "utf-8")
-  hash.digest("hex")
 
 saveIndexOnFileSystem = ->
   writeFileSync "storage/index.json", JSON.stringify(Artlist.index.toJSON(), undefined, "  "), "utf-8"

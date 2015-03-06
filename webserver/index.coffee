@@ -10,6 +10,7 @@ HTTPS             = require "https"
 Helmet            = require "helmet"
 Eco               = require "eco"
 Cookie            = require "cookie"
+Crypto            = require "crypto"
 
 # Exports an instance of [HTTPS server](http://nodejs.org/api/https.html#https_class_https_server)
 # with [cryptography credentials](./crypto_credentials.coffee) for this node.
@@ -56,13 +57,17 @@ service.get "/:page?", (request, response, next) ->
 
 # Post an article to the index.
 service.post "/articles", (request, response, next) ->
-  model = Artlist.index.add(request.body)
+  attributes = {id: generateIdentifierForNewArticle(request.body)}
+  attributes[name] = request.body[name] for name in ["title", "venue", "cost", "date", "time", "description", "category", "web_address"]
+  model = Artlist.index.add(attributes)
   response.statusCode = 201
   response.json model.toJSON()
 
 # Update an existing exiting article.
 service.put "/articles/:id", (request, response, next) ->
-  model = Artlist.index.get(request.params.id).set(request.body)
+  attributes = {}
+  attributes[name] = request.body[name] for name in ["title", "venue", "cost", "date", "time", "description", "category", "web_address", "destination_bucket"]
+  model = Artlist.index.get(request.params.id).set(attributes)
   response.statusCode = 200
   response.json model.toJSON()
 
@@ -87,3 +92,8 @@ render = (name, params={}) ->
   template = FileSystem.readFileSync "#{templatesFolder}/#{name}.html", "utf-8"
   params.render = render
   Eco.render template, params
+
+generateIdentifierForNewArticle = (requestBody) ->
+  hash = Crypto.createHash("sha1")
+  hash.update(JSON.stringify(requestBody), "utf-8")
+  hash.digest("hex")
