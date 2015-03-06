@@ -98,8 +98,8 @@
 	article div.title { padding: 0; text-indent: 0; }
 	article div.venue { padding: 0; text-indent: 0; }
 	article div.venue:before { content: "— "; }
-	article div.time { left: 75%; width: 10%; top: 15px; bottom: auto; white-space: nowrap; overflow: hidden; }
-	article div.cost { position: absolute; right: 0; width: 10%; text-align:right; top: 15px; bottom: auto; }
+	article div.time { position: absolute; right: 0; width: 10%; top: 15px; bottom: auto; white-space: nowrap; overflow: hidden; text-align: right;}
+	article div.cost { position: absolute; left: 75%; width: 10%; top: 15px; bottom: auto; }
 	article div.category.icon { position: absolute; left: -5px; top: 15px; }
 	article div.category.icon svg { height: 20px; width: 20px; margin: 5px 0; display: block; position: absolute; }
 	article div.display div.description { margin: 0 25% 0 0; padding: 0 20px; }
