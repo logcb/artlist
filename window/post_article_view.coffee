@@ -45,8 +45,11 @@ class PostArticleView extends Backbone.View
 
   attributeInputWasChanged: (event) ->
     value = event.target.value.trim()
-    value = @formatInputTimeForModel(value) if event.target.name is "time"
-    @article.set event.target.name, value
+    if event.target.name is "time"
+      if parsedValue = @parseInputTimeForModel(value)
+        @article.set event.target.name, parsedValue
+    else
+      @article.set event.target.name, value
 
   formWasSubmitted: (event) ->
     event.preventDefault()
@@ -59,17 +62,21 @@ class PostArticleView extends Backbone.View
 
   formatModelTimeForInput: (time) ->
     [hour, minute] = time.split(":")
-    if hour < 12
+    if Number(hour) < 12
       "#{hour}:#{minute}AM"
     else
       "#{Number(hour)-12}:#{minute}PM"
 
-  formatInputTimeForModel: (time) ->
-    [match, hour, minute, meridian] = /([0-9]+):([0-9]+)(AM|PM)/.exec(time)
-    if meridian is "AM"
-      hour = "0#{hour}" if hour.length is 1
-      "#{hour}:#{minute}"
+  parseInputTimeForModel: (time) ->
+    pattern = /([0-9]+):([0-9]+)(AM|PM)/
+    if pattern.test(time)
+      [match, hour, minute, meridian] = pattern.exec(time)
+      if meridian is "AM"
+        hour = "0#{hour}" if hour.length is 1
+        "#{hour}:#{minute}"
+      else
+        hour = String(Number(hour)+12) unless hour is "12"
+        hour = "0#{hour}" if hour.length is 1
+        "#{hour}:#{minute}"
     else
-      hour = String(Number(hour)+12)
-      hour = "0#{hour}" if hour.length is 1
-      "#{hour}:#{minute}"
+      undefined
