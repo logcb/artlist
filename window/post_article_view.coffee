@@ -14,7 +14,6 @@ class PostArticleView extends BasicView
     @article.on "invalid", @focusInvalidAttribute
     @article.on "sync", => @$("form").addClass("synced")
     @article.on "sync", => Artlist.index.add(@article)
-    @article.on "sync", => Artlist.router.navigate("/", {trigger: yes})
     @article.on "sync", => Function.delay 5000, => @initialize()
 
   events:
