@@ -26,15 +26,15 @@ body.loading * { visibility: hidden; }
 
 /* Introduction */
 
-div.intro > header { border-top: 1px solid red; }
+div.intro > header { border-top: 1px solid #999; }
 
 /* New Event Form */
 
-section.post > header { border-top: 1px solid black; }
+section.post > header { border-top: 1px solid #999; }
 section.post div.attribute label { display:block; position: relative; box-sizing: border-box; }
-section.post div.string.attribute label { border-bottom: 1px dotted #aaa; }
-section.post div.url.attribute label { border-bottom: 1px dotted #aaa; }
-section.post textarea { display:block; border: 1px dotted #aaa; width: 100%; background:transparent; box-sizing: border-box; padding: 0; height:88px; outline-offset: 2px;}
+section.post div.string.attribute label { border-bottom: 1px dotted #999; }
+section.post div.url.attribute label { border-bottom: 1px dotted #999; }
+section.post textarea { display:block; border: 1px dotted #999; width: 100%; background:transparent; box-sizing: border-box; padding: 0; height:88px; outline-offset: 2px;}
 section.post select.one.category { display:block; border: none; width: 100%; padding: 0; text-indent: 0; -webkit-appearance: button; outline-offset: 2px;}
 section.post input[type=url]     { display:block; width: 100%; outline-offset: 2px; }
 section.post input[type=string]  { display:block; width: 100%; outline-offset: 2px; }
@@ -134,7 +134,7 @@ body         > footer form.new.permit { height: 88px; margin-top: 0px; transitio
 body.editing > footer form.new.permit { margin-top: -88px; transition: margin-top 333ms ease-out; }
 
 body > footer label { display:block; padding: 22px; text-align: center; }
-body > footer input.secret_phrase { display: block; width: 400px; height: 28px; margin: 0 auto 0; text-align: center; padding: 4px 0; background: white; border: 1px solid hsla(0, 0%, 0%, 0.33); }
+body > footer input.secret_phrase { display: block; width: 400px; height: 28px; margin: 0 auto 0; text-align: center; padding: 4px 0; background: white; border: 1px solid #999; }
 body > footer input.secret_phrase:disabled { background: transparent; color: hsla(0, 0%, 0%, 0.33); }
 
 body > footer div.session { text-align: center; padding: 22px; }
