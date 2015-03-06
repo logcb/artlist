@@ -1,7 +1,5 @@
-{debounce} = require "underscore"
-Backbone = require "backbone"
 BasicView = require "./basic_view"
-Artlist = require "./artlist"
+{debounce} = require "underscore"
 
 class ArticleView extends BasicView
   module.exports = this
@@ -56,7 +54,8 @@ class ArticleView extends BasicView
     @model.set "venue", event.target.innerText
 
   timeStringInputWasChanged: (event) ->
-    @model.set "time", @formatInputTimeForModel(event.target.innerText)
+    if time = @parseInputTimeForModel(event.target.innerText)
+      @model.set "time", time
 
   costInputWasChanged: (event) ->
     @model.set "cost", event.target.innerText
@@ -91,13 +90,3 @@ class ArticleView extends BasicView
   enableEditing: ->
     for editable in @el.querySelectorAll("[contenteditable=false]")
       editable.setAttribute "contenteditable", "plaintext-only"
-
-  formatInputTimeForModel: (time) ->
-    [match, hour, minute, meridian] = /([0-9]+):([0-9]+)(AM|PM)/.exec(time)
-    if meridian is "AM"
-      hour = "0#{hour}" if hour.length is 1
-      "#{hour}:#{minute}"
-    else
-      hour = String(Number(hour)+12)
-      hour = "0#{hour}" if hour.length is 1
-      "#{hour}:#{minute}"
