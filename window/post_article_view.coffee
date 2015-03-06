@@ -1,7 +1,6 @@
-Backbone = require "backbone"
-Artlist = require "./artlist"
+BasicView = require "./basic_view"
 
-class PostArticleView extends Backbone.View
+class PostArticleView extends BasicView
   module.exports = this
 
   el: "body > div.post"
