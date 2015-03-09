@@ -29,6 +29,4 @@ class TrashedArticlesView extends BasicView
       @el.innerHTML = ""
 
   activateArticle: (event) ->
-    id = event.currentTarget.id
-    article = @collection.get(id)
-    new ArticleView {model: article, el: event.currentTarget}
+    Function.delay 33, => new ArticleView el: event.currentTarget

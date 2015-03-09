@@ -38,9 +38,7 @@ class DayOfArticlesView extends BasicView
     @render()
 
   activateArticle: (event) ->
-    new ArticleView
-      model: @collection.get(event.currentTarget.id)
-      el: event.currentTarget
+    Function.delay 33, => new ArticleView el: event.currentTarget
 
   nextSectionID: ->
     @sectionID Moment(@date, "YYYY-MM-DD").add(1, "day")

@@ -7,6 +7,7 @@ class ArticleView extends BasicView
   template: require "../templates/article.html"
 
   initialize: ->
+    console.info "Initialize"
     @activate()
     @model = Artlist.index.get @el.id.replace("ART", "")
     @model.on "change:title", debounce @saveArticle, 100
@@ -18,6 +19,7 @@ class ArticleView extends BasicView
     @model.on "error", @articleHasError
 
   events:
+    "click": "articleContainerWasClicked"
     "input div.title[contenteditable]": "titleInputWasChanged"
     "input div.venue[contenteditable]": "venueInputWasChanged"
     "input div.time[contenteditable]": "timeStringInputWasChanged"
@@ -32,18 +34,29 @@ class ArticleView extends BasicView
   render: ->
     @el.innerHTML = @renderTemplate({article:@model})
 
+  articleContainerWasClicked: (event) ->
+    return if @el.classList.contains("compacted")
+    return if $(event.target).is("a[href]")
+    if Artlist.operator.isPermittedToMakeChanges()
+      @deactivate() if event.target is @el
+    else
+      @deactivate()
+
   activate: =>
     @el.classList.remove("compacted")
     @el.classList.add("activated")
 
+  deactivate: =>
+    @el.classList.remove("activated")
+    @el.classList.add("compacted")
+    @off()
+
   categoryInputWasChanged: (event) ->
-    console.info(event.target.value)
     @model.set "category", event.target.value
     @model.save()
     @render()
 
   timeInputWasChanged: (event) ->
-    console.info(event.target.value)
     @model.set "time", event.target.value
     @render()
 
