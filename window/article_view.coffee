@@ -12,7 +12,6 @@ class ArticleView extends BasicView
     @model.on "change:title", debounce @saveArticle, 100
     @model.on "change:venue", debounce @saveArticle, 100
     @model.on "change:description", debounce @saveArticle, 100
-    @model.on "change:date", debounce @saveArticle, 100
     @model.on "change:time", debounce @saveArticle, 100
     @model.on "change:cost", debounce @saveArticle, 100
     @model.on "error", @articleHasError
@@ -25,7 +24,7 @@ class ArticleView extends BasicView
     "input div.description pre[contenteditable]": "descriptionInputWasChanged"
     "input div.cost[contenteditable]": "costInputWasChanged"
     "change select.one.category": "categoryInputWasChanged"
-    "change input[type=date]": "dateInputWasChanged"
+    "change div.date input": "dateInputWasChanged"
     "click button.publish": "publishArticle"
     "click button.pending": "moveArticleToPendingBucket"
     "click button.trash": "moveArticleToTrashBucket"
@@ -61,8 +60,16 @@ class ArticleView extends BasicView
   venueInputWasChanged: (event) ->
     @model.set "venue", event.target.innerText
 
+  dateInputWasChanged: (event) ->
+    if date = @parseInputDateForModel event.target.value
+      @model.set "date", date
+      @model.save()
+    else
+      @render()
+      @el.querySelector("div.date input").focus()
+
   timeStringInputWasChanged: (event) ->
-    if time = @parseInputTimeForModel(event.target.innerText)
+    if time = @parseInputTimeForModel event.target.innerText
       @model.set "time", time
 
   costInputWasChanged: (event) ->

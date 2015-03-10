@@ -89,7 +89,7 @@ class Artlist.Article.DateCollection extends Artlist.Article.Collection
   constructor: (@date) ->
     Artlist.Article.Collection::constructor.call(this)
     @syncArticlesWithPublishedBucket()
-    Artlist.published.on "add remove", @syncArticlesWithPublishedBucket
+    Artlist.published.on "add remove change:date", @syncArticlesWithPublishedBucket
 
   syncArticlesWithPublishedBucket: =>
     @set Artlist.published.filterByDate(@date), {remove:yes}

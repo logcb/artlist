@@ -24,6 +24,13 @@ class BasicView extends Backbone.View
     else
       "#{Number(hour)-12}:#{minute}PM"
 
+  parseInputDateForModel: (input) ->
+    pattern = /2015-[0-9][0-9]-[0-9][0-9]/
+    if pattern.test(input)
+      return input
+    else
+      undefined
+
   parseInputTimeForModel: (time) ->
     pattern = /([0-9]+):([0-9]+)(AM|PM)/i
     if pattern.test(time)
