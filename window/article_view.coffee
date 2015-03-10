@@ -7,7 +7,6 @@ class ArticleView extends BasicView
   template: require "../templates/article.html"
 
   initialize: ->
-    console.info "Initialize"
     @activate()
     @model = Artlist.index.get @el.id.replace("ART", "")
     @model.on "change:title", debounce @saveArticle, 100
