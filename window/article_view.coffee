@@ -56,10 +56,6 @@ class ArticleView extends BasicView
     @model.save()
     @render()
 
-  timeInputWasChanged: (event) ->
-    @model.set "time", event.target.value
-    @render()
-
   titleInputWasChanged: (event) ->
     @model.set "title", event.target.innerText
 
