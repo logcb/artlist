@@ -1,45 +1,50 @@
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 599px) {
   body, div.sleeve { width: auto; margin: auto; }
 
-  body, article, pre, textarea       { font: 14px/18px "Artlist-Light"; }
-  h2                                 { font: 11px/22px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; text-align: center; }
-  article header                     { }
-  section > p                        { font: 14px/18px "Artlist-Light"; }
-  article .controls                  { font: 14px/18px "Artlist-Light"; }
-  body > header nav                   { font: 11px/22px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
-  div.filter.controls div.search       { font: 11px/22px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
-  div.filter.controls div.search input { font: 11px/22px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
-  div.filter.controls div.categories   { font: 11px/22px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
+  body { font: 11px/16px "Artlist-Light"; }
+	article header, section.post input[type=string], section.post select { font-size: 15px; }
+  h2, div.filter.controls { font-size: 11px; }
+  section.post label { font-size: 11px; }
 
   /* HEADER */
 
   body > header, div.header_block_in_flow { height: 44px; }
-
   body > header h1 { padding: 12px 44px; box-sizing: border-box; height: 44px; text-align: center; }
   body > header h1 img { height: 22px; }
-  body > header nav { }
-  body > header nav > a {}
-  body > header nav.intro { left: 0px; top: 0px; }
-  body > header nav.share { right: 0px; top: 0px; }
-  body > header nav img { height: 44px; width: 44px; }
+  body > header nav img.icon { height: 44px; width: 44px; }
+  body > header nav.intro { left: 0; top: 0; }
+  body > header nav.intro img.icon { border-width: 0 1px 0 0; }
+  body > header nav.share { right: 0; top: 0; }
+  body > header nav.share img.icon { border-width: 0 0 0 1px; }
 
   /* INTRODUCTION */
 
-  section.intro { padding: 18px 12px; }
-  section.intro p + p { margin-top: 12px; }
+  section.intro h2 { margin: 11px; }
+  section.intro p { margin: 11px; }
 
   /* POST AN EVENT */
 
-  section.post { padding: 18px 12px; }
-  section.post > header p { margin: 12px; }
-
-  form.new.event { margin: 12px; }
-  form.new.event label { font: 9px/10px "Artlist-Light"; }
-  form.new.event .date.attribute { width: 33%; float:left; }
-  form.new.event .time.attribute { width: 33%; float:left; }
-  form.new.event .cost.attribute { width: 33%; float:left; }
-  form.new.event .category.attribute { clear:both; }
-  form.new.event .description.attribute { clear:both; }
+  section.post h2 { margin: 11px; }
+  section.post p { margin: 11px; }
+  section.post form { margin: 11px;  }
+  section.post .attribute { margin: 11px 0; height: 36px; }
+  section.post .attribute label { height: 36px; line-height: 11px; }
+	section.post .string.attribute input  { position: absolute; bottom: 0; line-height: 26px; height: 25px; }
+	section.post .string.attribute select { position: absolute; bottom: 0; line-height: 26px; height: 25px; }
+	section.post .date { width: 50%; margin: 0 0 11px; float:left; clear: left; }
+	section.post .date label { margin-right: 11px; }
+	section.post .time { width: 33%; float:left; margin: 0 0 11px; }
+	section.post .category.attribute { width: 50%; margin: 0 0 11px; float:left; clear: left;}
+	section.post .category label { margin-right: 11px; }
+	section.post .cost { width: 33%; float:left; margin: 0 0 11px; clear: right; }
+  section.post .description { height: auto; clear: both; }
+  section.post .description label { height: auto; }
+	section.post .description textarea { line-height: 16px; }
+	section.post footer { height: 36px; line-height: 36px; margin: 11px -11px; padding: 0px 11px; overflow: hidden; }
+	section.post footer .commit { height: 36px; margin-top: 0; }
+	section.post footer .synced { height: 36px; margin-top: 0; }
+	section.post form.synced .commit { margin-top: -36px; transition: margin-top 200ms ease-in-out; }
+	section.post button { padding: 0px 7px; height: 28px; line-height: 29px; margin: 4px 1px 4px 0; }
 
   /* LIST */
 

@@ -6,6 +6,7 @@
 
 h1, h2, h3, h4, h5, h6, p, pre, button, input, select, textarea { font: inherit; }
 button, input, select { background: transparent; border: none; padding: none; margin: none; box-sizing: border-box; }
+button { display: inline-block; }
 body, header, footer, section, article, div, h1, h2, h3, h4, h5, h6, p, pre { margin: 0; padding: 0; position: relative; }
 pre { display: block; white-space: pre-wrap; }
 
@@ -22,6 +23,7 @@ body { font-family: "Artlist-Light"; }
 h2, div.filter.controls { font-family: "Artlist-Demi"; text-transform: uppercase; letter-spacing: 1px; }
 button, strong { font-family: "Artlist-Demi"; }
 
+body { text-size-adjust: none; -webkit-text-size-adjust: none; }
 body.loading * { visibility: hidden; }
 
 /* Introduction */

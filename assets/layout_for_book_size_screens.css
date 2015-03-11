@@ -12,7 +12,6 @@
   body > header h1 { padding: 20px 0; margin: 0px -20px; height: 80px; box-sizing: border-box; text-align: center; }
   body > header nav.intro { left: 0px; top: 20px; }
   body > header nav.share { right: 0px; top: 20px; }
-  body > header nav img.icon { border: 1px solid hsla(0, 0%, 0%, 0.33); box-sizing: border-box; display: block; }
 
   /* INTRODUCTION */
 
@@ -46,7 +45,7 @@
 	section.post footer .commit { height: 44px; margin-top: 0; }
 	section.post footer .synced { height: 44px; margin-top: 0; }
 	section.post form.synced .commit { margin-top: -44px; transition: margin-top 200ms ease-in-out; }
-	section.post button { padding: 0px 9px; height: 36px; line-height: 38px; margin-top: 4px; }
+	section.post button { padding: 0px 9px; height: 36px; line-height: 38px; margin: 4px 1px 4px 0; }
 
   /* LIST */
 
