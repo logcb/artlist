@@ -25,10 +25,9 @@
     <%- @render "article_controls", {@article} %>
   </div>
 
-  <footer>
-    <div class="history" hidden>
-      <span class="created">Created <%= @moment(@article.get('created_at')).fromNow() %>.</span>
-      <span class="updated">Updated <%= @moment(@article.get('updated_at')).fromNow() %>.</span>
-    </div>
-  </footer>
+  <div class="history" hidden>
+    <span class="created">Created <%= @moment(@article.get('created_at')).fromNow() %>.</span>
+    <span class="updated">Updated <%= @moment(@article.get('updated_at')).fromNow() %>.</span>
+  </div>
 </div>
+<footer></footer>

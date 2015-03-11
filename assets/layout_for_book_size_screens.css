@@ -49,15 +49,6 @@
 
   /* LIST */
 
-  /*div.list_container { position: relative; box-sizing: border-box; }
-
-  div.list_container { padding-top: 160px; } div.filter.controls { height: 160px; }
-
-  div.filter.controls { left: 0; right: 0; }*/
-
-  /*body:not(.index_hm) div.filter.controls { position: absolute; top: 0; }*/
-  /*body.index       div.filter.controls { position: fixed; top: 80px; }*/
-
   div.filter.controls div.sleeve { border: 1px solid transparent; margin: -1px; height: 155px; }
   div.filter.controls div.rules { position: absolute; top: -1px; bottom: -1px; left: 0; right: 0; border-bottom: 1px solid hsl(0, 0%, 33%); border-top: 1px solid hsl(0, 0%, 33%); }
 
@@ -85,24 +76,20 @@
 
   /* LIST */
 
-  section.day h2 { height: 44px; line-height: 44px; padding: 0px 20px; margin: 0px -20px; }
-
-
+  section.day h2 { height: 44px; line-height: 45px; padding: 0px 20px; margin: -1px -20px 0; }
   section.day h2 .day_of_week { position: absolute; left: 33%; right: 33%; text-align: center;  }
-  /*section.day h2 .month_and_date { position: absolute; left: 0; top: 0; }*/
-
 
   /* ARTICLE */
 
   article { overflow: hidden; margin: 0px -20px; padding: 0px 20px; }
-  article.compacted { height: 74px; }
+  article.compacted { height: 75px; }
   article.activated { height: auto; }
-  article header { height: 75px; border-top: 1px dotted black; }
+  article header { height: 75px; }
   article div.title_and_venue { position: absolute; left: 20px; top: 0; right: 125px; height: 75px; }
-  article div.title_and_venue > div { display: inline-block; position: absolute; height: 25px; }
-  article div.title { left: 0; top: 12px; right: 0; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
-  article div.venue { left: 0; bottom: 12px; right: 0; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
-  article div.category.icon { position: absolute; left: -5px; top: 14px; }
+  article div.title_and_venue > div { position: absolute; height: 22px; }
+  article div.title { left: 0; top: 16px; right: 0; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+  article div.venue { left: 0; bottom: 14px; right: 0; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+  article div.category.icon { position: absolute; left: -5px; top: 16px; }
   article div.category.icon svg { height: 22px; width: 22px; display: block; margin: 0; position: absolute; }
   article div.time { position: absolute; height: 25px; right: 0; top: 12px; min-width: 100px; text-align: right; }
   article div.cost { position: absolute; height: 25px; right: 0; bottom: 12px; min-width: 100px; text-align: right; }
@@ -110,6 +97,7 @@
   article div.web_address { padding: 10px 20px; }
   article div.web_address a { text-decoration: underline; }
   article div.web_address div.code { font: 15px/20px; }
+  article footer { margin: 0px 20px; }
 
   /* ARTICLE Editing Controls */
 

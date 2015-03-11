@@ -2,7 +2,7 @@
   body, div.sleeve { width: auto; margin: auto; }
 
   body { font: 11px/16px "Artlist-Light"; }
-	article header, section.post input[type=string], section.post select { font-size: 15px; }
+	article header, section.post input[type=string], section.post select { font-size: 14px; }
   h2, div.filter.controls { font-size: 11px; }
   section.post label { font-size: 11px; }
 
@@ -52,18 +52,15 @@
 
   div.filter.controls { left: 0; right: 0; }
 
-  /*body:not(.index) div.filter.controls { position: absolute; top: 0; }
-  body.index       div.filter.controls { position: fixed; top: 44px; }*/
+  div.filter.controls div.rules { position: absolute; top: -1px; bottom: -1px; left: -30px; right: -30px; border-bottom: 1px solid #999; border-top: 1px solid #999; }
 
-  div.filter.controls div.sleeve { border: 1px solid transparent; margin: -1px; height: 124px; }
-
-  div.filter.controls div.search { margin: 4px 4px 0; height: 22px; }
+  div.filter.controls div.search { margin: 11px; height: 22px; }
   div.filter.controls div.search label { position: absolute; top: 0; left: 0; right: 0; display: block; }
   div.filter.controls div.search input { position: absolute; top: 0; left: 0; right: 0; display: block; width: 100%; padding: 0; text-indent: 55px; }
 
   div.filter.controls hr { height: 0; display:block; border:none; margin: 0 4px 4px; border-bottom: 1px dotted hsl(0, 0%, 0%); }
 
-  div.filter.controls div.categories { margin: 4px; height: 88px; }
+  div.filter.controls div.categories { margin: 11px; height: 88px; }
   div.filter.controls div.categories > * { width: 33%; height: 22px; position: absolute; }
   div.filter.controls div.categories label { text-indent: 11px; }
   div.filter.controls div.categories svg { height: 12px; width: 12px; top: 4px; left: -2px; }
@@ -79,15 +76,35 @@
   div.filter.controls div.categories label.visual_art { left: 66%; top: 66px; }
   div.filter.controls div.categories label input { display: none; }
 
-  section.day h2 { height: 21px; margin: -1px 0 0; position: relative; }
+  /* LIST */
+
+  section.day h2 { height: 21px; margin: -1px 0 0; position: relative; line-height: 22px; }
   section.day h2 .day_of_week { position: absolute; left: 20%; right: 20%; text-align: center; }
-  section.day h2 .month_and_date { position: absolute; left: 0; top: 0; }
+  section.day h2 .month_and_date { position: absolute; left: 8px; top: 0; }
 
   /* ARTICLE */
 
-  article { margin: -1px 4px 0; }
-  article.compacted { height: 43px; }
+  article { overflow: hidden; margin: 0px 0; padding: 0px 8px; }
+  article.compacted { height: 44px; }
   article.activated { height: auto; }
+  article header { height: 44px; }
+  article div.title_and_venue { position: absolute; left: 16px; top: 0; right: 60px; height: 44px; }
+  article div.title_and_venue > div { position: absolute; height: 16px; }
+  article div.title { left: 0; top: 6px; right: 0; line-height: 18px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+  article div.venue { left: 0; bottom: 6px; right: 0; line-height: 18px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+  article div.category.icon { position: absolute; left: -2px; top: 7px; }
+  article div.category.icon svg { height: 14px; width: 14px; display: block; margin: 0; position: absolute; }
+  article div.time { position: absolute; height: 16px; line-height: 18px; right: 0; top: 6px; min-width: 100px; text-align: right; }
+  article div.cost { position: absolute; height: 16px; line-height: 18px; right: 0; bottom: 6px; min-width: 100px; text-align: right; }
+  article div.description { margin: 0px 0 4px 16px; }
+  article div.web_address { margin: 4px 0 8px 16px; }
+  article div.web_address a { text-decoration: underline; }
+  article footer { margin: 0px 8px 0; }
+
+
+  /*article { margin: -1px 4px 0; }*/
+  /*article.compacted { height: 43px; }*/
+  /*article.activated { height: auto; }
   article header { height: 44px; }
   article div.title_and_venue { height: 44px; }
   article div.title_and_venue > div { height: 18px; }
@@ -98,9 +115,9 @@
   article div.category { left: -2px; top: 6px; }
   article div.category svg { height: 12px; width: 12px; }
   article div.description { padding: 4px 12px; }
-  article div.web_address { padding: 4px 12px; }
+  article div.web_address { padding: 4px 12px; }*/
 
-  article div.controls * { font: inherit; }
+  /*article div.controls * { font: inherit; }
   article div.controls { margin: 0px 12px;}
    article div.controls input   {  }
   article div.controls select  { }
@@ -115,5 +132,5 @@
   article div.controls div.date_and_time input[type=time] { width: 50%; }
 
 
-  article footer { height: 8px; }
+  article footer { height: 8px; }*/
 }
