@@ -1,23 +1,10 @@
-@media screen and (min-width: 600px) and (max-width: 1200px) {
+@media screen and (min-width: 600px) and (max-width: 1199px) {
   div.sleeve, section { width: auto; margin: 0 20px; }
 
-
-  body                      { font: 15px/22px "Artlist-Light"; }
-
+  body { font: 15px/22px "Artlist-Light"; }
+	article header, section.post input[type=string], section.post select { font-size: 22px; }
   h2, div.filter.controls { font-size: 14px; }
-
-  article header,
-  form.new.event input[type=string],
-  form.new.event textarea,
-  form.new.event select {
-    font: 22px/30px "Artlist-Light";
-  }
-
-  /*article .controls                  { font: 15px/30px "Artlist-Light"; }*/
-  body > header nav                   { font: 15px/30px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
-  /*div.filter.controls div.search       { font: 15px/48px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
-  div.filter.controls div.search input { font: 15px/48px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }
-  div.filter.controls div.categories   { font: 15px/33px "Artlist-Demi"; letter-spacing: 1px; text-transform: uppercase; }*/
+  section.post label { font-size: 12px; }
 
   /* HEADER */
 
@@ -38,22 +25,28 @@
   /* POST AN EVENT */
 
   section.post > header { padding: 22px 0 0; }
-  section.post > header h2 { position: absolute; }
-  section.post > header p { margin: 0px 0px 0px 25%;  }
-  section.post > footer { padding: 0 0 22px; }
+  section.post h2 { position: absolute; }
+  section.post header p { margin: 0px 0px 0px 25%;  }
   section.post form { margin: 0px 0px 0px 25%;  }
-
-  section.post label { font-size: 11px; }
-  section.post .web_address input { font-size: initial; }
-
-  /*form.new.event div.attribute { margin: 12px; }*/
-  form.new.event .date.attribute { width: 25%; float:left; }
-  form.new.event .time.attribute { width: 25%; float:left; }
-  form.new.event .cost.attribute { width: 25%; float:left; }
-  form.new.event .category.attribute { clear:left; }
-
-  form.new.event div.commit { padding: 20px 0; }
-  form.new.event div.commit button { border: 1px solid black; }
+  section.post .attribute { margin: 11px 0; height: 44px; }
+  section.post .attribute label { font-size: 11px; height: 44px; line-height: 11px; }
+	section.post .string.attribute input  { position: absolute; bottom: 0; line-height: 33px; height: 30px; }
+	section.post .string.attribute select { position: absolute; bottom: 0; line-height: 33px; height: 30px; }
+	section.post .date { width: 33%; margin: 0 0 11px; float:left; clear: left; }
+	section.post .date label { margin-right: 22px; }
+	section.post .time { width: 110px; float:left; margin: 0 0 11px; }
+	section.post .category.attribute { width: 33%; margin: 0 0 11px; float:left; clear: left;}
+	section.post .category label { margin-right: 22px; }
+	section.post .cost { width: 110px; float:left; margin: 0 0 11px; clear: right; }
+  section.post .description { height: auto; clear: both; }
+  section.post .description label { height: auto; }
+	section.post .description textarea { font-size:initial; }
+	section.post .web_address input { font-size: initial; }
+	section.post footer { height: 44px; line-height: 44px; margin: 11px -11px 22px; padding: 0px 11px; overflow: hidden; }
+	section.post footer .commit { height: 44px; margin-top: 0; }
+	section.post footer .synced { height: 44px; margin-top: 0; }
+	section.post form.synced .commit { margin-top: -44px; transition: margin-top 200ms ease-in-out; }
+	section.post button { padding: 0px 9px; height: 36px; line-height: 38px; margin-top: 4px; }
 
   /* LIST */
 

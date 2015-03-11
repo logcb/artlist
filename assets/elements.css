@@ -5,7 +5,7 @@
 @font-face { font-family: Artlist-Mono;   src: url(fonts/MaisonNeue-Mono.ttf);   }
 
 h1, h2, h3, h4, h5, h6, p, pre, button, input, select, textarea { font: inherit; }
-button, input, select { background: transparent; border: none; padding: none; margin: none; box-sizing: border-box; display: inline-block; }
+button, input, select { background: transparent; border: none; padding: none; margin: none; box-sizing: border-box; }
 body, header, footer, section, article, div, h1, h2, h3, h4, h5, h6, p, pre { margin: 0; padding: 0; position: relative; }
 pre { display: block; white-space: pre-wrap; }
 
@@ -34,11 +34,10 @@ section.post > header { border-top: 1px solid #999; }
 section.post div.attribute label { display:block; position: relative; box-sizing: border-box; }
 section.post div.string.attribute label { border-bottom: 1px dotted #999; }
 section.post div.url.attribute label { border-bottom: 1px dotted #999; }
-section.post textarea { display:block; border: 1px dotted #999; width: 100%; background:transparent; box-sizing: border-box; padding: 0; height:88px; outline-offset: 2px;}
-section.post select.one.category { display:block; border: none; width: 100%; padding: 0; text-indent: 0; -webkit-appearance: button; outline-offset: 2px;}
-section.post input[type=url]     { display:block; width: 100%; outline-offset: 2px; }
-section.post input[type=string]  { display:block; width: 100%; outline-offset: 2px; }
-
+section.post textarea { display:block; border: 1px dotted #999; width: 100%; background: transparent; box-sizing: border-box; padding: 0; height:88px; outline-offset: 0px; }
+section.post select.one.category { display:block; border: none; width: 100%; padding: 0; text-indent: 0; -webkit-appearance: button; outline-offset: 0px; }
+section.post input[type=string]  { display:block; width: 100%; outline-offset: 0px; }
+section.post input[type=url]     { display:block; width: 100%; outline-offset: 0px; }
 section.post button { font-family: "Artlist-Demi"; border: 1px solid #999; box-sizing: border-box; }
 section.post strong { font-family: "Artlist-Demi"; }
 
