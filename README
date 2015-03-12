@@ -1,38 +1,6 @@
 THE ARTLIST
 
-Created by LOG Creative Bureau with girafe en bois.
-
-SCHEDULE:
-
-January 26-30:
-• Converted widescreen mockup to web page
-• Converted pocket-size mockup to web page
-• Converted share form to web page
-• Assembled all screens into a HTML+CSS+Javascript bundle
-• Registered artlist.website and setup basic hosting package
-• Setup initial application server and deploy scripts
-
-February 2-6:
-• Database and hosting configuration
-• Refined deploy scripts
-• Validation and error handling for post an event form
-• Add description to forms
-• Add description to listings
-• Search and category filter programming
-• Enable pocket-sized post an event form
-• Enable pocket-sized information screen
-• Preview new event
-• Show event creation notice/receipt
-
-February 9-13:
-• Access controls for Art Engine folks
-• Programming of editing controls to add, remove and change the list
-• Let editors update the text that appears on the information screen
-
-February 16-20:
-• Refinements, bug squishing, optimizations, etc...
-
-Public Launch on Tuesday February 24 2015.
+Created by LOG Creative Bureau for Art Engine.
 
 COMMANDS:
 
@@ -52,4 +20,4 @@ Run the image in an interactive console on the remote host:
 `ssh core@artlist.website -C docker run -i -t --volume=/home/core/artlist_storage:/artlist/storage artlist_image /bin/bash`
 
 Push a new version of the index:
-scp storage/index.json core@artlist.website:artlist_storage
+`scp storage/index.json core@artlist.website:artlist_storage`
