@@ -19,80 +19,73 @@
 
   /* INTRODUCTION */
 
-  section.intro h2 { margin: 11px; }
-  section.intro p { margin: 11px; }
+  section.intro h2 { margin: 12px 6px; height: 16px; line-height: 18px; }
+  section.intro p { margin: 12px 6px; }
 
   /* POST AN EVENT */
 
-  section.post h2 { margin: 11px; }
-  section.post p { margin: 11px; }
-  section.post form { margin: 11px;  }
-  section.post .attribute { margin: 11px 0; height: 36px; }
+  section.post h2 { margin: 12px 6px; height: 16px; line-height: 18px; }
+  section.post p { margin: 12px 6px; }
+  section.post form { margin: 12px 6px; }
+  section.post .attribute { margin: 12px 0; height: 36px; }
   section.post .attribute label { height: 36px; line-height: 11px; }
 	section.post .string.attribute input  { position: absolute; bottom: 0; line-height: 26px; height: 25px; }
 	section.post .string.attribute select { position: absolute; bottom: 0; line-height: 26px; height: 25px; }
-	section.post .date { width: 50%; margin: 0 0 11px; float:left; clear: left; }
-	section.post .date label { margin-right: 11px; }
-	section.post .time { width: 33%; float:left; margin: 0 0 11px; }
-	section.post .category.attribute { width: 50%; margin: 0 0 11px; float:left; clear: left;}
-	section.post .category label { margin-right: 11px; }
-	section.post .cost { width: 33%; float:left; margin: 0 0 11px; clear: right; }
+	section.post .date { width: 50%; margin: 0 0 12px; float:left; clear: left; }
+	section.post .date label { margin-right: 12px; }
+	section.post .time { width: 33%; float:left; margin: 0 0 12px; }
+	section.post .category.attribute { width: 50%; margin: 0 0 12px; float:left; clear: left;}
+	section.post .category label { margin-right: 12px; }
+	section.post .cost { width: 33%; float:left; margin: 0 0 12px; clear: right; }
   section.post .description { height: auto; clear: both; }
   section.post .description label { height: auto; }
 	section.post .description textarea { line-height: 16px; }
-	section.post footer { height: 36px; line-height: 36px; margin: 11px -11px; padding: 0px 11px; overflow: hidden; }
+	section.post footer { height: 36px; line-height: 36px; margin: 12px -6px; padding: 0px 6px; overflow: hidden; }
 	section.post footer .commit { height: 36px; margin-top: 0; }
 	section.post footer .synced { height: 36px; margin-top: 0; }
 	section.post form.synced .commit { margin-top: -36px; transition: margin-top 200ms ease-in-out; }
 	section.post button { padding: 0px 7px; height: 28px; line-height: 29px; margin: 4px 1px 4px 0; }
 
-  /* LIST */
+  /* FILTER CONTROLS */
 
-  div.list_container { padding-top: 124px; } div.filter.controls { height: 124px; }
-
-  div.filter.controls { left: 0; right: 0; }
-
-  div.filter.controls div.rules { position: absolute; top: -1px; bottom: -1px; left: -30px; right: -30px; border-bottom: 1px solid #999; border-top: 1px solid #999; }
-
-  div.filter.controls div.search { margin: 11px; height: 22px; }
-  div.filter.controls div.search label { position: absolute; top: 0; left: 0; right: 0; display: block; }
-  div.filter.controls div.search input { position: absolute; top: 0; left: 0; right: 0; display: block; width: 100%; padding: 0; text-indent: 55px; }
-
-  div.filter.controls hr { height: 0; display:block; border:none; margin: 0 4px 4px; border-bottom: 1px dotted hsl(0, 0%, 0%); }
-
-  div.filter.controls div.categories { margin: 11px; height: 88px; }
-  div.filter.controls div.categories > * { width: 33%; height: 22px; position: absolute; }
-  div.filter.controls div.categories label { text-indent: 11px; }
-  div.filter.controls div.categories svg { height: 12px; width: 12px; top: 4px; left: -2px; }
+  div.filter.controls, div.filter.controls div.box { height: 136px; }
+  div.filter.controls div.rules { left: 0px; right: 0px; }
+  div.filter.controls div.search { margin: 6px; height: 36px; line-height: 38px; }
+  div.filter.controls div.search label { position: absolute; top: 0; left: 0; right: 0; display: block; height: 36px; }
+  div.filter.controls div.search input { position: absolute; top: 0; left: 0; right: 0; display: block; width: 100%; padding: 0; text-indent: 55px; border-bottom: 1px dotted #999; height: 36px;}
+  div.filter.controls hr { display:none;  }
+  div.filter.controls div.categories { margin: 6px; height: 88px; }
+  div.filter.controls div.categories label { width: 33%; height: 22px; line-height: 23px; position: absolute; text-indent: 16px; }
+  div.filter.controls div.categories svg { height: 16px; width: 16px; top: 3px; left: -1px; }
   div.filter.controls div.categories label:first-child { left: 00%; top: 00px; text-indent: 0;}
-  div.filter.controls div.categories label.comedy     { left: 00%; top: 22px; }
-  div.filter.controls div.categories label.community  { left: 00%; top: 44px; }
-  div.filter.controls div.categories label.dance      { left: 00%; top: 66px; }
-  div.filter.controls div.categories label.film       { left: 33%; top: 22px; }
-  div.filter.controls div.categories label.food       { left: 33%; top: 44px; }
-  div.filter.controls div.categories label.literature { left: 33%; top: 66px; }
-  div.filter.controls div.categories label.music      { left: 66%; top: 22px; }
-  div.filter.controls div.categories label.theatre    { left: 66%; top: 44px; }
-  div.filter.controls div.categories label.visual_art { left: 66%; top: 66px; }
+  div.filter.controls div.categories label.comedy      { left: 00%; top: 22px; }
+  div.filter.controls div.categories label.community   { left: 00%; top: 44px; }
+  div.filter.controls div.categories label.dance       { left: 00%; top: 66px; }
+  div.filter.controls div.categories label.film        { left: 33%; top: 22px; }
+  div.filter.controls div.categories label.food        { left: 33%; top: 44px; }
+  div.filter.controls div.categories label.literature  { left: 33%; top: 66px; }
+  div.filter.controls div.categories label.music       { left: 66%; top: 22px; }
+  div.filter.controls div.categories label.theatre     { left: 66%; top: 44px; }
+  div.filter.controls div.categories label.visual_art  { left: 66%; top: 66px; }
   div.filter.controls div.categories label input { display: none; }
 
   /* LIST */
 
-  section.day h2 { height: 21px; margin: -1px 0 0; position: relative; line-height: 22px; }
+  section.day h2 { height: 21px; margin: -1px 0 0; position: relative; line-height: 23px; letter-spacing: 0.5px; }
   section.day h2 .day_of_week { position: absolute; left: 20%; right: 20%; text-align: center; }
   section.day h2 .month_and_date { position: absolute; left: 8px; top: 0; }
 
   /* ARTICLE */
 
-  article { overflow: hidden; margin: 0px 0; padding: 0px 8px; }
+  article { padding: 0px 6px; }
   article:not(.activated) { height: 44px; }
   article header { height: 44px; }
   article div.title_and_venue { position: absolute; left: 16px; top: 0; right: 60px; height: 44px; }
   article div.title_and_venue > div { position: absolute; height: 16px; }
   article div.title { left: 0; top: 6px; right: 0; line-height: 18px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
   article div.venue { left: 0; bottom: 6px; right: 0; line-height: 18px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
-  article div.category.icon { position: absolute; left: -2px; top: 7px; }
-  article div.category.icon svg { height: 14px; width: 14px; display: block; margin: 0; position: absolute; }
+  article div.category.icon { position: absolute; left: -1px; top: 6px; }
+  article div.category.icon svg { height: 16px; width: 16px; display: block; margin: 0; position: absolute; }
   article div.time { position: absolute; height: 16px; line-height: 18px; right: 0; top: 6px; min-width: 100px; text-align: right; }
   article div.cost { position: absolute; height: 16px; line-height: 18px; right: 0; bottom: 6px; min-width: 100px; text-align: right; }
   article div.description { margin: 0px 0 4px 16px; }
