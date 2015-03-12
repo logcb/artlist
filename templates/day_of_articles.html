@@ -5,7 +5,7 @@
   </h2>
 </header>
 <% for article in @articles: %>
-  <article id="ART<%= article.id %>" <%- "hidden" unless Artlist.selection.include(article) %>>
+  <article id="<%= article.id %>" <%- "hidden" unless Artlist.selection.include(article) %>>
     <%- @render "article", {article} %>
   </article>
 <% end %>

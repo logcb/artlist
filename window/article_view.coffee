@@ -9,7 +9,7 @@ class ArticleView extends BasicView
   initialize: ->
     @activate()
     $(@el).on("click", @articleContainerWasClicked)
-    @model = Artlist.index.get @el.id.replace("ART", "")
+    @model = Artlist.index.get(@el.id)
     @model.on "change:title", debounce @saveArticle, 100
     @model.on "change:venue", debounce @saveArticle, 100
     @model.on "change:description", debounce @saveArticle, 100
@@ -33,7 +33,6 @@ class ArticleView extends BasicView
     @el.innerHTML = @renderTemplate({article:@model})
 
   articleContainerWasClicked: (event) =>
-    console.info "articleContainerWasClicked"
     return if $(event.target).is("a[href]")
     event.preventDefault()
     event.stopPropagation()

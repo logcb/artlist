@@ -39,6 +39,3 @@ class DayOfArticlesView extends BasicView
 
   sectionID: (date=@date) ->
     "#" + Moment(date, "YYYY-MM-DD").format("MMMDD")
-
-  articleID: (article) ->
-    "#ART" + article.id

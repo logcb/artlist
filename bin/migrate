@@ -8,20 +8,8 @@ parsed = JSON.parse(serialized)
 output = []
 
 for article in parsed
-  switch article.bucket
-    when "pending"
-      article.pending_at = (new Date).toJSON()
-    when "published"
-      article.published_at = (new Date).toJSON()
-    when "trash"
-      article.trashed_at = (new Date).toJSON()
-  # article.bucket = "pending"
-  # if article.trashed_at then article.bucket = "trash"
-  # if article.published_at then article.bucket = "published"
-  # article.venue += ", #{article.address}"
-  # delete article.address
-  # article.time = article.time
-  # delete article.time
+  if /ART/.test(article.id) is no
+    article.id = "ART" + article.id
   output.push article
 
-FileSystem.writeFileSync "storage/migrated.json", JSON.stringify(output, undefined, 2), "utf-8"
+FileSystem.writeFileSync "storage/index.json", JSON.stringify(output, undefined, 2), "utf-8"

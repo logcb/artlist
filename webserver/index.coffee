@@ -102,4 +102,4 @@ render = (name, params={}) ->
 generateIdentifierForNewArticle = (requestBody) ->
   hash = Crypto.createHash("sha1")
   hash.update(JSON.stringify(requestBody), "utf-8")
-  hash.digest("hex")
+  "ART" + hash.digest("hex")
