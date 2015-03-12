@@ -100,37 +100,4 @@
   article div.web_address { margin: 4px 0 8px 16px; }
   article div.web_address a { text-decoration: underline; }
   article footer { margin: 0px 8px 0; }
-
-
-  /*article { margin: -1px 4px 0; }*/
-  /*article.compacted { height: 43px; }*/
-  /*article.activated { height: auto; }
-  article header { height: 44px; }
-  article div.title_and_venue { height: 44px; }
-  article div.title_and_venue > div { height: 18px; }
-  article div.title { left: 12px; top: 4px; right: 56px; text-indent: 0; }
-  article div.venue { left: 12px; bottom: 4px; right: 56px; text-indent: 0; }
-  article div.time { position: absolute; height: 18px; right: 0; top: 4px; }
-  article div.cost { position: absolute; height: 18px; right: 0; bottom: 4px; }
-  article div.category { left: -2px; top: 6px; }
-  article div.category svg { height: 12px; width: 12px; }
-  article div.description { padding: 4px 12px; }
-  article div.web_address { padding: 4px 12px; }*/
-
-  /*article div.controls * { font: inherit; }
-  article div.controls { margin: 0px 12px;}
-   article div.controls input   {  }
-  article div.controls select  { }
-  article div.controls button  { }
-
-  article div.controls div.category { width: 50%; }
-  article div.controls div.category select.one.category { width: 100%; }
-
-  article div.controls div.date_and_time { width: 100%; }
-  article div.controls div.date_and_time label {  }
-  article div.controls div.date_and_time input[type=date] { width: 50%;  }
-  article div.controls div.date_and_time input[type=time] { width: 50%; }
-
-
-  article footer { height: 8px; }*/
 }
