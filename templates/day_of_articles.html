@@ -1,6 +1,6 @@
 <header>
   <h2>
-    <strong class="day_of_week"><%= @moment("#{@date}", "YYYY-MM-DD").format("dddd") %></strong>
+    <span class="day_of_week"><%= @moment("#{@date}", "YYYY-MM-DD").format("dddd") %></span>
     <span class="month_and_date"><%= @moment("#{@date}", "YYYY-MM-DD").format("MMMM D") %><span>
   </h2>
 </header>
