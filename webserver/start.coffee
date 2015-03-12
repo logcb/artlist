@@ -4,6 +4,8 @@
 #
 # Typically you don’t bother with all that typing and simply do `npm start`.
 
+
+
 webserver   = require "./index"
 environment = process.env.NODE_ENV ? "development"
 async       = require "async"
@@ -35,7 +37,7 @@ process.nextTick ->
       bindToPortAndBeginListening()
 
 bindToPortAndBeginListening = ->
-  webserver.listen port, (error) ->
+  webserver.listen port, "0.0.0.0", (error) ->
     if error
       console.error(error)
       throw "Can’t listen at port #{port}."
