@@ -107,7 +107,7 @@ article div.controls div.bucket_switches button.publish { width: 34%; margin: 0p
 
 /* Pending Articles */
 
-div.pending_articles { background: hsl(0, 0%, 88%);}
+div.pending_articles { background: #eee;}
 section.pending { border-top: 1px solid #999; }
 section.pending > header { padding: 20px 0; }
 section.pending > header h2 { font-family: "Artlist-Bold"; text-transform: uppercase; letter-spacing: 1px; line-height: 20px; }
@@ -115,7 +115,7 @@ section.pending > header p { line-height: 20px; line-height: 20px; }
 
 /* Trashed Articles */
 
-div.trashed_articles { background: hsl(0, 0%, 66%);}
+div.trashed_articles { background: #ccc;}
 section.trashed { border-top: 1px solid #999; }
 section.trashed > header { padding: 20px 0; }
 section.trashed > header h2 { font-family: "Artlist-Bold"; text-transform: uppercase; letter-spacing: 1px; line-height: 20px; }
