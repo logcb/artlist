@@ -8,6 +8,7 @@ class ArticleView extends BasicView
 
   initialize: ->
     @activate()
+    Function.delay 333, => $(@el).on("click", @articleContainerWasClicked)
     @model = Artlist.index.get @el.id.replace("ART", "")
     @model.on "change:title", debounce @saveArticle, 100
     @model.on "change:venue", debounce @saveArticle, 100
@@ -17,7 +18,6 @@ class ArticleView extends BasicView
     @model.on "error", @articleHasError
 
   events:
-    "click": "articleContainerWasClicked"
     "input div.title[contenteditable]": "titleInputWasChanged"
     "input div.venue[contenteditable]": "venueInputWasChanged"
     "input div.time[contenteditable]": "timeStringInputWasChanged"
@@ -32,7 +32,7 @@ class ArticleView extends BasicView
   render: ->
     @el.innerHTML = @renderTemplate({article:@model})
 
-  articleContainerWasClicked: (event) ->
+  articleContainerWasClicked: (event) =>
     return if @el.classList.contains("compacted")
     return if $(event.target).is("a[href]")
     if Artlist.operator.isPermittedToMakeChanges()
@@ -48,6 +48,7 @@ class ArticleView extends BasicView
     @el.classList.remove("activated")
     @el.classList.add("compacted")
     @off()
+    $(@el).off()
 
   categoryInputWasChanged: (event) ->
     @model.set "category", event.target.value
