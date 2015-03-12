@@ -46,15 +46,12 @@
 	section.post form.synced .commit { margin-top: -30px; transition: margin-top 200ms ease-in-out; }
 	section.post button { padding: 0px 5px; height: 30px; }
 
-	/* LIST CONTROLS */
+	/* FILTER CONTROLS */
 
 	body.index div.filter.controls div.position { position: fixed; top: 80px; left: 0; right: 0; }
 	body:not(.index) div.filter.controls div.position { position: relative; }
 
-	div.filter.controls { height: 180px; }
-
-	div.filter.controls div.sleeve { border: 1px solid transparent; margin: -1px auto; height: 180px; }
-	div.filter.controls div.box { height: 180px; }
+	div.filter.controls, div.filter.controls div.box { height: 180px; }
 	div.filter.controls div.rules { position: absolute; top: -1px; bottom: -1px; left: -30px; right: -30px; border-bottom: 1px solid #999; border-top: 1px solid #999; }
 
 	div.filter.controls div.search { position: absolute; top: 15px; left: 0; right: 50%; margin: 0 20px 0 0; height: 30px; line-height: 30px; }
