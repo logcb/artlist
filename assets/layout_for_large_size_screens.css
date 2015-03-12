@@ -78,7 +78,7 @@
 
 	/* LIST */
 
-	section.day > header h2 { margin: 0px -30px -1px; padding: 0px 30px; height: 60px; line-height: 62px; }
+	section.day > header h2 { margin: -1px -30px 0px; padding: 0px 30px; height: 59px; line-height: 62px; }
 
 	/* Article */
 
@@ -88,7 +88,7 @@
 
 	/* Article Display */
 
-	article header { height: 60px; line-height: 34px; border-top: 1px dotted #999; }
+	article header { height: 60px; line-height: 34px; }
 	article div.title_and_venue { position: absolute; margin: 0 0 0 0; padding: 15px 20px; bottom: auto; top: 0; left: 0; right: 25%; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
 	article div.title_and_venue > div { display: inline; position: relative; top: auto; bottom: auto;	height: 25px; }
 	article div.title { padding: 0; text-indent: 0; }
