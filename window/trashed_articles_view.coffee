@@ -9,7 +9,7 @@ class TrashedArticlesView extends BasicView
   template: require "../templates/trashed_articles.html"
 
   events:
-    "mousedown article.compacted[id]": "activateArticle"
+    "click article:not(.activated)": "activateArticle"
 
   initialize: ->
     @collection.on "add remove", @render
@@ -29,4 +29,4 @@ class TrashedArticlesView extends BasicView
       @el.innerHTML = ""
 
   activateArticle: (event) ->
-    Function.delay 33, => new ArticleView el: event.currentTarget
+    new ArticleView el: event.currentTarget

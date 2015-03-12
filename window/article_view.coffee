@@ -8,7 +8,7 @@ class ArticleView extends BasicView
 
   initialize: ->
     @activate()
-    Function.delay 333, => $(@el).on("click", @articleContainerWasClicked)
+    $(@el).on("click", @articleContainerWasClicked)
     @model = Artlist.index.get @el.id.replace("ART", "")
     @model.on "change:title", debounce @saveArticle, 100
     @model.on "change:venue", debounce @saveArticle, 100
@@ -33,20 +33,20 @@ class ArticleView extends BasicView
     @el.innerHTML = @renderTemplate({article:@model})
 
   articleContainerWasClicked: (event) =>
-    return if @el.classList.contains("compacted")
+    console.info "articleContainerWasClicked"
     return if $(event.target).is("a[href]")
+    event.preventDefault()
+    event.stopPropagation()
     if Artlist.operator.isPermittedToMakeChanges()
       @deactivate() if event.target is @el
     else
       @deactivate()
 
   activate: =>
-    @el.classList.remove("compacted")
     @el.classList.add("activated")
 
   deactivate: =>
     @el.classList.remove("activated")
-    @el.classList.add("compacted")
     @off()
     $(@el).off()
 

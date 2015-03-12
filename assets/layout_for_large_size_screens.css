@@ -83,8 +83,7 @@
 	/* Article */
 
 	article { margin: 0 -30px; padding: 0 30px; position: relative; }
-	article.compacted { height: 60px; }
-	article.activated { height: auto; }
+	article:not(.activated) { height: 60px; }
 
 	/* Article Display */
 

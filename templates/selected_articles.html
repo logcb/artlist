@@ -4,7 +4,7 @@
       <h2><strong><%= @moment("#{date}", "YYYY-MM-DD").format("dddd") %></strong>, <%= @moment("#{date}", "YYYY-MM-DD").format("MMM D") %></h2>
     </header>
     <% for article in articles: %>
-      <article class="compacted" id="<%= article.id %>">
+      <article id="<%= article.id %>">
         <%- @render "article", {article} %>
       </article>
     <% end %>

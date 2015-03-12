@@ -16,7 +16,7 @@ class DayOfArticlesView extends BasicView
     @insertIntoDocument()
 
   events:
-    "click article.compacted": "activateArticle"
+    "click article:not(.activated)": "activateArticle"
 
   render: =>
     @el.id = @sectionID()

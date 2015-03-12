@@ -4,7 +4,7 @@
     <p>Events are erased automatically after 15 days in the trash.</p>
   </header>
   <% for article in @articles: %>
-    <article class="compacted" id="<%= article.id %>">
+    <article id="<%= article.id %>">
       <%- @render "article", {article} %>
     </article>
   <% end %>

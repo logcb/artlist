@@ -4,7 +4,7 @@
     <p><%= @articles.length  %> new events are awaiting editorial review.</p>
   </header>
   <% for article in @articles: %>
-    <article class="compacted" id="<%= article.id %>">
+    <article id="<%= article.id %>">
       <%- @render "article", {article} %>
     </article>
   <% end %>

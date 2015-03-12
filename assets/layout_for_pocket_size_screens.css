@@ -85,8 +85,7 @@
   /* ARTICLE */
 
   article { overflow: hidden; margin: 0px 0; padding: 0px 8px; }
-  article.compacted { height: 44px; }
-  article.activated { height: auto; }
+  article:not(.activated) { height: 44px; }
   article header { height: 44px; }
   article div.title_and_venue { position: absolute; left: 16px; top: 0; right: 60px; height: 44px; }
   article div.title_and_venue > div { position: absolute; height: 16px; }

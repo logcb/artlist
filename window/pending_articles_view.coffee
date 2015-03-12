@@ -9,7 +9,7 @@ class PendingArticlesView extends BasicView
   template: require "../templates/pending_articles.html"
 
   events:
-    "mousedown article.compacted[id]": "activateArticle"
+    "click article:not(.activated)": "activateArticle"
 
   initialize: ->
     @collection.on "add remove", @render
@@ -27,4 +27,4 @@ class PendingArticlesView extends BasicView
       @el.innerHTML = ""
 
   activateArticle: (event) ->
-    Function.delay 33, => new ArticleView el: event.currentTarget
+    new ArticleView el: event.currentTarget
