@@ -2,8 +2,6 @@ FileSystem        = require "fs"
 hostname          = "artlist" + (if process.env.NODE_ENV is "production" then ".website" else ".dev")
 environment       = process.env.NODE_ENV ? "development"
 Artlist           = require "./artlist"
-CryptoCredentials = require "./crypto"
-SecretPhrase      = FileSystem.readFileSync("secrets/#{hostname}.secret.txt", "utf-8").trim()
 MorganLogger      = require "morgan"
 Express           = require "express"
 HTTPS             = require "https"
@@ -11,6 +9,14 @@ Helmet            = require "helmet"
 Eco               = require "eco"
 Cookie            = require "cookie"
 Crypto            = require "crypto"
+
+# Read SSL certificate and secret key from the file system.
+CryptoCredentials =
+  cert: FileSystem.readFileSync "webserver/crypto/#{hostname}.certificates.pem"
+  key:  FileSystem.readFileSync "secrets/#{hostname}.secret.key"
+
+# Read the secret phrase from the file system.
+SecretPhrase = FileSystem.readFileSync("secrets/#{hostname}.secret.txt", "utf-8").trim()
 
 # Exports an instance of [HTTPS server](http://nodejs.org/api/https.html#https_class_https_server)
 # with [cryptography credentials](./crypto_credentials.coffee) for this node.
