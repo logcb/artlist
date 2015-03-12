@@ -123,8 +123,6 @@ section.trashed > header p { line-height: 20px; line-height: 20px; }
 
 /* Document Footer */
 
-body > footer div.box { border-top: 1px solid #999; }
-
 body > footer img { display:block; margin: auto; padding: 12px; }
 body > footer input { font-family: "Artlist-Bold"; }
 
