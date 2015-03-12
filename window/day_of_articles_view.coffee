@@ -10,12 +10,13 @@ class DayOfArticlesView extends BasicView
 
   initialize: (@date, options={}) ->
     @collection = new Artlist.Article.DateCollection @date, options
-    @collection.on "add", @insertArticle
-    @collection.on "remove", @removeArticle
+    @collection.on "add remove", @render
+    Artlist.selection.on "add remove", @render
+    @render()
     @insertIntoDocument()
 
   events:
-    "mousedown article.compacted[id]": "activateArticle"
+    "click article.compacted": "activateArticle"
 
   render: =>
     @el.id = @sectionID()
@@ -26,16 +27,9 @@ class DayOfArticlesView extends BasicView
     })
 
   insertIntoDocument: ->
-    @render()
     containerElement = document.querySelector("div.current_articles")
     referenceElement = containerElement.querySelector("#{@nextSectionID()}")
     containerElement.insertBefore(@el, referenceElement)
-
-  insertArticle: (article) =>
-    @render()
-
-  removeArticle: (article) =>
-    @render()
 
   activateArticle: (event) ->
     new ArticleView el: event.currentTarget
