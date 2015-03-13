@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="assets/layout_for_pocket_size_screens.css">
 <script src="assets/bundle.js"></script>
 <script src="index.json.js"></script>
-<body class="loading" data-permit-id="<%= @permitIdentifier %>">
+<body class="loading" data-permit-id="<%= @permit?.id %>">
   <%- @render "header" %>
   <div class="intro"><%- @render "intro" %></div>
   <div class="post"></div>

@@ -1,9 +1,10 @@
 Artlist  = module.exports = {}
+hostname = "artlist" + (if process.env.NODE_ENV is "production" then ".website" else ".dev")
 Backbone = require "backbone"
-crypto  = require "crypto"
-{readFileSync, writeFileSync} = require "fs"
+Crypto  = require "crypto"
+FileSystem = require "fs"
 
-Artlist.index = new Backbone.Collection JSON.parse(readFileSync("storage/index.json"))
+Artlist.index = new Backbone.Collection JSON.parse(FileSystem.readFileSync("storage/index.json"))
 
 Artlist.index.comparator = (model) -> model.get("date") + model.get("time")
 
@@ -37,4 +38,27 @@ Artlist.index.on "change", (model) ->
   saveIndexOnFileSystem()
 
 saveIndexOnFileSystem = ->
-  writeFileSync "storage/index.json", JSON.stringify(Artlist.index.toJSON(), undefined, "  "), "utf-8"
+  FileSystem.writeFileSync "storage/index.json", JSON.stringify(Artlist.index.toJSON(), undefined, "  "), "utf-8"
+
+
+
+SecretPhrase = FileSystem.readFileSync("secrets/#{hostname}.secret.txt", "utf-8").trim()
+
+Artlist.permits = new Backbone.Collection JSON.parse(FileSystem.readFileSync("storage/permits.json"))
+
+Artlist.permits.generateIdentifer = ->
+  hash = Crypto.createHash("sha1")
+  hash.update(Crypto.randomBytes(256))
+  hash.digest("hex")
+
+Artlist.permits.authorize = (secretPhraseInput) ->
+  if secretPhraseInput is SecretPhrase
+    @add id: @generateIdentifer()
+  else
+    undefined
+
+Artlist.permits.on "add remove", (model) ->
+  savePermitsOnFileSystem()
+
+savePermitsOnFileSystem = ->
+  FileSystem.writeFileSync "storage/permits.json", JSON.stringify(Artlist.permits.toJSON(), undefined, "  "), "utf-8"
