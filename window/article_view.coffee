@@ -15,6 +15,7 @@ class ArticleView extends BasicView
     @model.on "change:description", debounce @saveArticle, 100
     @model.on "change:time", debounce @saveArticle, 100
     @model.on "change:cost", debounce @saveArticle, 100
+    @model.on "change:web_address", debounce @saveArticle, 100
     @model.on "error", @articleHasError
 
   events:
@@ -24,6 +25,7 @@ class ArticleView extends BasicView
     "input div.time[contenteditable]": "timeStringInputWasChanged"
     "input div.description pre[contenteditable]": "descriptionInputWasChanged"
     "input div.cost[contenteditable]": "costInputWasChanged"
+    "input div.web_address [type=url]": "webAddressInputWasChanged"
     "change select.one.category": "categoryInputWasChanged"
     "change div.date input": "dateInputWasChanged"
     "click button.publish": "publishArticle"
@@ -83,6 +85,9 @@ class ArticleView extends BasicView
 
   descriptionInputWasChanged: (event) ->
     @model.set "description", event.target.innerText
+
+  webAddressInputWasChanged: (event) ->
+    @model.set "web_address", event.target.value
 
   publishArticle: (event) ->
     console.info "moveArticleToPublishedBucket"
