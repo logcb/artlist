@@ -28,6 +28,15 @@ service.use MorganLogger ":status :method :url :response-time ms"
 # Activate strict transport security.
 service.use Helmet.hsts maxAge: (24 * 60 * 60 * 1000) * 180
 
+# Define the content security policy.
+service.use Helmet.csp
+  'default-src': "'none'"
+  'connect-src': "'self'"
+  'font-src':    "'self'"
+  'img-src':     "'self'"
+  'script-src':  "'self'"
+  'style-src':   "'self' 'unsafe-inline'"
+
 # Set `request.body` from parsed JSON.
 service.use require("body-parser").json()
 
