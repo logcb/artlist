@@ -18,6 +18,7 @@ class ArticleView extends BasicView
     @model.on "error", @articleHasError
 
   events:
+    "keypress div[contenteditable]": "blurIfEnterKeyWasPressed"
     "input div.title[contenteditable]": "titleInputWasChanged"
     "input div.venue[contenteditable]": "venueInputWasChanged"
     "input div.time[contenteditable]": "timeStringInputWasChanged"
@@ -31,6 +32,11 @@ class ArticleView extends BasicView
 
   render: ->
     @el.innerHTML = @renderTemplate({article:@model})
+
+  blurIfEnterKeyWasPressed: (event) ->
+    if event.keyIdentifier is "Enter"
+      event.preventDefault()
+      event.target.blur()
 
   articleContainerWasClicked: (event) =>
     return if $(event.target).is("a[href]")
