@@ -20,6 +20,8 @@ class ArticleView extends BasicView
 
   events:
     "keypress div[contenteditable]": "blurIfEnterKeyWasPressed"
+    "keypress [type=url]": "blurIfEnterKeyWasPressed"
+    "keypress [type=string]": "blurIfEnterKeyWasPressed"
     "input div.title[contenteditable]": "titleInputWasChanged"
     "input div.venue[contenteditable]": "venueInputWasChanged"
     "input div.time[contenteditable]": "timeStringInputWasChanged"
