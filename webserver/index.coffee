@@ -73,7 +73,7 @@ service.post "/articles", (request, response, next) ->
 
 # Update an existing exiting article.
 service.put "/articles/:id", (request, response, next) ->
-  if Artlist.permits.verify(request.permitID)
+  if request.permit
     attributes = {}
     attributes[name] = request.body[name] for name in ["title", "venue", "cost", "date", "time", "description", "category", "web_address", "destination_bucket"]
     model = Artlist.index.get(request.params.id).set(attributes)
