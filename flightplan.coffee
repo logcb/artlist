@@ -14,6 +14,10 @@ artlist =
 flightplan.remote ["reboot"], (remote) ->
   remote.sudo("reboot --force --reboot")
 
+flightplan.remote ["setup"], (remote) ->
+  remote.sudo("timedatectl set-timezone America/Montreal")
+  remote.exec("timedatectl")
+
 flightplan.remote ["status", "inspect", "default"], (remote) ->
   remote.exec "id"
   remote.exec "df /"

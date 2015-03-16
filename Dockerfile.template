@@ -7,9 +7,6 @@ MAINTAINER girafe en bois
 # Set the locale.
 RUN echo 'en_US.UTF-8 UTF-8' > /etc/locale.gen
 
-# Set the timezone.
-RUN sudo timedatectl set-timezone Canada/Eastern
-
 # Refresh, upgrade and install nessesary software packages.
 RUN pacman-db-upgrade
 RUN pacman --refresh --refresh --sync --sysupgrade --noconfirm
