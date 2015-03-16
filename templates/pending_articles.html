@@ -1,7 +1,11 @@
 <section class="pending">
   <header>
-    <h2>Pending events</h2>
-    <p><%= @articles.length  %> new events are awaiting editorial review.</p>
+    <h2>Pending Events</h2>
+    <% if @articles.length isnt 0: %>
+      <p><%= @articles.length  %> new <%- if @articles.length is 1 then "event is" else "events are" %> awaiting editorial review.</p>
+    <% else: %>
+      <p>No new events are awaiting editorial review.</p>
+    <% end %>
   </header>
   <% for article in @articles: %>
     <article id="<%= article.id %>">
