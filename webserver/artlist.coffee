@@ -3,6 +3,7 @@ hostname = "artlist" + (if process.env.NODE_ENV is "production" then ".website" 
 Backbone = require "backbone"
 Crypto  = require "crypto"
 FileSystem = require "fs"
+Moment = require "moment"
 
 Artlist.index = new Backbone.Collection JSON.parse(FileSystem.readFileSync("storage/index.json"))
 
@@ -37,10 +38,26 @@ Artlist.index.on "change", (model) ->
   Artlist.index.sort()
   saveIndexOnFileSystem()
 
+Artlist.index.eraseExpiredArticles = ->
+  today = Moment().format("YYYY-MM-DD")
+  expired = Artlist.index.filter (article) ->
+    article.get("date") < today
+  console.info "Erasing #{expired.length} expired articles..."
+  Artlist.index.remove(expired)
+  console.info "Index has #{Artlist.index.length} articles."
+  saveIndexOnFileSystem()
+
+Artlist.index.eraseDisposableArticles = ->
+  fifteenDaysAgo = Moment().subtract("15", "days").format("YYYY-MM-DD")
+  disposable = Artlist.index.filter (article) ->
+    article.get("bucket") is "trash" and article.get("trashed_at") < fifteenDaysAgo
+  console.info "Erasing #{disposable.length} disposable articles..."
+  Artlist.index.remove(disposable)
+  console.info "Index has #{Artlist.index.length} articles."
+  saveIndexOnFileSystem()
+
 saveIndexOnFileSystem = ->
   FileSystem.writeFileSync "storage/index.json", JSON.stringify(Artlist.index.toJSON(), undefined, "  "), "utf-8"
-
-
 
 SecretPhrase = FileSystem.readFileSync("secrets/#{hostname}.secret.txt", "utf-8").trim()
 

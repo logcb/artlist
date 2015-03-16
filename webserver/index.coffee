@@ -9,6 +9,8 @@ Helmet            = require "helmet"
 Eco               = require "eco"
 Cookie            = require "cookie"
 Crypto            = require "crypto"
+Moment            = require "moment"
+
 
 # Read SSL certificate and secret key from the file system.
 CryptoCredentials =
@@ -112,3 +114,11 @@ generateIdentifierForNewArticle = (requestBody) ->
   hash = Crypto.createHash("sha1")
   hash.update(JSON.stringify(requestBody), "utf-8")
   "ART" + hash.digest("hex")
+
+# Erase expired articles at startup and periodically thereafter.
+process.nextTick Artlist.index.eraseExpiredArticles
+setInterval Artlist.index.eraseExpiredArticles, Moment.duration(1, "hour")
+
+# Erase disposable articles at startup and periodically thereafter.
+process.nextTick Artlist.index.eraseDisposableArticles
+setInterval Artlist.index.eraseDisposableArticles, Moment.duration(1, "hour")
