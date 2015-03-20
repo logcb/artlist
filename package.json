@@ -20,7 +20,7 @@
     "underscore": "^1.7.0"
   },
   "scripts": {
-    "start": "make; coffee webserver/start.coffee",
+    "start": "coffee webserver/start.coffee",
     "test": "open https://artlist.dev:4000/"
   },
   "description": "THE ARTLIST",
