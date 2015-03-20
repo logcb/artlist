@@ -1,7 +1,5 @@
 artlist_image
 node_modules
-secrets
+secrets/artlist.website.*
 storage
-webserver/crypto/artlist.dev.crt
-webserver/crypto/artlist.dev.certificates.pem
 *.csr
