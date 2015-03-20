@@ -26,6 +26,10 @@ button, strong { font-family: "Artlist-Demi"; }
 body { text-size-adjust: none; -webkit-text-size-adjust: none; }
 body.loading * { visibility: hidden; }
 
+/* Hand pointer cursor for actionable elements */
+
+a[href], button:not([disabled]), article:not(.activated), div.filter.controls label:not(:first-child) { cursor: pointer; }
+
 /* Introduction */
 
 div.intro > header { border-top: 1px solid #999; }
