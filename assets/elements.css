@@ -26,6 +26,10 @@ button, strong { font-family: "Artlist-Demi"; }
 body { text-size-adjust: none; -webkit-text-size-adjust: none; }
 body.loading * { visibility: hidden; }
 
+/* Hide days without any events unless an editor is working on the list */
+
+body:not(.editing) section.empty.day { display: none; }
+
 /* Hand pointer cursor for actionable elements */
 
 a[href], button:not([disabled]), article:not(.activated), div.filter.controls label:not(:first-child) { cursor: pointer; }
