@@ -21,11 +21,11 @@
     "xml2js": "^0.4.4"
   },
   "scripts": {
-    "start": "coffee webserver/start.coffee",
+    "start": "make; coffee webserver/start.coffee",
     "test": "open https://artlist.dev:4000/"
   },
   "description": "THE ARTLIST",
   "homepage": "https://artlist.dev/",
   "license": "Public Domain",
-  "author": "Log Creative Bureau with girafe en bois"
+  "author": "Log Creative Bureau"
 }
