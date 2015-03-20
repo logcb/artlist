@@ -1,30 +1,20 @@
-setup: \
-	storage/index.json \
-	webserver/crypto/artlist.dev.certificates.pem \
-	webserver/crypto/artlist.website.certificates.pem
+setup: storage/index.json storage/permits.json
 
-
-# Storage folder.
+# Create the storage folder.
 storage:
 	mkdir -p storage
 
-# Download a copy of the index and save it to storage.
+# Download a copy of index.json from the website and save it to storage.
 storage/index.json: storage
 	curl https://artlist.website/index.json > storage/index.json
 
+# Create an empty list of permits and save it to storage.
+storage/permits.json: storage
+	echo "[]" > permits.json
 
-# PEM encoded file that includes the artlist.dev certificate and any intermediate certificates.
-webserver/crypto/artlist.dev.certificates.pem: webserver/crypto/artlist.dev.crt
-	cat webserver/crypto/artlist.dev.crt > webserver/crypto/artlist.dev.certificates.pem
 
-# Make self-signed certificate for artlist.dev
-webserver/crypto/artlist.dev.crt: secrets/artlist.dev.secret.key
-	./bin/certify-artlist.dev
-
-# Make secret key for artlist.dev
-secrets/artlist.dev.secret.key:
-	openssl genrsa 2048 > secrets/artlist.dev.secret.key
-
+# --------------------------------------
+# SSL certificates for the public server
 
 # PEM encoded file that includes the artlist.website certificate and the intermediate certificate.
 webserver/crypto/artlist.website.certificates.pem: webserver/crypto/artlist.website.crt webserver/crypto/GandiStandardSSLCA.pem
@@ -45,3 +35,19 @@ secrets/artlist.website.secret.key:
 # Download intermediate certificate from Gandi.
 webserver/crypto/GandiStandardSSLCA.pem:
 	curl -O https://www.gandi.net/static/CAs/GandiStandardSSLCA.pem > webserver/crypto/GandiStandardSSLCA.pem
+
+
+# ----------------------------------------
+# SSL Certificates for development servers
+
+# PEM encoded file that includes the artlist.dev certificate and any intermediate certificates.
+webserver/crypto/artlist.dev.certificates.pem: webserver/crypto/artlist.dev.crt
+	cat webserver/crypto/artlist.dev.crt > webserver/crypto/artlist.dev.certificates.pem
+
+# Make self-signed certificate for artlist.dev
+webserver/crypto/artlist.dev.crt: secrets/artlist.dev.secret.key
+	./bin/certify-artlist.dev
+
+# Make secret key for artlist.dev
+secrets/artlist.dev.secret.key:
+	openssl genrsa 2048 > secrets/artlist.dev.secret.key
