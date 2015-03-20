@@ -1,4 +1,4 @@
-@media screen and (min-width: 600px) and (max-width: 1199px) {
+@media screen and (min-width: 600px) and (max-width: 1024px) {
   div.sleeve, section { width: auto; margin: 0 20px; }
 
   body { font: 15px/22px "Artlist-Light"; }
