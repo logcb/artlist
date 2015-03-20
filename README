@@ -17,10 +17,10 @@ Move into the project directory and then install packages:
 `cd artlist`
 `npm install`
 
-After all the packages are installed you can start the webserver on your machine with:
-
+After all the packages are installed you can start the webserver with:
 `npm start`
 
+Visit https://artlist.dev:4000/ to see your copy of the site.
 
 REMOTE COMMANDS:
 
