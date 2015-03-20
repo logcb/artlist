@@ -13,6 +13,7 @@ RUN pacman --refresh --refresh --sync --sysupgrade --noconfirm
 RUN pacman --sync git nodejs python2 --noconfirm
 
 # Define the node environment.
+ENV PYTHON /usr/sbin/python2
 ENV NODE_ENV production
 ENV NODE_PATH /artlist
 ENV NODE_HOSTNAME artlist.website
