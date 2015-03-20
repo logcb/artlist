@@ -2,13 +2,27 @@ THE ARTLIST
 
 Created by LOG Creative Bureau for Art Engine.
 
-COMMANDS:
+SETUP ON A MAC:
 
-Install the package:
+Make sure you have installed the following software:
+
+• Command Line Tools from Apple (https://developer.apple.com/opensource/)
+• NodeJS version 12 (https://nodejs.org/download/)
+• Pow (http://pow.cx/)
+
+Clone the project repository:
+`git clone https://github.com/logcb/artlist.git`
+
+Move into the project directory and then install packages:
+`cd artlist`
 `npm install`
 
-Start the webserver:
+After all the packages are installed you can start the webserver on your machine with:
+
 `npm start`
+
+
+REMOTE COMMANDS:
 
 Start the webserver in a production environment:
 `NODE_ENV=production npm start`
