@@ -71,9 +71,7 @@
 
   /* LIST */
 
-  section.day h2 { height: 21px; margin: -1px 0 0; position: relative; line-height: 23px; letter-spacing: 0.5px; }
-  section.day h2 .day_of_week { position: absolute; left: 20%; right: 20%; text-align: center; }
-  section.day h2 .month_and_date { position: absolute; left: 8px; top: 0; }
+  section.day h2 { height: 21px; margin: -1px 0 0; position: relative; line-height: 23px; letter-spacing: 0.5px; text-align: center; }
 
   /* ARTICLE */
 
