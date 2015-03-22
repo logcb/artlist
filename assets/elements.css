@@ -102,7 +102,7 @@ section.day > header h2 .month_and_date { color: #999; font-family: "Artlist-Lig
 
 /* Articles */
 
-article { overflow: hidden; }
+article { overflow: hidden; transition: height 0ms ease-out; }
 article header { color: hsl(0, 0%, 33%); }
 article footer { position:absolute; bottom: 0; left: 0; right: 0; border-bottom: 1px dotted #999; }
 article div.box { border-bottom: 1px dotted #999; }

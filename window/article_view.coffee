@@ -52,12 +52,22 @@ class ArticleView extends BasicView
       @deactivate()
 
   activate: =>
+    @compactedHeight = $(@el).height()
+    @el.style.transitionDuration = @$("div.box").height() * 1.00 + "ms"
+    @el.style.height = @$("div.box").height() + "px"
     @el.classList.add("activated")
 
   deactivate: =>
+    @el.style.transitionDuration = @$("div.box").height() * 0.66 + "ms"
+    @el.style.height = @compactedHeight + "px"
     @el.classList.remove("activated")
     @off()
     $(@el).off()
+    $(@el).on "transitionend", (event) =>
+      if event.target is @el and event.propertyName is "height"
+        @el.style.transitionDuration = "0"
+        @el.style.height = ""
+        $(@el).off "transitionend"
 
   categoryInputWasChanged: (event) ->
     @model.set "category", event.target.value
