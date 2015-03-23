@@ -49,7 +49,7 @@ class ArticleView extends BasicView
     if Artlist.operator.isPermittedToMakeChanges()
       @deactivate() if event.target is @el
     else
-      @deactivate()
+      @deactivate() if window.getSelection().isCollapsed
 
   activate: =>
     @compactedHeight = $(@el).height()
