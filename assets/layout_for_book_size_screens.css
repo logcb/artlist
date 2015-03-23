@@ -1,7 +1,7 @@
 @media screen and (min-width: 600px) and (max-width: 1024px) {
   div.sleeve, section { width: auto; margin: 0 20px; }
 
-  body { font: 15px/22px "Artlist-Light"; }
+  body {font: 15px/22px "Artlist-Light";}
 	article header, section.post input[type=string], section.post select { font-size: 22px; }
   h2, div.filter.controls { font-size: 14px; }
   section.post label { font-size: 12px; }
