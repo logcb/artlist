@@ -2,7 +2,7 @@
   div.sleeve, section { width: auto; margin: 0 20px; }
 
   body {font: 15px/22px "Artlist-Light";}
-	article header, section.post input[type=string], section.post select { font-size: 22px; }
+	article header, section.post input[type=string], section.post select { font-size: 20px; }
   h2, div.filter.controls { font-size: 14px; }
   section.post label { font-size: 12px; }
 
@@ -28,7 +28,7 @@
   section.post header p { margin: 0px 0px 0px 25%;  }
   section.post form { margin: 0px 0px 0px 25%;  }
   section.post .attribute { margin: 11px 0; height: 44px; }
-  section.post .attribute label { font-size: 11px; height: 44px; line-height: 11px; }
+  section.post .attribute label { font-size: 12px; height: 44px; line-height: 11px; }
 	section.post .string.attribute input  { position: absolute; bottom: 0; line-height: 33px; height: 30px; }
 	section.post .string.attribute select { position: absolute; bottom: 0; line-height: 33px; height: 30px; }
 	section.post .date { width: 33%; margin: 0 0 11px; float:left; clear: left; }
@@ -60,7 +60,7 @@
   div.filter.controls div.search input { position: absolute; top: 0; left: 0; right: 0; display: block; width: 100%; padding: 0; text-indent: 75px; }
 
   div.filter.controls hr { height: 0; display: block; border:none; margin: 0; border-bottom: 1px dotted hsl(0, 0%, 0%); }
-
+	
   div.filter.controls div.categories { margin: 10px 0; height: 90px; }
   div.filter.controls div.categories > * { width: 25%; height: 30px; line-height: 32px; }
   div.filter.controls div.categories label { position: absolute; display:block; text-indent: 15px; }
@@ -92,9 +92,9 @@
   article div.venue { left: 0; bottom: 14px; right: 0; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
   article div.category.icon { position: absolute; left: -5px; top: 16px; }
   article div.category.icon svg { height: 22px; width: 22px; display: block; margin: 0; position: absolute; }
-  article div.time { position: absolute; height: 25px; right: 0; top: 12px; min-width: 100px; text-align: right; }
-  article div.cost { position: absolute; height: 25px; right: 0; bottom: 12px; min-width: 100px; text-align: right; }
-  article div.description { padding: 0 20px; }
+  article div.time { position: absolute; height: 25px; right: 0; top: 16px; min-width: 100px; text-align: right; }
+  article div.cost { position: absolute; height: 25px; right: 0; bottom: 11px; min-width: 100px; text-align: right; }
+  article div.description { padding: 0 20px; max-width:73%;}
   article div.web_address { padding: 10px 20px; }
   article div.web_address a { text-decoration: underline; }
   article div.web_address div.code { font: 15px/20px; }

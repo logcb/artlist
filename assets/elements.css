@@ -63,7 +63,7 @@ body > header h1 { border-bottom: 1px solid #999; }
 
 body > header nav { position: absolute; }
 body > header nav > a { display: block; }
-body > header nav img.icon { border: 1px solid #999; box-sizing: border-box; display: block; }
+body > header nav img.icon { box-sizing: border-box; display: block; }
 
 /* Category Icons */
 
