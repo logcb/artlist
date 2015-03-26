@@ -18,9 +18,12 @@ class DayOfArticlesView extends BasicView
   events:
     "click article:not(.activated)": "activateArticle"
 
+  selectionContainsDate: ->
+    Artlist.selection.detect (article) => article.get("date") is @date
+
   render: =>
     @el.id = @sectionID()
-    @el.classList[if @collection.isEmpty() then "add" else "remove"]("empty")
+    @el.classList[if @selectionContainsDate() then "remove" else "add"]("empty")
     @el.innerHTML = @renderTemplate({
       date: @date
       articles: @collection.toArray()
