@@ -12,8 +12,8 @@
 <script src="index.json.js"></script>
 <body class="loading" data-permit-id="<%= @permit?.id %>">
   <%- @render "header" %>
-  <div class="intro"><%- @render "intro" %></div>
-  <div class="post"></div>
+  <div class="intro" hidden><%- @render "intro" %></div>
+  <div class="post" hidden></div>
   <div class="current_articles"><div class="filter controls"></div></div>
   <div class="pending_articles"></div>
   <div class="trashed_articles"></div>

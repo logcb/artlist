@@ -23,11 +23,13 @@ class Router extends Backbone.Router
   intro: ->
     document.body.classList.remove("index", "intro", "post")
     document.body.classList.add("intro")
+    document.body.querySelector("div.intro").removeAttribute("hidden")
     @scrollTo("section.intro") unless @scrolling
 
   post: ->
     document.body.classList.remove("index", "intro", "post")
     document.body.classList.add("post")
+    document.body.querySelector("div.post").removeAttribute("hidden")
     @scrollTo("section.post") unless @scrolling
 
   params: (url=window.location) ->
