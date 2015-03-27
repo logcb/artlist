@@ -27,10 +27,6 @@ $(document).ready ->
   BodyView = require "./body_view"
   new BodyView
 
-  # Intro view is responsible for changing opening and closing the intro section.
-  IntroView = require "./intro_view"
-  new IntroView
-
   # Post article view constructs an article from input and posts the data to the remote host.
   PostArticleView = require "./post_article_view"
   new PostArticleView
@@ -57,13 +53,7 @@ $(document).ready ->
   new FooterView
 
 
-# Construct the router and start the push state history system when the document is ready.
+# Reveal all elements and say hello when the document is ready.
 $(document).ready ->
-  Router = require "./router"
-  Artlist.router = new Router
-  Backbone.history.start {pushState: true}
-
-
-# Say hello to console operators.
-$(document).ready ->
+  document.body.classList.remove("loading")
   console.info "THE ARTLIST is ready at #{location.hostname}:#{location.port}"

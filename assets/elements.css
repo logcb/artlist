@@ -35,14 +35,11 @@ body:not(.editing) section.empty.day { display: none; }
 
 /* Hand pointer cursor for actionable elements */
 
-a[href], button:not([disabled]), article:not(.activated), div.filter.controls label:not(:first-child) { cursor: pointer; }
-
-/* Introduction */
-
-div.intro > header { border-top: 1px solid #999; }
+header nav img, a[href], button:not([disabled]), article:not(.activated), div.filter.controls label:not(:first-child) { cursor: pointer; }
 
 /* New Event Form */
 
+section.post { margin-top: -1px; }
 section.post > header { border-top: 1px solid #999; }
 section.post div.attribute label { display:block; position: relative; box-sizing: border-box; }
 section.post div.string.attribute label { border-bottom: 1px dotted #999; }

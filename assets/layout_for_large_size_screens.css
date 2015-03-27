@@ -48,8 +48,9 @@
 
 	/* FILTER CONTROLS */
 
-	body.index div.filter.controls div.position { position: fixed; top: 80px; left: 0; right: 0; }
-	body:not(.index) div.filter.controls div.position { position: relative; }
+	div.filter.controls:not(.fixed) div.position { position: relative; }
+	div.filter.controls.fixed div.position { position: fixed; top: 80px; left: 0; right: 0; }
+
 
 	div.filter.controls, div.filter.controls div.box { height: 180px; }
 	div.filter.controls div.rules { position: absolute; top: -1px; bottom: -1px; left: -30px; right: -30px; border-bottom: 1px solid #999; border-top: 1px solid #999; }
