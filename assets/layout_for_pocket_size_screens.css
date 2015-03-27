@@ -50,7 +50,7 @@
 
   div.filter.controls, div.filter.controls div.box { height: 136px; }
   div.filter.controls div.rules { left: 0px; right: 0px; }
-  div.filter.controls div.search { margin: 6px 14px; height: 36px; line-height: 38px; }
+  div.filter.controls div.search { margin: 0px 14px; height: 36px; line-height: 38px; }
   div.filter.controls div.search label { position: absolute; top: 0; left: 0; right: 0; display: block; height: 36px; }
   div.filter.controls div.search input { position: absolute; top: 0; left: 0; right: 0; display: block; width: 100%; padding: 0; text-indent: 55px; border-bottom: 1px dotted #999; height: 36px;}
   div.filter.controls hr { display:none;  }
