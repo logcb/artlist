@@ -15,9 +15,10 @@
 
 	/* INTRODUCTION */
 
-	section.intro { padding: 25px 0; }
+	section.intro h2 { margin: 20px 0 10px; }
 	section.intro p { width: 75%; }
 	section.intro p + p { margin-top: 10px; }
+	section.intro footer { height: 20px; }
 
 	/* POST AN EVENT */
 
