@@ -20,6 +20,8 @@ compile = (callback) ->
   else
     # Define the file extensions that can be required in the bundle.
     browserify = Browserify extensions: [".coffee", ".html"]
+    # Don’t need jqeury in the bundle.
+    browserify.exclude("jquery")
     # Define transformations for CoffeeScript code and Eco templates.
     browserify.transform convertSourceFileToJavascript
     # Require all the templates.
