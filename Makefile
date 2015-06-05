@@ -10,7 +10,7 @@ storage/index.json: storage
 
 # Create an empty list of permits and save it to storage.
 storage/permits.json: storage
-	echo "[]" > permits.json
+	echo "[]" > storage/permits.json
 
 
 # --------------------------------------
