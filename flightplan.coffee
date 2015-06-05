@@ -1,6 +1,14 @@
 flightplan = require "flightplan"
 
-flightplan.target "website",
+flightplan = require "flightplan"
+
+flightplan.target "production",
+  host: "104.236.242.171" # "theartlist.ca"
+  username: "core"
+  agent: process.env.SSH_AUTH_SOCK
+  readyTimeout: 30000
+
+flightplan.target "staging",
   host: "artlist.website" # "104.236.246.144"
   username: "core"
   agent: process.env.SSH_AUTH_SOCK
