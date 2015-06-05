@@ -10,7 +10,7 @@ RUN echo 'en_US.UTF-8 UTF-8' > /etc/locale.gen
 # Refresh, upgrade and install nessesary software packages.
 RUN pacman-db-upgrade
 RUN pacman --refresh --refresh --sync --sysupgrade --noconfirm
-RUN pacman --sync git make gcc nodejs python2 --noconfirm
+RUN pacman --sync git make gcc python2 nodejs npm --noconfirm
 
 # Define the node environment.
 ENV PYTHON /usr/sbin/python2
