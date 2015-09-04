@@ -1,5 +1,5 @@
 FileSystem        = require "fs"
-hostname          = if process.env.NODE_ENV is "production" then "theartlist.ca" else "artlist.dev")
+hostname          = if process.env.NODE_ENV is "production" then "theartlist.ca" else "artlist.dev"
 environment       = process.env.NODE_ENV ? "development"
 Artlist           = require "./artlist"
 MorganLogger      = require "morgan"
