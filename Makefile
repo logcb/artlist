@@ -6,7 +6,7 @@ storage:
 
 # Download a copy of index.json from the website and save it to storage.
 storage/index.json: storage
-	curl https://artlist.website/index.json > storage/index.json
+	curl https://theartlist.ca/index.json > storage/index.json
 
 # Create an empty list of permits and save it to storage.
 storage/permits.json: storage
