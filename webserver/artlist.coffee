@@ -1,5 +1,5 @@
 Artlist  = module.exports = {}
-hostname = "artlist" + (if process.env.NODE_ENV is "production" then ".website" else ".dev")
+hostname = if process.env.NODE_ENV is "production" then "theartlist.ca" else "artlist.dev")
 Backbone = require "backbone"
 Crypto  = require "crypto"
 FileSystem = require "fs"

@@ -16,14 +16,14 @@ RUN pacman --sync git make gcc python2 nodejs npm --noconfirm
 ENV PYTHON /usr/sbin/python2
 ENV NODE_ENV production
 ENV NODE_PATH /artlist
-ENV NODE_HOSTNAME artlist.website
+ENV NODE_HOSTNAME theartlist.ca
 
 # Clone source code.
 RUN git clone ARTLIST_REPO
 
 # Add secret key and certificate for the web server.
-ADD artlist.website.secret.key /artlist/secrets/artlist.website.secret.key
-ADD artlist.website.secret.txt /artlist/secrets/artlist.website.secret.txt
+ADD theartlist.ca.secret.key /artlist/secrets/theartlist.ca.secret.key
+ADD theartlist.ca.secret.txt /artlist/secrets/theartlist.ca.secret.txt
 
 # Set the file system to ARTLIST_COMMIT.
 RUN cd artlist; git fetch --all; git reset --hard ARTLIST_COMMIT

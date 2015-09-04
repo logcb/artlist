@@ -50,13 +50,13 @@ flightplan.local ["deploy", "build_image"], (local) ->
   local.log "artlist.commit is #{artlist.commit}"
 
 flightplan.local ["deploy", "build_image"], (local) ->
-  local.exec "cp secrets/artlist.website.secret.* artlist_image/"
+  local.exec "cp secrets/theartlist.ca.secret.* artlist_image/"
   flightplan.writeDockerfile()
   local.log "Wrote artlist_image/Dockerfile to local filesystem."
   imageFiles = [
     "artlist_image/Dockerfile"
-    "artlist_image/artlist.website.secret.key"
-    "artlist_image/artlist.website.secret.txt"
+    "artlist_image/theartlist.ca.secret.key"
+    "artlist_image/theartlist.ca.secret.txt"
   ]
   local.log "Transfering artlist_image files:", JSON.stringify(imageFiles)
   local.transfer imageFiles, "/home/core"
