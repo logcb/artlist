@@ -1,5 +1,6 @@
 artlist_image
 node_modules
 secrets/artlist.website.*
+secrets/theartlist.ca.*
 storage
 *.csr

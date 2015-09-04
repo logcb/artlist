@@ -13,8 +13,28 @@ storage/permits.json: storage
 	echo "[]" > storage/permits.json
 
 
-# --------------------------------------
-# SSL certificates for the public server
+# ------------------------------------------
+# SSL files for https://theartlist.ca
+
+# PEM encoded file that includes theartlist.ca certificate and the intermediate certificates from GoDaddy.
+webserver/crypto/theartlist.ca.certificates.pem:
+	rm -f webserver/crypto/theartlist.ca.certificates.pem
+	touch webserver/crypto/theartlist.ca.certificates.pem
+	cat webserver/crypto/fa2214863c4f2253.crt >> webserver/crypto/theartlist.ca.certificates.pem
+	cat webserver/crypto/gd_bundle-g2-g1.crt >> webserver/crypto/theartlist.ca.certificates.pem
+
+# Make certificate signing request for theartlist.ca with the secret key.
+webserver/crypto/theartlist.ca.csr: secrets/theartlist.ca.secret.key
+	openssl req -new -key secrets/theartlist.ca.secret.key -out webserver/crypto/theartlist.ca.csr -subj "/CN=theartlist.ca"
+	openssl req -noout -text -in webserver/crypto/theartlist.ca.csr
+
+# Generate a secret key for theartlist.ca
+secrets/theartlist.ca.secret.key:
+	openssl genrsa -out secrets/theartlist.ca.secret.key 2048
+
+
+# ------------------------------------------
+# SSL files for https://artlist.website
 
 # PEM encoded file that includes the artlist.website certificate and the intermediate certificate.
 webserver/crypto/artlist.website.certificates.pem: webserver/crypto/artlist.website.crt webserver/crypto/GandiStandardSSLCA.pem
@@ -38,7 +58,7 @@ webserver/crypto/GandiStandardSSLCA.pem:
 
 
 # ----------------------------------------
-# SSL Certificates for development servers
+# SSL files for https://artlist.dev
 
 # PEM encoded file that includes the artlist.dev certificate and any intermediate certificates.
 webserver/crypto/artlist.dev.certificates.pem: webserver/crypto/artlist.dev.crt
