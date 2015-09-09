@@ -34,11 +34,11 @@ REMOTE COMMANDS:
 Start the webserver in a production environment:
 `NODE_ENV=production npm start`
 
-Deploy the project:
+Deploy the project from development machine:
 `fly deploy:website`
-
-Run the image in an interactive console on the remote host:
-`ssh core@artlist.website -C docker run -i -t --volume=/home/core/artlist_storage:/artlist/storage artlist_image /bin/bash`
 
 Push a new version of the index:
 `scp storage/index.json core@artlist.website:artlist_storage`
+
+Run the image in an interactive console on the remote host:
+`docker run -i -t --volume=/home/core/artlist_storage:/artlist/storage artlist_image /bin/bash`
