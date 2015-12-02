@@ -4,7 +4,6 @@
   "repository": "git+https://github.com/logcb/artlist.git",
   "dependencies": {
     "async": "^0.9.0",
-    "authority": "git://github.com/45678/authority",
     "backbone": "^1.1.2",
     "body-parser": "^1.10.2",
     "browserify": "^8.1.1",
