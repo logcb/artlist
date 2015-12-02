@@ -6,8 +6,12 @@ Requires=docker.service
 After=docker.service
 
 [Service]
-ExecStart=/usr/bin/docker run --name artlist --rm --publish 80:80 --publish 443:443 --volume=/home/core/artlist_storage:/artlist/storage artlist_image
+Restart=on-failure
+RestartSec=15
+ExecStartPre=/usr/bin/docker kill artlist
+ExecStartPre=/usr/bin/docker rm artlist
+ExecStart=/usr/bin/docker run --name=artlist --publish 80:80 --publish 443:443 --volume=/home/core/artlist_storage:/artlist/storage artlist_image
 ExecStop=/usr/bin/docker stop artlist
 
 [Install]
-WantedBy=local.target
+WantedBy=multi-user.target
