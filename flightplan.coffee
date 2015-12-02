@@ -1,6 +1,6 @@
 flightplan = require "flightplan"
-
-flightplan = require "flightplan"
+#
+# flightplan = require "flightplan"
 
 flightplan.target "production",
   host: "104.236.242.171" # "theartlist.ca"
