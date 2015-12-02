@@ -26,6 +26,9 @@ flightplan.remote ["setup"], (remote) ->
   remote.sudo("timedatectl set-timezone America/Montreal")
   remote.exec("timedatectl")
 
+flightplan.remote ["setup"], (remote) ->
+  remote.sudo("systemctl enable docker")
+
 flightplan.remote ["status", "inspect", "default"], (remote) ->
   remote.exec "id"
   remote.exec "df /"
