@@ -81,6 +81,7 @@ flightplan.local ["deploy", "setup_service"], (local) ->
 flightplan.remote ["deploy", "setup_service"], (remote) ->
   remote.log "Linking artlist service with systemd"
   remote.sudo "systemctl link /home/core/artlist.service"
+  remote.sudo "systemctl enable /home/core/artlist.service"
 
 flightplan.remote ["deploy", "restart"], (remote) ->
   remote.sudo("systemctl stop artlist")
